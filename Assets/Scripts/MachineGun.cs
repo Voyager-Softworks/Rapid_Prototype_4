@@ -17,6 +17,7 @@ public class MachineGun : MonoBehaviour
     [SerializeField] float m_currentRPS;
     [SerializeField] float m_targetRPS;
     [SerializeField] float m_rampTime;
+    [SerializeField] float m_decayTime;
     [SerializeField] float m_lastShotTime = 0;
 
     Vector3 vel = Vector3.zero;
@@ -37,12 +38,11 @@ public class MachineGun : MonoBehaviour
             }
             if (m_currentRPS < m_targetRPS) m_currentRPS += ((m_targetRPS - m_startRPS) / m_rampTime) * Time.deltaTime;
             else m_currentRPS = m_targetRPS;
-
-            Debug.Log(m_currentRPS);
         }
         else
         {
-            m_currentRPS = m_startRPS;
+            if (m_currentRPS > m_startRPS) m_currentRPS -= ((m_targetRPS - m_startRPS) / m_decayTime) * Time.deltaTime;
+            else m_currentRPS = m_startRPS;
         }
     }
 
