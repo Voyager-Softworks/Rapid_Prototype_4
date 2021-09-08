@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public float m_minChargeDuration = 0.0f;
     public float m_chargeTimer = 0.0f;
 
+    Vector2 m_oldVelocity;
+
     
     bool m_facingLeft = false;
     
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource m_landingSource;
+    public AudioSource m_jumpSource;
+    public AudioSource m_chargeSource;
     
 
     // Start is called before the first frame update
@@ -62,8 +66,9 @@ public class PlayerMovement : MonoBehaviour
         m_airStrafeAction.Disable();
         
         m_landingTimer = m_landDuration;
-        m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x;
-        m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y;
+        m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x * (Mathf.Abs(m_oldVelocity.x)/10.0f);
+        m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y * (Mathf.Abs(m_oldVelocity.y)/10.0f);
+        m_landingSource.Play();
         
         
     }
@@ -72,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!m_grounded) return;
         m_charging = true;
+        m_chargeSource.Play();
         m_walkAction.Disable();
     }
 
@@ -90,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         {
             m_airStrafeAction.Enable();
             m_walkAction.Disable();
+            m_jumpSource.Play();
             rb.AddForce(new Vector2(0.0f,m_jumpForceCurve.Evaluate(m_chargeTimer) * m_jumpForce), ForceMode2D.Impulse);
         }
         else
@@ -97,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
             m_walkAction.Enable();
             m_airStrafeAction.Disable();
         }
-        
+        m_chargeSource.Stop();
         m_chargeTimer = 0;
         
     }
@@ -144,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity *= 0.9f;
         }
         rb.velocity += vel * Time.deltaTime;
+        m_oldVelocity = rb.velocity;
     }
 
     void OnDrawGizmos()
