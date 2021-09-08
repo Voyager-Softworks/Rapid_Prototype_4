@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Resource : MonoBehaviour
 {
+    public InputAction m_pickupAction;
+
     public enum Type
     {
         Organic,
@@ -34,7 +37,7 @@ public class Resource : MonoBehaviour
         {
             m_pickupText.enabled = true;
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Keyboard.current.eKey.isPressed)
             {
                 m_player.GetComponent<Inventory>().AddResource(m_type);
                 Destroy(gameObject);

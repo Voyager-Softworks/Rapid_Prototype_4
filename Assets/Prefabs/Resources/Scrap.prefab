@@ -98,6 +98,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402bea4f1ee9dc04fbcd347cd8a3c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pickupAction:
+    m_Name: Pickup
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: d41e9fd9-fcce-4b8f-8af8-2622a590a9c9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d794740a-be70-4675-b7c2-a20285dd233f
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pickup
+      m_Flags: 0
   m_player: {fileID: 0}
   m_canvas: {fileID: 1635208353197418343}
   m_pickupText: {fileID: 1635208352424949324}

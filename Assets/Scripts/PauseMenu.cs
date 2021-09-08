@@ -48,15 +48,15 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!win.activeSelf && !lose.activeSelf && Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (menu.activeSelf) {
-                Unpause();
-            }
-            else
-            {
-                Pause();
-            }
-        }
+        //if (!win.activeSelf && !lose.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    if (menu.activeSelf) {
+        //        Unpause();
+        //    }
+        //    else
+        //    {
+        //        Pause();
+        //    }
+        //}
     }
 }
