@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MachineGun : MonoBehaviour
 {
+    public InputAction m_shootAction;
+
     [SerializeField] GameObject m_player;
 
     [SerializeField] GameObject m_bullet_prefab;
@@ -30,7 +33,7 @@ public class MachineGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Mouse.current.leftButton.isPressed)
         {
             if (m_currentRPS == 0 || Time.time - m_lastShotTime >= 1.0f / m_currentRPS)
             {

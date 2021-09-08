@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5312238160630991543}
   - component: {fileID: 5312238160630991542}
+  - component: {fileID: 5312238160630991541}
   - component: {fileID: 5312238160630991540}
   - component: {fileID: 5312238160630991536}
-  - component: {fileID: 5312238160630991541}
+  - component: {fileID: 5203168192554026397}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -86,6 +87,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &5312238160630991541
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312238160630991547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!50 &5312238160630991540
 Rigidbody2D:
   serializedVersion: 4
@@ -120,22 +137,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_moveSpeed: 10
---- !u!70 &5312238160630991541
-CapsuleCollider2D:
+--- !u!114 &5203168192554026397
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5312238160630991547}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5faa4e29d188eb4988b01d9d1f90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_organicAmount: 0
+  m_powerAmount: 0
+  m_scrapAmount: 0
+  m_text: {fileID: 0}
 --- !u!1 &5312238161658561860
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,11 +275,15 @@ PrefabInstance:
       objectReference: {fileID: 5312238160630991547}
     - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_rampTime
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_startRPS
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_decayTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_targetRPS
