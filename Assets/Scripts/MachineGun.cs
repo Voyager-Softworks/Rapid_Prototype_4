@@ -66,7 +66,7 @@ public class MachineGun : MonoBehaviour
         GameObject bullet = Instantiate(m_bullet_prefab, m_shootPos.position, transform.rotation, null);
         Rigidbody2D rb_bullet = bullet.GetComponent<Rigidbody2D>();
 
-        rb_bullet.velocity = transform.right * m_bullet_vel;
+        rb_bullet.velocity = transform.right * transform.lossyScale.x * m_bullet_vel;
         rb_bullet.velocity += m_player.GetComponent<Rigidbody2D>().velocity;
 
         Destroy(bullet, 10);

@@ -25,6 +25,7 @@ public class Resource : MonoBehaviour
     void Start()
     {
         if (!m_player) m_player = GameObject.Find("Player");
+        m_pickupText.fontSize = 1;
     }
 
     // Update is called once per frame
