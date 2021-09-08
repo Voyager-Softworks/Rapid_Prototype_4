@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 
 
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings")]
     [SerializeField] float m_moveSpeed = 1.0f;
     [SerializeField] float m_jumpForce = 1.0f;
+    [SerializeField] float m_landDuration = 1.0f;
+    public float m_landingTimer = 0.0f;
     [Range(0.0f, 1.0f)]
     [SerializeField] float m_maneuveringThrusterStrength = 1.0f;
 
@@ -26,9 +29,17 @@ public class PlayerMovement : MonoBehaviour
     public float m_minChargeDuration = 0.0f;
     public float m_chargeTimer = 0.0f;
 
+    
     bool m_facingLeft = false;
-        
+    
+    [Header("Special Effects")]
+    public CinemachineVirtualCamera m_cam;
+    public NoiseSettings m_noise;
+    public Vector2 m_landingNoiseMagnitude;
+    
 
+    [Header("Audio")]
+    public AudioSource m_landingSource;
     
 
     // Start is called before the first frame update
@@ -49,7 +60,10 @@ public class PlayerMovement : MonoBehaviour
     void Land()
     {
         m_airStrafeAction.Disable();
-        m_walkAction.Enable();
+        
+        m_landingTimer = m_landDuration;
+        m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x;
+        m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y;
         
         
     }
@@ -91,7 +105,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool m_groundedOld = m_grounded;
         m_grounded = Physics2D.BoxCast(transform.position + Vector3.down, new Vector3(1, 0.5f, 0), 0.0f, Vector2.up, 1.0f, LayerMask.GetMask("Ground"));
+        if (!m_groundedOld && m_grounded)
+        {
+            Land();
+        }
+        if(m_landingTimer > 0){m_landingTimer -= Time.deltaTime;}
+        else if (!m_walkAction.enabled && m_grounded)
+        {
+            m_walkAction.Enable();
+            m_noise.PositionNoise[0].X.Amplitude = 0.0f;
+            m_noise.PositionNoise[0].Y.Amplitude = 0.0f;
+            m_landingTimer = 0.0f;
+        }
         Vector2 vel = Vector2.zero;
         if (m_charging)
         {
