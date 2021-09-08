@@ -601,9 +601,9 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0.4027649
-      outSlope: 0.4027649
+      value: 0.5018616
+      inSlope: 0.201932
+      outSlope: 0.201932
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -611,8 +611,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 2.4989014
       value: 1.0064697
-      inSlope: 0.4027649
-      outSlope: 0.4027649
+      inSlope: 0.201932
+      outSlope: 0.201932
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -622,7 +622,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_grounded: 0
   m_charging: 0
-  m_minChargeDuration: 0.5
+  m_minChargeDuration: 0.7
   m_chargeTimer: 0
   m_cam: {fileID: 0}
   m_noise: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
