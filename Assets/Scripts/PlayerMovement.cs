@@ -4,11 +4,13 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.Events;
 
 
 
 public class PlayerMovement : MonoBehaviour
 {
+    SpriteRenderer m_renderer;
     [Header("Controls")]
     public InputAction m_walkAction, m_jumpAction, m_airStrafeAction;
     Rigidbody2D rb;
@@ -18,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float m_jumpForce = 1.0f;
     [SerializeField] float m_landDuration = 1.0f;
     public float m_landingTimer = 0.0f;
+    public UnityEvent m_OnLand;
     [Range(0.0f, 1.0f)]
     [SerializeField] float m_maneuveringThrusterStrength = 1.0f;
 
@@ -50,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        m_renderer = GetComponent<SpriteRenderer>();
     }
 
     void Awake()
@@ -58,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         m_jumpAction.Enable();
         m_jumpAction.started += ChargeJump;
         m_jumpAction.canceled += Jump;
+        m_jumpAction.performed += Jump;
         m_chargeTimer = 0;
     }
 
@@ -69,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x * (Mathf.Abs(m_oldVelocity.x)/10.0f);
         m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y * (Mathf.Abs(m_oldVelocity.y)/10.0f);
         m_landingSource.Play();
+        m_OnLand.Invoke();
         
         
     }
@@ -107,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         m_chargeSource.Stop();
         m_chargeTimer = 0;
         
+        
     }
 
     // Update is called once per frame
@@ -131,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
         {
             m_chargeTimer += Time.deltaTime;
         }
-        if(m_walkAction.enabled)
+        if(m_walkAction.enabled && !m_charging)
         {
             vel += m_walkAction.ReadValue<Vector2>();
             if(!m_grounded) { m_walkAction.Disable(); m_airStrafeAction.Enable(); }
@@ -145,7 +152,8 @@ public class PlayerMovement : MonoBehaviour
         vel = vel * m_moveSpeed;
         if(vel.x < -0.01f) m_facingLeft = true;
         if(vel.x > 0.01f) m_facingLeft = false;
-        transform.localScale = new Vector3(m_facingLeft ? -1.0f : 1.0f, 1.0f, 1.0f);
+        m_renderer.flipX = m_facingLeft;
+        
         if (vel.magnitude < 0.1f && m_grounded)
         {
             rb.velocity *= 0.9f;

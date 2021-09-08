@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-8002435953096532084
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 71653e15b3f940bd1b2befa38d67a96c
+  m_EffectName: Pitch Shifter
+  m_MixLevel: 2f3d28d8e38708275a1222dbfecab18a
+  m_Parameters:
+  - m_ParameterName: Pitch
+    m_GUID: d57ed9338982da241a20a2eef17b32b9
+  - m_ParameterName: FFT size
+    m_GUID: 92c085742b50a9c6a8f3912d9d1f4045
+  - m_ParameterName: Overlap
+    m_GUID: 4368ab3d46eb1bf67bb3d447e5684b70
+  - m_ParameterName: Max channels
+    m_GUID: abb28300747f892e0acf11ffa63143c5
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-3539855643163439019
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 69658cbf08af63a44a85dbc1ebf5ab4f
+  m_EffectName: SFX Reverb
+  m_MixLevel: 95bdf7d4c8ac060bc9edce640de3d806
+  m_Parameters:
+  - m_ParameterName: Dry Level
+    m_GUID: b848b93ded009156f9e25254593e75c4
+  - m_ParameterName: Room
+    m_GUID: 84987e34a1e655ee992fe628ac2e6d17
+  - m_ParameterName: Room HF
+    m_GUID: 178840e0512146b4a9ddd6ebfa8bb687
+  - m_ParameterName: Decay Time
+    m_GUID: 3d0f6025c34b999389b3cc9ee48474cc
+  - m_ParameterName: Decay HF Ratio
+    m_GUID: d79b2a9a120ce6d5fa422f5d7a301032
+  - m_ParameterName: Reflections
+    m_GUID: bef34df98fb8094b9901500f5c9223bd
+  - m_ParameterName: Reflect Delay
+    m_GUID: f2e7725e836e8d5d283a78d067fd1b74
+  - m_ParameterName: Reverb
+    m_GUID: 9a709b9908bd24b8996edebbd34de627
+  - m_ParameterName: Reverb Delay
+    m_GUID: 6911bb32ab058beba96b3ba6d48487e6
+  - m_ParameterName: Diffusion
+    m_GUID: 5b3d4b5993c75f9ebb4010e16dd1792b
+  - m_ParameterName: Density
+    m_GUID: a495d8186f9ebd3caaf0fe5dce1cc9fd
+  - m_ParameterName: HF Reference
+    m_GUID: c549034357f58b8279393858ae1b92cb
+  - m_ParameterName: Room LF
+    m_GUID: 7404b0c0445f2a6eca9d02f7341977e8
+  - m_ParameterName: LF Reference
+    m_GUID: 2b1f828d62731d9298665405bc81a826
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: testmixer
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews: []
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: e26a85d0a105039128039672eb9def72
+  m_Children: []
+  m_Volume: 9b26f5fe8cf447474aa81fa1de3931bc
+  m_Pitch: c9a6d4fd2b471990e8f77af9ceb1c78c
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  - {fileID: -8002435953096532084}
+  - {fileID: -3539855643163439019}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5f191dc793e476ef4b10c9a5032d7127
+  m_EffectName: Attenuation
+  m_MixLevel: ebbb9b2865b3b664e81024cf42ac8003
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 0d3e32f79e6dd806787ed2c8c05420af
+  m_FloatValues:
+    d57ed9338982da241a20a2eef17b32b9: 1
+    84987e34a1e655ee992fe628ac2e6d17: -10000
+    416fdfa4644a2ac7fb07d4343b18e85e: 0.80000037
+    b3e4edf6680a819a0bee4f1122c6a710: 2870.6877
+    0a5584c9f3ac830f6ab3f06497456c49: 1
+    f2e7725e836e8d5d283a78d067fd1b74: 0.078
+  m_TransitionOverrides: {}
