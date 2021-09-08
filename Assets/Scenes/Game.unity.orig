@@ -123,212 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
---- !u!1 &675093442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 675093445}
-  - component: {fileID: 675093444}
-  - component: {fileID: 675093443}
-  - component: {fileID: 675093446}
-  - component: {fileID: 675093447}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &675093443
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675093442}
-  m_Enabled: 1
---- !u!20 &675093444
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675093442}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 15
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &675093445
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675093442}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &675093446
+--- !u!114 &966294045 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
+  m_PrefabInstance: {fileID: 6688422379684269141}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675093442}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 7
-  m_ObsoleteRenderingPath: 0
-  m_ObsoleteFrameSettings:
-    overrides: 0
-    enableShadow: 0
-    enableContactShadows: 0
-    enableShadowMask: 0
-    enableSSR: 0
-    enableSSAO: 0
-    enableSubsurfaceScattering: 0
-    enableTransmission: 0
-    enableAtmosphericScattering: 0
-    enableVolumetrics: 0
-    enableReprojectionForVolumetrics: 0
-    enableLightLayers: 0
-    enableExposureControl: 1
-    diffuseGlobalDimmer: 0
-    specularGlobalDimmer: 0
-    shaderLitMode: 0
-    enableDepthPrepassWithDeferredRendering: 0
-    enableTransparentPrepass: 0
-    enableMotionVectors: 0
-    enableObjectMotionVectors: 0
-    enableDecals: 0
-    enableRoughRefraction: 0
-    enableTransparentPostpass: 0
-    enableDistortion: 0
-    enablePostprocess: 0
-    enableOpaqueObjects: 0
-    enableTransparentObjects: 0
-    enableRealtimePlanarReflection: 0
-    enableMSAA: 0
-    enableAsyncCompute: 0
-    runLightListAsync: 0
-    runSSRAsync: 0
-    runSSAOAsync: 0
-    runContactShadowsAsync: 0
-    runVolumeVoxelizationAsync: 0
-    lightLoopSettings:
-      overrides: 0
-      enableDeferredTileAndCluster: 0
-      enableComputeLightEvaluation: 0
-      enableComputeLightVariants: 0
-      enableComputeMaterialVariants: 0
-      enableFptlForForwardOpaque: 0
-      enableBigTilePrepass: 0
-      isFptlEnabled: 0
-  clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
-  clearDepth: 1
-  volumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  volumeAnchorOverride: {fileID: 0}
-  antialiasing: 0
-  SMAAQuality: 2
-  dithering: 0
-  stopNaNs: 0
-  taaSharpenStrength: 0.5
-  TAAQuality: 1
-  taaHistorySharpening: 0.35
-  taaAntiFlicker: 0.5
-  taaMotionVectorRejection: 0
-  taaAntiHistoryRinging: 0
-  physicalParameters:
-    m_Iso: 200
-    m_ShutterSpeed: 0.005
-    m_Aperture: 16
-    m_BladeCount: 5
-    m_Curvature: {x: 2, y: 11}
-    m_BarrelClipping: 0.25
-    m_Anamorphism: 0
-  flipYMode: 0
-  xrRendering: 1
-  fullscreenPassthrough: 0
-  allowDynamicResolution: 0
-  customRenderingSettings: 0
-  invertFaceCulling: 0
-  probeLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  hasPersistentHistory: 0
-  exposureTarget: {fileID: 0}
-  m_RenderingPathCustomFrameSettings:
-    bitDatas:
-      data1: 72198262773251917
-      data2: 13763000468760363032
-    lodBias: 1
-    lodBiasMode: 0
-    lodBiasQualityLevel: 0
-    maximumLODLevel: 0
-    maximumLODLevelMode: 0
-    maximumLODLevelQualityLevel: 0
-    sssQualityMode: 0
-    sssQualityLevel: 0
-    sssCustomSampleBudget: 20
-    materialQuality: 0
-  renderingPathCustomFrameSettingsOverrideMask:
-    mask:
-      data1: 0
-      data2: 0
-  defaultFrameSettings: 0
---- !u!114 &675093447
+--- !u!114 &1112310503 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 501089118616100140, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
+  m_PrefabInstance: {fileID: 501089119651340235}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 675093442}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -512,20 +323,17 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &846524156
-=======
---- !u!114 &966294045 stripped
->>>>>>> main
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-  m_PrefabInstance: {fileID: 6688422379684269141}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 846524151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: 2063728267a97b84a9beda4bda6e72bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   m_walkAction:
     m_Name: Walk
     m_Type: 0
@@ -957,14 +765,15 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1112310503
-=======
---- !u!114 &1112310503 stripped
->>>>>>> main
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 501089118616100140, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
-  m_PrefabInstance: {fileID: 501089119651340235}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112310502}
+=======
   m_GameObject: {fileID: 0}
+>>>>>>> 0132f3d9b09fc2ee101a1f2cc7fcd19a8490955e
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
@@ -1287,7 +1096,7 @@ Rigidbody2D:
 =======
 --- !u!1001 &501089119651340235
 PrefabInstance:
->>>>>>> main
+>>>>>>> 0132f3d9b09fc2ee101a1f2cc7fcd19a8490955e
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -1544,7 +1353,7 @@ GameObject:
   m_SourcePrefab: {fileID: 100100000, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
 --- !u!1001 &5312238160331908172
 PrefabInstance:
->>>>>>> main
+>>>>>>> 0132f3d9b09fc2ee101a1f2cc7fcd19a8490955e
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -1558,330 +1367,6 @@ PrefabInstance:
       propertyPath: m_cam
       value: 
       objectReference: {fileID: 1112310503}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_noise
-      value: 
-      objectReference: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForce
-      value: 800000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_landDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_Id
-      value: 635ddfa8-47da-4fdb-8cff-1b5e510dbc8c
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_Id
-      value: 4d817840-db93-4d4e-a2ed-ab82c6e7aa28
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_Name
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_minChargeDuration
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_Name
-      value: Walk
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_Id
-      value: abfe51fa-68ca-4750-b2c2-403a3fc8be67
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_Name
-      value: Air Strafe
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_landingNoiseMagnitude.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_landingNoiseMagnitude.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_Processors
-      value: ScaleVector2(y=0)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_ExpectedControlType
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_ExpectedControlType
-      value: Vector2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[1].time
-      value: 4.9999084
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[1].value
-      value: 0.99982274
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[0].inSlope
-      value: 0.1999682
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[1].inSlope
-      value: 0.1999682
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[0].outSlope
-      value: 0.1999682
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[1].outSlope
-      value: 0.1999682
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[0].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_SingletonActionBindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpForceCurve.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_SingletonActionBindings.Array.data[0].m_Id
-      value: e48e4c21-f943-4fbc-9d66-7407f3a24f62
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_SingletonActionBindings.Array.data[1].m_Id
-      value: f34fcf6d-6b30-41ef-ac27-44509fb2827d
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[0].m_Id
-      value: f64eaebb-4e1a-48e5-8096-00f3c8493d49
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[1].m_Id
-      value: 190f4664-084d-495f-9903-906c58cc0b6a
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[2].m_Id
-      value: cb341bc1-ddf5-433a-93c8-58a8bcc47a7e
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[3].m_Id
-      value: 48620baf-a630-493a-9293-7ee388702b77
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/buttonSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/space
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[0].m_Name
-      value: Keyboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: 2DVector
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[1].m_Name
-      value: left
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/a
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[2].m_Name
-      value: right
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/d
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[3].m_Path
-      value: <Gamepad>/leftStick
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[0].m_Flags
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[1].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[2].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_jumpAction.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Walk
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Walk
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Walk
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_walkAction.m_SingletonActionBindings.Array.data[3].m_Action
-      value: Walk
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[0].m_Id
-      value: 9eb6cc5e-9038-42ea-9d42-6ece73b9d010
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[1].m_Id
-      value: 67627a34-85e7-45e5-ad57-cf847e6b32a1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[2].m_Id
-      value: 097c4377-367e-489d-b102-7826a9e3cc44
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[3].m_Id
-      value: d3bf9c9f-28be-479f-93de-9d228d783d66
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[4].m_Id
-      value: 28e14276-f3e6-4c9f-878b-67c8cd05f928
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[5].m_Id
-      value: 53c05d33-1aa9-4937-9185-594f9c3065d4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[0].m_Name
-      value: Keyboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: 2DVector
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[1].m_Name
-      value: up
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/w
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[2].m_Name
-      value: down
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/s
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[3].m_Name
-      value: left
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[3].m_Path
-      value: <Keyboard>/a
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[4].m_Name
-      value: right
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[4].m_Path
-      value: <Keyboard>/d
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[5].m_Path
-      value: <Gamepad>/leftStick
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[0].m_Flags
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[1].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[2].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[3].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[4].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Air Strafe
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Air Strafe
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Air Strafe
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[3].m_Action
-      value: Air Strafe
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[4].m_Action
-      value: Air Strafe
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_airStrafeAction.m_SingletonActionBindings.Array.data[5].m_Action
-      value: Air Strafe
-      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1929,66 +1414,6 @@ PrefabInstance:
     - target: {fileID: 5312238160630991547, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561862, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_mousePos.m_Id
-      value: 2498e8f2-eb46-434e-a02c-098355393ade
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561862, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_mousePos.m_Name
-      value: Mouse Pos
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561862, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_mousePos.m_ExpectedControlType
-      value: Vector2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561862, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_mousePos.m_SingletonActionBindings.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561862, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_mousePos.m_SingletonActionBindings.Array.data[0].m_Id
-      value: 362f4fb4-6dd6-405e-9243-040e0ea8ec50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561862, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_mousePos.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Mouse>/position
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561862, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_mousePos.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Mouse Pos
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_Id
-      value: 05f53d65-cb6d-4324-8129-79cf4130415d
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_Name
-      value: Shoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_ExpectedControlType
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_SingletonActionBindings.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[0].m_Id
-      value: adb4b4e3-fe86-4fa6-a1f8-f882b971dc52
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Mouse>/leftButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Shoot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}

@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 6207577749372023522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.1, z: 1}
+  m_LocalScale: {x: 2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 2278086271051560686}
   m_Father: {fileID: 0}
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,9 +126,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1422be70248f6840b53a2560a8319fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shootAction:
+    m_Name: Shoot
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 05f53d65-cb6d-4324-8129-79cf4130415d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: adb4b4e3-fe86-4fa6-a1f8-f882b971dc52
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
   m_player: {fileID: 0}
   m_bullet_prefab: {fileID: 7610439907867034931, guid: 1a470d97da000b34ebc58caf9cecd362, type: 3}
   m_shootPos: {fileID: 2278086271051560686}
   m_bullet_vel: 40
-  m_RPS: 5
+  m_startRPS: 3
+  m_currentRPS: 0
+  m_targetRPS: 10
+  m_rampTime: 6
+  m_decayTime: 3
   m_lastShotTime: 0
