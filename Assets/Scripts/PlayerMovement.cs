@@ -10,7 +10,9 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    WalkSound m_walksoundmaker;
     SpriteRenderer m_renderer;
+    Animator m_anim;
     [Header("Controls")]
     public InputAction m_walkAction, m_jumpAction, m_airStrafeAction;
     Rigidbody2D rb;
@@ -54,6 +56,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         m_renderer = GetComponent<SpriteRenderer>();
+        m_anim = GetComponent<Animator>();
+        m_walksoundmaker = GetComponentInChildren<WalkSound>();
+    }
+
+    public void StepNoise()
+    {
+        m_walksoundmaker.PlaySound();
     }
 
     void Awake()
@@ -120,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         bool m_groundedOld = m_grounded;
-        m_grounded = Physics2D.BoxCast(transform.position + Vector3.down, new Vector3(1, 0.5f, 0), 0.0f, Vector2.up, 1.0f, LayerMask.GetMask("Ground"));
+        m_grounded = Physics2D.BoxCast(transform.position + (Vector3.down * 0.5f), new Vector3(0.8f, 0.25f, 0), 0.0f, Vector2.up, 1.0f, LayerMask.GetMask("Ground"));
         if (!m_groundedOld && m_grounded)
         {
             Land();
@@ -157,6 +166,12 @@ public class PlayerMovement : MonoBehaviour
         if (vel.magnitude < 0.1f && m_grounded)
         {
             rb.velocity *= 0.9f;
+            m_anim.SetBool("Walking", false);
+        }
+        else if(m_grounded)
+        {
+            m_anim.SetBool("Walking", true);
+            m_anim.speed = rb.velocity.magnitude;
         }
         rb.velocity += vel * Time.deltaTime;
         m_oldVelocity = rb.velocity;
@@ -165,6 +180,6 @@ public class PlayerMovement : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position + Vector3.down, new Vector3(1, 0.5f, 0));
+        Gizmos.DrawWireCube(transform.position + (Vector3.down * 0.5f), new Vector3(0.8f, 0.25f, 0));
     }
 }
