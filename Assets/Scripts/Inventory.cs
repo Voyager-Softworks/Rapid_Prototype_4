@@ -67,4 +67,50 @@ public class Inventory : MonoBehaviour
         m_scrapAmount += _amount;
         UpdateVisuals();
     }
+
+    public bool DoesHave(Resource.Type _type, float _amount)
+    {
+        switch (_type)
+        {
+            case Resource.Type.Organic:
+                if (m_organicAmount < _amount) return false;
+                break;
+
+            case Resource.Type.Power:
+                if (m_powerAmount < _amount) return false;
+                break;
+
+            case Resource.Type.Scrap:
+                if (m_scrapAmount < _amount) return false;
+                break;
+
+            default:
+                return false;
+        }
+
+        return true; 
+    }
+
+    public void Remove(Resource.Type _type, float _amount)
+    {
+        switch (_type)
+        {
+            case Resource.Type.Organic:
+                m_organicAmount = m_organicAmount <= _amount ? 0 : m_organicAmount - _amount;
+                break;
+
+            case Resource.Type.Power:
+                m_powerAmount = m_powerAmount <= _amount ? 0 : m_powerAmount - _amount;
+                break;
+
+            case Resource.Type.Scrap:
+                m_scrapAmount = m_scrapAmount <= _amount ? 0 : m_scrapAmount - _amount;
+                break;
+
+            default:
+                break;
+        }
+
+        UpdateVisuals();
+    }
 }

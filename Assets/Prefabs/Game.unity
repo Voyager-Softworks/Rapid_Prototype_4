@@ -10332,6 +10332,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &2096775372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2096775368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
+  m_PrefabInstance: {fileID: 986040627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9686624a714e48e4e84799b1c0913dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2409599522018385517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10440,14 +10451,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2551221062136507049, guid: d671da109b1831f489f53a8a79c1f2d0, type: 3}
-      propertyPath: near clip plane
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2551221062136507049, guid: d671da109b1831f489f53a8a79c1f2d0, type: 3}
-      propertyPath: orthographic size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2551221062136507055, guid: d671da109b1831f489f53a8a79c1f2d0, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -10461,18 +10464,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5271423662129279144, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5271423662129279145, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5251738
-      objectReference: {fileID: 0}
-    - target: {fileID: 5271423662129279145, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.23741311
-      objectReference: {fileID: 0}
     - target: {fileID: 5271423662318070226, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -10520,6 +10511,26 @@ PrefabInstance:
     - target: {fileID: 5271423662318070227, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
       propertyPath: m_Name
       value: Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 5312238160331908173}
+    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
+      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2096775372}
+    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
+      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
+      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
+      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
@@ -10586,9 +10597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5312238161658561860, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+--- !u!1 &5312238160331908173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5312238160630991547, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+  m_PrefabInstance: {fileID: 5312238160331908172}
+  m_PrefabAsset: {fileID: 0}
