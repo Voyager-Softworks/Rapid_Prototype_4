@@ -161,7 +161,15 @@ public class PlayerMovement : MonoBehaviour
         vel = vel * m_moveSpeed;
         if(vel.x < -0.01f) m_facingLeft = true;
         if(vel.x > 0.01f) m_facingLeft = false;
-        m_renderer.flipX = m_facingLeft;
+        if (m_facingLeft)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.identity;
+        }
+        
         
         if (vel.magnitude < 0.1f && m_grounded)
         {
