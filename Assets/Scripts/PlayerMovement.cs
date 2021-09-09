@@ -184,11 +184,16 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity *= 0.9f;
             m_anim.SetBool("Walking", false);
+            m_anim.speed = 1.0f;
         }
         else if(m_grounded && !m_reversing)
         {
             m_anim.SetBool("Walking", true);
             m_anim.speed = rb.velocity.magnitude;
+        }
+        else
+        {
+            m_anim.speed = 1.0f;
         }
         
         rb.velocity += vel * Time.deltaTime;
