@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     void Land()
     {
         m_airStrafeAction.Disable();
-        
+        m_anim.ResetTrigger("Jump");
         m_landingTimer = m_landDuration;
         m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x * (Mathf.Abs(m_oldVelocity.x)/10.0f);
         m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y * (Mathf.Abs(m_oldVelocity.y)/10.0f);
