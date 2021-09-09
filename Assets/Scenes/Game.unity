@@ -230,14 +230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM vcam1
       objectReference: {fileID: 0}
-    - target: {fileID: 501089118783958783, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
-      propertyPath: m_DeadZoneHeight
-      value: 0.684
-      objectReference: {fileID: 0}
-    - target: {fileID: 501089118783958783, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
-      propertyPath: m_SoftZoneHeight
-      value: 0.886
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
 --- !u!1 &422143569
@@ -275,7 +267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 8.85}
+  m_AnchoredPosition: {x: 8.87, y: 8.85}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &422143571
@@ -10520,18 +10512,6 @@ PrefabInstance:
       propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2096775372}
-    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
-      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
-      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
-      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
 --- !u!1001 &5312238160331908172

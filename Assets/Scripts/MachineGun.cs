@@ -23,6 +23,10 @@ public class MachineGun : MonoBehaviour
     [SerializeField] float m_decayTime;
     [SerializeField] float m_lastShotTime = 0;
 
+    [Header("Feel")]
+    [SerializeField] float m_recoilMulti = 5.0f;
+    [SerializeField] [Range(0.0f, 1.0f)] float m_returnRate = 0.75f;
+
     Vector3 vel = Vector3.zero;
 
     void Start()
@@ -54,19 +58,20 @@ public class MachineGun : MonoBehaviour
         vel *= 0.95f;
         transform.position += vel * Time.deltaTime;
 
-        transform.localPosition = Vector3.Lerp(transform.localPosition, m_restPos, 0.75f);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, m_restPos, m_returnRate);
     }
 
     void Shoot()
     {
         m_lastShotTime = Time.time;
 
-        vel -= transform.right * 10.0f;
+        vel -= transform.right * m_recoilMulti;
 
         GameObject bullet = Instantiate(m_bullet_prefab, m_shootPos.position, transform.rotation, null);
         Rigidbody2D rb_bullet = bullet.GetComponent<Rigidbody2D>();
 
         rb_bullet.velocity = transform.right * transform.lossyScale.x * m_bullet_vel;
+        rb_bullet.velocity += (Vector2)transform.up * Random.Range(-0.5f,1.5f);
         rb_bullet.velocity += m_player.GetComponent<Rigidbody2D>().velocity;
 
         Destroy(bullet, 10);
