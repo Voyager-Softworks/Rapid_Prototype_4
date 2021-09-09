@@ -10,6 +10,7 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    FollowMouse m_mousescript;
     WalkSound m_walksoundmaker;
     SpriteRenderer m_renderer;
     Animator m_anim;
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     
     bool m_facingLeft = false;
+    bool m_reversing = false;
     
     [Header("Special Effects")]
     public CinemachineVirtualCamera m_cam;
@@ -58,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         m_renderer = GetComponent<SpriteRenderer>();
         m_anim = GetComponent<Animator>();
         m_walksoundmaker = GetComponentInChildren<WalkSound>();
+        m_mousescript = GetComponentInChildren<FollowMouse>();
     }
 
     public void StepNoise()
@@ -91,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
     void ChargeJump(InputAction.CallbackContext _ctx)
     {
         if(!m_grounded) return;
+        m_anim.SetTrigger("Charge");
         m_charging = true;
         m_chargeSource.Play();
         m_walkAction.Disable();
@@ -113,11 +117,13 @@ public class PlayerMovement : MonoBehaviour
             m_walkAction.Disable();
             m_jumpSource.Play();
             rb.AddForce(new Vector2(0.0f,m_jumpForceCurve.Evaluate(m_chargeTimer) * m_jumpForce), ForceMode2D.Impulse);
+            m_anim.SetTrigger("Jump");
         }
         else
         {
             m_walkAction.Enable();
             m_airStrafeAction.Disable();
+            m_anim.SetTrigger("ChargeCancelled");
         }
         m_chargeSource.Stop();
         m_chargeTimer = 0;
@@ -130,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
     {
         bool m_groundedOld = m_grounded;
         m_grounded = Physics2D.BoxCast(transform.position + (Vector3.down * 0.5f), new Vector3(0.8f, 0.25f, 0), 0.0f, Vector2.up, 1.0f, LayerMask.GetMask("Ground"));
+        m_anim.SetBool("Grounded", m_grounded);
         if (!m_groundedOld && m_grounded)
         {
             Land();
@@ -159,8 +166,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         vel = vel * m_moveSpeed;
-        if(vel.x < -0.01f) m_facingLeft = true;
-        if(vel.x > 0.01f) m_facingLeft = false;
+        m_facingLeft = (m_mousescript.mouse_pos.x < 0.0f);
+        m_reversing = !((vel.x < -0.01f && m_facingLeft) || (vel.x > 0.01f && !m_facingLeft));
+        
         if (m_facingLeft)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -170,13 +178,14 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.identity;
         }
         
-        
+        m_anim.SetBool("Reversing", m_reversing);
+
         if (vel.magnitude < 0.1f && m_grounded)
         {
             rb.velocity *= 0.9f;
             m_anim.SetBool("Walking", false);
         }
-        else if(m_grounded)
+        else if(m_grounded && !m_reversing)
         {
             m_anim.SetBool("Walking", true);
             m_anim.speed = rb.velocity.magnitude;

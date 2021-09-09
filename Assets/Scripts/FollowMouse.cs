@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class FollowMouse : MonoBehaviour
 {
     public InputAction m_mousePos;
+    public Vector3 mouse_pos;
 
     [SerializeField] float m_rotateSpeed;
 
@@ -19,7 +20,7 @@ public class FollowMouse : MonoBehaviour
     {
         
 
-        Vector3 mouse_pos = Mouse.current.position.ReadValue();
+        mouse_pos = Mouse.current.position.ReadValue();
         Vector3 object_pos = Camera.main.WorldToScreenPoint(transform.position);
         mouse_pos.x = mouse_pos.x - object_pos.x;
         mouse_pos.y = mouse_pos.y - object_pos.y;
