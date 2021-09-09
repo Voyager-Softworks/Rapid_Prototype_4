@@ -190,9 +190,10 @@ public class PlayerMovement : MonoBehaviour
             m_anim.SetBool("Walking", true);
             m_anim.speed = rb.velocity.magnitude;
         }
-        m_anim.SetBool("Falling", vel.y <= 0.0f);
+        
         rb.velocity += vel * Time.deltaTime;
         m_oldVelocity = rb.velocity;
+        m_anim.SetBool("Falling", rb.velocity.y < 0.0f);
     }
 
     void OnDrawGizmos()
