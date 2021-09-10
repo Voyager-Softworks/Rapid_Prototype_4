@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float m_moveSpeed = 1.0f;
+    [SerializeField] float m_maxGroundedVelocity = 1.0f;
     [SerializeField] float m_jumpForce = 1.0f;
     [SerializeField] float m_landDuration = 1.0f;
     public float m_landingTimer = 0.0f;
@@ -225,6 +226,10 @@ public class PlayerMovement : MonoBehaviour
         }
         
         rb.velocity += vel * Time.deltaTime;
+        if (rb.velocity.magnitude > m_maxGroundedVelocity && m_grounded && !m_charging && vel.magnitude > 0.1f)
+        {
+            rb.velocity = rb.velocity.normalized * m_maxGroundedVelocity;
+        }
         m_oldVelocity = rb.velocity;
         m_anim.SetBool("Falling", rb.velocity.y < 0.0f);
     }
