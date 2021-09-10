@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963250742300843606}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7951995178382349843}
   - component: {fileID: 5677538402463048074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jump_SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4064230618819169079}
   - component: {fileID: 8682030285346787393}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Charge_SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8826523294486156682}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GunPivots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4956128633280993568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4742787783044087748}
   - component: {fileID: 2811639958539230591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun_Pivot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 3832237025584282516}
   - component: {fileID: 649940208131865272}
   - component: {fileID: 1879934053686715446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walk_SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,9 +572,9 @@ GameObject:
   - component: {fileID: 5312238160630991536}
   - component: {fileID: 5203168192554026397}
   - component: {fileID: 3628451280412113726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,8 +633,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 454791645
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1025126955724930509, guid: 3ca4f3a1ec48a22458a0d2632cfab096, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -818,7 +818,7 @@ MonoBehaviour:
       m_Flags: 0
   m_moveSpeed: 6
   m_maxGroundedVelocity: 1
-  m_jumpForce: 400000
+  m_jumpForce: 300000
   m_landDuration: 0.2
   m_landingTimer: 0
   m_OnLand:
@@ -862,8 +862,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_grounded: 0
+  m_groundCheckOffset: {x: 0, y: -0.48}
+  m_groundCheckExtents: {x: 0.49, y: 0.05}
   m_charging: 0
-  m_minChargeDuration: 0.7
+  m_minChargeDuration: 0.3
   m_chargeTimer: 0
   m_cam: {fileID: 0}
   m_noise: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
@@ -916,7 +918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5312238161658561861}
   - component: {fileID: 5312238161658561862}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun_Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000459325651186371}
   - component: {fileID: 4815109377865165581}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Land_SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1108,7 @@ GameObject:
   - component: {fileID: 2401548466809416779}
   - component: {fileID: 5039531436902209581}
   - component: {fileID: 8962148054830713446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TestParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5906,9 +5908,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5312238161658561861}
     m_Modifications:
+    - target: {fileID: 2278086271051560687, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_Name
       value: MachineGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 454791645
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_RootOrder
@@ -5972,13 +5990,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4742787783044087748}
     m_Modifications:
+    - target: {fileID: 2278086271051560687, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_Name
       value: MachineGun
       objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 454791645
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_RootOrder
