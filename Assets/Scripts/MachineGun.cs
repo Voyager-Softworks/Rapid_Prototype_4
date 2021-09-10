@@ -14,6 +14,8 @@ public class MachineGun : MonoBehaviour
     [SerializeField] Transform m_shootPos;
     Vector3 m_restPos;
 
+    Animator m_anim;
+
     [Header("Stats")]
     [SerializeField] float m_bullet_vel;
     [SerializeField] float m_startRPS;
@@ -33,12 +35,16 @@ public class MachineGun : MonoBehaviour
     {
         m_restPos = transform.localPosition;
         m_currentRPS = m_startRPS;
+        m_anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        
         if (Mouse.current.leftButton.isPressed)
         {
+            m_anim.speed = m_currentRPS;
+            m_anim.SetBool("Shooting", true);
             if (m_currentRPS == 0 || Time.time - m_lastShotTime >= 1.0f / m_currentRPS)
             {
                 Shoot();
@@ -48,6 +54,8 @@ public class MachineGun : MonoBehaviour
         }
         else
         {
+            m_anim.SetBool("Shooting", false);
+            m_anim.speed = 1.0f;
             if (m_currentRPS > m_startRPS) m_currentRPS -= ((m_targetRPS - m_startRPS) / m_decayTime) * Time.deltaTime;
             else m_currentRPS = m_startRPS;
         }

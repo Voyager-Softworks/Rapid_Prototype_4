@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     WalkSound m_walksoundmaker;
     SpriteRenderer m_renderer;
     Animator m_anim;
+    Animator[] m_gunAnims;
     [Header("Controls")]
     public InputAction m_walkAction, m_jumpAction, m_airStrafeAction;
     Rigidbody2D rb;
@@ -61,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         m_anim = GetComponent<Animator>();
         m_walksoundmaker = GetComponentInChildren<WalkSound>();
         m_mousescript = GetComponentInChildren<FollowMouse>();
+        m_gunAnims = GetComponentsInChildren<Animator>();
     }
 
     public void StepNoise()
@@ -184,16 +186,42 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity *= 0.9f;
             m_anim.SetBool("Walking", false);
+            foreach(var anim in m_gunAnims)
+            {
+                if(anim != m_anim){
+                anim.SetBool("Walking", false);
+                if(!anim.GetBool("Shooting")) anim.speed = rb.velocity.magnitude;
+                
+                }
+            }
             m_anim.speed = 1.0f;
         }
         else if(m_grounded && !m_reversing)
         {
             m_anim.SetBool("Walking", true);
+            foreach(var anim in m_gunAnims)
+            {
+                if(anim != m_anim){
+                anim.SetBool("Walking", true);
+                if(!anim.GetBool("Shooting")) anim.speed = rb.velocity.magnitude;
+                }
+            }
             m_anim.speed = rb.velocity.magnitude;
         }
         else
         {
             m_anim.speed = 1.0f;
+            if(m_grounded)
+            {
+                foreach(var anim in m_gunAnims)
+                {
+                    if(anim != m_anim){
+                    anim.SetBool("Walking", true);
+                    if(!anim.GetBool("Shooting")) anim.speed = 1.0f;
+                    }
+                }
+            }
+
         }
         
         rb.velocity += vel * Time.deltaTime;
