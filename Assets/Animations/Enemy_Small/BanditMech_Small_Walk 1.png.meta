@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: ac7ff4582c6c6124f81db1d96ad47d32
+guid: cdaf000a7d41ab143922bbdc9ed9bd0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1901881506430586478
-    second: BanditMech_Small_Walk_0
+      213: -7421696953691281488
+    second: BanditMech_Small_Walk 1_0
   - first:
-      213: 2480839433665961230
-    second: BanditMech_Small_Walk_1
+      213: -2860160437723847912
+    second: BanditMech_Small_Walk 1_1
   - first:
-      213: -2597263114926654967
-    second: BanditMech_Small_Walk_2
+      213: -627958516828778839
+    second: BanditMech_Small_Walk 1_2
   - first:
-      213: -484741096917680930
-    second: BanditMech_Small_Walk_3
+      213: -938238374301408
+    second: BanditMech_Small_Walk 1_3
   - first:
-      213: 6894610093457669618
-    second: BanditMech_Small_Walk_4
+      213: -6333921940791758563
+    second: BanditMech_Small_Walk 1_4
   - first:
-      213: -1262615202234957930
-    second: BanditMech_Small_Walk_5
+      213: 2987172550378554479
+    second: BanditMech_Small_Walk 1_5
+  - first:
+      213: 6373456947183439090
+    second: BanditMech_Small_Walk 1_6
+  - first:
+      213: 8352495026587570168
+    second: BanditMech_Small_Walk 1_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BanditMech_Small_Walk_0
+      name: BanditMech_Small_Walk 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -123,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 291f154b8d82b95e0800000000000000
-      internalID: -1901881506430586478
+      spriteID: 0b7e1a441f5d00990800000000000000
+      internalID: -7421696953691281488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BanditMech_Small_Walk_1
+      name: BanditMech_Small_Walk 1_1
       rect:
         serializedVersion: 2
         x: 96
@@ -144,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0dd0742256bd6220800000000000000
-      internalID: 2480839433665961230
+      spriteID: 81328d45c3bae48d0800000000000000
+      internalID: -2860160437723847912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BanditMech_Small_Walk_2
+      name: BanditMech_Small_Walk 1_2
       rect:
         serializedVersion: 2
         x: 192
@@ -165,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a729635faa4fbd0800000000000000
-      internalID: -2597263114926654967
+      spriteID: 9ae4db65e0b0947f0800000000000000
+      internalID: -627958516828778839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BanditMech_Small_Walk_3
+      name: BanditMech_Small_Walk 1_3
       rect:
         serializedVersion: 2
         x: 288
@@ -186,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc30366a8ad549f0800000000000000
-      internalID: -484741096917680930
+      spriteID: 0213cfa5daaacfff0800000000000000
+      internalID: -938238374301408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BanditMech_Small_Walk_4
+      name: BanditMech_Small_Walk 1_4
       rect:
         serializedVersion: 2
         x: 384
@@ -207,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fdfd5dc9539eaf50800000000000000
-      internalID: 6894610093457669618
+      spriteID: d11fd0cad836918a0800000000000000
+      internalID: -6333921940791758563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BanditMech_Small_Walk_5
+      name: BanditMech_Small_Walk 1_5
       rect:
         serializedVersion: 2
         x: 480
@@ -228,8 +234,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69ff6c6c92a4a7ee0800000000000000
-      internalID: -1262615202234957930
+      spriteID: f648c1c9b91947920800000000000000
+      internalID: 2987172550378554479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BanditMech_Small_Walk 1_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc4d105351137850800000000000000
+      internalID: 6373456947183439090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BanditMech_Small_Walk 1_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff08f729f50ae370800000000000000
+      internalID: 8352495026587570168
       vertices: []
       indices: 
       edges: []
