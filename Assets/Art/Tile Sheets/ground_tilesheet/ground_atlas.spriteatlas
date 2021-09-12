@@ -32,7 +32,8 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 35461d300244a724c95892b9783363ee, type: 3}
-    totalSpriteSurfaceArea: 201871
+    - {fileID: 2800000, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
+    totalSpriteSurfaceArea: 230543
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -117,6 +118,13 @@ SpriteAtlas:
   - {fileID: -215771776889156972, guid: 35461d300244a724c95892b9783363ee, type: 3}
   - {fileID: -2846005272790844735, guid: 35461d300244a724c95892b9783363ee, type: 3}
   - {fileID: 7015592771145302825, guid: 35461d300244a724c95892b9783363ee, type: 3}
+  - {fileID: -4093210755594548142, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
+  - {fileID: 8240511055515372684, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
+  - {fileID: 8546269788164728144, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
+  - {fileID: -1162996517825159786, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
+  - {fileID: 8214205624492558069, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
+  - {fileID: 1902788829420914109, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
+  - {fileID: -1857049456782815925, guid: 1a46a860e171e234ea81492cc716733e, type: 3}
   m_PackedSpriteNamesToIndex:
   - atlas_tiles_12
   - atlas_tiles_13
@@ -197,6 +205,13 @@ SpriteAtlas:
   - atlas_tiles_0
   - atlas_tiles_9
   - atlas_tiles_8
+  - atlas_tiles_dark_0
+  - atlas_tiles_dark_1
+  - atlas_tiles_dark_2
+  - atlas_tiles_dark_3
+  - atlas_tiles_dark_4
+  - atlas_tiles_dark_5
+  - atlas_tiles_dark_6
   m_RenderDataMap: {}
   m_Tag: ground_atlas
   m_IsVariant: 0
