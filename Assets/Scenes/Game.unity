@@ -5929,11 +5929,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1642343277 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6923625908309497845, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-  m_PrefabInstance: {fileID: 5312238160331908172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1686811410
 GameObject:
   m_ObjectHideFlags: 0
@@ -11606,42 +11601,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 181227822308456402, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003185592527901684, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_rampTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003185592527901684, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_startRPS
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003185592527901684, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_decayTime
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003185592527901684, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_targetRPS
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003185592527901684, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_randomShotDelay
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003185592527901687, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427335566150735024, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576278216509702822, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
       value: 
@@ -11693,42 +11652,6 @@ PrefabInstance:
     - target: {fileID: 5312238160630991547, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238160630991547, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732773, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_rampTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_shootPos
-      value: 
-      objectReference: {fileID: 1642343277}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_startRPS
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_ShotDelay
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_decayTime
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_targetRPS
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_randomShotDelay
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}

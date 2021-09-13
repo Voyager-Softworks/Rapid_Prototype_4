@@ -103,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 454791645
   m_SortingLayer: 1
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1200958525026924834, guid: b51f7056343262948bd826860400d8cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -147,11 +147,12 @@ MonoBehaviour:
   m_bullet_prefab: {fileID: 7610439907867034931, guid: 1a470d97da000b34ebc58caf9cecd362, type: 3}
   m_shootPos: {fileID: 2278086271051560686}
   m_bullet_vel: 40
-  m_startRPS: 3
+  m_startRPS: 1
   m_currentRPS: 0
-  m_targetRPS: 10
-  m_rampTime: 6
-  m_decayTime: 3
+  m_targetRPS: 3
+  m_randomShotDelay: 0.1
+  m_rampTime: 2
+  m_decayTime: 1.5
   m_lastShotTime: 0
   m_recoilMulti: 0.3
   m_returnRate: 0.75
