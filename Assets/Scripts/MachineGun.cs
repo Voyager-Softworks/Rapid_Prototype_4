@@ -21,6 +21,7 @@ public class MachineGun : MonoBehaviour
     [SerializeField] float m_startRPS;
     [SerializeField] float m_currentRPS;
     [SerializeField] float m_targetRPS;
+    [SerializeField] float m_randomShotDelay;
     [SerializeField] float m_rampTime;
     [SerializeField] float m_decayTime;
     [SerializeField] float m_lastShotTime = 0;
@@ -40,7 +41,7 @@ public class MachineGun : MonoBehaviour
 
     void Update()
     {
-        
+
         if (Mouse.current.leftButton.isPressed)
         {
             m_anim.speed = m_currentRPS;
@@ -71,7 +72,7 @@ public class MachineGun : MonoBehaviour
 
     void Shoot()
     {
-        m_lastShotTime = Time.time;
+        m_lastShotTime = Time.time + Random.Range(0, m_randomShotDelay);
 
         vel -= transform.right * m_recoilMulti;
 

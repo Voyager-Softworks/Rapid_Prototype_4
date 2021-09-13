@@ -171,7 +171,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         vel = vel * m_moveSpeed;
-        m_facingLeft = (m_mousescript.mouse_pos.x < 0.0f);
+
+        if (m_mousescript.mouse_pos.x < -50.0f)
+        {
+            m_facingLeft = true;
+        }
+        else if (m_mousescript.mouse_pos.x > 50.0f)
+        {
+            m_facingLeft = false;
+        }
+        //m_facingLeft = (m_mousescript.mouse_pos.x < 0.0f);
         m_reversing = ((vel.x < -0.01f && !m_facingLeft) || (vel.x > 0.01f && m_facingLeft));
 
         if (m_facingLeft)
