@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2016964579107793299}
   - component: {fileID: 5458231730428549061}
   - component: {fileID: 5022908284763508931}
-  m_Layer: 0
+  - component: {fileID: 3436752777369174004}
+  - component: {fileID: -632902370800108641}
+  m_Layer: 6
   m_Name: crystal_shard_chonk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,3 +97,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8830f5efbeb37ec4885fe5b0f058f263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &3436752777369174004
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516998977100680819}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.42, y: 0.68}
+    newSize: {x: 0.42, y: 0.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.02, y: 0.32}
+      - {x: -0.14999999, y: 0.089999996}
+      - {x: -0.14999999, y: -0.29}
+      - {x: 0.03, y: -0.29}
+      - {x: 0.08, y: -0.28}
+      - {x: 0.21, y: -0.22999999}
+      - {x: 0.21, y: 0.24}
+      - {x: 0.19, y: 0.32}
+--- !u!114 &-632902370800108641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516998977100680819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c5afa341e6fa443827435b24845056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_spawnResourceAtHealth:
+  - 0
+  - 25
+  - 50
+  - 75
+  m_resourcePrefab: {fileID: 1635208352146295761, guid: 8d35a8d0c020cd845a6dcf223760d2f5, type: 3}

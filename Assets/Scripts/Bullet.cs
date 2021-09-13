@@ -29,10 +29,15 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EnemyTest _e = collision.transform.GetComponent<EnemyTest>();
-
         if (_e)
         {
             _e.TakeDamage((m_baseDamage * m_damageMulti) + m_damageAdd);
+        }
+
+        ResourceNode _rn = collision.transform.GetComponent<ResourceNode>();
+        if (_rn)
+        {
+            _rn.TakeDamage(10.0f);
         }
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6272039024718673862}
   - component: {fileID: 3326514196687240544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 9216722335514716247}
   - component: {fileID: 6818708484781772264}
   - component: {fileID: 5140467857957405041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: crystal_lights_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7681129075251173913}
-  m_Layer: 0
+  - component: {fileID: 8044423814611805863}
+  - component: {fileID: 8296102590253534093}
+  m_Layer: 6
   m_Name: crystal_scrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,6 +202,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &8044423814611805863
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4572089057839538807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.09248161, y: 0.3433807}
+      - {x: -0.34067827, y: 0.1101816}
+      - {x: -0.23635525, y: 0.00019681454}
+      - {x: 0.14849818, y: -0.036795735}
+      - {x: 0.3961668, y: 0.1656707}
+--- !u!114 &8296102590253534093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4572089057839538807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c5afa341e6fa443827435b24845056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_spawnResourceAtHealth:
+  - 0
+  - 25
+  - 50
+  - 75
+  m_resourcePrefab: {fileID: 1635208352146295761, guid: 8d35a8d0c020cd845a6dcf223760d2f5, type: 3}
 --- !u!1 &6523886730139065020
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +262,7 @@ GameObject:
   - component: {fileID: 6445267447720662291}
   - component: {fileID: 5285823335186968828}
   - component: {fileID: 5572462343412317134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: crystal_atlas_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

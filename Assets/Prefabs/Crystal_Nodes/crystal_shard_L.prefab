@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 1697270888495961194}
   - component: {fileID: 6142430981583512107}
   - component: {fileID: 7918355891197610615}
-  m_Layer: 0
+  - component: {fileID: -2409565686947834625}
+  - component: {fileID: -6431660296206679756}
+  m_Layer: 6
   m_Name: crystal_shard_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,3 +97,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8830f5efbeb37ec4885fe5b0f058f263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &-2409565686947834625
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330078614820228805}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.33, y: 0.47}
+    newSize: {x: 0.33, y: 0.47}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.095, y: 0.175}
+      - {x: 0.015, y: 0.175}
+      - {x: -0.155, y: -0.074999996}
+      - {x: -0.155, y: -0.21499999}
+      - {x: 0.13499999, y: -0.21499999}
+      - {x: 0.145, y: -0.185}
+      - {x: 0.16499999, y: -0.065}
+      - {x: 0.16499999, y: 0.125}
+--- !u!114 &-6431660296206679756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330078614820228805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c5afa341e6fa443827435b24845056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_spawnResourceAtHealth:
+  - 0
+  - 25
+  - 50
+  - 75
+  m_resourcePrefab: {fileID: 1635208352146295761, guid: 8d35a8d0c020cd845a6dcf223760d2f5, type: 3}
