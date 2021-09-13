@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 501089118616100140, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1570253999}
     - target: {fileID: 501089118616100141, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
       propertyPath: m_Name
       value: CM vcam1
@@ -488,7 +492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.87, y: 8.85}
+  m_AnchoredPosition: {x: -12.16, y: 10.24}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &422143571
@@ -5929,6 +5933,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1570253992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5312238160630991547, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+  m_PrefabInstance: {fileID: 5312238160331908172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1570253999 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+  m_PrefabInstance: {fileID: 5312238160331908172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1686811410
 GameObject:
   m_ObjectHideFlags: 0
@@ -11419,6 +11433,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &2046313508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2096775368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
+  m_PrefabInstance: {fileID: 986040627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9686624a714e48e4e84799b1c0913dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2409599522018385517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11588,10 +11613,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    - target: {fileID: 5271423662318070227, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 1570253992}
+    - target: {fileID: 5271423663134770085, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
+      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2046313508}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e1c26a0770f0f4c8238edc515b2c63, type: 3}
 --- !u!1001 &5312238160331908172

@@ -144,16 +144,17 @@ MonoBehaviour:
       m_Action: Shoot
       m_Flags: 0
   m_player: {fileID: 0}
-  m_bullet_prefab: {fileID: 7610439907867034931, guid: 1a470d97da000b34ebc58caf9cecd362, type: 3}
+  m_bulletPrefab: {fileID: 7610439907867034931, guid: 1a470d97da000b34ebc58caf9cecd362, type: 3}
   m_shootPos: {fileID: 2278086271051560686}
   m_bullet_vel: 40
+  m_bulletDamageMulti: 1
+  m_bulletDamageAdd: 0
   m_startRPS: 1
   m_currentRPS: 0
   m_targetRPS: 3
   m_randomShotDelay: 0.1
   m_rampTime: 2
   m_decayTime: 1.5
-  m_lastShotTime: 0
   m_recoilMulti: 0.3
   m_returnRate: 0.75
 --- !u!95 &5825063834926587628

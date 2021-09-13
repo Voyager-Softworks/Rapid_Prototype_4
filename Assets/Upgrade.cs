@@ -23,6 +23,7 @@ public class Upgrade : MonoBehaviour
     }
 
     [SerializeField] GameObject m_player;
+    [SerializeField] float m_upgradeRange;
 
     [SerializeField] List<UpgradeCost> m_upgrades;
 
@@ -37,10 +38,15 @@ public class Upgrade : MonoBehaviour
         
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, m_upgradeRange);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.eKey.isPressed && Vector2.Distance(m_player.transform.position, transform.position) < 5)
+        if (Keyboard.current.eKey.wasPressedThisFrame && Vector2.Distance(m_player.transform.position, transform.position) < m_upgradeRange)
         {
             TryBuyUpgrade();
         }
