@@ -81,7 +81,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3751327984207610431}
-  - component: {fileID: 5592095647542880405}
   m_Layer: 0
   m_Name: orange_sapling
   m_TagString: Untagged
@@ -106,21 +105,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5592095647542880405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659335011858790132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280f070857cbd23469def4ef2b373471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxIntensity: 100
-  minIntensity: 0
-  pulseSpeed: 1
 --- !u!1 &2175149870828776848
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1528565914709054539}
   - component: {fileID: 2969692585942196215}
+  - component: {fileID: 3863217318765757285}
   m_Layer: 0
   m_Name: orange_atlas_light_2
   m_TagString: Untagged
@@ -203,6 +188,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3863217318765757285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175149870828776848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8830f5efbeb37ec4885fe5b0f058f263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3469866939198632190
 GameObject:
   m_ObjectHideFlags: 0

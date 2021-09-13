@@ -124,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3168479160800313880}
   - component: {fileID: 3168479160800313887}
+  - component: {fileID: 7755617319834793898}
   m_Layer: 0
   m_Name: orange_atlas_light_1
   m_TagString: Untagged
@@ -196,3 +197,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7755617319834793898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168479160800313886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8830f5efbeb37ec4885fe5b0f058f263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248146994475168373}
   - component: {fileID: 2741621522354510275}
+  - component: {fileID: 7470373383152295050}
   m_Layer: 0
   m_Name: crystal_lights_5
   m_TagString: Untagged
@@ -82,6 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7470373383152295050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287416769066293389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8830f5efbeb37ec4885fe5b0f058f263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r: 2
 --- !u!1 &3498717978433150014
 GameObject:
   m_ObjectHideFlags: 0
