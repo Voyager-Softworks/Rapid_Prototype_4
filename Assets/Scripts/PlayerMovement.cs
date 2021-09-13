@@ -16,13 +16,17 @@ public class PlayerMovement : MonoBehaviour
     Animator m_anim;
     Animator[] m_gunAnims;
     [Header("Controls")]
-    public InputAction m_walkAction, m_jumpAction, m_airStrafeAction;
+    public InputAction m_walkAction, m_jumpAction, m_airStrafeAction, m_dashAction;
     Rigidbody2D rb;
 
     [Header("Settings")]
     [SerializeField] float m_moveSpeed = 1.0f;
     [SerializeField] float m_maxGroundedVelocity = 1.0f;
     [SerializeField] float m_jumpForce = 1.0f;
+
+    [SerializeField] float m_dashForce = 1.0f;
+    [SerializeField] float m_dashDuration = 1.0f;
+    float m_dashTimer = 0.0f;
     [SerializeField] float m_landDuration = 1.0f;
     public float m_landingTimer = 0.0f;
     public UnityEvent m_OnLand;
@@ -78,10 +82,22 @@ public class PlayerMovement : MonoBehaviour
         m_walkAction.Enable();
         m_jumpAction.Enable();
         m_airStrafeAction.Enable();
+        m_dashAction.Enable();
         m_jumpAction.started += ChargeJump;
         m_jumpAction.canceled += Jump;
         m_jumpAction.performed += Jump;
+        m_dashAction.performed += Dash;
         m_chargeTimer = 0;
+    }
+
+
+    void Dash(InputAction.CallbackContext _ctx)
+    {
+        if (m_dashTimer > 0.0f) return;
+        rb.mass = 10000;
+        rb.velocity += new Vector2(_ctx.ReadValue<float>(), 0) * m_dashForce;
+        m_dashTimer = m_dashDuration;
+
     }
 
     void Land()
@@ -147,6 +163,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Land();
         }
+        if (m_dashTimer > 0)
+        {
+            m_dashTimer -= Time.deltaTime;
+        }
+        else
+        {
+            m_dashTimer = 0;
+            rb.mass = 20000;
+        }
         if (m_landingTimer > 0) { m_landingTimer -= Time.deltaTime; }
         else if (m_grounded)
         {
@@ -195,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
 
         m_anim.SetBool("Reversing", m_reversing);
 
-        if (vel.magnitude < 0.1f && m_grounded)
+        if (vel.magnitude < 0.1f && m_grounded && m_dashTimer <= 0.0f)
         {
             rb.velocity *= 0.9f;
             m_anim.SetBool("Walking", false);
