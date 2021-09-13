@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float m_jumpForce = 1.0f;
 
     [SerializeField] float m_dashForce = 1.0f;
+    float m_timesincelastmovementkey = 0.0f;
     [SerializeField] float m_dashDuration = 1.0f;
     float m_dashTimer = 0.0f;
     [SerializeField] float m_landDuration = 1.0f;
@@ -88,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
         m_jumpAction.performed += Jump;
         m_dashAction.performed += Dash;
         m_chargeTimer = 0;
+        m_walkAction.started += (_ctx) => { if (m_timesincelastmovementkey < 0.3f) { Dash(_ctx); } m_timesincelastmovementkey = 0; };
     }
 
 
@@ -95,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (m_dashTimer > 0.0f) return;
         rb.mass = 10000;
-        rb.velocity += new Vector2(_ctx.ReadValue<float>(), 0) * m_dashForce;
+        rb.velocity += (m_walkAction.ReadValue<Vector2>() * m_dashForce) + (Vector2.up * 4.0f);
         m_dashTimer = m_dashDuration;
 
     }
@@ -157,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         bool m_groundedOld = m_grounded;
+        m_timesincelastmovementkey += Time.deltaTime;
         m_grounded = Physics2D.BoxCast(transform.position + (Vector3)m_groundCheckOffset, (Vector3)m_groundCheckExtents, 0.0f, Vector2.up, 1.0f, LayerMask.GetMask("Ground"));
         m_anim.SetBool("Grounded", m_grounded);
         if (!m_groundedOld && m_grounded)
@@ -266,7 +269,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity += vel * Time.deltaTime;
-        if (rb.velocity.magnitude > m_maxGroundedVelocity && m_grounded && !m_charging && vel.magnitude > 0.1f)
+        if (rb.velocity.magnitude > m_maxGroundedVelocity && m_grounded && !m_charging && vel.magnitude > 0.1f && m_dashTimer <= 0.0f)
         {
             rb.velocity = rb.velocity.normalized * m_maxGroundedVelocity;
         }

@@ -824,30 +824,6 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: kb
-      m_Id: 3b9999a6-be1f-43b2-af75-654f632abb1e
-      m_Path: 1DAxis
-      m_Interactions: MultiTap(tapTime=0.3)
-      m_Processors: 
-      m_Groups: 
-      m_Action: Dash
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 3e7cf1d5-c700-4750-8070-b47c3c7abc9d
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Dash
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 28c2e7af-106c-4a68-842a-564f33583aaa
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Dash
-      m_Flags: 8
     - m_Name: gmpad
       m_Id: 8a9d39f9-6c16-4f03-9c24-cec85296ef5d
       m_Path: 1DAxis
@@ -875,7 +851,8 @@ MonoBehaviour:
   m_moveSpeed: 7
   m_maxGroundedVelocity: 1.3
   m_jumpForce: 10000000
-  m_dashForce: 200000
+  m_dashForce: 10
+  m_dashDuration: 1
   m_landDuration: 0.2
   m_landingTimer: 0
   m_OnLand:
