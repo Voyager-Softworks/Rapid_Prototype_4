@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181227822308456402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2401548466809416779}
@@ -473,7 +473,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 4eff74df42ebb7434a0b628b4a2bf4cc, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.215
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -588,7 +588,7 @@ Transform:
   m_GameObject: {fileID: 5312238160630991547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.32, y: 1.32, z: 1.32}
   m_Children:
   - {fileID: 4956128633280993568}
   - {fileID: 8826523294486156682}
@@ -816,9 +816,9 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Air Strafe
       m_Flags: 0
-  m_moveSpeed: 6
-  m_maxGroundedVelocity: 1
-  m_jumpForce: 300000
+  m_moveSpeed: 7
+  m_maxGroundedVelocity: 1.3
+  m_jumpForce: 305000
   m_landDuration: 0.2
   m_landingTimer: 0
   m_OnLand:
@@ -862,7 +862,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_grounded: 0
-  m_groundCheckOffset: {x: 0, y: -0.48}
+  m_groundCheckOffset: {x: 0, y: -0.63}
   m_groundCheckExtents: {x: 0.49, y: 0.05}
   m_charging: 0
   m_minChargeDuration: 0.3
@@ -1123,7 +1123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8951341933379764549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.495, z: 0}
+  m_LocalPosition: {x: 0, y: -0.346, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 963250742300843606}
