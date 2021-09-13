@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_walkAction.Enable();
         m_jumpAction.Enable();
+        m_airStrafeAction.Enable();
         m_jumpAction.started += ChargeJump;
         m_jumpAction.canceled += Jump;
         m_jumpAction.performed += Jump;
@@ -85,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Land()
     {
-        m_airStrafeAction.Disable();
+
         m_anim.ResetTrigger("Jump");
         m_landingTimer = m_landDuration;
         m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x * (Mathf.Abs(m_oldVelocity.x) / 10.0f);
@@ -100,14 +101,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!m_grounded) return;
         m_anim.SetTrigger("Charge");
+        m_anim.ResetTrigger("ChargeCancelled");
         m_charging = true;
         m_chargeSource.Play();
-        m_walkAction.Disable();
+
     }
 
     void CancelJump(InputAction.CallbackContext _ctx)
     {
-        m_walkAction.Enable();
+
         m_charging = false;
         m_chargeTimer = 0;
 
@@ -118,17 +120,16 @@ public class PlayerMovement : MonoBehaviour
         m_charging = false;
         if (m_chargeTimer >= m_minChargeDuration)
         {
-            m_airStrafeAction.Enable();
-            m_walkAction.Disable();
+
             m_jumpSource.Play();
-            rb.AddForce(new Vector2(0.0f, m_jumpForceCurve.Evaluate(m_chargeTimer) * m_jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0.0f, m_jumpForceCurve.Evaluate(m_chargeTimer) * m_jumpForce), ForceMode2D.Force);
             m_anim.SetTrigger("Jump");
         }
         else
         {
-            m_walkAction.Enable();
-            m_airStrafeAction.Disable();
+
             m_anim.SetTrigger("ChargeCancelled");
+            m_anim.ResetTrigger("Charge");
         }
         m_chargeSource.Stop();
         m_chargeTimer = 0;
@@ -147,9 +148,9 @@ public class PlayerMovement : MonoBehaviour
             Land();
         }
         if (m_landingTimer > 0) { m_landingTimer -= Time.deltaTime; }
-        else if (!m_walkAction.enabled && m_grounded)
+        else if (m_grounded)
         {
-            m_walkAction.Enable();
+
             m_noise.PositionNoise[0].X.Amplitude = 0.0f;
             m_noise.PositionNoise[0].Y.Amplitude = 0.0f;
             m_landingTimer = 0.0f;
@@ -159,15 +160,15 @@ public class PlayerMovement : MonoBehaviour
         {
             m_chargeTimer += Time.deltaTime;
         }
-        if (m_walkAction.enabled && !m_charging)
+        if (m_grounded && !m_charging && m_landingTimer == 0)
         {
             vel += m_walkAction.ReadValue<Vector2>();
-            if (!m_grounded) { m_walkAction.Disable(); m_airStrafeAction.Enable(); }
+
         }
-        else if (m_airStrafeAction.enabled)
+        else if (!m_grounded)
         {
             vel += m_airStrafeAction.ReadValue<Vector2>() * m_maneuveringThrusterStrength;
-            if (m_grounded) Land();
+
         }
 
         vel = vel * m_moveSpeed;
@@ -209,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
             }
             m_anim.speed = 1.0f;
         }
-        else if (m_grounded && !m_reversing)
+        else if (m_grounded)
         {
             m_anim.SetBool("Walking", true);
             foreach (var anim in m_gunAnims)
@@ -252,5 +253,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position + (Vector3)m_groundCheckOffset, (Vector3)m_groundCheckExtents);
+        Gizmos.DrawRay(transform.position, rb.velocity);
     }
 }
