@@ -7,6 +7,10 @@ public class Bullet : MonoBehaviour
     Rigidbody2D m_rb;
     AudioSource m_as;
 
+    [SerializeField] public float m_baseDamage = 2.0f;
+    [SerializeField] public float m_damageMulti = 1.0f;
+    [SerializeField] public float m_damageAdd = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +32,7 @@ public class Bullet : MonoBehaviour
 
         if (_e)
         {
-            _e.TakeDamage(1.0f);
+            _e.TakeDamage((m_baseDamage * m_damageMulti) + m_damageAdd);
         }
     }
 }
