@@ -34,6 +34,7 @@ public class MachineGun : MonoBehaviour
     [Header("Feel")]
     [SerializeField] float m_recoilMulti = 5.0f;
     [SerializeField] [Range(0.0f, 1.0f)] float m_returnRate = 0.75f;
+    [SerializeField] bool m_leftClick = true;
 
     Vector3 vel = Vector3.zero;
 
@@ -46,13 +47,14 @@ public class MachineGun : MonoBehaviour
 
     void Update()
     {
-
-        if (Mouse.current.leftButton.isPressed)
+        m_anim.ResetTrigger("Fire");
+        if ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
         {
-            m_anim.speed = m_currentRPS;
             m_anim.SetBool("Shooting", true);
             if (m_currentRPS == 0 || Time.time - m_lastShotTime >= 1.0f / m_currentRPS)
             {
+                m_anim.speed = m_currentRPS * (0.36f / 0.60f);
+                //m_anim.speed = 1.0f;
                 Shoot();
             }
             if (m_currentRPS < m_targetRPS) m_currentRPS += ((m_targetRPS - m_startRPS) / m_rampTime) * Time.deltaTime;
@@ -61,7 +63,6 @@ public class MachineGun : MonoBehaviour
         else
         {
             m_anim.SetBool("Shooting", false);
-            m_anim.speed = 1.0f;
             if (m_currentRPS > m_startRPS) m_currentRPS -= ((m_targetRPS - m_startRPS) / m_decayTime) * Time.deltaTime;
             else m_currentRPS = m_startRPS;
         }
@@ -78,6 +79,8 @@ public class MachineGun : MonoBehaviour
     void Shoot()
     {
         m_lastShotTime = Time.time + Random.Range(0, m_randomShotDelay);
+
+        m_anim.SetTrigger("Fire");
 
         vel -= transform.right * m_recoilMulti;
 

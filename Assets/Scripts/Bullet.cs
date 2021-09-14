@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] public float m_damageMulti = 1.0f;
     [SerializeField] public float m_damageAdd = 0.0f;
 
+    bool m_active = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +30,28 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        EnemyTest _e = collision.transform.GetComponent<EnemyTest>();
-        if (_e)
+        if (!m_active) return;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.0f);
+
+        foreach (Collider2D _hit in hits)
         {
-            _e.TakeDamage((m_baseDamage * m_damageMulti) + m_damageAdd);
+            EnemyTest _e = _hit.transform.GetComponent<EnemyTest>();
+            if (_e)
+            {
+                _e.TakeDamage((m_baseDamage * m_damageMulti) + m_damageAdd);
+            }
+
+            ResourceNode _rn = _hit.transform.GetComponent<ResourceNode>();
+            if (_rn)
+            {
+                _rn.TakeDamage(10.0f);
+            }
         }
 
-        ResourceNode _rn = collision.transform.GetComponent<ResourceNode>();
-        if (_rn)
-        {
-            _rn.TakeDamage(10.0f);
-        }
+        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.GetComponent<TrailRenderer>().enabled = false;
+        m_active = false;
+        Destroy(gameObject, 2);
     }
 }
