@@ -6,6 +6,8 @@ public class NavAgent : MonoBehaviour
 {
     public Vector2 m_flowVector;
     public float m_speed;
+    public float m_maxGroundedVelocity;
+    public float m_maxAerialVelocity;
     public float m_jumpForce;
 
     public float m_jumpCooldown;
@@ -20,12 +22,15 @@ public class NavAgent : MonoBehaviour
 
     Rigidbody2D m_body;
 
+    Animator m_anim;
+
     // Start is called before the first frame update
     void Start()
     {
         m_body = GetComponent<Rigidbody2D>();
         m_flowVector = Vector2.zero;
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        m_anim = GetComponent<Animator>();
     }
 
     void Jump()
@@ -67,6 +72,37 @@ public class NavAgent : MonoBehaviour
             }
         }
         m_body.AddForce(newVelocity);
+        if (m_grounded)
+        {
+            if (m_body.velocity.magnitude > m_maxGroundedVelocity)
+            {
+                Vector3 newV = m_body.velocity.normalized * m_maxGroundedVelocity;
+                newV.y = m_body.velocity.y;
+                m_body.velocity = newV;
+            }
+        }
+        else
+        {
+            if (m_body.velocity.magnitude > m_maxAerialVelocity)
+            {
+                Vector3 newV = m_body.velocity.normalized * m_maxAerialVelocity;
+                newV.y = m_body.velocity.y;
+                m_body.velocity = newV;
+            }
+        }
+        if (m_anim != null)
+        {
+            m_anim.SetBool("IsWalking", Mathf.Abs(m_body.velocity.x) > 0.02f && m_grounded);
+            m_anim.SetBool("IsGrounded", m_grounded);
+            if (m_seekPlayer && m_body.velocity.x < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else if (m_seekPlayer)
+            {
+                transform.rotation = Quaternion.identity;
+            }
+        }
         m_flowVector = Vector2.zero;
     }
     void OnDrawGizmos()
