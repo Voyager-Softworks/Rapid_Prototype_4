@@ -40,8 +40,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708596902441701014}
   serializedVersion: 7
-  lengthInSec: 2
-  simulationSpeed: 2
+  lengthInSec: 1.5
+  simulationSpeed: 1.5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,8 +168,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: 0.25
+      scalar: 0.75
+      minScalar: 1.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.01
-      minScalar: 0.005
+      scalar: 0.08
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -606,8 +606,8 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0
-      minScalar: 0
+      scalar: 0.1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -659,15 +659,15 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
-    angle: 10
+    type: 4
+    angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: -90, z: 0}
-    m_Scale: {x: 0.01, y: 0.01, z: 0.01}
+    m_Rotation: {x: -90, y: -90, z: 0}
+    m_Scale: {x: 0.1, y: 0.2, z: 0.05}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -975,7 +975,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 20
+        scalar: 30
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1039,31 +1039,22 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 4.5449233
-          outSlope: 4.5449233
+          time: 0.013660431
+          value: 0.86842346
+          inSlope: 2.7165573
+          outSlope: 2.7165573
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.10109289
-        - serializedVersion: 3
-          time: 0.08580902
-          value: 1
-          inSlope: 2.6804712
-          outSlope: 2.6804712
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.12316336
+          outWeight: 0.108033925
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: -1.9328977
-          outSlope: -1.9328977
+          value: 0.47368622
+          inSlope: -0.7268973
+          outSlope: -0.7268973
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.2639613
+          inWeight: 0.14681438
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1365,13 +1356,13 @@ ParticleSystem:
     enabled: 1
     gradient:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 1
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.9600122, b: 0.5518868, a: 1}
-        key1: {r: 1, g: 0.8475749, b: 0.3820755, a: 1}
+        key0: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+        key1: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1608,7 +1599,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2473,7 +2464,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -3992,7 +3983,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
@@ -4835,7 +4826,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4891,7 +4881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8271244823148772747}
   m_Layer: 0
-  m_Name: Chaingun_Impact
+  m_Name: Landing_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
