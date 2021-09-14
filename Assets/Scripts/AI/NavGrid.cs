@@ -205,12 +205,15 @@ public class NavGrid : MonoBehaviour
         foreach (Cell cell in m_grid)
         {
             if (!cell.m_traversable) continue;
-            Collider2D[] hits = Physics2D.OverlapBoxAll(cell.m_position, Vector3.one * m_cellradius * 2, 0, layermask);
+            Collider2D[] hits = Physics2D.OverlapBoxAll(cell.m_position, Vector3.one * m_cellradius * 4, 0, layermask);
             foreach (Collider2D hit in hits)
             {
                 if (hit != null)
                 {
-                    hit.gameObject.GetComponent<NavAgent>().m_flowVector += cell.m_direction.normalized;
+                    if (hit.gameObject.GetComponent<NavAgent>())
+                        hit.gameObject.GetComponent<NavAgent>().m_flowVector += cell.m_direction.normalized;
+                    else
+                        hit.gameObject.GetComponent<FlyingNavAgent>().m_flowVector += cell.m_direction.normalized;
                 }
             }
         }
