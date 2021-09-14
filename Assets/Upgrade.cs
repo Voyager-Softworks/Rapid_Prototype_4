@@ -20,6 +20,7 @@ public class Upgrade : MonoBehaviour
     public class UpgradeCost
     {
         [SerializeField] public ResourceCost[] m_costs;
+        [SerializeField] public UnityEvent OnUpgrade;
     }
 
     [SerializeField] GameObject m_player;
@@ -84,6 +85,7 @@ public class Upgrade : MonoBehaviour
 
     private void DoUpgrade()
     {
+        m_upgrades[(int)m_currentLevel].OnUpgrade.Invoke();
         m_currentLevel++;
         Upgraded.Invoke();
         if (m_currentLevel == m_upgrades.Count) HitMaxLevel.Invoke();
