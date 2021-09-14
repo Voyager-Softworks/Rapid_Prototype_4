@@ -281,6 +281,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position + (Vector3)m_groundCheckOffset, (Vector3)m_groundCheckExtents);
-        Gizmos.DrawRay(transform.position, rb.velocity);
+        if (rb) Gizmos.DrawRay(transform.position, rb.velocity);
     }
 }
