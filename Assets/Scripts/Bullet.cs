@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Rigidbody2D m_rb;
-    AudioSource m_as;
 
     [SerializeField] public float m_baseDamage = 2.0f;
     [SerializeField] public float m_damageMulti = 1.0f;
@@ -16,10 +15,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_as = GetComponent<AudioSource>();
         m_rb = GetComponent<Rigidbody2D>();
-
-        m_as.pitch = Random.Range(0.9f, 1.1f);
     }
 
     // Update is called once per frame
@@ -49,9 +45,13 @@ public class Bullet : MonoBehaviour
             }
         }
 
+        Destroy(gameObject, 0.01f);
+    }
+
+    private void OnDestroy()
+    {
         gameObject.GetComponent<Renderer>().enabled = false;
         gameObject.GetComponent<TrailRenderer>().enabled = false;
         m_active = false;
-        Destroy(gameObject, 2);
     }
 }

@@ -11,6 +11,7 @@ public class MachineGun : MonoBehaviour
     [SerializeField] GameObject m_player;
 
     [SerializeField] GameObject m_bulletPrefab;
+    [SerializeField] GameObject m_bulletSound;
 
     [SerializeField] Transform m_shootPos;
     Vector3 m_restPos;
@@ -81,6 +82,12 @@ public class MachineGun : MonoBehaviour
         m_lastShotTime = Time.time + Random.Range(0, m_randomShotDelay);
 
         m_anim.SetTrigger("Fire");
+
+        GameObject sound = Instantiate(m_bulletSound, null);
+
+        AudioSource m_as = sound.GetComponent<AudioSource>();
+        m_as.pitch = Random.Range(0.9f, 1.1f);
+        m_as.Play();
 
         vel -= transform.right * m_recoilMulti;
 
