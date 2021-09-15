@@ -13,6 +13,7 @@ public class MachineGun : MonoBehaviour
     [SerializeField] GameObject m_bulletPrefab;
     [SerializeField] GameObject m_bulletSound;
 
+    [SerializeField] GameObject m_shootPart;
     [SerializeField] Transform m_shootPos;
     Vector3 m_restPos;
 
@@ -46,11 +47,14 @@ public class MachineGun : MonoBehaviour
         m_anim = GetComponent<Animator>();
     }
 
+    GameObject _shootPart;
+
     void Update()
     {
         m_anim.ResetTrigger("Fire");
         if ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
         {
+            if (!_shootPart) _shootPart = Instantiate(m_shootPart, m_shootPos.position, transform.rotation, transform);
             m_anim.SetBool("Shooting", true);
             if (m_currentRPS == 0 || Time.time - m_lastShotTime >= 1.0f / m_currentRPS)
             {
@@ -63,6 +67,7 @@ public class MachineGun : MonoBehaviour
         }
         else
         {
+            if (_shootPart) Destroy(_shootPart);
             m_anim.SetBool("Shooting", false);
             if (m_currentRPS > m_startRPS) m_currentRPS -= ((m_targetRPS - m_startRPS) / m_decayTime) * Time.deltaTime;
             else m_currentRPS = m_startRPS;
@@ -84,6 +89,7 @@ public class MachineGun : MonoBehaviour
         m_anim.SetTrigger("Fire");
 
         GameObject sound = Instantiate(m_bulletSound, null);
+        Destroy(sound, 5.0f);
 
         AudioSource m_as = sound.GetComponent<AudioSource>();
         m_as.pitch = Random.Range(0.9f, 1.1f);
@@ -93,11 +99,11 @@ public class MachineGun : MonoBehaviour
 
         GameObject bullet = Instantiate(m_bulletPrefab, m_shootPos.position, transform.rotation, null);
         Rigidbody2D rb_bullet = bullet.GetComponent<Rigidbody2D>();
-        Bullet bulletScript= bullet.GetComponent<Bullet>();
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.m_damageMulti = m_bulletDamageMulti;
         bulletScript.m_damageAdd = m_bulletDamageAdd;
 
-        rb_bullet.velocity = transform.right * transform.lossyScale.x * m_bullet_vel;
+        rb_bullet.velocity = transform.right * transform.lossyScale.x * m_bullet_vel * Random.Range(0.9f, 1.1f);
         rb_bullet.velocity += (Vector2)transform.up * Random.Range(-0.5f,1.5f);
         rb_bullet.velocity += m_player.GetComponent<Rigidbody2D>().velocity;
 

@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] public float m_baseDamage = 2.0f;
     [SerializeField] public float m_damageMulti = 1.0f;
     [SerializeField] public float m_damageAdd = 0.0f;
+    [SerializeField] public float m_AOERange = 1.0f;
 
     bool m_active = true;
 
@@ -30,7 +31,7 @@ public class Bullet : MonoBehaviour
     {
         if (!m_active) return;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.0f);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, m_AOERange);
 
         foreach (Collider2D _hit in hits)
         {
