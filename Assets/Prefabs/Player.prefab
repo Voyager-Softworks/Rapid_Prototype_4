@@ -1005,9 +1005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5faa4e29d188eb4988b01d9d1f90f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_organicAmount: 0
-  m_powerAmount: 0
-  m_scrapAmount: 0
+  m_organicAmount: 20
+  m_powerAmount: 20
+  m_scrapAmount: 20
   m_text: {fileID: 0}
 --- !u!95 &3628451280412113726
 Animator:
@@ -6335,7 +6335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_RootOrder
@@ -6412,14 +6412,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
   m_PrefabInstance: {fileID: 2278086269927742601}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1325673063 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2278086271051560686, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
-  m_PrefabInstance: {fileID: 2278086269927742601}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5312238161664732772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+  m_PrefabInstance: {fileID: 2278086269927742601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1325673063 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2278086271051560686, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
   m_PrefabInstance: {fileID: 2278086269927742601}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4939572443961593200
@@ -6435,7 +6435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031954, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031964, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_SortingOrder
@@ -6620,6 +6620,10 @@ PrefabInstance:
     - target: {fileID: 7287635023378031954, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_Name
       value: Minigun_Front
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031954, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031965, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_RootOrder

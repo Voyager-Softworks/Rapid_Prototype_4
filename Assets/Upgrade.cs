@@ -24,6 +24,7 @@ public class Upgrade : MonoBehaviour
     }
 
     [SerializeField] GameObject m_player;
+    [SerializeField] GameObject m_upgradeUi;
     [SerializeField] float m_upgradeRange;
 
     [SerializeField] List<UpgradeCost> m_upgrades;
@@ -47,9 +48,20 @@ public class Upgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame && Vector2.Distance(m_player.transform.position, transform.position) < m_upgradeRange)
+        float dist = Vector2.Distance(m_player.transform.position, transform.position);
+
+        if (dist < m_upgradeRange)
         {
-            TryBuyUpgrade();
+            m_upgradeUi.SetActive(true);
+
+            if (Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                TryBuyUpgrade();
+            }
+        }
+        else
+        {
+            if (m_upgradeUi.activeSelf) m_upgradeUi.SetActive(false);
         }
     }
 
