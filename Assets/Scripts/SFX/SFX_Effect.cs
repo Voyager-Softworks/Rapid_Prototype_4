@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class SFX_Effect : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class SFX_Effect : MonoBehaviour
         STOP_PARTICLE,
         SET_SCREEN_SHAKE,
         SPAWN,
+        POST_PROCESSING,
     }
     [System.Serializable]
     public class Effect
@@ -28,6 +31,8 @@ public class SFX_Effect : MonoBehaviour
         public GameObject m_prefab;
     }
     public NoiseSettings m_noiseSettingsData;
+    Volume m_pp;
+
     public bool m_playOnAwake = false;
     public bool m_loop = false;
     bool m_playing = false;
@@ -41,6 +46,7 @@ public class SFX_Effect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_pp = FindObjectOfType<Volume>();
 
     }
 
