@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 5312238160630991536}
   - component: {fileID: 5203168192554026397}
   - component: {fileID: 3628451280412113726}
+  - component: {fileID: 8033001826356427796}
   - component: {fileID: 1302473369726858521}
   - component: {fileID: 5312238160331908180}
   m_Layer: 7
@@ -941,8 +942,8 @@ MonoBehaviour:
   m_OnLand:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5039531436902209581}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+      - m_Target: {fileID: 8033001826356427796}
+        m_TargetAssemblyTypeName: SFX_Effect, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1025,6 +1026,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8033001826356427796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312238160630991547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13db967582573f387bd4f16f5bedad59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noiseSettingsData: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
+  m_playOnAwake: 0
+  m_loop: 0
+  m_effectsList:
+  - m_type: 3
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 5039531436902209581}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+  - m_type: 1
+    m_waitDuration: 0.3
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+  - m_type: 5
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
 --- !u!61 &1302473369726858521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6671,13 +6706,13 @@ PrefabInstance:
       objectReference: {fileID: 8308941514213574202, guid: ab70078d5558b694c809814df204978a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
---- !u!1 &3003185592527901689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
-  m_PrefabInstance: {fileID: 9189817623909654811}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3003185592527901686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+  m_PrefabInstance: {fileID: 9189817623909654811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3003185592527901689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
   m_PrefabInstance: {fileID: 9189817623909654811}
   m_PrefabAsset: {fileID: 0}

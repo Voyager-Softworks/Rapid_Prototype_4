@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class Railgun : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class Railgun : MonoBehaviour
     [SerializeField] float m_recoilMulti = 5.0f;
     [SerializeField] [Range(0.0f, 1.0f)] float m_returnRate = 0.75f;
     [SerializeField] bool m_leftClick = true;
+
+    public UnityEvent OnShoot;
 
     Vector3 vel = Vector3.zero;
 
@@ -74,6 +77,7 @@ public class Railgun : MonoBehaviour
 
     void Shoot()
     {
+        OnShoot.Invoke();
         AS.Play();
 
         m_anim.SetTrigger("Fire");
