@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 5312238160630991536}
   - component: {fileID: 5203168192554026397}
   - component: {fileID: 3628451280412113726}
+  - component: {fileID: 8033001826356427796}
   - component: {fileID: 1302473369726858521}
   - component: {fileID: 5312238160331908180}
   m_Layer: 7
@@ -941,8 +942,8 @@ MonoBehaviour:
   m_OnLand:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5039531436902209581}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+      - m_Target: {fileID: 8033001826356427796}
+        m_TargetAssemblyTypeName: SFX_Effect, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1025,6 +1026,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8033001826356427796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312238160630991547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13db967582573f387bd4f16f5bedad59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noiseSettingsData: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
+  m_playOnAwake: 0
+  m_loop: 0
+  m_effectsList:
+  - m_type: 3
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 5039531436902209581}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+  - m_type: 1
+    m_waitDuration: 0.3
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+  - m_type: 5
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
 --- !u!61 &1302473369726858521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6171,7 +6206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_RootOrder
@@ -6230,6 +6265,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootPart
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: c30692f1491705e47a405c418b25ec9b, type: 3}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_currentRPS
       value: 1
       objectReference: {fileID: 0}
@@ -6239,11 +6278,6 @@ PrefabInstance:
       objectReference: {fileID: 8308941514213574202, guid: ab70078d5558b694c809814df204978a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
---- !u!4 &5312238161664732772 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
-  m_PrefabInstance: {fileID: 2278086269927742601}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1325673063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2278086271051560686, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
@@ -6252,6 +6286,11 @@ Transform:
 --- !u!1 &5312238161664732779 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+  m_PrefabInstance: {fileID: 2278086269927742601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5312238161664732772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6207577749372023533, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
   m_PrefabInstance: {fileID: 2278086269927742601}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4939572443961593200
@@ -6267,7 +6306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031954, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031964, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031965, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_RootOrder
@@ -6317,6 +6360,22 @@ PrefabInstance:
       propertyPath: m_player
       value: 
       objectReference: {fileID: 5312238160630991547}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_leftClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootPart
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 8dbf9be20b3cd1e449f1c75760e27de3, type: 3}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_targetRPS
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_randomShotDelay
+      value: 0.001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c768228b2619e234a89c00330ae23a65, type: 3}
 --- !u!4 &2426881126305310765 stripped
@@ -6433,14 +6492,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minigun_Front
       objectReference: {fileID: 0}
-    - target: {fileID: 7287635023378031954, guid: c768228b2619e234a89c00330ae23a65, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287635023378031964, guid: c768228b2619e234a89c00330ae23a65, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031965, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6490,8 +6541,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5312238160630991547}
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
-      propertyPath: m_leftClick
-      value: 1
+      propertyPath: m_targetRPS
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_randomShotDelay
+      value: 0.001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c768228b2619e234a89c00330ae23a65, type: 3}
@@ -6599,7 +6654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_SortingOrder
@@ -6661,6 +6716,10 @@ PrefabInstance:
       propertyPath: m_leftClick
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootPart
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: c30692f1491705e47a405c418b25ec9b, type: 3}
     - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_currentRPS
       value: 1
