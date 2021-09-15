@@ -25,8 +25,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float m_jumpForce = 1.0f;
 
     [SerializeField] float m_dashForce = 1.0f;
+    [SerializeField] float m_dashVerticalForce = 1.0f;
     float m_timesincelastmovementkey = 0.0f;
     [SerializeField] float m_dashDuration = 1.0f;
+    [SerializeField] float m_dashCooldownDuration = 1.0f;
+    float m_dashCooldownTimer = 0.0f;
     float m_dashTimer = 0.0f;
     [SerializeField] float m_landDuration = 1.0f;
     public float m_landingTimer = 0.0f;
@@ -95,10 +98,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash(InputAction.CallbackContext _ctx)
     {
-        if (m_dashTimer > 0.0f) return;
+        if (m_dashTimer > 0.0f || m_dashCooldownTimer > 0.0f) return;
         rb.mass = 10000;
-        rb.velocity += (m_walkAction.ReadValue<Vector2>() * m_dashForce) + (Vector2.up * 4.0f);
+        rb.velocity += (m_walkAction.ReadValue<Vector2>() * m_dashForce) + (Vector2.up * m_dashVerticalForce);
         m_dashTimer = m_dashDuration;
+        m_dashCooldownTimer = m_dashCooldownDuration;
 
     }
 
@@ -175,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
             m_dashTimer = 0;
             rb.mass = 20000;
         }
+        if (m_dashCooldownTimer > 0) { m_dashCooldownTimer -= Time.deltaTime; } else { m_dashCooldownTimer = 0; }
         if (m_landingTimer > 0) { m_landingTimer -= Time.deltaTime; }
         else if (m_grounded)
         {
