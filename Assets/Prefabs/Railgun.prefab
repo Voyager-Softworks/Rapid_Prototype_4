@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1062193038931647151}
   - component: {fileID: 5441601926692273561}
   - component: {fileID: 1338051850}
+  - component: {fileID: 7811641533978737401}
   m_Layer: 7
   m_Name: Railgun
   m_TagString: Untagged
@@ -210,6 +211,21 @@ MonoBehaviour:
   m_recoilMulti: 25
   m_returnRate: 0.75
   m_leftClick: 0
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7811641533978737401}
+        m_TargetAssemblyTypeName: SFX_Effect, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &1338051850
 AudioSource:
   m_ObjectHideFlags: 0
@@ -306,6 +322,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7811641533978737401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990635962838974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13db967582573f387bd4f16f5bedad59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noiseSettingsData: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
+  m_playOnAwake: 0
+  m_loop: 0
+  m_effectsList:
+  - m_type: 5
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 1, y: 0}
+  - m_type: 1
+    m_waitDuration: 0.2
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 1, y: 0}
+  - m_type: 5
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
 --- !u!1 &1080231804615137012
 GameObject:
   m_ObjectHideFlags: 0
