@@ -16,7 +16,7 @@ public class SFX_Effect : MonoBehaviour
         STOP_PARTICLE,
         SET_SCREEN_SHAKE,
         SPAWN,
-        POST_PROCESSING,
+
     }
     [System.Serializable]
     public class Effect

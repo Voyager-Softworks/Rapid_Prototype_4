@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1187514438124963600}
   - component: {fileID: 8143876762838158965}
   - component: {fileID: 2468160550584417584}
+  - component: {fileID: 7201540384246155768}
   m_Layer: 10
   m_Name: Alien_Large
   m_TagString: Untagged
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_jumpForce: 10
   m_jumpCooldown: 1.5
   m_groundCheckOffset: 0.39
-  m_stoppingDistance: 5
+  m_stoppingDistance: 0.5
   m_grounded: 0
   m_seekPlayer: 0
 --- !u!50 &1187514438124963607
@@ -178,6 +179,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 50
+  m_deathPart: {fileID: 0}
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: c4ff223a4ec54894ab139beafaa2523d, type: 3}
     m_amount: 2
+--- !u!114 &7201540384246155768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187514438124963611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1dd33e69580b2d95a5b880e5d70fa73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_detectionRadius: 7.94
+  m_attackRadius: 0.32
+  m_attacking: 0
