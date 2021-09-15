@@ -57,6 +57,12 @@ public class MeleeAttackAI : MonoBehaviour
 
     }
 
+    public void m_Attack()
+    {
+        if ((transform.position - m_playerTransform.position).magnitude < 0.5f)
+            m_playerTransform.gameObject.GetComponent<PlayerHealth>().Damage(1.0f);
+    }
+
 
     /// <summary>
     /// Callback to draw gizmos only if the object is selected.
