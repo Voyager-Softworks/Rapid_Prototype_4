@@ -13,6 +13,7 @@ public class SFX_Effect : MonoBehaviour
         PLAY_PARTICLE,
         STOP_PARTICLE,
         SET_SCREEN_SHAKE,
+        SPAWN,
     }
     [System.Serializable]
     public class Effect
@@ -23,6 +24,8 @@ public class SFX_Effect : MonoBehaviour
         public AudioSource m_source;
         public ParticleSystem m_particle;
         public Vector2 m_screenShakeAmplitude;
+
+        public GameObject m_prefab;
     }
     public NoiseSettings m_noiseSettingsData;
     public bool m_playOnAwake = false;
@@ -107,6 +110,9 @@ public class SFX_Effect : MonoBehaviour
                     break;
                 case SFXtype.WAIT:
                     m_delayTimer = currEffect.m_waitDuration;
+                    break;
+                case SFXtype.SPAWN:
+                    Instantiate(currEffect.m_prefab, transform.position, transform.rotation);
                     break;
                 default:
                     break;

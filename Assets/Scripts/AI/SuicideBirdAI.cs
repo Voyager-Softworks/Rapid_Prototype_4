@@ -24,7 +24,7 @@ public class SuicideBirdAI : MonoBehaviour
     void Update()
     {
 
-        if ((Physics2D.Linecast(transform.position, m_playerTransform.position, LayerMask.GetMask("Ground") | LayerMask.GetMask("Environment"))
+        if ((!Physics2D.Linecast(transform.position, m_playerTransform.position, LayerMask.GetMask("Ground") | LayerMask.GetMask("Environment"))
             || (transform.position - m_playerTransform.position).magnitude < m_detectionRadius) && (!m_seeking))
         {
             m_seeking = true;
@@ -32,6 +32,14 @@ public class SuicideBirdAI : MonoBehaviour
 
         }
         if (m_seeking) m_body.velocity += m_seekDirection * m_seekForce * Time.deltaTime;
+        if (m_seeking && m_body.velocity.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (m_seeking)
+        {
+            transform.rotation = Quaternion.identity;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

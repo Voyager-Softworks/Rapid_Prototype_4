@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1187514438124963600}
   - component: {fileID: 8143876762838158965}
   - component: {fileID: 4841929539110870727}
+  - component: {fileID: 5658930208202474054}
   m_Layer: 10
   m_Name: SmallMech
   m_TagString: Untagged
@@ -182,3 +183,18 @@ MonoBehaviour:
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
     m_amount: 1
+--- !u!114 &5658930208202474054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187514438124963611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6763fcf21ae6f34686c9cb4e195a917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_detectionRadius: 4.3
+  m_attackRadius: 1.87
+  m_shooting: 0

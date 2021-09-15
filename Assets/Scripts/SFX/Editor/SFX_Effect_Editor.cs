@@ -126,6 +126,14 @@ public class SFX_Effect_Editor : Editor
             GUIContent.none
             );
                 break;
+            case SFX_Effect.SFXtype.SPAWN:
+                EditorGUI.LabelField(new Rect(rect.x, rect.y + (EditorGUIUtility.singleLineHeight + 5) * 2, 150, EditorGUIUtility.singleLineHeight), "[ Spawn a Prefab ]");
+                EditorGUI.PropertyField(
+            new Rect(rect.x + 150, rect.y, rect.width - 150, EditorGUIUtility.singleLineHeight * 4),
+            element.FindPropertyRelative("m_prefab"),
+            GUIContent.none
+            );
+                break;
             default:
                 break;
         }

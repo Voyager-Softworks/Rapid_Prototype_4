@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1187514438124963600}
   - component: {fileID: 8143876762838158965}
   - component: {fileID: 1941645753}
+  - component: {fileID: 5730137711734366079}
   m_Layer: 10
   m_Name: LargeMech
   m_TagString: Untagged
@@ -100,13 +101,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_flowVector: {x: 0, y: 0}
-  m_speed: 1.5
-  m_maxGroundedVelocity: 2
+  m_speed: 2.5
+  m_maxGroundedVelocity: 3
   m_maxAerialVelocity: 3
   m_jumpForce: 10
   m_jumpCooldown: 1.5
   m_groundCheckOffset: 0.65
-  m_stoppingDistance: 5
+  m_stoppingDistance: 3
   m_grounded: 0
   m_seekPlayer: 1
 --- !u!50 &1187514438124963607
@@ -182,3 +183,18 @@ MonoBehaviour:
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
     m_amount: 2
+--- !u!114 &5730137711734366079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187514438124963611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6763fcf21ae6f34686c9cb4e195a917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_detectionRadius: 10.3
+  m_attackRadius: 4.3
+  m_shooting: 0
