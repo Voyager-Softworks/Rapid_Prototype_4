@@ -33,7 +33,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.43, y: 15.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2232747272619932189}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,7 +108,7 @@ MonoBehaviour:
   m_jumpForce: 10
   m_jumpCooldown: 1.5
   m_groundCheckOffset: 0.39
-  m_stoppingDistance: 5
+  m_stoppingDistance: 2
   m_grounded: 0
   m_seekPlayer: 0
 --- !u!50 &1187514438124963607
@@ -179,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 75
+  m_deathPart: {fileID: 0}
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
     m_amount: 1
@@ -194,6 +196,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6763fcf21ae6f34686c9cb4e195a917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_detectionRadius: 6.07
-  m_attackRadius: 1.92
+  m_detectionRadius: 7.73
+  m_attackRadius: 3.53
   m_shooting: 0
+  m_barrelPositions:
+  - {fileID: 2232747272619932189}
+  m_bulletPrefab: {fileID: 6649951725195701283, guid: da997ef7f06ec8d28897f902bfdad233, type: 3}
+  m_bulletSpeed: 5
+--- !u!1 &6302914769117262138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2232747272619932189}
+  m_Layer: 10
+  m_Name: BarrelPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2232747272619932189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302914769117262138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45, y: -0.164, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1187514438124963606}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -33,7 +33,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.43, y: 15.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 593603873706313348}
+  - {fileID: 9128977684925031207}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,7 +109,7 @@ MonoBehaviour:
   m_jumpForce: 10
   m_jumpCooldown: 1.5
   m_groundCheckOffset: 0.39
-  m_stoppingDistance: 5
+  m_stoppingDistance: 2
   m_grounded: 0
   m_seekPlayer: 0
 --- !u!50 &1187514438124963607
@@ -195,6 +197,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6763fcf21ae6f34686c9cb4e195a917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_detectionRadius: 4.3
-  m_attackRadius: 1.87
+  m_detectionRadius: 7.97
+  m_attackRadius: 3.94
   m_shooting: 0
+  m_barrelPositions:
+  - {fileID: 593603873706313348}
+  - {fileID: 9128977684925031207}
+  m_bulletPrefab: {fileID: 6649951725195701283, guid: da997ef7f06ec8d28897f902bfdad233, type: 3}
+  m_bulletSpeed: 7
+--- !u!1 &1787298610197412085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593603873706313348}
+  m_Layer: 10
+  m_Name: BarrelPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &593603873706313348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787298610197412085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.057, y: -0.207, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1187514438124963606}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2738361104151473201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9128977684925031207}
+  m_Layer: 10
+  m_Name: RearBarrelPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9128977684925031207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2738361104151473201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.192, y: -0.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1187514438124963606}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
