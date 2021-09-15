@@ -13,7 +13,7 @@ public class EnemyTest : MonoBehaviour
 
     [SerializeField] float m_health = 100.0f;
     bool m_alive = true;
-
+    [SerializeField] GameObject m_deathPart;
 
     [SerializeField] List<Drop> m_drops;
 
@@ -78,7 +78,9 @@ public class EnemyTest : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        if (!this.gameObject.scene.isLoaded) return;
+
+        Destroy(Instantiate(m_deathPart, transform.position, Quaternion.identity, null), 4.0f);
     }
 
     public void UpdateVisuals()
