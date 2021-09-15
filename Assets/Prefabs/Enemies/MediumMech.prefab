@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1187514438124963600}
   - component: {fileID: 8143876762838158965}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: MediumMech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 2900005227755517198, guid: 704cb3bf60a02cf4db9d4b26cd5388da, type: 3}
+  m_SortingLayerID: 454791645
+  m_SortingLayer: 1
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 3125448032308413808, guid: 23da98b75df41814eb3f4e1aa0eb745c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_flowVector: {x: 0, y: 0}
-  m_speed: 1.5
+  m_speed: 2
   m_maxGroundedVelocity: 2
   m_maxAerialVelocity: 3
   m_jumpForce: 10
@@ -142,8 +142,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0061216354, y: -0.014349937}
-  m_Size: {x: 0.80002594, y: 0.90205383}
+  m_Offset: {x: 0.0023407936, y: -0.19793797}
+  m_Size: {x: 0.28288937, y: 0.5649662}
   m_Direction: 0
 --- !u!95 &8143876762838158965
 Animator:
@@ -155,7 +155,7 @@ Animator:
   m_GameObject: {fileID: 1187514438124963611}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8a61edb8f7f8b38b582bafc88b7dd1a1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9db98390cfbf0faf8a627ae405b04678, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
