@@ -179,8 +179,7 @@ public class PlayerMovement : MonoBehaviour
         else if (m_grounded)
         {
 
-            m_noise.PositionNoise[0].X.Amplitude = 0.0f;
-            m_noise.PositionNoise[0].Y.Amplitude = 0.0f;
+
             m_landingTimer = 0.0f;
         }
         Vector2 vel = Vector2.zero;
