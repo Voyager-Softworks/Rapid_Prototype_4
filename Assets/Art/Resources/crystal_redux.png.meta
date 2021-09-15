@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 1a2238817d3934b44af5df058efc9ad7
+guid: 5b17735b939c9dc439357d3f249e161d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5342970691794401810
-    second: resource_atlas_0
-  - first:
-      213: -3276480317036847669
-    second: resource_atlas_1
-  - first:
-      213: -144409339516939042
-    second: resource_atlas_2
-  - first:
-      213: 8105369494727275605
-    second: resource_atlas_3
+      213: -3933798663380265788
+    second: resource_crystal_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +71,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,7 +83,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,55 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: resource_atlas_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 8
-        width: 21
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21a7ab1398b062a40800000000000000
-      internalID: 5342970691794401810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: resource_atlas_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 7
-        width: 20
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcd957dd28a9782d0800000000000000
-      internalID: -3276480317036847669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: resource_atlas_2
+      name: resource_crystal_0
       rect:
         serializedVersion: 2
         x: 60
         y: 6
         width: 19
-        height: 22
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,29 +108,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed418d78874fefdf0800000000000000
-      internalID: -144409339516939042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: resource_atlas_3
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 8
-        width: 19
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 554b1828c9e0c7070800000000000000
-      internalID: 8105369494727275605
+      spriteID: 4c4105335f65869c0800000000000000
+      internalID: -3933798663380265788
       vertices: []
       indices: 
       edges: []
