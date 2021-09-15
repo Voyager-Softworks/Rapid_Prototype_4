@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class Resource : MonoBehaviour
 {
-    public InputAction m_pickupAction;
-
     public enum Type
     {
         Organic,
@@ -16,8 +14,6 @@ public class Resource : MonoBehaviour
     }
 
     [SerializeField] GameObject m_player;
-    [SerializeField] Canvas m_canvas;
-    [SerializeField] TextMeshProUGUI m_pickupText;
 
     [SerializeField] Type m_type;
 
@@ -25,28 +21,24 @@ public class Resource : MonoBehaviour
     void Start()
     {
         if (!m_player) m_player = GameObject.Find("Player");
-        m_pickupText.fontSize = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_canvas.transform.rotation = Quaternion.identity;
-        m_canvas.transform.position = transform.position + Vector3.up;
-
-        if (Vector2.Distance(m_player.transform.position, transform.position) < 3)
+        float dist = Vector2.Distance(m_player.transform.position, transform.position);
+        if (dist < 3)
         {
-            m_pickupText.enabled = true;
-
-            if (Keyboard.current.eKey.isPressed)
-            {
-                m_player.GetComponent<Inventory>().AddResource(m_type);
-                Destroy(gameObject);
-            }
+            GetComponent<Rigidbody2D>().velocity += (Vector2)((m_player.transform.position - transform.position).normalized) * Time.deltaTime;
         }
-        else
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform == m_player.transform)
         {
-            m_pickupText.enabled = false;
+            m_player.GetComponent<Inventory>().AddResource(m_type);
+            Destroy(gameObject);
         }
     }
 

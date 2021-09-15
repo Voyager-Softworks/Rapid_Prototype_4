@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1187514438124963607}
   - component: {fileID: 1187514438124963600}
   - component: {fileID: 8143876762838158965}
+  - component: {fileID: -2973547943693054960}
   m_Layer: 10
   m_Name: MediumMech
   m_TagString: Untagged
@@ -164,3 +165,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2973547943693054960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187514438124963611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3de96285238c429f6fefe9c3ca64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 75
+  m_drops:
+  - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
+    m_amount: 1

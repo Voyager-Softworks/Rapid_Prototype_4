@@ -212,7 +212,7 @@ public class NavGrid : MonoBehaviour
                 {
                     if (hit.gameObject.GetComponent<NavAgent>())
                         hit.gameObject.GetComponent<NavAgent>().m_flowVector += cell.m_direction.normalized;
-                    else
+                    else if (hit.gameObject.GetComponent<FlyingNavAgent>())
                         hit.gameObject.GetComponent<FlyingNavAgent>().m_flowVector += cell.m_direction.normalized;
                 }
             }

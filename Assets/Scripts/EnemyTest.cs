@@ -62,7 +62,10 @@ public class EnemyTest : MonoBehaviour
         m_alive = false;
         m_health = 0;
         GetComponent<Rigidbody2D>().freezeRotation = false;
-        GetComponent<Rigidbody2D>().mass *= 0.5f;
+        GetComponent<Rigidbody2D>().AddTorque(1);
+        Destroy(gameObject, 1.0f);
+
+        Destroy(GetComponent<NavAgent>());
 
         foreach (Drop _drop in m_drops)
         {
@@ -71,6 +74,11 @@ public class EnemyTest : MonoBehaviour
                 GameObject newDrop = Instantiate(_drop.m_prefab, transform.position + transform.up, Quaternion.identity, null);
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 
     public void UpdateVisuals()
