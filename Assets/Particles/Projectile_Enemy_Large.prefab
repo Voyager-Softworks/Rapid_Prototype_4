@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5022082254445367438}
   - component: {fileID: 4093360961610152622}
   - component: {fileID: 3744585619086168087}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SparkBois (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4889,7 +4889,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8271244823148772747}
-  m_Layer: 0
+  - component: {fileID: 3426301438191118691}
+  - component: {fileID: 72502702987296369}
+  - component: {fileID: 3295405582218456687}
+  - component: {fileID: 917512792508457589}
+  m_Layer: 14
   m_Name: Projectile_Enemy_Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,6 +4920,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3426301438191118691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240376982557400333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b08f10da4769ebdbb179a40c4377e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &72502702987296369
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240376982557400333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.17
+--- !u!50 &3295405582218456687
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240376982557400333}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &917512792508457589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240376982557400333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13db967582573f387bd4f16f5bedad59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noiseSettingsData: {fileID: 0}
+  m_playOnAwake: 0
+  m_loop: 0
+  m_effectsList:
+  - m_type: 1
+    m_waitDuration: 0.1
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+  - m_type: 0
+    m_waitDuration: 0.1
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
 --- !u!1 &2380821543734278305
 GameObject:
   m_ObjectHideFlags: 0
@@ -4927,7 +5010,7 @@ GameObject:
   - component: {fileID: 5546900749608600173}
   - component: {fileID: 2465745128424851255}
   - component: {fileID: 5687313065587773699}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SparkBois (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9798,7 +9881,7 @@ GameObject:
   - component: {fileID: 1474757164891665964}
   - component: {fileID: 2982164803977829294}
   - component: {fileID: 7314919874519252820}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SparkBois (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14678,7 +14761,7 @@ GameObject:
   - component: {fileID: 4828974362146145882}
   - component: {fileID: 5155665065304793498}
   - component: {fileID: 4758532359754805173}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SparkBois (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19549,7 +19632,7 @@ GameObject:
   - component: {fileID: 6111914245954011684}
   - component: {fileID: 2993343798355801248}
   - component: {fileID: 7213490986411423056}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SparkBois (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24429,7 +24512,7 @@ GameObject:
   - component: {fileID: 947766669355047738}
   - component: {fileID: 1726005028909830361}
   - component: {fileID: 6917660626215728513}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SparkBois (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
