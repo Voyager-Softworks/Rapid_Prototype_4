@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class SuicideBirdAI : MonoBehaviour
 {
+    public AudioSource m_aggrosource;
     public UnityEvent OnCollide;
     Transform m_playerTransform;
     bool m_seeking = false;
@@ -29,6 +30,7 @@ public class SuicideBirdAI : MonoBehaviour
         {
             m_seeking = true;
             m_seekDirection = (m_playerTransform.position - transform.position).normalized;
+            m_aggrosource.Play();
 
         }
         if (m_seeking) m_body.velocity += m_seekDirection * m_seekForce * Time.deltaTime;

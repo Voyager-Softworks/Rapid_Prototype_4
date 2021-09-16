@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class RangedAttackAI : MonoBehaviour
 {
-
+    bool m_playerDetected = false;
+    public AudioSource m_barkSource;
+    public List<AudioClip> m_clips;
     Transform m_playerTransform;
 
     Rigidbody2D m_body;
@@ -13,6 +15,7 @@ public class RangedAttackAI : MonoBehaviour
 
     public bool m_shooting;
     public List<Transform> m_barrelPositions;
+
 
     public GameObject m_bulletPrefab;
     public float m_bulletSpeed;
@@ -41,11 +44,20 @@ public class RangedAttackAI : MonoBehaviour
             m_agent.m_seekPlayer = false;
 
         }
-        else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius)
+        else if (m_playerDetected)
         {
             m_shooting = false;
             m_anim.SetBool("IsShooting", false);
             m_agent.m_seekPlayer = true;
+        }
+        else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius && !m_playerDetected)
+        {
+            m_shooting = false;
+            m_anim.SetBool("IsShooting", false);
+            m_agent.m_seekPlayer = true;
+            m_playerDetected = true;
+            m_barkSource.clip = m_clips[Random.Range(0, m_clips.Count)];
+            m_barkSource.Play();
         }
         else
         {
