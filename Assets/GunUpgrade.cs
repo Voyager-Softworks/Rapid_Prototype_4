@@ -39,15 +39,15 @@ public class GunUpgrade : MonoBehaviour
             switch (_cost.m_type)
             {
                 case Resource.Type.Organic:
-                    m_text.text += ", " + _cost.m_amount + "Organic";
+                    m_text.text += ", " + _cost.m_amount + " Organic";
                     break;
 
                 case Resource.Type.Power:
-                    m_text.text += ", " + _cost.m_amount + "Power";
+                    m_text.text += ", " + _cost.m_amount + " Power";
                     break;
 
                 case Resource.Type.Scrap:
-                    m_text.text += ", " + _cost.m_amount + "Scrap";
+                    m_text.text += ", " + _cost.m_amount + " Scrap";
                     break;
             }
         }
@@ -74,6 +74,8 @@ public class GunUpgrade : MonoBehaviour
             }
 
             Bought.Invoke();
+            m_button.enabled = false;
+            m_text.text = m_message + " BOUGHT";
         }
         else
         {
