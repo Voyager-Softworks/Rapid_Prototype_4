@@ -295,7 +295,7 @@ MonoBehaviour:
   m_upgrades:
   - m_costs:
     - m_type: 2
-      m_amount: 1
+      m_amount: 4
     OnUpgrade:
       m_PersistentCalls:
         m_Calls:
@@ -337,9 +337,9 @@ MonoBehaviour:
           m_CallState: 2
   - m_costs:
     - m_type: 2
-      m_amount: 2
+      m_amount: 10
     - m_type: 0
-      m_amount: 2
+      m_amount: 10
     OnUpgrade:
       m_PersistentCalls:
         m_Calls:
@@ -381,11 +381,11 @@ MonoBehaviour:
           m_CallState: 2
   - m_costs:
     - m_type: 2
-      m_amount: 3
+      m_amount: 20
     - m_type: 0
-      m_amount: 3
+      m_amount: 20
     - m_type: 1
-      m_amount: 3
+      m_amount: 2
     OnUpgrade:
       m_PersistentCalls:
         m_Calls:
@@ -415,11 +415,11 @@ MonoBehaviour:
           m_CallState: 2
   - m_costs:
     - m_type: 2
-      m_amount: 4
+      m_amount: 25
     - m_type: 0
-      m_amount: 4
+      m_amount: 25
     - m_type: 1
-      m_amount: 4
+      m_amount: 2
     OnUpgrade:
       m_PersistentCalls:
         m_Calls: []
