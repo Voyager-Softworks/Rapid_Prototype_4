@@ -19,6 +19,7 @@ public class EnemyTest : MonoBehaviour
     }
 
     [SerializeField] float m_health = 100.0f;
+    float startHealth = 0;
     bool m_alive = true;
     [SerializeField] GameObject m_deathPart;
 
@@ -29,7 +30,7 @@ public class EnemyTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        startHealth = m_health;
     }
 
     // Update is called once per frame
@@ -108,6 +109,6 @@ public class EnemyTest : MonoBehaviour
     public void UpdateVisuals()
     {
         SpriteRenderer rend = GetComponent<SpriteRenderer>();
-        rend.color = new Color(1, m_health / 100, m_health / 100);
+        rend.color = new Color(1, m_health / startHealth, m_health / startHealth);
     }
 }
