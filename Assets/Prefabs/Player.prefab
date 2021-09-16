@@ -1136,13 +1136,6 @@ MonoBehaviour:
   m_playOnAwake: 0
   m_loop: 0
   m_effectsList:
-  - m_type: 2
-    m_waitDuration: 0
-    m_clip: {fileID: 8300000, guid: d29a6acaacc973c4aac01099eadf9872, type: 3}
-    m_source: {fileID: 533010135829879249}
-    m_particle: {fileID: 0}
-    m_screenShakeAmplitude: {x: 0, y: 0}
-    m_prefab: {fileID: 0}
   - m_type: 5
     m_waitDuration: 0
     m_clip: {fileID: 0}
@@ -1163,6 +1156,13 @@ MonoBehaviour:
     m_source: {fileID: 0}
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 3, y: 3}
+    m_prefab: {fileID: 0}
+  - m_type: 2
+    m_waitDuration: 0
+    m_clip: {fileID: 8300000, guid: d29a6acaacc973c4aac01099eadf9872, type: 3}
+    m_source: {fileID: 533010135829879249}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
   - m_type: 6
     m_waitDuration: 0
