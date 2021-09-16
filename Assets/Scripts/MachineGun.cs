@@ -12,6 +12,7 @@ public class MachineGun : MonoBehaviour
 
     [SerializeField] GameObject m_bulletPrefab;
     [SerializeField] GameObject m_bulletSound;
+    [SerializeField] GameObject m_OverHeatSound;
 
     [SerializeField] GameObject m_shootPart;
     [SerializeField] bool m_spawnOnShoot = false;
@@ -72,6 +73,7 @@ public class MachineGun : MonoBehaviour
 
         if (m_heatValue >= 1.0f)
         {
+            Instantiate(m_OverHeatSound, transform.position, Quaternion.identity, null);
             canShoot = false;
         }
 

@@ -6505,6 +6505,10 @@ PrefabInstance:
       propertyPath: m_spawnOnShoot
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_OverHeatSound
+      value: 
+      objectReference: {fileID: 7036815220807840685, guid: 9e9b686168dab244c83f32199e463c27, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
 --- !u!1 &5312238161664732779 stripped
@@ -6609,6 +6613,10 @@ PrefabInstance:
       propertyPath: m_coolDownRate
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_OverHeatSound
+      value: 
+      objectReference: {fileID: 7036815220807840685, guid: 9e9b686168dab244c83f32199e463c27, type: 3}
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_randomShotDelay
       value: 0.001
@@ -6830,6 +6838,10 @@ PrefabInstance:
       propertyPath: m_coolDownRate
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_OverHeatSound
+      value: 
+      objectReference: {fileID: 7036815220807840685, guid: 9e9b686168dab244c83f32199e463c27, type: 3}
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_randomShotDelay
       value: 0.001
@@ -7131,6 +7143,10 @@ PrefabInstance:
       propertyPath: m_spawnOnShoot
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_OverHeatSound
+      value: 
+      objectReference: {fileID: 7036815220807840685, guid: 9e9b686168dab244c83f32199e463c27, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
 --- !u!1 &3003185592527901689 stripped
