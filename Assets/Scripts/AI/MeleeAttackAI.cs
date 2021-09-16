@@ -6,7 +6,8 @@ public class MeleeAttackAI : MonoBehaviour
 {
     bool m_playerDetected = false;
     public AudioSource m_barkSource;
-    public List<AudioClip> m_clips;
+    public List<AudioClip> m_aggroclips;
+    public AudioClip m_attackClip;
     Transform m_playerTransform;
 
 
@@ -49,7 +50,7 @@ public class MeleeAttackAI : MonoBehaviour
             m_anim.SetBool("IsShooting", false);
             m_agent.m_seekPlayer = true;
             m_playerDetected = true;
-            m_barkSource.clip = m_clips[Random.Range(0, m_clips.Count)];
+            m_barkSource.clip = m_aggroclips[Random.Range(0, m_aggroclips.Count)];
             m_barkSource.Play();
         }
         else
@@ -72,7 +73,12 @@ public class MeleeAttackAI : MonoBehaviour
     public void m_Attack()
     {
         if ((transform.position - m_playerTransform.position).magnitude < 0.5f)
+        {
             m_playerTransform.gameObject.GetComponent<PlayerHealth>().Damage(1.0f);
+            m_barkSource.clip = m_attackClip;
+            m_barkSource.Play();
+        }
+
     }
 
 
