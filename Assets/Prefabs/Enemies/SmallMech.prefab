@@ -198,8 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6763fcf21ae6f34686c9cb4e195a917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_detectionRadius: 9.23
-  m_attackRadius: 3.94
+  m_barkSource: {fileID: 0}
+  m_clips: []
+  m_detectionRadius: 7
+  m_attackRadius: 2.5
   m_shooting: 0
   m_barrelPositions:
   - {fileID: 593603873706313348}
