@@ -68,6 +68,7 @@ public class MachineGun : MonoBehaviour
         else
         {
             if (_shootPart) Destroy(_shootPart);
+            m_anim.speed = 1.0f;
             m_anim.SetBool("Shooting", false);
             if (m_currentRPS > m_startRPS) m_currentRPS -= ((m_targetRPS - m_startRPS) / m_decayTime) * Time.deltaTime;
             else m_currentRPS = m_startRPS;
