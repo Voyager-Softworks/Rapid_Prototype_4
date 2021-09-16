@@ -34,6 +34,26 @@ public class PlayerHealth : MonoBehaviour
 
         }
     }
+
+    public void TryRepair()
+    {
+        bool hasAll = true;
+
+        if (!GetComponent<Inventory>().DoesHave(Resource.Type.Scrap, 1))
+        {
+            hasAll = false;
+        }
+
+        if (hasAll)
+        {
+            GetComponent<Inventory>().Remove(Resource.Type.Scrap, 1);
+
+            m_playerHealth += 25.0f;
+        }
+
+        m_playerHealth = Mathf.Clamp(m_playerHealth, 0, 100.0f);
+    }
+
     public void Damage(float _dmg)
     {
         if (m_dead) return;

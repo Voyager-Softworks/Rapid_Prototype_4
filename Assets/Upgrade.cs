@@ -26,6 +26,7 @@ public class Upgrade : MonoBehaviour
     [SerializeField] GameObject m_player;
     [SerializeField] GameObject m_equipUI;
     [SerializeField] GameObject m_upgradeUI;
+    [SerializeField] GameObject m_repairUI;
     [SerializeField] float m_upgradeRange;
 
     [SerializeField] List<UpgradeCost> m_upgrades;
@@ -55,6 +56,7 @@ public class Upgrade : MonoBehaviour
         {
             m_equipUI.SetActive(true);
             m_upgradeUI.SetActive(true);
+            m_repairUI.SetActive(true);
 
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
@@ -65,6 +67,7 @@ public class Upgrade : MonoBehaviour
         {
             if (m_equipUI.activeSelf) m_equipUI.SetActive(false);
             if (m_upgradeUI.activeSelf) m_upgradeUI.SetActive(false);
+            if (m_repairUI.activeSelf) m_repairUI.SetActive(false);
         }
     }
 
