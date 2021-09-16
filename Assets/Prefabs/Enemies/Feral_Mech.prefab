@@ -185,7 +185,11 @@ MonoBehaviour:
   m_weakTo: 0
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: c4ff223a4ec54894ab139beafaa2523d, type: 3}
-    m_amount: 2
+    m_amount: 5
+  - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
+    m_amount: 5
+  - m_prefab: {fileID: 1635208352146295761, guid: 8d35a8d0c020cd845a6dcf223760d2f5, type: 3}
+    m_amount: 5
 --- !u!114 &7201540384246155768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +357,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.66
+  MinDistance: 4.55
   MaxDistance: 13.5801735
   Pan2D: 0
   rolloffMode: 1

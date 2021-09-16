@@ -185,7 +185,7 @@ MonoBehaviour:
   m_weakTo: 1
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
-    m_amount: 1
+    m_amount: 5
 --- !u!114 &2197407937043334587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_barkSource: {fileID: 1748314042783214113}
   m_clips:
   - {fileID: 8300000, guid: 1ba2ba5216fbf7944b7e8e9eb53015b0, type: 3}
-  m_detectionRadius: 8
+  m_detectionRadius: 7
   m_attackRadius: 3.53
   m_shooting: 0
   m_barrelPositions:
