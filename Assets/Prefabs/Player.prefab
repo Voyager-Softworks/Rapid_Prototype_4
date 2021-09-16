@@ -6623,6 +6623,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5312238161658561861}
     m_Modifications:
+    - target: {fileID: 1338051850, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c41e549998202f40a0ed0f72c3f8c73, type: 3}
     - target: {fileID: 990635962838974, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
       propertyPath: m_Name
       value: Railgun_Front
@@ -6644,6 +6648,10 @@ PrefabInstance:
       value: 454791645
       objectReference: {fileID: 0}
     - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_as
+      value: 
+      objectReference: {fileID: 5312238161701311374}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
       propertyPath: m_player
       value: 
       objectReference: {fileID: 5312238160630991547}
@@ -6655,6 +6663,26 @@ PrefabInstance:
       propertyPath: m_damageType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c41e549998202f40a0ed0f72c3f8c73, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_chargeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e0887db0e70e1a4ea0f7ec913930b46, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_hitPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 365da694fc6c10d44b6f9efc574e1bbb, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_shootPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: ad7a23df686ea9643bf2faa9c09a5d3f, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_chargePartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 92052c393c399044fb9a526c39ad28f5, type: 3}
     - target: {fileID: 5717211727037017616, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6713,6 +6741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+--- !u!82 &5312238161701311374 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1338051850, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+  m_PrefabInstance: {fileID: 5312238160413597316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &499690309677428884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5717211727037017616, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
@@ -6884,6 +6917,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4742787783044087748}
     m_Modifications:
+    - target: {fileID: 1338051850, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c41e549998202f40a0ed0f72c3f8c73, type: 3}
     - target: {fileID: 990635962838974, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
       propertyPath: m_Name
       value: Railgun_Back
@@ -6909,6 +6946,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_as
+      value: 
+      objectReference: {fileID: 5312238161701311374}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
       propertyPath: m_player
       value: 
       objectReference: {fileID: 5312238160630991547}
@@ -6916,6 +6957,26 @@ PrefabInstance:
       propertyPath: m_damageType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c41e549998202f40a0ed0f72c3f8c73, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_chargeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e0887db0e70e1a4ea0f7ec913930b46, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_hitPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 365da694fc6c10d44b6f9efc574e1bbb, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_shootPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: ad7a23df686ea9643bf2faa9c09a5d3f, type: 3}
+    - target: {fileID: 5441601926692273561, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
+      propertyPath: m_chargePartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 92052c393c399044fb9a526c39ad28f5, type: 3}
     - target: {fileID: 5717211727037017616, guid: 1f2a70d2f7ea76444b13ad4c47816d23, type: 3}
       propertyPath: m_RootOrder
       value: 1
