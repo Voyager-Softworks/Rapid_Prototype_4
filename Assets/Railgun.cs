@@ -21,6 +21,11 @@ public class Railgun : MonoBehaviour
     [SerializeField] float m_Damage = 150.0f;
     [SerializeField] EnemyTest.DamageType m_damageType;
 
+    [Header("Particle")]
+    [SerializeField] GameObject m_chargePartPrefab;
+    [SerializeField] GameObject m_shootPartPrefab;
+    [SerializeField] GameObject m_hitPartPrefab;
+
     [Header("Stats")]
     [SerializeField] float m_currentCharge = 0;
     [SerializeField] float m_desiredCharge = 100.0f;
@@ -37,6 +42,8 @@ public class Railgun : MonoBehaviour
 
     Vector3 vel = Vector3.zero;
 
+    GameObject _chargePart;
+
     void Start()
     {
         AS = GetComponent<AudioSource>();
@@ -49,11 +56,14 @@ public class Railgun : MonoBehaviour
         m_anim.ResetTrigger("Fire");
         if (Time.time - m_lastShotTime >= m_cooldownWait && (m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
         {
+            if (!_chargePart) _chargePart = Instantiate(m_chargePartPrefab, m_shootPos.position, transform.rotation, transform);
             m_currentCharge += m_chargePerSecond * Time.deltaTime;
             if (m_currentCharge >= m_desiredCharge) m_currentCharge = m_desiredCharge;
         }
         else
         {
+            if (_chargePart) Destroy(_chargePart);
+
             if (m_currentCharge >= m_desiredCharge)
             {
                 Shoot();
@@ -88,6 +98,9 @@ public class Railgun : MonoBehaviour
         m_beam.transform.localPosition = Vector3.zero;
         m_beam.transform.localRotation = Quaternion.identity;
 
+        GameObject _shootPart = Instantiate(m_shootPartPrefab, m_shootPos.position, transform.rotation, null);
+        Destroy(_shootPart, 3.0f);
+
         vel -= transform.right * m_recoilMulti;
 
         m_lastShotTime = Time.time;
@@ -102,6 +115,9 @@ public class Railgun : MonoBehaviour
         {
             if (_hit && _hit.transform)
             {
+
+                GameObject _hitPart = Instantiate(m_hitPartPrefab, _hit.transform.position, Quaternion.identity, null);
+                Destroy(_hitPart, 3.0f);
 
                 EnemyTest _e = _hit.transform.GetComponent<EnemyTest>();
                 if (_e)
