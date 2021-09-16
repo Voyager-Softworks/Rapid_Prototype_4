@@ -24,7 +24,7 @@ public class Upgrade : MonoBehaviour
     }
 
     [SerializeField] GameObject m_player;
-    [SerializeField] GameObject m_upgradeUi;
+    [SerializeField] GameObject m_equipUI;
     [SerializeField] float m_upgradeRange;
 
     [SerializeField] List<UpgradeCost> m_upgrades;
@@ -52,7 +52,7 @@ public class Upgrade : MonoBehaviour
 
         if (dist < m_upgradeRange)
         {
-            m_upgradeUi.SetActive(true);
+            m_equipUI.SetActive(true);
 
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
@@ -61,7 +61,7 @@ public class Upgrade : MonoBehaviour
         }
         else
         {
-            if (m_upgradeUi.activeSelf) m_upgradeUi.SetActive(false);
+            if (m_equipUI.activeSelf) m_equipUI.SetActive(false);
         }
     }
 
