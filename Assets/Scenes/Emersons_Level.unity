@@ -47770,6 +47770,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3751327984207610431, guid: 3b9f00d3df248bd4db64d701c31f3ebf, type: 3}
   m_PrefabInstance: {fileID: 1935041192}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &449782466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 404074818, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
+  m_PrefabInstance: {fileID: 986040627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &455788817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2314420239413321627, guid: 355c88954e27d48459d5c7e886030a9f, type: 3}
@@ -133582,6 +133587,10 @@ PrefabInstance:
       propertyPath: m_equipUI
       value: 
       objectReference: {fileID: 1640758354}
+    - target: {fileID: 1504640072054018127, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
+      propertyPath: m_upgradeUI
+      value: 
+      objectReference: {fileID: 449782466}
     - target: {fileID: 1504640072054018127, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
       propertyPath: m_upgrades.Array.data[0].OnUpgrade.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
