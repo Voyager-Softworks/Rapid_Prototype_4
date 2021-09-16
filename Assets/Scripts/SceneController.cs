@@ -17,18 +17,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void LoadDeath()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        SceneManager.LoadScene(2);
-    }
-
     public void LoadWin()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     public void Exit()
