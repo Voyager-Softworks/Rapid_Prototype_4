@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float m_jumpForce = 1.0f;
 
     [SerializeField] float m_dashForce = 1.0f;
+    [SerializeField] float m_verticalDashForce = 1.0f;
     float m_timesincelastmovementkey = 0.0f;
     [SerializeField] float m_dashDuration = 1.0f;
     float m_dashTimer = 0.0f;
@@ -61,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource m_jumpSource;
     public AudioSource m_chargeSource;
 
+    [Header("Particles")]
+    public List<ParticleSystem> m_particles;
+
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +80,10 @@ public class PlayerMovement : MonoBehaviour
     public void StepNoise()
     {
         m_walksoundmaker.PlaySound();
+    }
+    public void StepParticle(int _index)
+    {
+        m_particles[_index].Play();
     }
 
     void Awake()
@@ -97,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (m_dashTimer > 0.0f) return;
         rb.mass = 10000;
-        rb.velocity += (m_walkAction.ReadValue<Vector2>() * m_dashForce) + (Vector2.up * 4.0f);
+        rb.velocity += (m_walkAction.ReadValue<Vector2>() * m_dashForce) + (Vector2.up * m_verticalDashForce);
         m_dashTimer = m_dashDuration;
 
     }

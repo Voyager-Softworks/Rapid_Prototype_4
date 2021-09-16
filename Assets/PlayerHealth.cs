@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public Transform m_respawnPos;
 
     public bool m_dead = false;
-    public float m_deathTimer = 1.0f;
+    public float m_deathTimer = 2.0f;
     public float m_playerHealth;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,12 @@ public class PlayerHealth : MonoBehaviour
         {
             m_dead = false;
             GetComponent<Animator>().SetBool("Dead", false);
+            GetComponent<Inventory>().Drop(Resource.Type.Scrap, 50.0f);
+            GetComponent<Inventory>().Drop(Resource.Type.Organic, 50.0f);
+            GetComponent<Inventory>().Drop(Resource.Type.Power, 50.0f);
             transform.position = m_respawnPos.position;
+            m_playerHealth = 100.0f;
+            m_deathTimer = 2.0f;
             OnRespawn.Invoke();
 
         }
@@ -66,6 +71,7 @@ public class PlayerHealth : MonoBehaviour
             m_dead = true;
             GetComponent<Animator>().SetBool("Dead", true);
             GetComponent<Animator>().speed = 1.0f;
+
 
         }
     }
