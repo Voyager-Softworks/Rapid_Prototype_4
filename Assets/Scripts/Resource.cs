@@ -38,7 +38,10 @@ public class Resource : MonoBehaviour
         if (collision.transform == m_player.transform)
         {
             m_player.GetComponent<Inventory>().AddResource(m_type);
-            Destroy(gameObject);
+            Destroy(gameObject, 1.0f);
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<AudioSource>().Play();
         }
     }
 
