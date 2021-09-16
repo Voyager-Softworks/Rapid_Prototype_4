@@ -56,8 +56,11 @@ public class RangedAttackAI : MonoBehaviour
             m_anim.SetBool("IsShooting", false);
             m_agent.m_seekPlayer = true;
             m_playerDetected = true;
-            m_barkSource.clip = m_clips[Random.Range(0, m_clips.Count)];
-            m_barkSource.Play();
+            if (m_barkSource)
+            {
+                m_barkSource.clip = m_clips[Random.Range(0, m_clips.Count)];
+                m_barkSource.Play();
+            }
         }
         else
         {
