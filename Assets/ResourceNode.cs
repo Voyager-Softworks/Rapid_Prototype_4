@@ -11,11 +11,16 @@ public class ResourceNode : MonoBehaviour
 
     [SerializeField] GameObject m_resourcePrefab;
 
+    [SerializeField] GameObject m_destroySound;
+
     public void TakeDamage(float _amount)
     {
         if (!m_healthy) return;
 
         m_health -= _amount;
+
+        GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
+        GetComponent<AudioSource>().Play();
 
         CheckSpawns();
 
@@ -42,6 +47,7 @@ public class ResourceNode : MonoBehaviour
 
     void Break()
     {
+        Instantiate(m_destroySound, transform.position, Quaternion.identity, null);
         Destroy(gameObject);
     }
 }
