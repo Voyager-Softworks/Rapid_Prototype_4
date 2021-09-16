@@ -118,7 +118,7 @@ public class SFX_Effect : MonoBehaviour
                     m_delayTimer = currEffect.m_waitDuration;
                     break;
                 case SFXtype.SPAWN:
-                    Instantiate(currEffect.m_prefab, transform.position, transform.rotation);
+                    Instantiate(currEffect.m_prefab, transform.position, Quaternion.identity);
                     break;
                 default:
                     break;

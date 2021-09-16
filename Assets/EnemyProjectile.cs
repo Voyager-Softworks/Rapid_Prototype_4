@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
+    public float m_Damage = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,18 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (other.collider.gameObject.CompareTag("Player"))
         {
-            other.collider.gameObject.GetComponent<PlayerHealth>().Damage(1.0f);
+            other.collider.gameObject.GetComponent<PlayerHealth>().Damage(m_Damage);
+        }
+        if (GetComponent<SFX_Effect>())
+        {
+            GetComponent<SFX_Effect>().Play();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerHealth>().Damage(m_Damage);
         }
         if (GetComponent<SFX_Effect>())
         {
