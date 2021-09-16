@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     float m_dashTimer = 0.0f;
     [SerializeField] float m_landDuration = 1.0f;
     public float m_landingTimer = 0.0f;
-    public UnityEvent m_OnLand;
+    public UnityEvent m_OnLand, m_onDash;
     [Range(0.0f, 1.0f)]
     [SerializeField] float m_maneuveringThrusterStrength = 1.0f;
 
@@ -104,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
     void Dash(InputAction.CallbackContext _ctx)
     {
         if (m_dashTimer > 0.0f) return;
+        m_onDash.Invoke();
         rb.mass = 10000;
         rb.velocity += (m_walkAction.ReadValue<Vector2>() * m_dashForce) + (Vector2.up * m_verticalDashForce);
         m_dashTimer = m_dashDuration;
