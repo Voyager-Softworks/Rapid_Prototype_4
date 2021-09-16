@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -27,6 +28,7 @@ public class Upgrade : MonoBehaviour
     [SerializeField] GameObject m_equipUI;
     [SerializeField] GameObject m_upgradeUI;
     [SerializeField] GameObject m_repairUI;
+    [SerializeField] GameObject m_upgradeText;
     [SerializeField] float m_upgradeRange;
 
     [SerializeField] List<UpgradeCost> m_upgrades;
@@ -59,12 +61,14 @@ public class Upgrade : MonoBehaviour
             if (!open)
             {
                 GameObject.Find("OpenSound").GetComponent<AudioSource>().Play();
+                UpdateText();
             }
             open = true;
 
             m_equipUI.SetActive(true);
             m_upgradeUI.SetActive(true);
             m_repairUI.SetActive(true);
+            m_upgradeText.SetActive(true);
 
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
@@ -78,7 +82,33 @@ public class Upgrade : MonoBehaviour
             if (m_equipUI.activeSelf) m_equipUI.SetActive(false);
             if (m_upgradeUI.activeSelf) m_upgradeUI.SetActive(false);
             if (m_repairUI.activeSelf) m_repairUI.SetActive(false);
+            if (m_upgradeText.activeSelf) m_upgradeText.SetActive(false);
         }
+    }
+
+    private void UpdateText()
+    {
+        if (m_upgrades.Count <= m_currentLevel) return;
+
+        string costString = "";
+
+        foreach (ResourceCost _cost in m_upgrades[(int)m_currentLevel].m_costs)
+        {
+            switch (_cost.m_type)
+            {
+                case Resource.Type.Organic:
+                    costString += _cost.m_amount + " Organic ";
+                    break;
+                case Resource.Type.Power:
+                    costString += _cost.m_amount + " Power ";
+                    break;
+                case Resource.Type.Scrap:
+                    costString += _cost.m_amount + " Scrap ";
+                    break;
+            }
+        }
+
+        m_upgradeText.GetComponent<TextMeshProUGUI>().text = "[E] To Upgrade\n(" + costString + ")";
     }
 
     private void TryBuyUpgrade()
@@ -117,5 +147,6 @@ public class Upgrade : MonoBehaviour
         m_currentLevel++;
         Upgraded.Invoke();
         if (m_currentLevel == m_upgrades.Count) HitMaxLevel.Invoke();
+        UpdateText();
     }
 }

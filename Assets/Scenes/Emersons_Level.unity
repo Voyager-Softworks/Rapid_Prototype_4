@@ -84955,6 +84955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16baa2ac56f98634e99ba94c787af197, type: 3}
+--- !u!20 &1253553305 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6061731658932011850, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
+  m_PrefabInstance: {fileID: 6061731659334342798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1256039962
 GameObject:
   m_ObjectHideFlags: 0
@@ -129321,6 +129326,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 773177072, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1253553305}
     - target: {fileID: 1504640070168002644, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
       propertyPath: m_Name
       value: Town
@@ -129386,6 +129395,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 449782466}
     - target: {fileID: 1504640072054018127, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
+      propertyPath: HitMaxLevel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1502377189}
+    - target: {fileID: 1504640072054018127, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
       propertyPath: m_upgrades.Array.data[0].OnUpgrade.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1180511446}
@@ -129405,10 +129418,6 @@ PrefabInstance:
       propertyPath: m_upgrades.Array.data[2].OnUpgrade.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2009689254}
-    - target: {fileID: 1504640072054018127, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
-      propertyPath: m_upgrades.Array.data[3].OnUpgrade.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1502377189}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
 --- !u!1001 &7110762040981901477
