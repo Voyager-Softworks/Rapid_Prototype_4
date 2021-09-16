@@ -33,6 +33,10 @@ public class Bullet : MonoBehaviour
     {
         if (!m_active) return;
 
+        GameObject _hitPart = Instantiate(m_hitPart, transform.position, Quaternion.identity);
+        _hitPart.transform.LookAt(_hitPart.transform.position + (Vector3)m_rb.velocity);
+        Destroy(_hitPart, 1.0f);
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, m_AOERange);
 
         foreach (Collider2D _hit in hits)
@@ -41,9 +45,6 @@ public class Bullet : MonoBehaviour
             if (_e)
             {
                 _e.TakeDamage((m_baseDamage * m_damageMulti) + m_damageAdd, m_damageType);
-                GameObject _hitPart = Instantiate(m_hitPart, _hit.ClosestPoint(transform.position), Quaternion.identity);
-                _hitPart.transform.LookAt(_hitPart.transform.position + (Vector3)m_rb.velocity);
-                Destroy(_hitPart, 1.0f);
             }
 
             ResourceNode _rn = _hit.transform.GetComponent<ResourceNode>();
