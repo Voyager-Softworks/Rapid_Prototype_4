@@ -14,6 +14,7 @@ public class MachineGun : MonoBehaviour
     [SerializeField] GameObject m_bulletSound;
 
     [SerializeField] GameObject m_shootPart;
+    [SerializeField] bool m_spawnOnShoot = false;
     [SerializeField] Transform m_shootPos;
     Vector3 m_restPos;
 
@@ -77,7 +78,7 @@ public class MachineGun : MonoBehaviour
         m_anim.ResetTrigger("Fire");
         if (canShoot && ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
         {
-            if (!_shootPart) _shootPart = Instantiate(m_shootPart, m_shootPos.position, transform.rotation, transform);
+            if (!m_spawnOnShoot && !_shootPart) _shootPart = Instantiate(m_shootPart, m_shootPos.position, transform.rotation, transform);
             m_anim.SetBool("Shooting", true);
             if (m_currentRPS == 0 || Time.time - m_lastShotTime >= 1.0f / m_currentRPS)
             {
@@ -92,7 +93,7 @@ public class MachineGun : MonoBehaviour
         }
         else
         {
-            if (_shootPart) Destroy(_shootPart);
+            if (!m_spawnOnShoot && _shootPart) Destroy(_shootPart);
             m_anim.speed = 1.0f;
             m_anim.SetBool("Shooting", false);
             if (m_currentRPS > m_startRPS) m_currentRPS -= ((m_targetRPS - m_startRPS) / m_decayTime) * Time.deltaTime;
@@ -131,6 +132,12 @@ public class MachineGun : MonoBehaviour
         AudioSource m_as = sound.GetComponent<AudioSource>();
         m_as.pitch = Random.Range(0.9f, 1.1f);
         m_as.Play();
+
+        if (m_spawnOnShoot)
+        {
+            GameObject _part = Instantiate(m_shootPart, m_shootPos.position, Quaternion.identity, null);
+            Destroy(_part, 3.0f);
+        }
 
         vel -= transform.right * m_recoilMulti;
 

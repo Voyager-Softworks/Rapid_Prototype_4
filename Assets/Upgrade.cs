@@ -47,6 +47,8 @@ public class Upgrade : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, m_upgradeRange);
     }
 
+    bool open = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -54,6 +56,12 @@ public class Upgrade : MonoBehaviour
 
         if (dist < m_upgradeRange)
         {
+            if (!open)
+            {
+                GameObject.Find("OpenSound").GetComponent<AudioSource>().Play();
+            }
+            open = true;
+
             m_equipUI.SetActive(true);
             m_upgradeUI.SetActive(true);
             m_repairUI.SetActive(true);
@@ -65,6 +73,8 @@ public class Upgrade : MonoBehaviour
         }
         else
         {
+            open = false;
+
             if (m_equipUI.activeSelf) m_equipUI.SetActive(false);
             if (m_upgradeUI.activeSelf) m_upgradeUI.SetActive(false);
             if (m_repairUI.activeSelf) m_repairUI.SetActive(false);
