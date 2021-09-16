@@ -11,6 +11,11 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] Text m_text;
 
+    [Header("Prefabs")]
+    [SerializeField] GameObject m_powerPrefab;
+    [SerializeField] GameObject m_organicPrefab;
+    [SerializeField] GameObject m_scrapPrefab;
+
     private void Start()
     {
         UpdateVisuals();
@@ -24,7 +29,7 @@ public class Inventory : MonoBehaviour
 
     public void UpdateVisuals()
     {
-        m_text.text =     "ORGANIC  x" + m_organicAmount +
+        m_text.text = "ORGANIC  x" + m_organicAmount +
                         "\nPOWER    x" + m_powerAmount +
                         "\nSCRAP    x" + m_scrapAmount;
     }
@@ -88,7 +93,7 @@ public class Inventory : MonoBehaviour
                 return false;
         }
 
-        return true; 
+        return true;
     }
 
     public void Remove(Resource.Type _type, float _amount)
@@ -112,5 +117,50 @@ public class Inventory : MonoBehaviour
         }
 
         UpdateVisuals();
+    }
+
+    public void Drop(Resource.Type _type, float _percentage)
+    {
+        int dropamount = 0;
+        switch (_type)
+        {
+            case Resource.Type.Organic:
+                dropamount = (int)(m_organicAmount * (_percentage / 100.0f));
+                m_organicAmount = 0;
+                break;
+
+            case Resource.Type.Power:
+                dropamount = (int)(m_powerAmount * (_percentage / 100.0f));
+                m_powerAmount = 0;
+                break;
+
+            case Resource.Type.Scrap:
+                dropamount = (int)(m_scrapAmount * (_percentage / 100.0f));
+                m_scrapAmount = 0;
+                break;
+
+            default:
+                break;
+        }
+
+        UpdateVisuals();
+        for (int i = 0; i <= dropamount; i++)
+        {
+            switch (_type)
+            {
+                case Resource.Type.Organic:
+                    Instantiate(m_organicPrefab, gameObject.transform.position, Quaternion.identity);
+                    break;
+                case Resource.Type.Power:
+                    Instantiate(m_powerPrefab, gameObject.transform.position, Quaternion.identity);
+                    break;
+                case Resource.Type.Scrap:
+                    Instantiate(m_scrapPrefab, gameObject.transform.position, Quaternion.identity);
+                    break;
+                default:
+                    break;
+            }
+
+        }
     }
 }
