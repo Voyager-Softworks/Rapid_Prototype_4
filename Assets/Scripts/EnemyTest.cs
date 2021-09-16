@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EnemyTest : MonoBehaviour
 {
+    public enum DamageType
+    {
+        Minigun,
+        Railgun,
+        Universal
+    }
+
     [System.Serializable]
     public class Drop
     {
@@ -14,6 +21,8 @@ public class EnemyTest : MonoBehaviour
     [SerializeField] float m_health = 100.0f;
     bool m_alive = true;
     [SerializeField] GameObject m_deathPart;
+
+    [SerializeField] DamageType m_weakTo;
 
     [SerializeField] List<Drop> m_drops;
 
@@ -32,8 +41,21 @@ public class EnemyTest : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float _amount)
+    public void TakeDamage(float _amount, DamageType _type)
     {
+        if (m_weakTo == _type)
+        {
+            _amount *= 1.5f;
+        }
+        else if (_type == DamageType.Universal)
+        {
+            _amount *= 1.0f;
+        }
+        else
+        {
+            _amount *= 0.3f;
+        }
+
         m_health -= _amount;
 
         if (m_alive && m_health <= 0)

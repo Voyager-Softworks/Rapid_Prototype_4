@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] GameObject m_hitPart;
 
+    [SerializeField] EnemyTest.DamageType m_damageType;
+
     [SerializeField] public float m_baseDamage = 2.0f;
     [SerializeField] public float m_damageMulti = 1.0f;
     [SerializeField] public float m_damageAdd = 0.0f;
@@ -38,7 +40,7 @@ public class Bullet : MonoBehaviour
             EnemyTest _e = _hit.transform.GetComponent<EnemyTest>();
             if (_e)
             {
-                _e.TakeDamage((m_baseDamage * m_damageMulti) + m_damageAdd);
+                _e.TakeDamage((m_baseDamage * m_damageMulti) + m_damageAdd, m_damageType);
                 GameObject _hitPart = Instantiate(m_hitPart, _hit.ClosestPoint(transform.position), Quaternion.identity);
                 _hitPart.transform.LookAt(_hitPart.transform.position + (Vector3)m_rb.velocity);
                 Destroy(_hitPart, 1.0f);

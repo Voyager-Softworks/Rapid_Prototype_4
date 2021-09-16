@@ -19,6 +19,7 @@ public class Railgun : MonoBehaviour
     [Header("Bullet")]
     [SerializeField] float m_Range = 20.0f;
     [SerializeField] float m_Damage = 150.0f;
+    [SerializeField] EnemyTest.DamageType m_damageType;
 
     [Header("Stats")]
     [SerializeField] float m_currentCharge = 0;
@@ -105,7 +106,7 @@ public class Railgun : MonoBehaviour
                 EnemyTest _e = _hit.transform.GetComponent<EnemyTest>();
                 if (_e)
                 {
-                    _e.TakeDamage(m_Damage);
+                    _e.TakeDamage(m_Damage, m_damageType);
                 }
 
                 ResourceNode _rn = _hit.transform.GetComponent<ResourceNode>();

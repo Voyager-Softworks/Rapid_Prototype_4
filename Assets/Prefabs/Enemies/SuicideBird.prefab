@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4200884670035412505}
   - component: {fileID: 4200884670035412576}
   - component: {fileID: 4200884670035412577}
+  - component: {fileID: -6260113874211237071}
   m_Layer: 0
   m_Name: SuicideBird
   m_TagString: Untagged
@@ -219,3 +220,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
+--- !u!114 &-6260113874211237071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200884670035412504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3de96285238c429f6fefe9c3ca64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 25
+  m_deathPart: {fileID: 0}
+  m_weakTo: 0
+  m_drops:
+  - m_prefab: {fileID: 1635208352146295761, guid: c4ff223a4ec54894ab139beafaa2523d, type: 3}
+    m_amount: 1
