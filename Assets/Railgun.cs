@@ -14,17 +14,22 @@ public class Railgun : MonoBehaviour
 
     Animator m_anim;
 
-    AudioSource AS;
-
     [Header("Bullet")]
     [SerializeField] float m_Range = 20.0f;
     [SerializeField] float m_Damage = 150.0f;
     [SerializeField] EnemyTest.DamageType m_damageType;
 
-    [Header("Particle")]
+    [Header("Particles")]
     [SerializeField] GameObject m_chargePartPrefab;
     [SerializeField] GameObject m_shootPartPrefab;
     [SerializeField] GameObject m_hitPartPrefab;
+
+    [Header("Sounds")]
+    [SerializeField] AudioSource m_as;
+    [SerializeField] AudioClip m_shootSound;
+    [SerializeField] AudioClip m_chargeSound;
+
+
 
     [Header("Stats")]
     [SerializeField] float m_currentCharge = 0;
@@ -46,7 +51,7 @@ public class Railgun : MonoBehaviour
 
     void Start()
     {
-        AS = GetComponent<AudioSource>();
+        m_as = GetComponent<AudioSource>();
         m_restPos = transform.localPosition;
         m_anim = GetComponent<Animator>();
     }
@@ -56,6 +61,10 @@ public class Railgun : MonoBehaviour
         m_anim.ResetTrigger("Fire");
         if (Time.time - m_lastShotTime >= m_cooldownWait && (m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
         {
+            m_as.clip = m_chargeSound;
+            m_as.loop = true;
+            if (!m_as.isPlaying) m_as.Play();
+
             if (!_chargePart) _chargePart = Instantiate(m_chargePartPrefab, m_shootPos.position, transform.rotation, transform);
             m_currentCharge += m_chargePerSecond * Time.deltaTime;
             if (m_currentCharge >= m_desiredCharge) m_currentCharge = m_desiredCharge;
@@ -63,6 +72,7 @@ public class Railgun : MonoBehaviour
         else
         {
             if (_chargePart) Destroy(_chargePart);
+            if (m_as.clip == m_chargeSound) m_as.Stop();
 
             if (m_currentCharge >= m_desiredCharge)
             {
@@ -90,7 +100,6 @@ public class Railgun : MonoBehaviour
     void Shoot()
     {
         OnShoot.Invoke();
-        AS.Play();
 
         m_anim.SetTrigger("Fire");
 
@@ -100,6 +109,11 @@ public class Railgun : MonoBehaviour
 
         GameObject _shootPart = Instantiate(m_shootPartPrefab, m_shootPos.position, transform.rotation, null);
         Destroy(_shootPart, 3.0f);
+
+        m_as.Stop();
+        m_as.clip = m_shootSound;
+        m_as.loop = false;
+        if (!m_as.isPlaying) m_as.Play();
 
         vel -= transform.right * m_recoilMulti;
 
@@ -116,7 +130,7 @@ public class Railgun : MonoBehaviour
             if (_hit && _hit.transform)
             {
 
-                GameObject _hitPart = Instantiate(m_hitPartPrefab, _hit.transform.position, Quaternion.identity, null);
+                GameObject _hitPart = Instantiate(m_hitPartPrefab, _hit.point, Quaternion.identity, null);
                 Destroy(_hitPart, 3.0f);
 
                 EnemyTest _e = _hit.transform.GetComponent<EnemyTest>();
