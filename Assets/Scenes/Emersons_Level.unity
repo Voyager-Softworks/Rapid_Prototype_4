@@ -132903,6 +132903,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 161188856545731357, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_hitPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 365da694fc6c10d44b6f9efc574e1bbb, type: 3}
+    - target: {fileID: 161188856545731357, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_shootPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: ad7a23df686ea9643bf2faa9c09a5d3f, type: 3}
+    - target: {fileID: 161188856545731357, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_chargePartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 92052c393c399044fb9a526c39ad28f5, type: 3}
+    - target: {fileID: 1513293118014496517, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_hitPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 365da694fc6c10d44b6f9efc574e1bbb, type: 3}
+    - target: {fileID: 1513293118014496517, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_shootPartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: ad7a23df686ea9643bf2faa9c09a5d3f, type: 3}
+    - target: {fileID: 1513293118014496517, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_chargePartPrefab
+      value: 
+      objectReference: {fileID: 2240376982557400333, guid: 92052c393c399044fb9a526c39ad28f5, type: 3}
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
       value: 
