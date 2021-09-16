@@ -6402,9 +6402,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_heatUpRate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_bulletSound
       value: 
       objectReference: {fileID: 8308941514213574202, guid: ab70078d5558b694c809814df204978a, type: 3}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_coolDownRate
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
 --- !u!1 &5312238161664732779 stripped
@@ -6500,6 +6508,14 @@ PrefabInstance:
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_targetRPS
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_heatUpRate
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_coolDownRate
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_randomShotDelay
@@ -6676,6 +6692,14 @@ PrefabInstance:
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_targetRPS
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_heatUpRate
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_coolDownRate
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_randomShotDelay
@@ -6858,9 +6882,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_heatUpRate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_bulletSound
       value: 
       objectReference: {fileID: 8308941514213574202, guid: ab70078d5558b694c809814df204978a, type: 3}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_coolDownRate
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
 --- !u!4 &3003185592527901686 stripped

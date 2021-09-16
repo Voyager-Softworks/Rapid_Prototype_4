@@ -33,6 +33,12 @@ public class MachineGun : MonoBehaviour
     [SerializeField] float m_decayTime;
     float m_lastShotTime = 0;
 
+    [Header("Cooldown")]
+    [SerializeField] float m_heatValue = 0.0f;
+    [SerializeField] float m_heatUpRate = 0.25f;
+    [SerializeField] float m_coolDownRate = 0.5f;
+    [SerializeField] float m_startShootMax = 0.75f;
+
     [Header("Feel")]
     [SerializeField] float m_recoilMulti = 5.0f;
     [SerializeField] [Range(0.0f, 1.0f)] float m_returnRate = 0.75f;
@@ -49,10 +55,27 @@ public class MachineGun : MonoBehaviour
 
     GameObject _shootPart;
 
+    bool canShoot = false;
+
     void Update()
     {
+        if (!((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
+        {
+            canShoot = false;
+        }
+
+        if (m_heatValue <= m_startShootMax && ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
+        {
+            canShoot = true;
+        }
+
+        if (m_heatValue >= 1.0f)
+        {
+            canShoot = false;
+        }
+
         m_anim.ResetTrigger("Fire");
-        if ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
+        if (canShoot && ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
         {
             if (!_shootPart) _shootPart = Instantiate(m_shootPart, m_shootPos.position, transform.rotation, transform);
             m_anim.SetBool("Shooting", true);
@@ -64,6 +87,8 @@ public class MachineGun : MonoBehaviour
             }
             if (m_currentRPS < m_targetRPS) m_currentRPS += ((m_targetRPS - m_startRPS) / m_rampTime) * Time.deltaTime;
             else m_currentRPS = m_targetRPS;
+
+            m_heatValue += m_heatUpRate * Time.deltaTime;
         }
         else
         {
@@ -72,7 +97,12 @@ public class MachineGun : MonoBehaviour
             m_anim.SetBool("Shooting", false);
             if (m_currentRPS > m_startRPS) m_currentRPS -= ((m_targetRPS - m_startRPS) / m_decayTime) * Time.deltaTime;
             else m_currentRPS = m_startRPS;
+
+            m_heatValue -= m_coolDownRate * Time.deltaTime;
         }
+
+        m_heatValue = Mathf.Clamp(m_heatValue, 0.0f, 1.0f);
+        UpdateVisuals();
     }
 
     private void FixedUpdate()
@@ -81,6 +111,12 @@ public class MachineGun : MonoBehaviour
         transform.position += vel * Time.deltaTime;
 
         transform.localPosition = Vector3.Lerp(transform.localPosition, m_restPos, m_returnRate);
+    }
+
+    public void UpdateVisuals()
+    {
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        rend.color = new Color(1, (1.5f - m_heatValue) / 1.0f, (1.5f - m_heatValue) / 1.0f);
     }
 
     void Shoot()

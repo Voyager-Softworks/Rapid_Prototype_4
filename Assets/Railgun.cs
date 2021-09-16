@@ -24,6 +24,7 @@ public class Railgun : MonoBehaviour
     [SerializeField] float m_currentCharge = 0;
     [SerializeField] float m_desiredCharge = 100.0f;
     [SerializeField] float m_chargePerSecond = 75.0f;
+    [SerializeField] float m_cooldownWait = 2.0f;
     float m_lastShotTime = 0;
 
     [Header("Feel")]
@@ -45,7 +46,7 @@ public class Railgun : MonoBehaviour
     void Update()
     {
         m_anim.ResetTrigger("Fire");
-        if ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
+        if (Time.time - m_lastShotTime >= m_cooldownWait && (m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
         {
             m_currentCharge += m_chargePerSecond * Time.deltaTime;
             if (m_currentCharge >= m_desiredCharge) m_currentCharge = m_desiredCharge;
@@ -64,7 +65,7 @@ public class Railgun : MonoBehaviour
             m_anim.SetBool("Shooting", false);
         }
 
-        m_beam.transform.localScale = Vector3.Lerp(m_beam.transform.localScale, new Vector3(m_beam.transform.localScale.x, 0, 1), 5.0f * Time.deltaTime);
+        UpdateVisuals();
     }
 
     private void FixedUpdate()
@@ -87,6 +88,8 @@ public class Railgun : MonoBehaviour
         m_beam.transform.localRotation = Quaternion.identity;
 
         vel -= transform.right * m_recoilMulti;
+
+        m_lastShotTime = Time.time;
 
         RaycastHit2D[] hits = Physics2D.RaycastAll(m_shootPos.position, transform.right);
 
@@ -124,6 +127,14 @@ public class Railgun : MonoBehaviour
         m_beam.transform.localPosition = new Vector3(hitDist / 2.0f, 0, 0);
 
         m_beam.transform.parent = null;
+    }
+
+    public void UpdateVisuals()
+    {
+        m_beam.transform.localScale = Vector3.Lerp(m_beam.transform.localScale, new Vector3(m_beam.transform.localScale.x, 0, 1), 5.0f * Time.deltaTime);
+
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        rend.color = new Color(1, (Time.time - m_lastShotTime) / m_cooldownWait, (Time.time - m_lastShotTime) / m_cooldownWait);
     }
 
     public void AddDamage(float _amount)
