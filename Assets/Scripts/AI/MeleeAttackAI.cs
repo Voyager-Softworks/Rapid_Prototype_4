@@ -16,6 +16,8 @@ public class MeleeAttackAI : MonoBehaviour
 
     public bool m_attacking;
 
+    public float m_Damage;
+
     Animator m_anim;
     NavAgent m_agent;
     // Start is called before the first frame update
@@ -74,7 +76,7 @@ public class MeleeAttackAI : MonoBehaviour
     {
         if ((transform.position - m_playerTransform.position).magnitude < 0.5f)
         {
-            m_playerTransform.gameObject.GetComponent<PlayerHealth>().Damage(1.0f);
+            m_playerTransform.gameObject.GetComponent<PlayerHealth>().Damage(m_Damage);
             m_barkSource.clip = m_attackClip;
             m_barkSource.Play();
         }
