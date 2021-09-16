@@ -110,4 +110,20 @@ public class MachineGun : MonoBehaviour
 
         Destroy(bullet, 10);
     }
+
+    public void AddDamage(float _amount)
+    {
+        m_bulletDamageAdd += _amount;
+    }
+
+    public void AddRPS(float _amount)
+    {
+        m_targetRPS += _amount;
+    }
+
+    public void ReduceRampTime(float _amount)
+    {
+        m_rampTime -= _amount;
+        if (m_rampTime <= 0) m_rampTime = 0.1f;
+    }
 }

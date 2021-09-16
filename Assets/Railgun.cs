@@ -125,4 +125,14 @@ public class Railgun : MonoBehaviour
 
         m_beam.transform.parent = null;
     }
+
+    public void AddDamage(float _amount)
+    {
+        m_Damage += _amount;
+    }
+
+    public void IncreaseChargeRate(float _amount)
+    {
+        m_chargePerSecond += _amount;
+    }
 }

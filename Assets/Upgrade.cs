@@ -38,7 +38,7 @@ public class Upgrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(!m_player) m_player = GameObject.Find("Player");
     }
 
     private void OnDrawGizmos()
