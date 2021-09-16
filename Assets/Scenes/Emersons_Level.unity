@@ -72945,11 +72945,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &765121217 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1504640070168002646, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
-  m_PrefabInstance: {fileID: 6704605393775941395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765222241
 GameObject:
   m_ObjectHideFlags: 0
@@ -78951,6 +78946,10 @@ PrefabInstance:
       propertyPath: Bought.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 5312238160331908178}
+    - target: {fileID: 38102008418195550, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493667613668093907, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_player
       value: 
@@ -78963,6 +78962,14 @@ PrefabInstance:
       propertyPath: Bought.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 39558436}
+    - target: {fileID: 4547539111073018753, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917915508792113146, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -129243,23 +129250,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6070571764874833227, guid: 488f39600912a49468c5686887e727e6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2441
+      value: 0.8490982
       objectReference: {fileID: 0}
     - target: {fileID: 6070571764874833227, guid: 488f39600912a49468c5686887e727e6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2441
+      value: 0.8490982
       objectReference: {fileID: 0}
     - target: {fileID: 6070571764874833227, guid: 488f39600912a49468c5686887e727e6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2441
+      value: 0.8490982
       objectReference: {fileID: 0}
     - target: {fileID: 6070571764874833227, guid: 488f39600912a49468c5686887e727e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -752
+      value: -791
       objectReference: {fileID: 0}
     - target: {fileID: 6070571764874833227, guid: 488f39600912a49468c5686887e727e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -233
+      value: -299
       objectReference: {fileID: 0}
     - target: {fileID: 6070571764874833227, guid: 488f39600912a49468c5686887e727e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -129296,6 +129303,10 @@ PrefabInstance:
     - target: {fileID: 7756403563981194900, guid: 488f39600912a49468c5686887e727e6, type: 3}
       propertyPath: m_Name
       value: abilties
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756403563981194900, guid: 488f39600912a49468c5686887e727e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 488f39600912a49468c5686887e727e6, type: 3}
