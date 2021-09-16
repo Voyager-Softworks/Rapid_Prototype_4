@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 454791645
   m_SortingLayer: 1
-  m_SortingOrder: 9
+  m_SortingOrder: 8
   m_Sprite: {fileID: 7743551807634628354, guid: ffb2be7198381de4282a813cde1f28c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,9 +185,9 @@ MonoBehaviour:
   m_weakTo: 0
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: c4ff223a4ec54894ab139beafaa2523d, type: 3}
-    m_amount: 5
+    m_amount: 10
   - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
-    m_amount: 5
+    m_amount: 10
   - m_prefab: {fileID: 1635208352146295761, guid: 8d35a8d0c020cd845a6dcf223760d2f5, type: 3}
     m_amount: 5
 --- !u!114 &7201540384246155768
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_detectionRadius: 8
   m_attackRadius: 0.84
   m_attacking: 0
-  m_Damage: 15
+  m_Damage: 5
 --- !u!82 &5195648885565021678
 AudioSource:
   m_ObjectHideFlags: 0
