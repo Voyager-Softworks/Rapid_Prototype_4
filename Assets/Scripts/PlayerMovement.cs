@@ -146,6 +146,7 @@ public class PlayerMovement : MonoBehaviour
         m_landingTimer = m_landDuration;
         m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x * (Mathf.Abs(m_oldVelocity.x) / 10.0f);
         m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y * (Mathf.Abs(m_oldVelocity.y) / 10.0f);
+        Gamepad.current.SetMotorSpeeds(Mathf.Clamp(m_oldVelocity.magnitude/20.0f, 0.0f, 1.0f), 0.5f);
         m_landingSource.Play();
         m_OnLand.Invoke();
         m_jumpcount = 0;
@@ -262,11 +263,11 @@ public class PlayerMovement : MonoBehaviour
 
         vel = vel * m_moveSpeed;
 
-        if (m_mousescript.mouse_pos.x < -50.0f)
+        if (m_mousescript.mouse_pos.x < 0.0f)
         {
             m_facingLeft = true;
         }
-        else if (m_mousescript.mouse_pos.x > 50.0f)
+        else if (m_mousescript.mouse_pos.x > 0.0f)
         {
             m_facingLeft = false;
         }

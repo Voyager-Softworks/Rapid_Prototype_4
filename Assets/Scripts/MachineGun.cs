@@ -52,6 +52,7 @@ public class MachineGun : MonoBehaviour
     {
         m_restPos = transform.localPosition;
         m_currentRPS = m_startRPS;
+        m_shootAction.Enable();
         m_anim = GetComponent<Animator>();
     }
 
@@ -61,12 +62,12 @@ public class MachineGun : MonoBehaviour
 
     void Update()
     {
-        if (!((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
+        if (!((m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f)) || (!m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f))))
         {
             canShoot = false;
         }
 
-        if (m_heatValue <= m_startShootMax && ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
+        if (m_heatValue <= m_startShootMax && ((m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f) || (!m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f)))))
         {
             canShoot = true;
         }
@@ -78,7 +79,7 @@ public class MachineGun : MonoBehaviour
         }
 
         m_anim.ResetTrigger("Fire");
-        if (canShoot && ((m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
+        if (canShoot && ((m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f) || (!m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f)))))
         {
             if (!m_spawnOnShoot && !_shootPart) _shootPart = Instantiate(m_shootPart, m_shootPos.position, transform.rotation, transform);
             m_anim.SetBool("Shooting", true);

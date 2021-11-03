@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 
 public class SFX_Effect : MonoBehaviour
@@ -16,6 +17,7 @@ public class SFX_Effect : MonoBehaviour
         STOP_PARTICLE,
         SET_SCREEN_SHAKE,
         SPAWN,
+        SET_GAMEPAD_RUMBLE,
 
     }
     [System.Serializable]
@@ -29,6 +31,8 @@ public class SFX_Effect : MonoBehaviour
         public Vector2 m_screenShakeAmplitude;
 
         public GameObject m_prefab;
+
+        public Vector2 m_controllerRumbleSpeed;
     }
     public NoiseSettings m_noiseSettingsData;
     Volume m_pp;
@@ -119,6 +123,9 @@ public class SFX_Effect : MonoBehaviour
                     break;
                 case SFXtype.SPAWN:
                     Instantiate(currEffect.m_prefab, transform.position, Quaternion.identity, transform.parent);
+                    break;
+                case SFXtype.SET_GAMEPAD_RUMBLE:
+                    Gamepad.current.SetMotorSpeeds(currEffect.m_controllerRumbleSpeed.x, currEffect.m_controllerRumbleSpeed.y);
                     break;
                 default:
                     break;

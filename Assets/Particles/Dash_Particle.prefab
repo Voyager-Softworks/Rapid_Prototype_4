@@ -57,6 +57,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 3
     m_waitDuration: 0
     m_clip: {fileID: 0}
@@ -64,6 +65,7 @@ MonoBehaviour:
     m_particle: {fileID: 2982164803977829294}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 3
     m_waitDuration: 0
     m_clip: {fileID: 0}
@@ -71,6 +73,47 @@ MonoBehaviour:
     m_particle: {fileID: 6053938424071048007}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
+  - m_type: 7
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0.4, y: 0}
+  - m_type: 1
+    m_waitDuration: 0.1
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
+  - m_type: 7
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0.2, y: 0}
+  - m_type: 1
+    m_waitDuration: 0.1
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
+  - m_type: 7
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
 --- !u!82 &760751043156575856
 AudioSource:
   m_ObjectHideFlags: 0

@@ -689,6 +689,22 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Mouse Pos
       m_Flags: 0
+  m_aimStick:
+    m_Name: Aim Stick
+    m_Type: 2
+    m_ExpectedControlType: Stick
+    m_Id: 0839b688-d538-40b7-a079-00c59d81f416
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 810cc4a0-5122-44c7-a2f6-9edbe16bfbc2
+      m_Path: <Gamepad>/rightStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Stick
+      m_Flags: 0
   mouse_pos: {x: 0, y: 0, z: 0}
   m_rotateSpeed: 3
 --- !u!1 &5308583705879278527
@@ -1161,20 +1177,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_contactFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 1
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 64
-    minDepth: 0
-    maxDepth: 1
-    minNormalAngle: 90
-    maxNormalAngle: -90
+  m_grounded: 0
   m_groundCheckOffset: {x: 0, y: -0.64}
   m_groundCheckExtents: {x: 0.49, y: 0.11}
   m_cam: {fileID: 0}
@@ -1338,6 +1341,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0.3, y: 0.3}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 1
     m_waitDuration: 1
     m_clip: {fileID: 0}
@@ -1345,6 +1349,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 5
     m_waitDuration: 0
     m_clip: {fileID: 0}
@@ -1352,6 +1357,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 3, y: 3}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 2
     m_waitDuration: 0
     m_clip: {fileID: 8300000, guid: d29a6acaacc973c4aac01099eadf9872, type: 3}
@@ -1359,6 +1365,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 6
     m_waitDuration: 0
     m_clip: {fileID: 0}
@@ -1366,6 +1373,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 4197056827482537731, guid: d5fc7d21d36ba1f28a300aec946a1b32, type: 3}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 1
     m_waitDuration: 0.2
     m_clip: {fileID: 0}
@@ -1373,6 +1381,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 5
     m_waitDuration: 0
     m_clip: {fileID: 0}
@@ -1380,6 +1389,7 @@ MonoBehaviour:
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
 --- !u!82 &533010135829879249
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1537,6 +1547,22 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Mouse Pos
+      m_Flags: 0
+  m_aimStick:
+    m_Name: Aim Stick
+    m_Type: 2
+    m_ExpectedControlType: Stick
+    m_Id: 5f45d2b3-d8d8-470d-b594-f909997ee515
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2044f95d-a1cf-44f5-9bd3-1a10a0474a5f
+      m_Path: <Gamepad>/rightStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim Stick
       m_Flags: 0
   mouse_pos: {x: 0, y: 0, z: 0}
   m_rotateSpeed: 3
@@ -6591,13 +6617,31 @@ MonoBehaviour:
     m_particle: {fileID: 5039531436902209581}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 1
-    m_waitDuration: 0.3
+    m_waitDuration: 0.1
     m_clip: {fileID: 0}
     m_source: {fileID: 0}
     m_particle: {fileID: 5039531436902209581}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
+  - m_type: 7
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
+  - m_type: 1
+    m_waitDuration: 0.2
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 5
     m_waitDuration: 0.3
     m_clip: {fileID: 0}
@@ -6605,6 +6649,7 @@ MonoBehaviour:
     m_particle: {fileID: 5039531436902209581}
     m_screenShakeAmplitude: {x: 0, y: 0}
     m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
 --- !u!1001 &2278086269927742601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6704,6 +6749,18 @@ PrefabInstance:
       propertyPath: m_OverHeatSound
       value: 
       objectReference: {fileID: 7036815220807840685, guid: 9e9b686168dab244c83f32199e463c27, type: 3}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 6cec5062-790f-46c1-abae-9a858266edcb
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/rightTrigger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
 --- !u!4 &5312238161664732772 stripped
@@ -6902,6 +6959,30 @@ PrefabInstance:
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_randomShotDelay
       value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 81f47d46-fbda-48fd-a5c7-03420cc1eb33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 71873685-0ab1-4b13-8e6b-a06ab02cd508
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Gamepad>/leftTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Mouse>/rightButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Shoot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c768228b2619e234a89c00330ae23a65, type: 3}
@@ -7127,6 +7208,22 @@ PrefabInstance:
     - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
       propertyPath: m_randomShotDelay
       value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 1cfab438-9cca-49c0-b870-1bd2b3589fe0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/rightTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287635023378031967, guid: c768228b2619e234a89c00330ae23a65, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Shoot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c768228b2619e234a89c00330ae23a65, type: 3}
@@ -7590,6 +7687,22 @@ PrefabInstance:
       propertyPath: m_OverHeatSound
       value: 
       objectReference: {fileID: 7036815220807840685, guid: 9e9b686168dab244c83f32199e463c27, type: 3}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 1225b76e-dfed-46dd-a195-013742df287a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/rightButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207577749372023535, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
+      propertyPath: m_shootAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/leftTrigger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
 --- !u!4 &3003185592527901686 stripped

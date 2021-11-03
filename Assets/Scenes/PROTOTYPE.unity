@@ -137971,6 +137971,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3003185592527901684, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_shootAction.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
       value: 
@@ -138038,6 +138042,14 @@ PrefabInstance:
     - target: {fileID: 5312238160630991547, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_shootAction.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312238161664732774, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_shootAction.m_ExpectedControlType
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 6100420772379895130, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_respawnPos

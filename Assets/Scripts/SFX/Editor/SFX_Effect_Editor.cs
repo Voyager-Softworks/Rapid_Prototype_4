@@ -108,6 +108,14 @@ public class SFX_Effect_Editor : Editor
             GUIContent.none
             );
                 break;
+            case SFX_Effect.SFXtype.SET_GAMEPAD_RUMBLE:
+                EditorGUI.LabelField(new Rect(rect.x, rect.y + (EditorGUIUtility.singleLineHeight + 5) * 2, 170, EditorGUIUtility.singleLineHeight), "[ Set Gamepad Rumble Speed ]");
+                EditorGUI.PropertyField(
+            new Rect(rect.x + 170, rect.y + EditorGUIUtility.singleLineHeight + 5, (rect.width - 170), EditorGUIUtility.singleLineHeight * 4),
+            element.FindPropertyRelative("m_controllerRumbleSpeed"),
+            GUIContent.none
+            );
+                break;
             case SFX_Effect.SFXtype.STOP_PARTICLE:
                 EditorGUI.LabelField(new Rect(rect.x, rect.y + (EditorGUIUtility.singleLineHeight + 5) * 2, 150, EditorGUIUtility.singleLineHeight), "[ Stop a Particle Effect ]");
                 EditorGUI.PropertyField(
