@@ -26,6 +26,8 @@ public class ResourcesEditor : Editor
         }
         EditorGUILayout.EndHorizontal();
 
+        EditorGUILayout.Space();
+
         //draw player resources
         EditorGUILayout.LabelField("Player Resources", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
@@ -46,7 +48,7 @@ public class ResourcesEditor : Editor
         serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.Power).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.Power].amount;
         EditorGUILayout.EndHorizontal();
 
-        //add a space between the player resources and the enemy resources
+        //space
         EditorGUILayout.Space();
         
         //draw resource prefabs and buttons to find them in the project files
