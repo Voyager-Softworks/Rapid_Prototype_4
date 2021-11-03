@@ -13,8 +13,6 @@ public class ResourcesEditor : Editor
     {
 
         Resources resources = (Resources)target;
-        
-        Undo.RecordObject(resources, "resources");
 
         EditorGUILayout.LabelField("Scene Instances", EditorStyles.boldLabel);
 
@@ -24,8 +22,7 @@ public class ResourcesEditor : Editor
         resources.player = (GameObject)EditorGUILayout.ObjectField(resources.player, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.player = GameObject.FindGameObjectWithTag("Player");
-            PrefabUtility.RecordPrefabInstancePropertyModifications(resources.player);
+            serializedObject.FindProperty("player").objectReferenceValue = GameObject.FindGameObjectWithTag("Player");
         }
         EditorGUILayout.EndHorizontal();
 
@@ -33,15 +30,20 @@ public class ResourcesEditor : Editor
         EditorGUILayout.LabelField("Player Resources", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Organic");
-        resources.g_playerResources[Resources.ResourceType.Organic] = EditorGUILayout.IntField(resources.g_playerResources[Resources.ResourceType.Organic]);
+        resources.playerResources[(int)Resources.ResourceType.Organic].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.Organic].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.Organic).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.Organic].amount;
         EditorGUILayout.EndHorizontal();
+        
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Scrap");
-        resources.g_playerResources[Resources.ResourceType.Scrap] = EditorGUILayout.IntField(resources.g_playerResources[Resources.ResourceType.Scrap]);
+        resources.playerResources[(int)Resources.ResourceType.Scrap].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.Scrap].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.Scrap).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.Scrap].amount;
         EditorGUILayout.EndHorizontal();
+
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Power");
-        resources.g_playerResources[Resources.ResourceType.Power] = EditorGUILayout.IntField(resources.g_playerResources[Resources.ResourceType.Power]);
+        resources.playerResources[(int)Resources.ResourceType.Power].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.Power].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.Power).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.Power].amount;
         EditorGUILayout.EndHorizontal();
 
         //add a space between the player resources and the enemy resources
@@ -74,6 +76,7 @@ public class ResourcesEditor : Editor
         }
         EditorGUILayout.EndHorizontal();
 
+        serializedObject.ApplyModifiedProperties();
     }
 }
 #endif

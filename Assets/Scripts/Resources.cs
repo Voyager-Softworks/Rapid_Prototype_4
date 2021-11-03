@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Resources : MonoBehaviour
 {
@@ -15,11 +16,18 @@ public class Resources : MonoBehaviour
     //player GameObject
     [SerializeField] public GameObject player;
 
-    //Player resources
-    [SerializeField] public Dictionary<ResourceType, int> g_playerResources = new Dictionary<ResourceType, int>() {
-        { ResourceType.Organic, 0 },
-        { ResourceType.Power, 0 },
-        { ResourceType.Scrap, 0 }
+    [Serializable]
+    public struct PlayerResource {
+        [SerializeField] public ResourceType type;
+        [SerializeField] public int amount;
+    }
+
+    [Header("Player Resources")]
+    //player resources
+    [SerializeField] public PlayerResource[] playerResources = new PlayerResource[3]{
+        new PlayerResource{type = ResourceType.Organic, amount = 0},
+        new PlayerResource{type = ResourceType.Power, amount = 0},
+        new PlayerResource{type = ResourceType.Scrap, amount = 0}
     };
 
     [Header("Prefabs")]
