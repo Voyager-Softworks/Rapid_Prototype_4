@@ -29,9 +29,9 @@ public class PlayerHealth : MonoBehaviour
         {
             m_dead = false;
             GetComponent<Animator>().SetBool("Dead", false);
-            GetComponent<Inventory>().Drop(Resource.Type.Scrap, 50.0f);
-            GetComponent<Inventory>().Drop(Resource.Type.Organic, 50.0f);
-            GetComponent<Inventory>().Drop(Resource.Type.Power, 50.0f);
+            GetComponent<Inventory>().Drop(Resources.ResourceType.Scrap, 50.0f);
+            GetComponent<Inventory>().Drop(Resources.ResourceType.Organic, 50.0f);
+            GetComponent<Inventory>().Drop(Resources.ResourceType.Power, 50.0f);
             transform.position = m_respawnPos.position;
             m_playerHealth = 100.0f;
             m_deathTimer = 2.0f;
@@ -44,14 +44,14 @@ public class PlayerHealth : MonoBehaviour
     {
         bool hasAll = true;
 
-        if (!GetComponent<Inventory>().DoesHave(Resource.Type.Scrap, 1))
+        if (!GetComponent<Inventory>().DoesHave(Resources.ResourceType.Scrap, 1))
         {
             hasAll = false;
         }
 
         if (hasAll)
         {
-            GetComponent<Inventory>().Remove(Resource.Type.Scrap, 1);
+            GetComponent<Inventory>().Remove(Resources.ResourceType.Scrap, 1);
 
             m_playerHealth += 25.0f;
         }

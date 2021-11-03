@@ -34,19 +34,19 @@ public class Inventory : MonoBehaviour
                         "\nSCRAP    x" + m_scrapAmount;
     }
 
-    public void AddResource(Resource.Type _type, float _amount = 1.0f)
+    public void AddResource(Resources.ResourceType _type, float _amount = 1.0f)
     {
         switch (_type)
         {
-            case Resource.Type.Organic:
+            case Resources.ResourceType.Organic:
                 AddOrganic(_amount);
                 break;
 
-            case Resource.Type.Power:
+            case Resources.ResourceType.Power:
                 AddPower(_amount);
                 break;
 
-            case Resource.Type.Scrap:
+            case Resources.ResourceType.Scrap:
                 AddScrap(_amount);
                 break;
 
@@ -73,19 +73,19 @@ public class Inventory : MonoBehaviour
         UpdateVisuals();
     }
 
-    public bool DoesHave(Resource.Type _type, float _amount)
+    public bool DoesHave(Resources.ResourceType _type, float _amount)
     {
         switch (_type)
         {
-            case Resource.Type.Organic:
+            case Resources.ResourceType.Organic:
                 if (m_organicAmount < _amount) return false;
                 break;
 
-            case Resource.Type.Power:
+            case Resources.ResourceType.Power:
                 if (m_powerAmount < _amount) return false;
                 break;
 
-            case Resource.Type.Scrap:
+            case Resources.ResourceType.Scrap:
                 if (m_scrapAmount < _amount) return false;
                 break;
 
@@ -96,19 +96,19 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public void Remove(Resource.Type _type, float _amount)
+    public void Remove(Resources.ResourceType _type, float _amount)
     {
         switch (_type)
         {
-            case Resource.Type.Organic:
+            case Resources.ResourceType.Organic:
                 m_organicAmount = m_organicAmount <= _amount ? 0 : m_organicAmount - _amount;
                 break;
 
-            case Resource.Type.Power:
+            case Resources.ResourceType.Power:
                 m_powerAmount = m_powerAmount <= _amount ? 0 : m_powerAmount - _amount;
                 break;
 
-            case Resource.Type.Scrap:
+            case Resources.ResourceType.Scrap:
                 m_scrapAmount = m_scrapAmount <= _amount ? 0 : m_scrapAmount - _amount;
                 break;
 
@@ -119,22 +119,22 @@ public class Inventory : MonoBehaviour
         UpdateVisuals();
     }
 
-    public void Drop(Resource.Type _type, float _percentage)
+    public void Drop(Resources.ResourceType _type, float _percentage)
     {
         int dropamount = 0;
         switch (_type)
         {
-            case Resource.Type.Organic:
+            case Resources.ResourceType.Organic:
                 dropamount = (int)(m_organicAmount * (_percentage / 100.0f));
                 m_organicAmount = 0;
                 break;
 
-            case Resource.Type.Power:
+            case Resources.ResourceType.Power:
                 dropamount = (int)(m_powerAmount * (_percentage / 100.0f));
                 m_powerAmount = 0;
                 break;
 
-            case Resource.Type.Scrap:
+            case Resources.ResourceType.Scrap:
                 dropamount = (int)(m_scrapAmount * (_percentage / 100.0f));
                 m_scrapAmount = 0;
                 break;
@@ -148,13 +148,13 @@ public class Inventory : MonoBehaviour
         {
             switch (_type)
             {
-                case Resource.Type.Organic:
+                case Resources.ResourceType.Organic:
                     Instantiate(m_organicPrefab, gameObject.transform.position, Quaternion.identity);
                     break;
-                case Resource.Type.Power:
+                case Resources.ResourceType.Power:
                     Instantiate(m_powerPrefab, gameObject.transform.position, Quaternion.identity);
                     break;
-                case Resource.Type.Scrap:
+                case Resources.ResourceType.Scrap:
                     Instantiate(m_scrapPrefab, gameObject.transform.position, Quaternion.identity);
                     break;
                 default:
