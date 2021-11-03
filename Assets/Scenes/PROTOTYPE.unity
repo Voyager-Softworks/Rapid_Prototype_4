@@ -42445,6 +42445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b2f742934252b1498b81cc77d5222b5, type: 3}
+--- !u!1 &362937171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1504640070168002644, guid: 806b99cb126b1a045b54065bef8cf716, type: 3}
+  m_PrefabInstance: {fileID: 6704605393775941395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &364396911
 GameObject:
   m_ObjectHideFlags: 0
@@ -81710,7 +81715,7 @@ GameObject:
   - component: {fileID: 1057308778}
   - component: {fileID: 1057308780}
   m_Layer: 0
-  m_Name: 
+  m_Name: TheFUckIsTHis?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81742,8 +81747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7521cfb9c924ee4888bace2a5d916b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: NaN
+  cam: {fileID: 6061731659334342799}
+  parallaxEffect: 1
 --- !u!1001 &1057476470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132416,6 +132421,18 @@ PrefabInstance:
       propertyPath: m_cam
       value: 
       objectReference: {fileID: 1112310503}
+    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_airStrafeForce
+      value: 0.207
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_maxThrusterDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_maneuveringThrusterStrength
+      value: 0.212
+      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -132559,6 +132576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
+--- !u!1 &6061731659334342799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6061731658932011852, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
+  m_PrefabInstance: {fileID: 6061731659334342798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6704605393775941395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132860,7 +132882,7 @@ PrefabInstance:
     - target: {fileID: 7584434816010575926, guid: 190d57ece674084429be05acffe76855, type: 3}
       propertyPath: m_town
       value: 
-      objectReference: {fileID: 6704605393775941396}
+      objectReference: {fileID: 362937171}
     - target: {fileID: 7584434816010575926, guid: 190d57ece674084429be05acffe76855, type: 3}
       propertyPath: m_player
       value: 

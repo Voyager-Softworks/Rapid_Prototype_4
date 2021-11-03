@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float m_moveSpeed = 1.0f;
     [SerializeField] float m_maxGroundedVelocity = 1.0f;
     [SerializeField] float m_jumpForce = 1.0f;
+    [SerializeField] float m_thrusterForce = 1.0f;
 
     [SerializeField] float m_dashForce = 1.0f;
     [SerializeField] float m_verticalDashForce = 1.0f;
@@ -34,16 +35,22 @@ public class PlayerMovement : MonoBehaviour
     public UnityEvent m_OnLand, m_onDash;
     [Range(0.0f, 1.0f)]
     [SerializeField] float m_maneuveringThrusterStrength = 1.0f;
+    [Range(0.0f, 1.0f)]
+    [SerializeField] float m_airStrafeForce = 1.0f;
 
 
-    public AnimationCurve m_jumpForceCurve;
 
     public bool m_grounded = false;
     public Vector2 m_groundCheckOffset, m_groundCheckExtents;
 
-    public bool m_charging = false;
-    public float m_minChargeDuration = 0.0f;
-    public float m_chargeTimer = 0.0f;
+    
+
+    public bool m_thrustersEngaged = false;
+    public float m_thrusterDelay = 0.0f;
+    float m_thrusterTimer;
+    public float m_maxThrusterDuration = 0.0f;
+    float m_thrusterDuration;
+   
 
     Vector2 m_oldVelocity;
 
@@ -92,11 +99,11 @@ public class PlayerMovement : MonoBehaviour
         m_jumpAction.Enable();
         m_airStrafeAction.Enable();
         m_dashAction.Enable();
-        m_jumpAction.started += ChargeJump;
-        m_jumpAction.canceled += Jump;
-        m_jumpAction.performed += Jump;
+        m_jumpAction.started += Jump;
+        m_jumpAction.canceled += DisengageThrusters;
+        m_jumpAction.performed += DisengageThrusters;
         m_dashAction.performed += Dash;
-        m_chargeTimer = 0;
+        
         m_walkAction.started += (_ctx) => { if (m_timesincelastmovementkey < 0.3f) { Dash(_ctx); } m_timesincelastmovementkey = 0; };
     }
 
@@ -124,44 +131,25 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void ChargeJump(InputAction.CallbackContext _ctx)
-    {
-        if (!m_grounded) return;
-        m_anim.SetTrigger("Charge");
-        m_anim.ResetTrigger("ChargeCancelled");
-        m_charging = true;
-        m_chargeSource.Play();
 
-    }
-
-    void CancelJump(InputAction.CallbackContext _ctx)
-    {
-
-        m_charging = false;
-        m_chargeTimer = 0;
-
-    }
 
     void Jump(InputAction.CallbackContext _ctx)
     {
-        m_charging = false;
-        if (m_chargeTimer >= m_minChargeDuration)
+        if (m_grounded)
         {
 
             m_jumpSource.Play();
-            rb.AddForce(new Vector2(0.0f, m_jumpForceCurve.Evaluate(m_chargeTimer) * m_jumpForce), ForceMode2D.Force);
+            rb.AddForce(new Vector2(0.0f, m_jumpForce), ForceMode2D.Force);
             m_anim.SetTrigger("Jump");
+            m_thrustersEngaged = true;
+            m_thrusterTimer = m_thrusterDelay;
+            m_thrusterDuration = m_maxThrusterDuration;
         }
-        else
-        {
+    }
 
-            m_anim.SetTrigger("ChargeCancelled");
-            m_anim.ResetTrigger("Charge");
-        }
-        m_chargeSource.Stop();
-        m_chargeTimer = 0;
-
-
+    void DisengageThrusters(InputAction.CallbackContext _ctx)
+    {
+        m_thrustersEngaged = false;
     }
 
     // Update is called once per frame
@@ -192,19 +180,35 @@ public class PlayerMovement : MonoBehaviour
             m_landingTimer = 0.0f;
         }
         Vector2 vel = Vector2.zero;
-        if (m_charging)
+        if (m_thrustersEngaged)
         {
-            m_chargeTimer += Time.deltaTime;
+            if (m_thrusterTimer <= 0.0f && !m_grounded)
+            {
+                if (m_thrusterDuration >= 0.0f)
+                {
+                    vel += Vector2.up * m_thrusterForce;
+                    m_thrusterDuration -= Time.deltaTime;
+                }
+            }
+            else
+            {
+                m_thrusterTimer -= Time.deltaTime;
+            }
         }
-        if (m_grounded && !m_charging && m_landingTimer == 0)
+       
+        if (m_grounded && m_landingTimer == 0)
         {
-            vel += m_walkAction.ReadValue<Vector2>();
+            vel.x = m_walkAction.ReadValue<Vector2>().x;
+
+        }
+        else if (!m_grounded && m_thrustersEngaged)
+        {
+            vel.x = m_airStrafeAction.ReadValue<Vector2>().x * (m_maneuveringThrusterStrength + m_airStrafeForce);
 
         }
         else if (!m_grounded)
         {
-            vel += m_airStrafeAction.ReadValue<Vector2>() * m_maneuveringThrusterStrength;
-
+            vel.x = m_airStrafeAction.ReadValue<Vector2>().x * (m_airStrafeForce);
         }
 
         vel = vel * m_moveSpeed;
@@ -276,8 +280,9 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        rb.velocity += vel * Time.deltaTime;
-        if (rb.velocity.magnitude > m_maxGroundedVelocity && m_grounded && !m_charging && vel.magnitude > 0.1f && m_dashTimer <= 0.0f)
+        rb.velocity += new Vector2(0.0f, vel.y * Time.deltaTime);
+        rb.velocity = new Vector2(vel.x, rb.velocity.y);
+        if (rb.velocity.magnitude > m_maxGroundedVelocity && m_grounded && vel.magnitude > 0.1f && m_dashTimer <= 0.0f)
         {
             rb.velocity = rb.velocity.normalized * m_maxGroundedVelocity;
         }

@@ -54,7 +54,7 @@ public class Upgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector2.Distance(m_player.transform.position, transform.position);
+        float dist = Vector2.Distance(m_player != null ? m_player.transform.position : Vector3.zero, transform.position);
 
         if (dist < m_upgradeRange)
         {
