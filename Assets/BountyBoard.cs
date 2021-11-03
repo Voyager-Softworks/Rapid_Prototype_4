@@ -12,17 +12,14 @@ public class BountyBoard : MonoBehaviour
     public GameObject mainPannel;
     public GameObject mainTitle;
 
+    [Header("Missions")]
+    public List<GameObject> missionButtons;
+
     [Header("Info")]
     public GameObject infoPannel;
     public GameObject infoTitle;
-
-    [Header("Difficulty")]
-    public GameObject difficulty;
-    public GameObject difficultyDecrease;
-    public GameObject difficultyIncrease;
-
-    [Header("Missions")]
-    public GameObject mission1;
-    public GameObject mission2;
-    public GameObject mission3;
+    public GameObject infoLevel;
+    public GameObject infoReward;
+    public GameObject infoEvents;
+    public GameObject infoAcceptButton;
 }
