@@ -10,6 +10,8 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool m_dashEnabled = true, m_doubleJumpEnabled = true;
+
     FollowMouse m_mousescript;
     WalkSound m_walksoundmaker;
     SpriteRenderer m_renderer;
@@ -21,22 +23,44 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float m_moveSpeed = 1.0f;
+    [Header("Ground Speed")]
     [SerializeField] float m_maxGroundedVelocity = 1.0f;
+    [Header("Jumping")]
     [SerializeField] float m_jumpForce = 1.0f;
+    [Range(0.0f, 1.0f)]
+    [SerializeField] float m_airStrafeForce = 1.0f;
+    [Header("Maneuvering Thrusters")]
     [SerializeField] float m_thrusterForce = 1.0f;
+    [Range(0.0f, 1.0f)]
+    [SerializeField] float m_maneuveringThrusterStrength = 1.0f;
+    
+    public bool m_thrustersEngaged = false;
+    public float m_thrusterDelay = 0.0f;
+    float m_thrusterTimer;
+    public float m_maxThrusterDuration = 0.0f;
+    float m_thrusterDuration;
 
+    [Header("Double Jump")]
+    public int m_maxAirJumpCount = 0;
+    int m_jumpcount = 0;
+    
+
+    [Header("Dash")]
     [SerializeField] float m_dashForce = 1.0f;
-    [SerializeField] float m_verticalDashForce = 1.0f;
+    Vector2 m_dashDirection;
+    
     float m_timesincelastmovementkey = 0.0f;
     [SerializeField] float m_dashDuration = 1.0f;
     float m_dashTimer = 0.0f;
+
+    [SerializeField] float m_dashCooldown = 1.0f;
+    float m_dashCooldownTimer;
+
+    [Header("Landing")]
     [SerializeField] float m_landDuration = 1.0f;
     public float m_landingTimer = 0.0f;
     public UnityEvent m_OnLand, m_onDash;
-    [Range(0.0f, 1.0f)]
-    [SerializeField] float m_maneuveringThrusterStrength = 1.0f;
-    [Range(0.0f, 1.0f)]
-    [SerializeField] float m_airStrafeForce = 1.0f;
+   
 
 
 
@@ -45,11 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     
 
-    public bool m_thrustersEngaged = false;
-    public float m_thrusterDelay = 0.0f;
-    float m_thrusterTimer;
-    public float m_maxThrusterDuration = 0.0f;
-    float m_thrusterDuration;
+   
    
 
     Vector2 m_oldVelocity;
@@ -110,10 +130,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash(InputAction.CallbackContext _ctx)
     {
-        if (m_dashTimer > 0.0f) return;
+        if (m_dashTimer > 0.0f || m_dashCooldownTimer > 0.0f || !m_dashEnabled) return;
         m_onDash.Invoke();
-        rb.mass = 10000;
-        rb.velocity += (m_walkAction.ReadValue<Vector2>() * m_dashForce) + (Vector2.up * m_verticalDashForce);
+        
+        
+        m_dashDirection = m_walkAction.ReadValue<Vector2>();
         m_dashTimer = m_dashDuration;
 
     }
@@ -127,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
         m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y * (Mathf.Abs(m_oldVelocity.y) / 10.0f);
         m_landingSource.Play();
         m_OnLand.Invoke();
+        m_jumpcount = 0;
 
 
     }
@@ -144,7 +166,17 @@ public class PlayerMovement : MonoBehaviour
             m_thrustersEngaged = true;
             m_thrusterTimer = m_thrusterDelay;
             m_thrusterDuration = m_maxThrusterDuration;
+            m_jumpcount++;
         }
+        else if(m_jumpcount < m_maxAirJumpCount)
+        {
+            m_jumpSource.Play();
+            rb.velocity *= new Vector2(1.0f, 0.0f);
+            rb.AddForce(new Vector2(0.0f, m_jumpForce ), ForceMode2D.Force);
+            m_anim.SetTrigger("Jump");
+            m_jumpcount++;
+        }
+        
     }
 
     void DisengageThrusters(InputAction.CallbackContext _ctx)
@@ -157,7 +189,14 @@ public class PlayerMovement : MonoBehaviour
     {
         bool m_groundedOld = m_grounded;
         m_timesincelastmovementkey += Time.deltaTime;
-        m_grounded = Physics2D.BoxCast(transform.position + (Vector3)m_groundCheckOffset, (Vector3)m_groundCheckExtents, 0.0f, Vector2.up, 1.0f, LayerMask.GetMask("Ground"));
+        m_grounded = (Vector2.Dot(Physics2D.BoxCast(
+            (Vector2)transform.position + m_groundCheckOffset, 
+            m_groundCheckExtents, 
+            0.0f, 
+            Vector2.up, 
+            1.0f, 
+            LayerMask.GetMask("Ground")
+            ).normal, Vector2.up) >= 0.5f);
         m_anim.SetBool("Grounded", m_grounded);
         if (!m_groundedOld && m_grounded)
         {
@@ -166,17 +205,23 @@ public class PlayerMovement : MonoBehaviour
         if (m_dashTimer > 0)
         {
             m_dashTimer -= Time.deltaTime;
+            m_dashCooldownTimer = m_dashCooldown;
         }
         else
         {
             m_dashTimer = 0;
             rb.mass = 20000;
+            if ((m_dashCooldownTimer -= Time.deltaTime) < 0.0f)
+            {
+                m_dashCooldownTimer = 0.0f;
+            }
+
         }
         if (m_landingTimer > 0) { m_landingTimer -= Time.deltaTime; }
         else if (m_grounded)
         {
 
-
+            
             m_landingTimer = 0.0f;
         }
         Vector2 vel = Vector2.zero;
@@ -196,19 +241,23 @@ public class PlayerMovement : MonoBehaviour
             }
         }
        
-        if (m_grounded && m_landingTimer == 0)
+        if (m_grounded && m_landingTimer == 0 && m_dashTimer <= 0.0f)
         {
             vel.x = m_walkAction.ReadValue<Vector2>().x;
 
         }
-        else if (!m_grounded && m_thrustersEngaged)
+        else if (!m_grounded && m_thrustersEngaged && m_dashTimer <= 0.0f)
         {
             vel.x = m_airStrafeAction.ReadValue<Vector2>().x * (m_maneuveringThrusterStrength + m_airStrafeForce);
 
         }
-        else if (!m_grounded)
+        else if (!m_grounded && m_dashTimer <= 0.0f)
         {
             vel.x = m_airStrafeAction.ReadValue<Vector2>().x * (m_airStrafeForce);
+        }
+        else if (m_dashTimer > 0.0f)
+        {
+            vel.x = m_dashDirection.x * m_dashForce;
         }
 
         vel = vel * m_moveSpeed;

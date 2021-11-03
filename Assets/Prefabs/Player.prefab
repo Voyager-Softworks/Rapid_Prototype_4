@@ -962,6 +962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2063728267a97b84a9beda4bda6e72bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dashEnabled: 1
+  m_doubleJumpEnabled: 1
   m_walkAction:
     m_Name: Walk
     m_Type: 0
@@ -1115,13 +1117,19 @@ MonoBehaviour:
       m_Action: Dash
       m_Flags: 8
   m_moveSpeed: 7
-  m_maxGroundedVelocity: 2
-  m_jumpForce: 5000000
-  m_thrusterForce: 2
-  m_dashForce: 6
-  m_verticalDashForce: 3
-  m_dashDuration: 1
-  m_landDuration: 0.2
+  m_maxGroundedVelocity: 3
+  m_jumpForce: 7500000
+  m_airStrafeForce: 0.3
+  m_thrusterForce: 1.5
+  m_maneuveringThrusterStrength: 0.212
+  m_thrustersEngaged: 0
+  m_thrusterDelay: 0.3
+  m_maxThrusterDuration: 1
+  m_maxAirJumpCount: 2
+  m_dashForce: 2
+  m_dashDuration: 0.3
+  m_dashCooldown: 2
+  m_landDuration: 0.1
   m_landingTimer: 0
   m_OnLand:
     m_PersistentCalls:
@@ -1153,14 +1161,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_maneuveringThrusterStrength: 0.724
-  m_airStrafeForce: 1
-  m_grounded: 0
+  m_contactFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 1
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 1
+    minNormalAngle: 90
+    maxNormalAngle: -90
   m_groundCheckOffset: {x: 0, y: -0.64}
   m_groundCheckExtents: {x: 0.49, y: 0.11}
-  m_thrustersEngaged: 0
-  m_thrusterDelay: 0.3
-  m_maxThrusterDuration: 0.75
   m_cam: {fileID: 0}
   m_noise: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
   m_landingNoiseMagnitude: {x: 1.5, y: 1.5}
