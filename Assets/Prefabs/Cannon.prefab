@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6207577749372023535}
   - component: {fileID: 5825063834926587628}
   m_Layer: 7
-  m_Name: MachineGun
+  m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,8 +143,20 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Shoot
       m_Flags: 0
+    - m_Name: 
+      m_Id: f1c0f910-19de-468a-9ea8-86787ec3b98b
+      m_Path: <Gamepad>/leftTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
   m_player: {fileID: 0}
   m_bulletPrefab: {fileID: 7610439907867034931, guid: 1a470d97da000b34ebc58caf9cecd362, type: 3}
+  m_bulletSound: {fileID: 0}
+  m_OverHeatSound: {fileID: 0}
+  m_shootPart: {fileID: 0}
+  m_spawnOnShoot: 0
   m_shootPos: {fileID: 2278086271051560686}
   m_bullet_vel: 40
   m_bulletDamageMulti: 1
@@ -155,8 +167,13 @@ MonoBehaviour:
   m_randomShotDelay: 0.1
   m_rampTime: 2
   m_decayTime: 1.5
+  m_heatValue: 0
+  m_heatUpRate: 0.25
+  m_coolDownRate: 0.5
+  m_startShootMax: 0.75
   m_recoilMulti: 0.3
   m_returnRate: 0.75
+  m_leftClick: 1
 --- !u!95 &5825063834926587628
 Animator:
   serializedVersion: 3
