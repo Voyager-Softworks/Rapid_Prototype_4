@@ -11,7 +11,7 @@ public class Upgrade : MonoBehaviour
     [System.Serializable]
     public class ResourceCost
     {
-        [SerializeField] public Resource.Type m_type;
+        [SerializeField] public Resources.ResourceType m_type;
         [SerializeField] public float m_amount;
     }
 
@@ -96,13 +96,13 @@ public class Upgrade : MonoBehaviour
         {
             switch (_cost.m_type)
             {
-                case Resource.Type.Organic:
+                case Resources.ResourceType.Organic:
                     costString += _cost.m_amount + " Organic ";
                     break;
-                case Resource.Type.Power:
+                case Resources.ResourceType.Power:
                     costString += _cost.m_amount + " Power ";
                     break;
-                case Resource.Type.Scrap:
+                case Resources.ResourceType.Scrap:
                     costString += _cost.m_amount + " Scrap ";
                     break;
             }

@@ -6,16 +6,10 @@ using UnityEngine.InputSystem;
 
 public class Resource : MonoBehaviour
 {
-    public enum Type
-    {
-        Organic,
-        Power,
-        Scrap
-    }
 
     [SerializeField] GameObject m_player;
 
-    [SerializeField] Type m_type;
+    [SerializeField] Resources.ResourceType m_type;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +39,7 @@ public class Resource : MonoBehaviour
         }
     }
 
-    public Type GetResourceType()
+    public Resources.ResourceType GetResourceType()
     {
         return m_type;
     }
