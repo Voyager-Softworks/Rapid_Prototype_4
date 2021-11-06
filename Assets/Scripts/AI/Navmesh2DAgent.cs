@@ -13,6 +13,7 @@ public class Navmesh2DAgent : MonoBehaviour
 
     public bool m_isMoving = false;
     public bool m_canFly = false;
+    public bool m_canClimb = false;
 
 
 
@@ -25,7 +26,37 @@ public class Navmesh2DAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateMovement();
+    }
+
+    private void UpdateMovement()
+    {
+        if(!m_isMoving) return;
+        if (m_currentPath != null && m_currentPath.Count > 0)
+        {
+            Vector2 target = m_currentPath[0];
+            Vector2 direction = target - (Vector2)transform.position;
+            float distance = direction.magnitude;
+            float step = m_speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target, step);
+            if (distance <= step)
+            {
+                m_currentPath.RemoveAt(0);
+            }
+            if ((target - (Vector2)transform.position).x < 0.0f)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.identity;
+            }
+
+        }
+        else
+        {
+            m_isMoving = false;
+        }
     }
 
     public void MoveTo(Vector3 targetPosition)
@@ -43,7 +74,7 @@ public class Navmesh2DAgent : MonoBehaviour
     public void SetNewTargetPosition(Vector3 targetPosition)
     {
         m_targetPosition = targetPosition;
-        List<Vector2> newPath = m_navmesh.FindPath(transform.position, m_targetPosition, m_canFly);
+        List<Vector2> newPath = m_navmesh.FindPath(transform.position, m_targetPosition, m_canFly, m_canClimb);
         if (newPath != null && newPath.Count > 0)
         {
             m_currentPath = newPath;
@@ -52,7 +83,7 @@ public class Navmesh2DAgent : MonoBehaviour
     }
 
     
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         if (m_currentPath != null)
         {

@@ -31,7 +31,7 @@ public class MeleeAttackAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        m_anim.SetBool("IsWalking", m_agent.m_isMoving);
         if ((!Physics2D.Linecast(transform.position, m_playerTransform.position, LayerMask.GetMask("Ground") | LayerMask.GetMask("Environment"))
             && (transform.position - m_playerTransform.position).magnitude < m_attackRadius))
         {

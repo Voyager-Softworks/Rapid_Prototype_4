@@ -18,6 +18,7 @@ public class Navmesh2D : MonoBehaviour
         {
             m_traversable = true;
             m_walkable = false;
+            m_climbable = false;
             m_position = _position;
             m_index = _index;
         }
@@ -32,6 +33,7 @@ public class Navmesh2D : MonoBehaviour
 
         public bool m_traversable;
         public bool m_walkable;
+        public bool m_climbable;
         public Vector2 m_index;
         public Vector3 m_position;
 
@@ -129,8 +131,28 @@ public class Navmesh2D : MonoBehaviour
         return true;
     }
 
+    //Checks if a neighboring cell in a given direction is Climbable using QueryPosition
+    public bool IsClimbable(Vector2 _pos, Vector2 _dir)
+    {
+        Cell cell = QueryPosition(_pos);
+        if (cell == null)
+        {
+            return false;
+        }
+        Cell neighbor = QueryPosition(_pos + _dir);
+        if (neighbor == null)
+        {
+            return false;
+        }
+        if (neighbor.m_climbable == false)
+        {
+            return false;
+        }
+        return true;
+    }
+
     //Use A* to path from one cell to another cell using non-traversible cells as obstacles
-    public List<Cell> Path(Cell _start, Cell _goal, bool _canFly)
+    public List<Cell> Path(Cell _start, Cell _goal, bool _canFly, bool _canClimb)
     {
         List<Cell> open = new List<Cell>();
         List<Cell> closed = new List<Cell>();
@@ -164,7 +186,9 @@ public class Navmesh2D : MonoBehaviour
             closed.Add(current);
             foreach (Cell neighbor in GetNeighbors(current))
             {
-                if (!(IsWalkable(neighbor.m_position, current.m_position - neighbor.m_position) || (_canFly && IsTraversible(neighbor.m_position, current.m_position - neighbor.m_position))))
+                if (!(IsWalkable(neighbor.m_position, current.m_position - neighbor.m_position) || 
+                (_canFly && IsTraversible(neighbor.m_position, current.m_position - neighbor.m_position)) || 
+                (_canClimb && IsClimbable(neighbor.m_position, current.m_position - neighbor.m_position))))
                 {
                     continue;
                 }
@@ -245,7 +269,7 @@ public class Navmesh2D : MonoBehaviour
         return path;
     }
     
-    public List<Vector2> FindPath(Vector3 _start, Vector3 _goal, bool _canFly = false)
+    public List<Vector2> FindPath(Vector3 _start, Vector3 _goal, bool _canFly = false, bool _canClimb = false)
     {
         
         Cell start = QueryPosition(new Vector2(_start.x, _start.y));
@@ -256,7 +280,7 @@ public class Navmesh2D : MonoBehaviour
             return null;
             
         }
-        List<Cell> path = Path(start, goal, _canFly);
+        List<Cell> path = Path(start, goal, _canFly, _canClimb);
         List<Vector2> path2 = new List<Vector2>();
         if(path == null) return path2;
         foreach (Cell cell in path)
@@ -309,7 +333,16 @@ public class Navmesh2D : MonoBehaviour
                 {
                     if(m_grid[x, y].m_traversable && !m_grid[x, y-1].m_traversable) m_grid[x, y].m_walkable = true;
                 }
-                
+                if(x > 0 && x < m_width - 1 && y > 0 && y < m_height - 1)
+                {
+                    if(
+                        m_grid[x, y].m_traversable &&
+                        (!m_grid[x - 1, y].m_traversable || !m_grid[x + 1, y].m_traversable) &&
+                        !m_grid[x, y].m_walkable &&
+                        m_grid[x, y + 1].m_traversable
+                        ) m_grid[x, y].m_climbable = true;
+                    
+                }
             }
         }
     }
@@ -336,6 +369,15 @@ public class Navmesh2D : MonoBehaviour
                         Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
                         Gizmos.color = Color.green - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos - new Vector3(0.0f, m_cellradius - 0.1f, 0.0f), new Vector3(m_cellradius*2.0f, 0.2f, 1.0f));
+                        Gizmos.color = Color.black;
+                    }
+                    else if (m_grid[i, j].m_climbable)
+                    {
+                        Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.95f);
+                        Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
+                        Gizmos.color = Color.yellow - new Color(0.0f, 0.0f, 0.0f, 0.95f);
+                        Gizmos.DrawCube(pos - new Vector3(m_cellradius - 0.1f, 0.0f, 0.0f), new Vector3(0.2f, m_cellradius*2.0f, 1.0f));
+                        Gizmos.DrawCube(pos + new Vector3(m_cellradius - 0.1f, 0.0f, 0.0f), new Vector3(0.2f, m_cellradius*2.0f, 1.0f));
                         Gizmos.color = Color.black;
                     }
                     else if (m_grid[i, j].m_traversable)
