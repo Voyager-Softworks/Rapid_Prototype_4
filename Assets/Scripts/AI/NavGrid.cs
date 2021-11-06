@@ -229,16 +229,17 @@ public class NavGrid : MonoBehaviour
     /// </summary>
     private void GridGizmo()
     {
-        Gizmos.color = Color.black;
+        
         for (int i = 0; i < m_width; i++)
         {
             for (int j = 0; j < m_height; j++)
             {
                 Vector3 pos = new Vector3(((m_cellradius * 2) * i + m_cellradius) + m_origin.x, ((m_cellradius * 2) * j + m_cellradius) + m_origin.y, 0);
-
+                Gizmos.color = Color.black;
                 Gizmos.DrawWireCube(pos, Vector3.one * m_cellradius * 2);
                 if (m_grid != null)
                 {
+                    Gizmos.color = Color.yellow;
                     Gizmos.DrawRay(pos, m_grid[i, j].m_direction.normalized);
                     if (displayHeight)
                     {
@@ -252,14 +253,14 @@ public class NavGrid : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
         Create();
 
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
         UpdateEnemyVectors();
         if (makeflowfield)

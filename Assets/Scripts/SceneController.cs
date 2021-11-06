@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    public void LoadPrototype()
+    {
+        SceneManager.LoadScene("PROTOTYPE");
+    }
     public void LoadMenu()
     {
         Cursor.lockState = CursorLockMode.None;

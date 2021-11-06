@@ -4,15 +4,326 @@ using UnityEngine;
 
 public class Navmesh2D : MonoBehaviour
 {
+    /// <summary>
+    /// The cell.
+    /// </summary>
+    public class Cell
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Cell"/> class.
+        /// </summary>
+        /// <param name="_position">The _position.</param>
+        /// <param name="_index">The _index.</param>
+        public Cell(Vector3 _position, Vector2 _index)
+        {
+            m_traversable = true;
+            m_walkable = false;
+            m_position = _position;
+            m_index = _index;
+        }
+
+        
+
+        /// <summary>
+        /// Sets the traversable.
+        /// </summary>
+        /// <param name="_traversable">If true, _traversable.</param>
+        public void SetTraversable(bool _traversable) => m_traversable = _traversable;
+
+        public bool m_traversable;
+        public bool m_walkable;
+        public Vector2 m_index;
+        public Vector3 m_position;
+    }
+
+    public class CellNode
+    {
+        public Cell m_cell;
+        public CellNode m_parent;
+        public float m_f;
+        public float m_g;
+        public float m_h;
+    }
+
+    public Cell[,] m_grid;
+
+    public Vector3 m_origin = Vector3.zero;
+    public int m_width = 20;
+    public int m_height = 20;
+    public float m_cellradius = 0.5f;
+
+    /// <summary>
+    /// Creates the Grid.
+    /// </summary>
+    public void Create()
+    {
+        m_grid = new Cell[m_width, m_height];
+        //Populate the grid
+        for (int i = 0; i < m_width; i++)
+        {
+            for (int j = 0; j < m_height; j++)
+            {
+                Vector3 pos = new Vector3(((m_cellradius * 2) * i + m_cellradius) + m_origin.x, ((m_cellradius * 2) * j + m_cellradius) + m_origin.y, 0);
+                m_grid[i, j] = new Cell(pos, new Vector2(i, j));
+            }
+        }
+    }
+
+    //Gets the cell corresponding to the specified position in world space
+    public Cell QueryPosition(Vector2 _pos)
+    {
+        Vector2 index = new Vector2((_pos.x + m_origin.x) / (m_cellradius * 2), (_pos.y + m_origin.y) / (m_cellradius * 2));
+        int x = Mathf.RoundToInt(index.x);
+        int y = Mathf.RoundToInt(index.y);
+        if (x < 0 || x >= m_width || y < 0 || y >= m_height)
+        {
+            return null;
+        }
+        return m_grid[x, y];
+    }
+
+    //Checks if a neighboring cell in a given direction is walkable using QueryPosition
+    public bool IsWalkable(Vector2 _pos, Vector2 _dir)
+    {
+        Cell cell = QueryPosition(_pos);
+        if (cell == null)
+        {
+            return false;
+        }
+        if (cell.m_traversable == false)
+        {
+            return false;
+        }
+        Cell neighbor = QueryPosition(_pos + _dir);
+        if (neighbor == null)
+        {
+            return false;
+        }
+        if (neighbor.m_walkable == false)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    //Checks if a neighboring cell in a given direction is Traversible using QueryPosition
+    public bool IsTraversible(Vector2 _pos, Vector2 _dir)
+    {
+        Cell cell = QueryPosition(_pos);
+        if (cell == null)
+        {
+            return false;
+        }
+        if (cell.m_traversable == false)
+        {
+            return false;
+        }
+        Cell neighbor = QueryPosition(_pos + _dir);
+        if (neighbor == null)
+        {
+            return false;
+        }
+        if (neighbor.m_traversable == false)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    //Use A* to path from one cell to another cell using non-traversible cells as obstacles using CellNodes
+    public List<Cell> Path(Cell _start, Cell _goal, bool _canFly = false)
+    {
+        List<CellNode> open = new List<CellNode>();
+        List<CellNode> closed = new List<CellNode>();
+        CellNode start = new CellNode();
+        start.m_cell = _start;
+        start.m_g = 0;
+        start.m_h = Vector2.Distance(_start.m_index, _goal.m_index);
+        start.m_f = start.m_g + start.m_h;
+        open.Add(start);
+        while (open.Count > 0)
+        {
+            CellNode current = open[0];
+            for (int i = 1; i < open.Count; i++)
+            {
+                if (open[i].m_f < current.m_f)
+                {
+                    current = open[i];
+                }
+            }
+            open.Remove(current);
+            closed.Add(current);
+            if (current.m_cell == _goal)
+            {
+                return RetracePath(start, current);
+            }
+            foreach (Vector2 dir in new Vector2[] { new Vector2(0, 1), new Vector2(0, -1), new Vector2(1, 0), new Vector2(-1, 0) })
+            {
+                if (IsWalkable(current.m_cell.m_position, dir) || (_canFly && IsTraversible(current.m_cell.m_position, dir)))
+                {
+                    CellNode neighbor = new CellNode();
+                    neighbor.m_cell = QueryPosition((Vector2)current.m_cell.m_position + dir);
+                    neighbor.m_parent = current;
+                    neighbor.m_g = current.m_g + 1;
+                    neighbor.m_h = Vector2.Distance(neighbor.m_cell.m_index, _goal.m_index);
+                    neighbor.m_f = neighbor.m_g + neighbor.m_h;
+                    if (!Contains(closed, neighbor))
+                    {
+                        open.Add(neighbor);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    bool Contains(List<CellNode> _list, CellNode _node)
+    {
+        foreach (CellNode node in _list)
+        {
+            if (node.m_cell == _node.m_cell)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private IEnumerable<Cell> GetNeighbors(Cell current)
+    {
+        List<Cell> neighbors = new List<Cell>();
+        for (int i = -1; i <= 1; i++)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                if (i == 0 && j == 0)
+                {
+                    continue;
+                }
+                Vector2 index = current.m_index + new Vector2(i, j);
+                if (index.x < 0 || index.x >= m_width || index.y < 0 || index.y >= m_height)
+                {
+                    continue;
+                }
+                neighbors.Add(m_grid[(int)index.x, (int)index.y]);
+            }
+        }
+        return neighbors;
+    }
+
+    private List<Cell> RetracePath(CellNode start, CellNode goal)
+    {
+        List<Cell> path = new List<Cell>();
+        CellNode current = goal;
+        while (current != start)
+        {
+            path.Add(current.m_cell);
+            current = current.m_parent;
+        }
+        path.Reverse();
+        return path;
+    }
+    
+    //Draws a path gizmo using lines drawn between cells
+    public void DrawPath(List<Cell> _path)
+    {
+        if (_path == null)
+        {
+            return;
+        }
+        for (int i = 0; i < _path.Count - 1; i++)
+        {
+            Debug.DrawLine(_path[i].m_position, _path[i + 1].m_position, Color.red, 0.5f);
+        }
+    }
+
+
+    /// <summary>
+    /// Generates the navmesh.
+    /// </summary>
+    public void GenerateNavmesh()
+    {
+
+        Queue<Cell> cells_to_process = new Queue<Cell>();
+        int layermask = LayerMask.GetMask("Player", "Ground");
+        foreach (Cell c in m_grid)
+        {
+            c.m_traversable = true;
+
+            Collider2D hit = Physics2D.OverlapBox(c.m_position, (Vector3.one * m_cellradius), 0, layermask);
+            if (hit != null)
+            {
+                if (hit.CompareTag("Ground"))
+                {
+                    c.m_traversable = false;
+                }
+            }
+        }
+        for (var x = 0; x < m_width; x++)
+        {
+            for (var y = 0; y < m_height; y++)
+            {
+                if (y > 0)
+                {
+                    if(m_grid[x, y].m_traversable && !m_grid[x, y-1].m_traversable) m_grid[x, y].m_walkable = true;
+                }
+                
+            }
+        }
+    }
+
+    /// <summary>
+    /// Gizmos for the Grid
+    /// </summary>
+    private void GridGizmo()
+    {
+        
+        for (int i = 0; i < m_width; i++)
+        {
+            for (int j = 0; j < m_height; j++)
+            {
+                Vector3 pos = new Vector3(((m_cellradius * 2) * i + m_cellradius) + m_origin.x, ((m_cellradius * 2) * j + m_cellradius) + m_origin.y, 0);
+                Gizmos.color = Color.black  - new Color(0.0f, 0.0f, 0.0f, 0.7f);
+                Gizmos.DrawWireCube(pos, Vector3.one * m_cellradius * 2);
+                if (m_grid != null)
+                {
+                    
+                    if (m_grid[i, j].m_walkable)
+                    {
+                        Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.85f);
+                        Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
+                        Gizmos.color = Color.green - new Color(0.0f, 0.0f, 0.0f, 0.7f);
+                        Gizmos.DrawCube(pos - new Vector3(0.0f, m_cellradius - 0.1f, 0.0f), new Vector3(m_cellradius*2.0f, 0.2f, 1.0f));
+                        Gizmos.color = Color.black;
+                    }
+                    else if (m_grid[i, j].m_traversable)
+                    {
+                        Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.85f);
+                        Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
+                        Gizmos.color = Color.black - new Color(0.0f, 0.0f, 0.0f, 0.7f);
+                    }
+                    else
+                    {
+                        Gizmos.color = Color.red - new Color(0.0f, 0.0f, 0.0f, 0.85f);
+                        Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
+                        Gizmos.color = Color.black - new Color(0.0f, 0.0f, 0.0f, 0.7f);
+                    }
+                }
+            }
+        }
+    }
+
+    public void OnDrawGizmos()
+    {
+        GridGizmo();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Create();
+        GenerateNavmesh();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
