@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1187514438124963606}
   - component: {fileID: 1187514438124963605}
-  - component: {fileID: 1187514438124963604}
   - component: {fileID: 1187514438124963607}
   - component: {fileID: 1187514438124963600}
   - component: {fileID: 8143876762838158965}
   - component: {fileID: 2468160550584417584}
   - component: {fileID: 7201540384246155768}
   - component: {fileID: 2213887242661115584}
+  - component: {fileID: -8007448889439679549}
   m_Layer: 10
   m_Name: Alien_Large
   m_TagString: Untagged
@@ -89,28 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1187514438124963604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187514438124963611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec66f043792186d7aa35481f357276bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_flowVector: {x: 0, y: 0}
-  m_speed: 2
-  m_maxGroundedVelocity: 2
-  m_maxAerialVelocity: 3
-  m_jumpForce: 10
-  m_jumpCooldown: 1.5
-  m_groundCheckOffset: 0.45
-  m_stoppingDistance: 0.5
-  m_grounded: 0
-  m_seekPlayer: 0
 --- !u!50 &1187514438124963607
 Rigidbody2D:
   serializedVersion: 4
@@ -301,3 +279,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8007448889439679549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187514438124963611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ef63cb1eeda1bdd972b2fe257eed6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_navmesh: {fileID: 0}
+  m_speed: 1
+  m_rotationSpeed: 1
+  m_isMoving: 0
+  m_canFly: 0

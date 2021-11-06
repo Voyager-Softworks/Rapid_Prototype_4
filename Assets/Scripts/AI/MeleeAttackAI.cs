@@ -19,12 +19,12 @@ public class MeleeAttackAI : MonoBehaviour
     public float m_Damage;
 
     Animator m_anim;
-    NavAgent m_agent;
+    Navmesh2DAgent m_agent;
     // Start is called before the first frame update
     void Start()
     {
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        m_agent = GetComponent<NavAgent>();
+        m_agent = GetComponent<Navmesh2DAgent>();
         m_anim = GetComponent<Animator>();
     }
 
@@ -37,20 +37,20 @@ public class MeleeAttackAI : MonoBehaviour
         {
             m_attacking = true;
             m_anim.SetBool("IsShooting", true);
-            m_agent.m_seekPlayer = false;
+            m_agent.Stop();
 
         }
         else if (m_playerDetected)
         {
             m_attacking = false;
             m_anim.SetBool("IsShooting", false);
-            m_agent.m_seekPlayer = true;
+            m_agent.MoveTo(m_playerTransform.position);
         }
         else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius && !m_playerDetected)
         {
             m_attacking = false;
             m_anim.SetBool("IsShooting", false);
-            m_agent.m_seekPlayer = true;
+            m_agent.MoveTo(m_playerTransform.position);
             m_playerDetected = true;
             m_barkSource.clip = m_aggroclips[Random.Range(0, m_aggroclips.Count)];
             m_barkSource.Play();
@@ -58,7 +58,7 @@ public class MeleeAttackAI : MonoBehaviour
         else
         {
             m_attacking = false;
-            m_agent.m_seekPlayer = false;
+            m_agent.Stop();
             m_anim.SetBool("IsShooting", false);
         }
         if (m_attacking && (m_playerTransform.position - transform.position).x < 0.0f)

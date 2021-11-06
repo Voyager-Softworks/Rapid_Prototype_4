@@ -34,16 +34,15 @@ public class Navmesh2D : MonoBehaviour
         public bool m_walkable;
         public Vector2 m_index;
         public Vector3 m_position;
-    }
 
-    public class CellNode
-    {
-        public Cell m_cell;
-        public CellNode m_parent;
         public float m_f;
         public float m_g;
         public float m_h;
+
+        public Cell m_parent;
     }
+
+   
 
     public Cell[,] m_grid;
 
@@ -72,7 +71,7 @@ public class Navmesh2D : MonoBehaviour
     //Gets the cell corresponding to the specified position in world space
     public Cell QueryPosition(Vector2 _pos)
     {
-        Vector2 index = new Vector2((_pos.x + m_origin.x) / (m_cellradius * 2), (_pos.y + m_origin.y) / (m_cellradius * 2));
+        Vector2 index = new Vector2(((_pos.x - m_origin.x) / (m_cellradius * 2))-m_cellradius, ((_pos.y - m_origin.y) / (m_cellradius * 2))-m_cellradius);
         int x = Mathf.RoundToInt(index.x);
         int y = Mathf.RoundToInt(index.y);
         if (x < 0 || x >= m_width || y < 0 || y >= m_height)
@@ -90,7 +89,7 @@ public class Navmesh2D : MonoBehaviour
         {
             return false;
         }
-        if (cell.m_traversable == false)
+        if (cell.m_walkable == false)
         {
             return false;
         }
@@ -130,20 +129,26 @@ public class Navmesh2D : MonoBehaviour
         return true;
     }
 
-    //Use A* to path from one cell to another cell using non-traversible cells as obstacles using CellNodes
-    public List<Cell> Path(Cell _start, Cell _goal, bool _canFly = false)
+    //Use A* to path from one cell to another cell using non-traversible cells as obstacles
+    public List<Cell> Path(Cell _start, Cell _goal, bool _canFly)
     {
-        List<CellNode> open = new List<CellNode>();
-        List<CellNode> closed = new List<CellNode>();
-        CellNode start = new CellNode();
-        start.m_cell = _start;
-        start.m_g = 0;
-        start.m_h = Vector2.Distance(_start.m_index, _goal.m_index);
-        start.m_f = start.m_g + start.m_h;
-        open.Add(start);
+        List<Cell> open = new List<Cell>();
+        List<Cell> closed = new List<Cell>();
+
+        foreach (Cell cell in m_grid)
+        {
+            cell.m_f = Mathf.Infinity;
+            cell.m_g = Mathf.Infinity;
+            cell.m_h = Mathf.Infinity;
+            cell.m_parent = null;
+        }
+        _start.m_g = 0.0f;
+        _start.m_h = Heuristic(_start, _goal);
+        _start.m_f = _start.m_g + _start.m_h;
+        open.Add(_start);
         while (open.Count > 0)
         {
-            CellNode current = open[0];
+            Cell current = open[0];
             for (int i = 1; i < open.Count; i++)
             {
                 if (open[i].m_f < current.m_f)
@@ -151,37 +156,52 @@ public class Navmesh2D : MonoBehaviour
                     current = open[i];
                 }
             }
+            if (current == _goal)
+            {
+                return RetracePath(_start, _goal);
+            }
             open.Remove(current);
             closed.Add(current);
-            if (current.m_cell == _goal)
+            foreach (Cell neighbor in GetNeighbors(current))
             {
-                return RetracePath(start, current);
-            }
-            foreach (Vector2 dir in new Vector2[] { new Vector2(0, 1), new Vector2(0, -1), new Vector2(1, 0), new Vector2(-1, 0) })
-            {
-                if (IsWalkable(current.m_cell.m_position, dir) || (_canFly && IsTraversible(current.m_cell.m_position, dir)))
+                if (!(IsWalkable(neighbor.m_position, current.m_position - neighbor.m_position) || (_canFly && IsTraversible(neighbor.m_position, current.m_position - neighbor.m_position))))
                 {
-                    CellNode neighbor = new CellNode();
-                    neighbor.m_cell = QueryPosition((Vector2)current.m_cell.m_position + dir);
+                    continue;
+                }
+                if (closed.Contains(neighbor))
+                {
+                    continue;
+                }
+                float new_g = current.m_g + Vector3.Distance(current.m_position, neighbor.m_position);
+                if (new_g < neighbor.m_g)
+                {
+                    neighbor.m_g = new_g;
                     neighbor.m_parent = current;
-                    neighbor.m_g = current.m_g + 1;
-                    neighbor.m_h = Vector2.Distance(neighbor.m_cell.m_index, _goal.m_index);
+                    neighbor.m_h = Vector3.Distance(neighbor.m_position, _goal.m_position);
                     neighbor.m_f = neighbor.m_g + neighbor.m_h;
-                    if (!Contains(closed, neighbor))
+                    if (!open.Contains(neighbor))
                     {
                         open.Add(neighbor);
                     }
+                    
                 }
+                
+                
             }
         }
         return null;
     }
 
-    bool Contains(List<CellNode> _list, CellNode _node)
+    private float Heuristic(Cell start, Cell goal)
     {
-        foreach (CellNode node in _list)
+        return Vector3.Distance(start.m_position, goal.m_position);
+    }
+
+    bool Contains(List<Cell> _list, Cell _node)
+    {
+        foreach (Cell node in _list)
         {
-            if (node.m_cell == _node.m_cell)
+            if (node == _node)
             {
                 return true;
             }
@@ -211,19 +231,41 @@ public class Navmesh2D : MonoBehaviour
         return neighbors;
     }
 
-    private List<Cell> RetracePath(CellNode start, CellNode goal)
+    private List<Cell> RetracePath(Cell start, Cell goal)
     {
         List<Cell> path = new List<Cell>();
-        CellNode current = goal;
+        Cell current = goal;
         while (current != start)
         {
-            path.Add(current.m_cell);
+            path.Add(current);
+            
             current = current.m_parent;
         }
         path.Reverse();
         return path;
     }
     
+    public List<Vector2> FindPath(Vector3 _start, Vector3 _goal, bool _canFly = false)
+    {
+        
+        Cell start = QueryPosition(new Vector2(_start.x, _start.y));
+        Cell goal = QueryPosition(new Vector2(_goal.x, _goal.y));
+        if (start == null || goal == null)
+        {
+            
+            return null;
+            
+        }
+        List<Cell> path = Path(start, goal, _canFly);
+        List<Vector2> path2 = new List<Vector2>();
+        if(path == null) return path2;
+        foreach (Cell cell in path)
+        {
+            path2.Add((Vector2)cell.m_position);
+        }
+        return path2;
+    }
+
     //Draws a path gizmo using lines drawn between cells
     public void DrawPath(List<Cell> _path)
     {
@@ -290,21 +332,21 @@ public class Navmesh2D : MonoBehaviour
                     
                     if (m_grid[i, j].m_walkable)
                     {
-                        Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.85f);
+                        Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
-                        Gizmos.color = Color.green - new Color(0.0f, 0.0f, 0.0f, 0.7f);
+                        Gizmos.color = Color.green - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos - new Vector3(0.0f, m_cellradius - 0.1f, 0.0f), new Vector3(m_cellradius*2.0f, 0.2f, 1.0f));
                         Gizmos.color = Color.black;
                     }
                     else if (m_grid[i, j].m_traversable)
                     {
-                        Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.85f);
+                        Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
                         Gizmos.color = Color.black - new Color(0.0f, 0.0f, 0.0f, 0.7f);
                     }
                     else
                     {
-                        Gizmos.color = Color.red - new Color(0.0f, 0.0f, 0.0f, 0.85f);
+                        Gizmos.color = Color.red - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
                         Gizmos.color = Color.black - new Color(0.0f, 0.0f, 0.0f, 0.7f);
                     }
