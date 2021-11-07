@@ -138212,9 +138212,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2426881126305310754, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3003185592527901684, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_shootAction.m_Type
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213948384371024584, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
@@ -138284,10 +138292,18 @@ PrefabInstance:
       propertyPath: m_shootAction.m_ExpectedControlType
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5312937544958128442, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6100420772379895130, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_respawnPos
       value: 
       objectReference: {fileID: 471841748}
+    - target: {fileID: 6811620733776842018, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
 --- !u!1 &5312238160331908173 stripped

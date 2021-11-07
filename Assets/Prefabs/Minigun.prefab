@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 454791645
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -5120986925729201918, guid: ebd65149cb37d8e44831d4b497c611d2, type: 3}
+  m_Sprite: {fileID: 3042359442344387034, guid: c1f9d7b146eae694398ee08c2ecb9752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,7 +147,9 @@ MonoBehaviour:
   m_player: {fileID: 0}
   m_bulletPrefab: {fileID: 7610439907867034931, guid: 4d27b52a879332847b00f1df8b4543b4, type: 3}
   m_bulletSound: {fileID: 8308941514213574202, guid: 4b57b51425be31f45acb7449699d1486, type: 3}
+  m_OverHeatSound: {fileID: 0}
   m_shootPart: {fileID: 2240376982557400333, guid: 8dbf9be20b3cd1e449f1c75760e27de3, type: 3}
+  m_spawnOnShoot: 0
   m_shootPos: {fileID: 3213948384732537182}
   m_bullet_vel: 40
   m_bulletDamageMulti: 1
@@ -158,6 +160,10 @@ MonoBehaviour:
   m_randomShotDelay: 0.01
   m_rampTime: 5
   m_decayTime: 2
+  m_heatValue: 0
+  m_heatUpRate: 0.25
+  m_coolDownRate: 0.5
+  m_startShootMax: 0.75
   m_recoilMulti: 0
   m_returnRate: 1
   m_leftClick: 1
