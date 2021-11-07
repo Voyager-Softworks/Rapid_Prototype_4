@@ -87,7 +87,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Audio")]
     public AudioSource m_landingSource;
     public AudioSource m_jumpSource;
-    public AudioSource m_chargeSource;
+    public AudioSource m_doubleJumpSource;
+    public AudioSource m_thrusterSource;
+
 
     [Header("Particles")]
     public List<ParticleSystem> m_particles;
@@ -171,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(m_jumpcount < m_maxAirJumpCount)
         {
-            m_jumpSource.Play();
+            m_doubleJumpSource.Play();
             rb.velocity *= new Vector2(1.0f, 0.0f);
             rb.AddForce(new Vector2(0.0f, m_jumpForce ), ForceMode2D.Force);
             m_anim.SetTrigger("Jump");
@@ -183,6 +185,7 @@ public class PlayerMovement : MonoBehaviour
     void DisengageThrusters(InputAction.CallbackContext _ctx)
     {
         m_thrustersEngaged = false;
+        m_thrusterSource.Stop();
     }
 
     // Update is called once per frame
@@ -232,6 +235,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (m_thrusterDuration >= 0.0f)
                 {
+                    if (!m_thrusterSource.isPlaying) m_thrusterSource.Play();
                     vel += Vector2.up * m_thrusterForce;
                     m_thrusterDuration -= Time.deltaTime;
                 }
@@ -240,6 +244,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 m_thrusterTimer -= Time.deltaTime;
             }
+        }
+        else
+        {
+            m_thrusterSource.Stop();
         }
        
         if (m_grounded && m_landingTimer == 0 && m_dashTimer <= 0.0f)
