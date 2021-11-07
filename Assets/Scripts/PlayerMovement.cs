@@ -294,11 +294,11 @@ public class PlayerMovement : MonoBehaviour
                 if (anim != m_anim)
                 {
                     anim.SetBool("Walking", false);
-                    if (!anim.GetBool("Shooting") && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerGun_SHOOT")) anim.speed = Mathf.Clamp(rb.velocity.magnitude, 1.0f, float.PositiveInfinity);
+                    
 
                 }
             }
-            m_anim.speed = 1.0f;
+            
         }
         else if (m_grounded)
         {
@@ -308,14 +308,14 @@ public class PlayerMovement : MonoBehaviour
                 if (anim != m_anim)
                 {
                     anim.SetBool("Walking", true);
-                    if (!anim.GetBool("Shooting") && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerGun_SHOOT")) anim.speed = Mathf.Clamp(rb.velocity.magnitude, 1.0f, float.PositiveInfinity);
+                    
                 }
             }
-            m_anim.speed = rb.velocity.magnitude;
+            
         }
         else
         {
-            m_anim.speed = 1.0f;
+            
             if (m_grounded)
             {
                 foreach (var anim in m_gunAnims)
@@ -323,7 +323,7 @@ public class PlayerMovement : MonoBehaviour
                     if (anim != m_anim)
                     {
                         anim.SetBool("Walking", true);
-                        if (!anim.GetBool("Shooting") && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerGun_SHOOT")) anim.speed = 1.0f;
+                        
                     }
                 }
             }

@@ -6,6 +6,7 @@ public class WalkSound : MonoBehaviour
 {
     AudioSource source;
     public List<AudioClip> clipList;
+    public SFX_Effect sfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,6 @@ public class WalkSound : MonoBehaviour
     {
         source.clip = clipList[Random.Range(0, clipList.Count)];
         source.Play();
+        sfx.Play();
     }
 }

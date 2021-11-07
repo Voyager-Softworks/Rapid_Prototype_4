@@ -718,6 +718,7 @@ GameObject:
   - component: {fileID: 3832237025584282516}
   - component: {fileID: 649940208131865272}
   - component: {fileID: 1879934053686715446}
+  - component: {fileID: 7058431283921411780}
   m_Layer: 7
   m_Name: Walk_SFX
   m_TagString: Untagged
@@ -755,6 +756,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0c3e1fb5565fe2d4c904b7e5e4847b5b, type: 3}
   - {fileID: 8300000, guid: 0bb6cb99347503d418af1c0d58a4a6a9, type: 3}
   - {fileID: 8300000, guid: 24ac560aada25694387cba514687ce7a, type: 3}
+  sfx: {fileID: 7058431283921411780}
 --- !u!82 &1879934053686715446
 AudioSource:
   m_ObjectHideFlags: 0
@@ -851,6 +853,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7058431283921411780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5308583705879278527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13db967582573f387bd4f16f5bedad59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noiseSettingsData: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
+  m_playOnAwake: 0
+  m_loop: 0
+  m_effectsList:
+  - m_type: 5
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0.02}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
+  - m_type: 1
+    m_waitDuration: 0.2
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
+  - m_type: 5
+    m_waitDuration: 0
+    m_clip: {fileID: 0}
+    m_source: {fileID: 0}
+    m_particle: {fileID: 0}
+    m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
 --- !u!1 &5312238160630991547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,8 +1220,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_grounded: 0
-  m_groundCheckOffset: {x: 0, y: -0.64}
-  m_groundCheckExtents: {x: 0.49, y: 0.11}
+  m_groundCheckOffset: {x: 0, y: -0.85}
+  m_groundCheckExtents: {x: 0.6, y: 0.2}
   m_cam: {fileID: 0}
   m_noise: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
   m_landingNoiseMagnitude: {x: 1.5, y: 1.5}
@@ -1266,8 +1308,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030545529, y: -0.1706342}
-  m_Size: {x: 0.47647017, y: 0.61873394}
+  m_Offset: {x: 0.030545529, y: -0.21}
+  m_Size: {x: 0.47647017, y: 0.83}
   m_Direction: 0
 --- !u!114 &6100420772379895130
 MonoBehaviour:
