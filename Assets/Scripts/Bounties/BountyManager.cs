@@ -37,25 +37,34 @@ public class BountyManager : MonoBehaviour
     }
 
     [Header("Board")]
-    public BountyBoard bountyBoard;
+    public BountyBoard bountyBoard = null;
 
     [Header("Bounties")]
-    public List<Bounty> inactiveBounties;
-    public List<Bounty> activeBounties;
-    public List<Bounty> completedBounties;
-    public List<Bounty> failedBounties;
-    public Bounty selectedBounty;
+    public List<Bounty> inactiveBounties = new List<Bounty>(){};
+    public List<Bounty> activeBounties = new List<Bounty>(){};
+    public List<Bounty> completedBounties = new List<Bounty>(){};
+    public List<Bounty> failedBounties = new List<Bounty>(){};
+    public Bounty selectedBounty = null;
 
     [Header("Spawn Info")]
     public List<LevelSpawnInfo> spawnInfo;
 
-    void Start()
-    {
+    void Awake() {
         SceneManager.sceneLoaded += SceneLoaded;
+    }
+
+    private void OnDestroy() {
+        SceneManager.sceneLoaded -= SceneLoaded;
     }
 
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
+        if (this == null) return;
+        if (gameObject == null) return;
+
+        selectedBounty = null;
+
         if (scene.name == "Level_Hub")
         {
             // Load the board
@@ -75,6 +84,8 @@ public class BountyManager : MonoBehaviour
     void LoadBoard()
     {
         bountyBoard = GameObject.Find("BountyBoard").GetComponent<BountyBoard>();
+
+        bountyBoard.infoAcceptButton.GetComponent<Button>().onClick.AddListener(AcceptBounty);
     }
 
     void LoadBounties()
@@ -132,7 +143,7 @@ public class BountyManager : MonoBehaviour
             TextMeshProUGUI[] text = _button.GetComponentsInChildren<TextMeshProUGUI>();
 
             //get inactive bounties
-            List<Bounty> _bounties = inactiveBounties;
+            List<Bounty> _bounties = new List<Bounty>(inactiveBounties);
             //add on the active bounties
             _bounties.AddRange(activeBounties);
 
@@ -143,11 +154,12 @@ public class BountyManager : MonoBehaviour
                 Bounty bounty = _bounties[i];
 
                 //add button listener
+                _button.GetComponent<Button>().onClick.RemoveAllListeners();
                 _button.GetComponent<Button>().onClick.AddListener( () => {
                     //update selected bounty
-                    selectedBounty = bounty;
+                    selectedBounty = (selectedBounty == bounty) ? null : bounty;
                     //update the board
-                    UpdateSelected();
+                    UpdateBoard();
                 });
 
                 //set the button text
@@ -157,14 +169,14 @@ public class BountyManager : MonoBehaviour
                     if (_text.transform.name.ToLower() == "type")
                     {
                         //set the text to the bounty type
-                        _text.text = _bounties[i].bountyType.ToString();
+                        _text.text = bounty.bountyType.ToString();
                     }
 
                     //check if name is "Diff"
                     if (_text.transform.name.ToLower() == "diff")
                     {
                         //set the text to the bounty difficulty
-                        switch (_bounties[i].bountyDifficulty)
+                        switch (bounty.bountyDifficulty)
                         {
                             case BountyDifficulty.EASY:
                                 _text.text = "*";
@@ -178,6 +190,22 @@ public class BountyManager : MonoBehaviour
                         }
                     }
                 }
+                
+                //if bounty is active, make green, otherwise white
+                if (bounty.bountyStatus == BountyStatus.ACTIVE)
+                {
+                    _button.GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    _button.GetComponent<Image>().color = Color.white;
+                }
+
+                //if this bounty is selected, make it darker
+                if (selectedBounty == bounty)
+                {
+                    _button.GetComponent<Image>().color = _button.GetComponent<Image>().color * 0.75f;
+                }
 
                 //set the button to active
                 _button.SetActive(true);
@@ -189,19 +217,13 @@ public class BountyManager : MonoBehaviour
             }
         }
 
-        if (inactiveBounties.Count > 0){
-            selectedBounty = inactiveBounties[0];
-        }
-        else if (activeBounties.Count > 0){
-            selectedBounty = activeBounties[0];
-        }
-        else {
-            selectedBounty = null;
-        }
+        UpdateSelected();
     }
 
     void UpdateSelected(){
         if (selectedBounty != null){
+            bountyBoard.infoPannel.SetActive(true);
+
             bountyBoard.infoTitle.GetComponent<TextMeshProUGUI>().text = selectedBounty.bountyType.ToString();
             bountyBoard.infoLevel.GetComponent<TextMeshProUGUI>().text = selectedBounty.levelType.ToString();
             //generate the reward text
@@ -215,6 +237,46 @@ public class BountyManager : MonoBehaviour
                 rewardText += unlock + ", ";
             }
             bountyBoard.infoReward.GetComponent<TextMeshProUGUI>().text = rewardText;
+
+            //if selected bounty is active
+            if (selectedBounty.bountyStatus == BountyStatus.ACTIVE){
+                //make accept button say "In Progress"
+                bountyBoard.infoAcceptButton.GetComponentInChildren<TextMeshProUGUI>().text = "In Progress";
+                //make the accept button inactive
+                bountyBoard.infoAcceptButton.GetComponent<Button>().interactable = false;
+            }
+            else {
+                //make accept button say "Accept"
+                bountyBoard.infoAcceptButton.GetComponentInChildren<TextMeshProUGUI>().text = "Accept";
+                //make the accept button active
+                bountyBoard.infoAcceptButton.GetComponent<Button>().interactable = true;
+            }
+        }
+        else{
+            bountyBoard.infoPannel.SetActive(false);
+        }
+    }
+
+    void AcceptBounty()
+    {
+        if (selectedBounty != null)
+        {
+            //check if bounty is already active, or in the active list, if so, do nothing
+            if (selectedBounty.bountyStatus == BountyStatus.ACTIVE || activeBounties.Contains(selectedBounty))
+            {
+                return;
+            }
+
+            //remove the bounty from the inactive bounties
+            inactiveBounties.Remove(selectedBounty);
+
+            //add the bounty to the active bounties
+            activeBounties.Add(selectedBounty);
+
+            selectedBounty.bountyStatus = BountyStatus.ACTIVE;
+
+            //update the board
+            UpdateBoard();
         }
     }
 

@@ -42,6 +42,10 @@ public class Resources : MonoBehaviour
         SceneManager.sceneLoaded += SceneLoaded;
     }
 
+    private void OnDestroy() {
+        SceneManager.sceneLoaded -= SceneLoaded;
+    }
+
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (!player) player = GameObject.FindGameObjectWithTag("Player");
