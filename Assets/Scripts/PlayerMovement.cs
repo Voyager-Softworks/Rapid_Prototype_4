@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Animator m_anim;
     Animator[] m_gunAnims;
     [Header("Controls")]
-    public InputAction m_walkAction, m_jumpAction, m_airStrafeAction, m_dashAction;
+    public InputAction m_walkAction, m_jumpAction, m_airStrafeAction, m_dashAction, m_groundPoundAction;
     Rigidbody2D rb;
 
     [Header("Settings")]
@@ -44,12 +44,17 @@ public class PlayerMovement : MonoBehaviour
     public int m_maxAirJumpCount = 0;
     int m_jumpcount = 0;
     
+    [Header("Ground Pound")]
+    public float m_groundPoundForce = 1.0f;
 
     [Header("Dash")]
     [SerializeField] float m_dashForce = 1.0f;
     Vector2 m_dashDirection;
     
     float m_timesincelastmovementkey = 0.0f;
+    KeyCode m_lastmovementkey = KeyCode.None;
+
+    Vector2 m_lastMovementDirection;
     [SerializeField] float m_dashDuration = 1.0f;
     float m_dashTimer = 0.0f;
 
@@ -121,12 +126,14 @@ public class PlayerMovement : MonoBehaviour
         m_jumpAction.Enable();
         m_airStrafeAction.Enable();
         m_dashAction.Enable();
+        m_groundPoundAction.Enable();
         m_jumpAction.started += Jump;
         m_jumpAction.canceled += DisengageThrusters;
         m_jumpAction.performed += DisengageThrusters;
         m_dashAction.performed += Dash;
         
-        m_walkAction.started += (_ctx) => { if (m_timesincelastmovementkey < 0.3f) { Dash(_ctx); } m_timesincelastmovementkey = 0; };
+        m_walkAction.started += (_ctx) => { if (m_timesincelastmovementkey < 0.3f && m_lastMovementDirection == _ctx.ReadValue<Vector2>().normalized) { Dash(_ctx); } m_timesincelastmovementkey = 0; m_lastMovementDirection = _ctx.ReadValue<Vector2>().normalized; };
+        m_groundPoundAction.started += (_ctx) => { if (m_timesincelastmovementkey < 0.3f && m_lastMovementDirection == _ctx.ReadValue<Vector2>().normalized) { GroundPound(_ctx); } m_timesincelastmovementkey = 0; m_lastMovementDirection = _ctx.ReadValue<Vector2>().normalized;};
     }
 
 
@@ -141,6 +148,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void GroundPound(InputAction.CallbackContext _ctx)
+    {
+        if(!m_grounded && !m_thrustersEngaged)
+        {
+            rb.velocity = new Vector2(0.0f, -m_groundPoundForce);
+        }
+    }
+
     void Land()
     {
 
@@ -148,7 +163,8 @@ public class PlayerMovement : MonoBehaviour
         m_landingTimer = m_landDuration;
         m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x * (Mathf.Abs(m_oldVelocity.x) / 10.0f);
         m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y * (Mathf.Abs(m_oldVelocity.y) / 10.0f);
-        Gamepad.current.SetMotorSpeeds(Mathf.Clamp(m_oldVelocity.magnitude/20.0f, 0.0f, 1.0f), 0.5f);
+        if(Gamepad.current != null) Gamepad.current.SetMotorSpeeds(Mathf.Clamp(m_oldVelocity.magnitude/20.0f, 0.0f, 1.0f), 0.5f);
+        
         m_landingSource.Play();
         m_OnLand.Invoke();
         m_jumpcount = 0;

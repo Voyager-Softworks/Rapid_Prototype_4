@@ -8,6 +8,7 @@ public class FollowMouse : MonoBehaviour
     public InputAction m_mousePos, m_aimStick;
     public Vector3 mouse_pos;
 
+    public bool m_gamepadMode = false;
     [SerializeField] float m_rotateSpeed;
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class FollowMouse : MonoBehaviour
     void Update()
     {
         
-        if(Gamepad.all.Count > 0)
+        if(Gamepad.current != null && m_gamepadMode)
         {
             mouse_pos = m_aimStick.ReadValue<Vector2>();
         }
