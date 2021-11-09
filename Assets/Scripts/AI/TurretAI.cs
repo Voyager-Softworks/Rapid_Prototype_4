@@ -114,7 +114,12 @@ public class TurretAI : MonoBehaviour
         {
             return;
         }
-        
+        //return if player is outside of min and max angle
+        if (Vector3.Angle(m_playerTransform.position - transform.position, transform.right) < m_minAngle || Vector3.Angle(m_playerTransform.position - transform.position, transform.right) > m_maxAngle)
+        {
+            return;
+        }
+
         
         if(m_clip > 0)
         {
