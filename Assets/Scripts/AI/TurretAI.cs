@@ -72,11 +72,8 @@ public class TurretAI : MonoBehaviour
         if ((!Physics2D.Linecast(transform.position, m_playerTransform.position, LayerMask.GetMask("Ground") | LayerMask.GetMask("Environment"))
             && (transform.position - m_playerTransform.position).magnitude < m_attackRadius))
         {
-            Shoot(m_currBarrel++);
-            if(m_currBarrel >= m_barrelPositions.Count)
-            {
-                m_currBarrel = 0;
-            }
+            Shoot();
+            
             m_anim.SetBool("IsShooting", true);
             RotateTurret();
 
@@ -134,6 +131,36 @@ public class TurretAI : MonoBehaviour
         }
     }
 
+    public void Shoot()
+    {
+        if (m_reloadDelayTimer > 0.0f || m_shotDelayTimer > 0.0f)
+        {
+            return;
+        }
+        //return if player is outside of min and max angle
+        if (Vector3.Angle(m_playerTransform.position - transform.position, transform.right) < m_minAngle || Vector3.Angle(m_playerTransform.position - transform.position, transform.right) > m_maxAngle)
+        {
+            return;
+        }
+        
+        
+        if(m_clip > 0)
+        {
+            m_clip--;
+            m_shotDelayTimer = m_shotDelay;
+            GameObject projectile = Instantiate(m_bulletPrefab, m_barrelPositions[m_currBarrel].position, m_barrelAimHolder.rotation, null);
+            projectile.GetComponent<Rigidbody2D>().velocity = (m_barrelPositions[m_currBarrel].right).normalized * m_bulletSpeed;
+            if(++m_currBarrel >= m_barrelPositions.Count)
+            {
+                m_currBarrel = 0;
+            }
+        }
+        else
+        {
+            Reload();
+        }
+    }
+
     
     
 
@@ -169,10 +196,32 @@ public class TurretAI : MonoBehaviour
         }
         Gizmos.DrawLine(pos, transform.position);
         
+        for(int i = 0; i < m_barrelPositions.Count; i++)
+        {
+            if(i == m_currBarrel && m_reloadDelayTimer <= 0.0f) Gizmos.color = Color.green;
+            else Gizmos.color = Color.red;
+            
+            Gizmos.DrawLine(m_barrelPositions[i].position, m_barrelPositions[i].position + m_barrelPositions[i].right * 0.2f);
+            Gizmos.DrawSphere(m_barrelPositions[i].position, 0.05f);
+        }
+        Gizmos.color = Color.green;
+        if (m_reloadDelayTimer > 0.0f)
+        {
+            Gizmos.DrawSphere(m_barrelAimHolder.position, ((m_reloadDelay - m_reloadDelayTimer)/m_reloadDelay) * 0.25f);
+        }
+        else
+        {
+            Gizmos.DrawSphere(m_barrelAimHolder.position, ((float)m_clip / (float)m_clipSize) * 0.25f);
+        }
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireSphere(m_barrelAimHolder.position, 0.25f);
 
     }
     
-    
+   
+
+
     public void RotateTurret()
     {
 
@@ -187,9 +236,15 @@ public class TurretAI : MonoBehaviour
         {
             angle = m_maxAngle;
         }
+        
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
         m_barrelAimHolder.rotation = Quaternion.Slerp(m_barrelAimHolder.rotation, rotation, Time.deltaTime * m_rotateSpeed);
     }
+
+    
+
+
 
     
     
