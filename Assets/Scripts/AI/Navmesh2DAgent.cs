@@ -51,7 +51,7 @@ public class Navmesh2DAgent : MonoBehaviour
                 m_rb.AddForce(climbforce * 15.0f);
                 if (m_rb.IsTouchingLayers(LayerMask.GetMask("Ground")) && climbforce.magnitude > 0.1f)
                 {
-                    m_rb.AddForce(-Physics2D.gravity * 4.0f);
+                    m_rb.AddForce(-Physics2D.gravity * 3.5f);
                     m_rb.AddForce(climbforce * 20.0f);
                 }
                 

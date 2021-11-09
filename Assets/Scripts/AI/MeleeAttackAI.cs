@@ -74,7 +74,7 @@ public class MeleeAttackAI : MonoBehaviour
 
     public void m_Attack()
     {
-        if ((transform.position - m_playerTransform.position).magnitude < 0.5f)
+        if ((transform.position - m_playerTransform.position).magnitude < m_attackRadius)
         {
             m_playerTransform.gameObject.GetComponent<PlayerHealth>().Damage(m_Damage);
             m_barkSource.clip = m_attackClip;
