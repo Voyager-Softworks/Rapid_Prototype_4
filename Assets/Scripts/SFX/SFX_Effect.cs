@@ -125,7 +125,11 @@ public class SFX_Effect : MonoBehaviour
                     Instantiate(currEffect.m_prefab, transform.position, Quaternion.identity, transform.parent);
                     break;
                 case SFXtype.SET_GAMEPAD_RUMBLE:
-                    Gamepad.current.SetMotorSpeeds(currEffect.m_controllerRumbleSpeed.x, currEffect.m_controllerRumbleSpeed.y);
+                    if(Gamepad.current != null)
+                    {
+                        Gamepad.current.SetMotorSpeeds(currEffect.m_controllerRumbleSpeed.x, currEffect.m_controllerRumbleSpeed.y);
+                    }
+                    
                     break;
                 default:
                     break;
