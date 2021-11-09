@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class FollowMouse : MonoBehaviour
 {
+    public static float AimConeAngle = 90.0f;
     public InputAction m_mousePos, m_aimStick;
     public Vector3 mouse_pos;
 
@@ -34,6 +35,6 @@ public class FollowMouse : MonoBehaviour
         
         
         float angle = Mathf.Atan2(mouse_pos.y, transform.parent.rotation.eulerAngles.y == 0 ? mouse_pos.x : -mouse_pos.x) * Mathf.Rad2Deg;
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(new Vector3(0, 0, Mathf.Clamp(angle, -25.0f, 25.0f))), m_rotateSpeed * Time.deltaTime);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(new Vector3(0, 0, Mathf.Clamp(angle, 0.0f - (AimConeAngle/2.0f), 0.0f + (AimConeAngle/2.0f)))), m_rotateSpeed * Time.deltaTime);
     }
 }

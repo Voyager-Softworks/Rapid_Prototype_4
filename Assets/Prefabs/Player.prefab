@@ -835,6 +835,7 @@ MonoBehaviour:
       m_Action: Aim Stick
       m_Flags: 0
   mouse_pos: {x: 0, y: 0, z: 0}
+  m_gamepadMode: 0
   m_rotateSpeed: 3
 --- !u!1 &5308583705879278527
 GameObject:
@@ -1399,7 +1400,7 @@ MonoBehaviour:
         m_CallState: 2
   m_grounded: 0
   m_groundCheckOffset: {x: 0, y: -0.85}
-  m_groundCheckExtents: {x: 0.6, y: 0.2}
+  m_groundCheckExtents: {x: 0.57, y: 0.2}
   m_cam: {fileID: 0}
   m_noise: {fileID: 11400000, guid: e03e7185e2e78aedb90b54cc35d8af35, type: 2}
   m_landingNoiseMagnitude: {x: 1.5, y: 1.5}
@@ -1461,7 +1462,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03160517, y: -0.24}
+  m_Offset: {x: 0, y: -0.24}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1786,6 +1787,7 @@ MonoBehaviour:
       m_Action: Aim Stick
       m_Flags: 0
   mouse_pos: {x: 0, y: 0, z: 0}
+  m_gamepadMode: 0
   m_rotateSpeed: 3
 --- !u!82 &39558437
 AudioSource:

@@ -255,6 +255,10 @@ public class PlayerMovement : MonoBehaviour
                     vel += Vector2.up * m_thrusterForce;
                     m_thrusterDuration -= Time.deltaTime;
                 }
+                else
+                {
+                    m_thrusterSource.Stop();
+                }
             }
             else
             {
@@ -287,11 +291,11 @@ public class PlayerMovement : MonoBehaviour
 
         vel = vel * m_moveSpeed;
 
-        if (m_mousescript.mouse_pos.x < 0.0f)
+        if (m_mousescript.mouse_pos.x < -50.0f)
         {
             m_facingLeft = true;
         }
-        else if (m_mousescript.mouse_pos.x > 0.0f)
+        else if (m_mousescript.mouse_pos.x > 50.0f)
         {
             m_facingLeft = false;
         }
@@ -301,6 +305,7 @@ public class PlayerMovement : MonoBehaviour
         if (m_facingLeft)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+            
         }
         else
         {
