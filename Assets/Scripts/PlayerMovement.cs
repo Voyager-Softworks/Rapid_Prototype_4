@@ -290,7 +290,7 @@ public class PlayerMovement : MonoBehaviour
             vel.x = m_airStrafeAction.ReadValue<Vector2>().x * (m_maneuveringThrusterStrength + m_airStrafeForce);
 
         }
-        else if (!m_grounded && m_dashTimer <= 0.0f)
+        else if (!m_grounded && m_dashTimer <= 0.0f && Mathf.Abs(rb.velocity.y) > 0.5f)
         {
             vel.x = m_airStrafeAction.ReadValue<Vector2>().x * (m_airStrafeForce);
         }
