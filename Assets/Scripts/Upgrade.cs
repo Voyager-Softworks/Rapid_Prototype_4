@@ -96,13 +96,13 @@ public class Upgrade : MonoBehaviour
         {
             switch (_cost.m_type)
             {
-                case Resources.ResourceType.Organic:
+                case Resources.ResourceType.ORGANIC:
                     costString += _cost.m_amount + " Organic ";
                     break;
-                case Resources.ResourceType.Power:
+                case Resources.ResourceType.POWER:
                     costString += _cost.m_amount + " Power ";
                     break;
-                case Resources.ResourceType.Scrap:
+                case Resources.ResourceType.SCRAP:
                     costString += _cost.m_amount + " Scrap ";
                     break;
             }

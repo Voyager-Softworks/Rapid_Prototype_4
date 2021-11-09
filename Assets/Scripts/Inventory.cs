@@ -38,15 +38,15 @@ public class Inventory : MonoBehaviour
     {
         switch (_type)
         {
-            case Resources.ResourceType.Organic:
+            case Resources.ResourceType.ORGANIC:
                 AddOrganic(_amount);
                 break;
 
-            case Resources.ResourceType.Power:
+            case Resources.ResourceType.POWER:
                 AddPower(_amount);
                 break;
 
-            case Resources.ResourceType.Scrap:
+            case Resources.ResourceType.SCRAP:
                 AddScrap(_amount);
                 break;
 
@@ -77,15 +77,15 @@ public class Inventory : MonoBehaviour
     {
         switch (_type)
         {
-            case Resources.ResourceType.Organic:
+            case Resources.ResourceType.ORGANIC:
                 if (m_organicAmount < _amount) return false;
                 break;
 
-            case Resources.ResourceType.Power:
+            case Resources.ResourceType.POWER:
                 if (m_powerAmount < _amount) return false;
                 break;
 
-            case Resources.ResourceType.Scrap:
+            case Resources.ResourceType.SCRAP:
                 if (m_scrapAmount < _amount) return false;
                 break;
 
@@ -100,15 +100,15 @@ public class Inventory : MonoBehaviour
     {
         switch (_type)
         {
-            case Resources.ResourceType.Organic:
+            case Resources.ResourceType.ORGANIC:
                 m_organicAmount = m_organicAmount <= _amount ? 0 : m_organicAmount - _amount;
                 break;
 
-            case Resources.ResourceType.Power:
+            case Resources.ResourceType.POWER:
                 m_powerAmount = m_powerAmount <= _amount ? 0 : m_powerAmount - _amount;
                 break;
 
-            case Resources.ResourceType.Scrap:
+            case Resources.ResourceType.SCRAP:
                 m_scrapAmount = m_scrapAmount <= _amount ? 0 : m_scrapAmount - _amount;
                 break;
 
@@ -124,17 +124,17 @@ public class Inventory : MonoBehaviour
         int dropamount = 0;
         switch (_type)
         {
-            case Resources.ResourceType.Organic:
+            case Resources.ResourceType.ORGANIC:
                 dropamount = (int)(m_organicAmount * (_percentage / 100.0f));
                 m_organicAmount = 0;
                 break;
 
-            case Resources.ResourceType.Power:
+            case Resources.ResourceType.POWER:
                 dropamount = (int)(m_powerAmount * (_percentage / 100.0f));
                 m_powerAmount = 0;
                 break;
 
-            case Resources.ResourceType.Scrap:
+            case Resources.ResourceType.SCRAP:
                 dropamount = (int)(m_scrapAmount * (_percentage / 100.0f));
                 m_scrapAmount = 0;
                 break;
@@ -148,13 +148,13 @@ public class Inventory : MonoBehaviour
         {
             switch (_type)
             {
-                case Resources.ResourceType.Organic:
+                case Resources.ResourceType.ORGANIC:
                     Instantiate(m_organicPrefab, gameObject.transform.position, Quaternion.identity);
                     break;
-                case Resources.ResourceType.Power:
+                case Resources.ResourceType.POWER:
                     Instantiate(m_powerPrefab, gameObject.transform.position, Quaternion.identity);
                     break;
-                case Resources.ResourceType.Scrap:
+                case Resources.ResourceType.SCRAP:
                     Instantiate(m_scrapPrefab, gameObject.transform.position, Quaternion.identity);
                     break;
                 default:

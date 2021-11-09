@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316f28372d8e7b1429ca8a62996a8517, type: 3}
+  m_Name: Wasteland_SpawnInfo
+  m_EditorClassIdentifier: 
+  levelType: 1
+  defaultMinAmount: 10
+  defaultMaxAmount: 20
+  defaultSpawns:
+  - prefab: {fileID: 1187514438124963611, guid: 530f3c16e11e746468945a951459a09c, type: 3}
+    ratioAmount: 1
+  - prefab: {fileID: 1187514438124963611, guid: 14ee4c0e4f2d43343ad8332dc78ea025, type: 3}
+    ratioAmount: 0.5
+  swarmMinAmount: 15
+  swarmMaxAmount: 25
+  swarmSpawns:
+  - prefab: {fileID: 4200884670035412504, guid: a3ae9a44728dfe4b2963b713b37a85c0, type: 3}
+    ratioAmount: 1
+  eliteMinAmount: 1
+  eliteMaxAmount: 1
+  eliteSpawns:
+  - prefab: {fileID: 1187514438124963611, guid: c7ad2673b4a4881408b195e978c6265d, type: 3}
+    ratioAmount: 1
