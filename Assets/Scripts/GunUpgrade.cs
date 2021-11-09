@@ -38,15 +38,15 @@ public class GunUpgrade : MonoBehaviour
         {
             switch (_cost.m_type)
             {
-                case Resources.ResourceType.Organic:
+                case Resources.ResourceType.ORGANIC:
                     m_text.text += ", " + _cost.m_amount + " Organic";
                     break;
 
-                case Resources.ResourceType.Power:
+                case Resources.ResourceType.POWER:
                     m_text.text += ", " + _cost.m_amount + " Power";
                     break;
 
-                case Resources.ResourceType.Scrap:
+                case Resources.ResourceType.SCRAP:
                     m_text.text += ", " + _cost.m_amount + " Scrap";
                     break;
             }

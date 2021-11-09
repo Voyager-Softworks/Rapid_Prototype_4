@@ -32,20 +32,20 @@ public class ResourcesEditor : Editor
         EditorGUILayout.LabelField("Player Resources", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Organic");
-        resources.playerResources[(int)Resources.ResourceType.Organic].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.Organic].amount);
-        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.Organic).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.Organic].amount;
+        resources.playerResources[(int)Resources.ResourceType.ORGANIC].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.ORGANIC].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.ORGANIC).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.ORGANIC].amount;
         EditorGUILayout.EndHorizontal();
         
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Scrap");
-        resources.playerResources[(int)Resources.ResourceType.Scrap].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.Scrap].amount);
-        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.Scrap).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.Scrap].amount;
+        resources.playerResources[(int)Resources.ResourceType.SCRAP].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.SCRAP].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.SCRAP).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.SCRAP].amount;
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Power");
-        resources.playerResources[(int)Resources.ResourceType.Power].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.Power].amount);
-        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.Power).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.Power].amount;
+        resources.playerResources[(int)Resources.ResourceType.POWER].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.POWER].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.POWER).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.POWER].amount;
         EditorGUILayout.EndHorizontal();
 
         //space

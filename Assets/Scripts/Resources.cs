@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Resources : MonoBehaviour
 {
     public enum ResourceType
     {
-        Organic,
-        Power,
-        Scrap
+        ORGANIC,
+        POWER,
+        SCRAP
     }
 
     [Header("Scene Instances")]
@@ -25,9 +26,9 @@ public class Resources : MonoBehaviour
     [Header("Player Resources")]
     //player resources
     [SerializeField] public PlayerResource[] playerResources = new PlayerResource[3]{
-        new PlayerResource{type = ResourceType.Organic, amount = 0},
-        new PlayerResource{type = ResourceType.Power, amount = 0},
-        new PlayerResource{type = ResourceType.Scrap, amount = 0}
+        new PlayerResource{type = ResourceType.ORGANIC, amount = 0},
+        new PlayerResource{type = ResourceType.POWER, amount = 0},
+        new PlayerResource{type = ResourceType.SCRAP, amount = 0}
     };
 
     [Header("Prefabs")]
@@ -37,6 +38,11 @@ public class Resources : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {
+        SceneManager.sceneLoaded += SceneLoaded;
+    }
+
+    void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (!player) player = GameObject.FindGameObjectWithTag("Player");
     }
