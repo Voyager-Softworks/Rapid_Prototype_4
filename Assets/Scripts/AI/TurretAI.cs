@@ -34,6 +34,8 @@ public class TurretAI : MonoBehaviour
     int m_currBarrel = 0;
     Animator m_anim;
 
+    bool m_roundChambered = false;
+
     bool m_facingLeft = false;
     // Start is called before the first frame update
     void Start()
@@ -74,20 +76,20 @@ public class TurretAI : MonoBehaviour
         {
             Shoot();
             
-            m_anim.SetBool("IsShooting", true);
+            
             RotateTurret();
 
         }
         else if (m_playerDetected)
         {
             m_shooting = false;
-            m_anim.SetBool("IsShooting", false);
+            
             RotateTurret();
         }
         else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius && !m_playerDetected)
         {
             m_shooting = false;
-            m_anim.SetBool("IsShooting", false);
+            
             
             m_playerDetected = true;
             if (m_barkSource)
@@ -100,7 +102,7 @@ public class TurretAI : MonoBehaviour
         {
             m_shooting = false;
             
-            m_anim.SetBool("IsShooting", false);
+            
         }
         
 
@@ -142,14 +144,13 @@ public class TurretAI : MonoBehaviour
         {
             return;
         }
-        
-        
+        if (m_roundChambered) return;
         if(m_clip > 0)
         {
             m_clip--;
-            m_shotDelayTimer = m_shotDelay;
-            GameObject projectile = Instantiate(m_bulletPrefab, m_barrelPositions[m_currBarrel].position, m_barrelAimHolder.rotation, null);
-            projectile.GetComponent<Rigidbody2D>().velocity = (m_barrelPositions[m_currBarrel].right).normalized * m_bulletSpeed;
+            m_anim.SetTrigger("Shoot");
+            m_roundChambered = true;
+            m_anim.speed = 1.0f / m_shotDelay;
             if(++m_currBarrel >= m_barrelPositions.Count)
             {
                 m_currBarrel = 0;
@@ -162,7 +163,14 @@ public class TurretAI : MonoBehaviour
     }
 
     
-    
+    public void Fire()
+    {
+        m_roundChambered = false;
+        m_anim.speed = 1.0f;
+        m_shotDelayTimer = m_shotDelay;
+        GameObject projectile = Instantiate(m_bulletPrefab, m_barrelPositions[m_currBarrel].position, m_barrelAimHolder.rotation, null);
+        projectile.GetComponent<Rigidbody2D>().velocity = (m_barrelPositions[m_currBarrel].right).normalized * m_bulletSpeed;
+    }
 
 
 
