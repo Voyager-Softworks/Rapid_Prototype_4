@@ -87804,7 +87804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1062991447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87822,6 +87822,8 @@ MonoBehaviour:
   p: {fileID: 0}
   m_detectionRadius: 10.17
   m_attackRadius: 5.45
+  m_minAngle: -8.5
+  m_maxAngle: 45
   m_shooting: 0
   m_barrelPositions:
   - {fileID: 95026246}
@@ -87829,6 +87831,9 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 2240376982557400333, guid: a60e049ac2f951241915c0bf36efe316, type: 3}
   m_bulletSpeed: 10
   m_rotateSpeed: 1
+  m_clipSize: 4
+  m_shotDelay: 0.2
+  m_reloadDelay: 0.7
 --- !u!4 &1062991448
 Transform:
   m_ObjectHideFlags: 0
@@ -87837,7 +87842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062991446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.12, y: 4.31, z: -0.75366527}
+  m_LocalPosition: {x: -3.12, y: 4.38, z: -0.75366527}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 680952142}
