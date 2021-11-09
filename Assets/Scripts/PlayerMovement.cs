@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     WalkSound m_walksoundmaker;
     SpriteRenderer m_renderer;
     Animator m_anim;
+
+    public Animator m_dashAnim;
     Animator[] m_gunAnims;
     [Header("Controls")]
     public InputAction m_walkAction, m_jumpAction, m_airStrafeAction, m_dashAction, m_groundPoundAction;
@@ -144,6 +146,14 @@ public class PlayerMovement : MonoBehaviour
         
         
         m_dashDirection = m_walkAction.ReadValue<Vector2>();
+        if ((m_dashDirection.x < 0.0f && m_facingLeft) || (m_dashDirection.x > 0.0f && !m_facingLeft))
+        {
+            m_dashAnim.SetTrigger("DashForward");
+        }
+        else
+        {
+            m_dashAnim.SetTrigger("DashBackward");
+        }
         m_dashTimer = m_dashDuration;
 
     }
