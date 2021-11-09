@@ -8,7 +8,7 @@ public class Navmesh2DAgent : MonoBehaviour
     public float m_speed = 1.0f;
     public float m_rotationSpeed = 1.0f;
     public List<Vector2> m_currentPath;
-
+    Rigidbody2D m_rb;
     private Vector3 m_targetPosition;
 
     public bool m_isMoving = false;
@@ -20,6 +20,7 @@ public class Navmesh2DAgent : MonoBehaviour
     void Start()
     {
         m_navmesh = FindObjectOfType<Navmesh2D>();
+        m_rb = GetComponent<Rigidbody2D>();
     }
     
 
@@ -36,6 +37,27 @@ public class Navmesh2DAgent : MonoBehaviour
         {
             Vector2 target = m_currentPath[0];
             Vector2 direction = target - (Vector2)transform.position;
+            Vector2 climbforce = Vector2.zero;
+            if (m_canClimb && m_rb != null)
+            {
+                if(!m_navmesh.IsTraversible(target, Vector2.right) || (m_navmesh.IsWalkable(target, Vector2.right) && m_navmesh.IsTraversible(this.gameObject.transform.position, Vector2.down)))
+                {
+                    climbforce = Vector2.right * 1.0f;
+                }
+                else if(!m_navmesh.IsTraversible(target, Vector2.left) || (m_navmesh.IsWalkable(target, Vector2.left) && m_navmesh.IsTraversible(this.gameObject.transform.position, Vector2.down)))
+                {
+                    climbforce = Vector2.left * 1.0f;
+                }
+                m_rb.AddForce(climbforce * 15.0f);
+                if (m_rb.IsTouchingLayers(LayerMask.GetMask("Ground")) && climbforce.magnitude > 0.1f)
+                {
+                    m_rb.AddForce(-Physics2D.gravity * 4.0f);
+                    m_rb.AddForce(climbforce * 20.0f);
+                }
+                
+                
+            }
+            
             float distance = direction.magnitude;
             float step = m_speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);
@@ -43,19 +65,34 @@ public class Navmesh2DAgent : MonoBehaviour
             {
                 m_currentPath.RemoveAt(0);
             }
-            if ((target - (Vector2)transform.position).x < 0.0f)
+            if (climbforce.magnitude < 0.1f)
             {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
+                if ((target - (Vector2)transform.position).x < 0.0f)
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.identity;
+                }
             }
             else
             {
-                transform.rotation = Quaternion.identity;
+                if (climbforce.x > 0.0f)
+                {
+                    transform.rotation = Quaternion.identity;
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
             }
+            
 
         }
         else
         {
-            m_isMoving = false;
+            Stop();
         }
     }
 
@@ -75,10 +112,9 @@ public class Navmesh2DAgent : MonoBehaviour
     {
         m_targetPosition = targetPosition;
         List<Vector2> newPath = m_navmesh.FindPath(transform.position, m_targetPosition, m_canFly, m_canClimb);
-        if (newPath != null && newPath.Count > 0)
-        {
-            m_currentPath = newPath;
-        }
+        
+        m_currentPath = newPath;
+        
         
     }
 

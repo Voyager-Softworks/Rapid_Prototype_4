@@ -115,10 +115,6 @@ public class Navmesh2D : MonoBehaviour
         {
             return false;
         }
-        if (cell.m_traversable == false)
-        {
-            return false;
-        }
         Cell neighbor = QueryPosition(_pos + _dir);
         if (neighbor == null)
         {
@@ -240,7 +236,7 @@ public class Navmesh2D : MonoBehaviour
         {
             for (int j = -1; j <= 1; j++)
             {
-                if (i == 0 && j == 0)
+                if ((i == 0 && j == 0))
                 {
                     continue;
                 }
@@ -337,9 +333,44 @@ public class Navmesh2D : MonoBehaviour
                 {
                     if(
                         m_grid[x, y].m_traversable &&
-                        (!m_grid[x - 1, y].m_traversable || !m_grid[x + 1, y].m_traversable) &&
-                        !m_grid[x, y].m_walkable &&
-                        m_grid[x, y + 1].m_traversable
+                        (
+                            (
+                            (!m_grid[x - 1, y].m_traversable || !m_grid[x + 1, y].m_traversable) &&
+                            m_grid[x, y + 1].m_traversable
+                            ) 
+                        ||
+                            (
+                                (m_grid[x - 1, y].m_walkable || m_grid[x + 1, y].m_walkable) &&
+                                m_grid[x, y - 1].m_climbable &&
+                                !m_grid[x, y + 1].m_climbable
+                            )
+                        )
+                        ) m_grid[x, y].m_climbable = true;
+                    
+                }
+            }
+        }
+        for (var x = 0; x < m_width; x++)
+        {
+            for (var y = 0; y < m_height; y++)
+            {
+                
+                if(x > 0 && x < m_width - 1 && y > 0 && y < m_height - 1)
+                {
+                    if(
+                        m_grid[x, y].m_traversable &&
+                        (
+                            (
+                            (!m_grid[x - 1, y].m_traversable || !m_grid[x + 1, y].m_traversable) &&
+                            m_grid[x, y + 1].m_traversable
+                            ) 
+                        ||
+                            (
+                                (m_grid[x - 1, y].m_walkable || m_grid[x + 1, y].m_walkable) &&
+                                m_grid[x, y - 1].m_climbable &&
+                                !m_grid[x, y + 1].m_climbable
+                            )
+                        )
                         ) m_grid[x, y].m_climbable = true;
                     
                 }
