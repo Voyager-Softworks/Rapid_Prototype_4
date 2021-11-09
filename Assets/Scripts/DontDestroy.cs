@@ -8,6 +8,11 @@ public class DontDestroy : MonoBehaviour
 
     void Awake()
     {
+        CheckValidInstance();
+    }
+
+    public bool CheckValidInstance()
+    {
         if (instance == null)
         {
             instance = this.gameObject;
@@ -16,6 +21,9 @@ public class DontDestroy : MonoBehaviour
         else if (instance != this.gameObject)
         {
             Destroy(this.gameObject);
+            return false;
         }
+
+        return true;
     }
 }
