@@ -11,6 +11,17 @@ public class EnemyTest : MonoBehaviour
         Universal
     }
 
+    public enum EnemyType
+    {
+        NONE,
+        ALIEN_SMALL,
+        ALIEN_LARGE,
+        ALIENT_FLYING,
+        MECH_SMALL,
+        MECH_MEDIUM,
+        MECH_LARGE,
+    }
+
     [System.Serializable]
     public class Drop
     {
@@ -18,9 +29,13 @@ public class EnemyTest : MonoBehaviour
         public float m_amount;
     }
 
+    public EnemyType m_enemyType = EnemyType.NONE;
+
     [SerializeField] float m_health = 100.0f;
     float startHealth = 0;
     bool m_alive = true;
+
+    public bool m_elite = false;
     [SerializeField] GameObject m_deathPart;
 
     [SerializeField] DamageType m_weakTo;
@@ -82,6 +97,15 @@ public class EnemyTest : MonoBehaviour
 
     public void Die()
     {
+        GameObject persistent = GameObject.Find("Persistent");
+        if (persistent){
+            PlayerStats stats = persistent.GetComponent<PlayerStats>();
+            if (stats)
+            {
+                stats.AddKill(gameObject, false);
+            }
+        }
+
         m_alive = false;
         m_health = 0;
         GetComponent<Rigidbody2D>().freezeRotation = false;
