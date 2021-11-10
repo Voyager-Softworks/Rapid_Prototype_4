@@ -699,7 +699,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 7.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1271673757
 CanvasRenderer:
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 1639815112}
   - component: {fileID: 1639815111}
   m_Layer: 5
-  m_Name: Mods
+  m_Name: Penalty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1238,7 +1238,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "EVENTS: \nSWARM, ELITE, BLAH, BLAH, BLAH, BLAH, BLAH"
+  m_text: 'COST:
+
+    AAAAAAAHHH'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3457,8 +3459,9 @@ MonoBehaviour:
   infoTitle: {fileID: 431740219636640924}
   infoLevel: {fileID: 1839238219}
   infoReward: {fileID: 1615520122}
-  infoEvents: {fileID: 1639815109}
+  infoPenalty: {fileID: 1639815109}
   infoAcceptButton: {fileID: 1271673753}
+  infoDeclineButton: {fileID: 0}
 --- !u!1 &8474603433925352106
 GameObject:
   m_ObjectHideFlags: 0

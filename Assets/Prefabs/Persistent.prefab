@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  resourceText: {fileID: 0}
   playerResources:
   - type: 0
     amount: 0
@@ -107,6 +108,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9eedb3ffc56b6d4aa6518078f6ce385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bountyBoard: {fileID: 0}
+  inactiveBounties: []
+  activeBounties: []
+  completedBounties: []
+  failedBounties: []
+  selectedBounty:
+    levelType: 1
+    bountyType: 1
+    bountyStatus: 0
+    bountyDifficulty: 0
+    bountyCost: []
+    reward: {fileID: 0}
+  spawnInfo:
+  - {fileID: 11400000, guid: 207f28e395c865f4e8b28c00ebf6cc95, type: 2}
 --- !u!114 &3437735875824158598
 MonoBehaviour:
   m_ObjectHideFlags: 0

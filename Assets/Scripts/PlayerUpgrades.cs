@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerUpgrades : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Awake() {
+        SceneManager.sceneLoaded += SceneLoaded;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy() {
+        SceneManager.sceneLoaded -= SceneLoaded;
+    }
+
+    void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
+        if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
     }
 }
