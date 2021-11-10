@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: desert_atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 7013af8193225d34494e2028758042c6, type: 3}
+    totalSpriteSurfaceArea: 45248
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 5698664783926249173, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: -1947594863695248076, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: 6500082780552089339, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: 7471516705302035883, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: 6522142427436110321, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: -7865336901194668880, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: -7594919856974030117, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: 5403843745382557883, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: -89704484982091323, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: -8444048452703297912, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: 7350244486162952402, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: -1873916251478277924, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  - {fileID: 2005107890651681846, guid: 7013af8193225d34494e2028758042c6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - desert_sheet_10
+  - desert_sheet_11
+  - desert_sheet_12
+  - desert_sheet_9
+  - desert_sheet_8
+  - desert_sheet_1
+  - desert_sheet_0
+  - desert_sheet_3
+  - desert_sheet_2
+  - desert_sheet_5
+  - desert_sheet_4
+  - desert_sheet_7
+  - desert_sheet_6
+  m_RenderDataMap: {}
+  m_Tag: desert_atlas
+  m_IsVariant: 0
