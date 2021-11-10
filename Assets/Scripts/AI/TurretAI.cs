@@ -113,11 +113,7 @@ public class TurretAI : MonoBehaviour
         {
             return;
         }
-        //return if player is outside of min and max angle
-        if (Vector3.Angle(m_playerTransform.position - transform.position, transform.right) < m_minAngle || Vector3.Angle(m_playerTransform.position - transform.position, transform.right) > m_maxAngle)
-        {
-            return;
-        }
+        
 
         
         if(m_clip > 0)
@@ -139,11 +135,8 @@ public class TurretAI : MonoBehaviour
         {
             return;
         }
-        //return if player is outside of min and max angle
-        if (Vector3.Angle(m_playerTransform.position - transform.position, transform.right) < m_minAngle || Vector3.Angle(m_playerTransform.position - transform.position, transform.right) > m_maxAngle)
-        {
-            return;
-        }
+       //return if player is outside of min and max angle
+        if (Vector3.Dot(m_playerTransform.position - m_barrelPositions[m_currBarrel].position, m_barrelPositions[m_currBarrel].right) < 0.5f) return;
         if (m_roundChambered) return;
         if(m_clip > 0)
         {
@@ -195,7 +188,7 @@ public class TurretAI : MonoBehaviour
         float angleStep = (m_maxAngle - m_minAngle) / 20;
         Vector3 prevPos = transform.position;
         Vector3 pos = transform.position;
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i <= 20; i++)
         {
             pos = transform.position + Quaternion.Euler(0, 0, angle) * Vector3.right * m_attackRadius;
             Gizmos.DrawLine(prevPos, pos);
@@ -230,10 +223,11 @@ public class TurretAI : MonoBehaviour
    
 
 
+
     public void RotateTurret()
     {
 
-        Vector3 direction = m_playerTransform.position - transform.position;
+        Vector3 direction = m_playerTransform.position - m_barrelAimHolder.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //clamp angle
         if (angle < m_minAngle)
@@ -245,9 +239,12 @@ public class TurretAI : MonoBehaviour
             angle = m_maxAngle;
         }
         
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.Euler(0, m_barrelAimHolder.eulerAngles.y, 0);
         
+        
+
         m_barrelAimHolder.rotation = Quaternion.Slerp(m_barrelAimHolder.rotation, rotation, Time.deltaTime * m_rotateSpeed);
+        
     }
 
     

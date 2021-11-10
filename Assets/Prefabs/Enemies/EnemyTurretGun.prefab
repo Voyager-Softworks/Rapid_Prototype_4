@@ -50,15 +50,15 @@ MonoBehaviour:
   p: {fileID: 0}
   m_detectionRadius: 4
   m_attackRadius: 3.5
-  m_minAngle: -25.2
-  m_maxAngle: 32.3
+  m_minAngle: -14.9
+  m_maxAngle: 194.5
   m_shooting: 0
   m_barrelPositions:
   - {fileID: 4518498241451846828}
   m_barrelAimHolder: {fileID: 7556890659934629443}
   m_bulletPrefab: {fileID: 2240376982557400333, guid: a60e049ac2f951241915c0bf36efe316, type: 3}
   m_bulletSpeed: 1
-  m_rotateSpeed: 1
+  m_rotateSpeed: 2
   m_clipSize: 3
   m_shotDelay: 0.1
   m_reloadDelay: 2

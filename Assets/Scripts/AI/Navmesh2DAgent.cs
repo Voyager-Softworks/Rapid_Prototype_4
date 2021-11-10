@@ -96,7 +96,7 @@ public class Navmesh2DAgent : MonoBehaviour
         }
     }
 
-    public void MoveTo(Vector3 targetPosition)
+    public void MoveTo(Vector3 targetPosition, Vector3 offset = default(Vector3))
     {
         SetNewTargetPosition(targetPosition);
         m_isMoving = true;
@@ -108,10 +108,10 @@ public class Navmesh2DAgent : MonoBehaviour
         m_currentPath = null;
     }
 
-    public void SetNewTargetPosition(Vector3 targetPosition)
+    public void SetNewTargetPosition(Vector3 targetPosition, Vector3 offset = default(Vector3))
     {
         m_targetPosition = targetPosition;
-        List<Vector2> newPath = m_navmesh.FindPath(transform.position, m_targetPosition, m_canFly, m_canClimb);
+        List<Vector2> newPath = m_navmesh.FindPath(transform.position + offset, m_targetPosition, m_canFly, m_canClimb);
         
         m_currentPath = newPath;
         
