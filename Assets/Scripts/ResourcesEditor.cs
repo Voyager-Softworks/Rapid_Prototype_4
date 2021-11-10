@@ -16,13 +16,23 @@ public class ResourcesEditor : Editor
 
         EditorGUILayout.LabelField("Scene Instances", EditorStyles.boldLabel);
 
-        //draw player prefab field and button to find it
+        //draw player instance field and button to find it
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Player Prefab");
+        EditorGUILayout.LabelField("Player Instance");
         resources.player = (GameObject)EditorGUILayout.ObjectField(resources.player, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
             serializedObject.FindProperty("player").objectReferenceValue = GameObject.FindGameObjectWithTag("Player");
+        }
+        EditorGUILayout.EndHorizontal();
+
+        //draw resource text instance field and button to find it
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Resource Text Instance");
+        resources.resourceText = (GameObject)EditorGUILayout.ObjectField(resources.resourceText, typeof(GameObject), true);
+        if (GUILayout.Button("Find"))
+        {
+            serializedObject.FindProperty("resourceText").objectReferenceValue = GameObject.Find("Resource_Text");
         }
         EditorGUILayout.EndHorizontal();
 

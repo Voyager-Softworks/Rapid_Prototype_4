@@ -180,7 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b3de96285238c429f6fefe9c3ca64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enemyType: 4
   m_health: 75
+  m_elite: 0
   m_deathPart: {fileID: 2240376982557400333, guid: a287119178f539a469f2f9f86769fe0d, type: 3}
   m_weakTo: 1
   m_drops:
@@ -202,12 +204,17 @@ MonoBehaviour:
   m_clips: []
   m_detectionRadius: 7
   m_attackRadius: 2.5
+  m_minAngle: 0
+  m_maxAngle: 0
   m_shooting: 0
   m_barrelPositions:
   - {fileID: 593603873706313348}
   - {fileID: 9128977684925031207}
   m_bulletPrefab: {fileID: 2240376982557400333, guid: 723a194b706d45747921b84bf7dc2c12, type: 3}
   m_bulletSpeed: 5
+  m_clipSize: 0
+  m_shotDelay: 0
+  m_reloadDelay: 0
 --- !u!1 &1787298610197412085
 GameObject:
   m_ObjectHideFlags: 0

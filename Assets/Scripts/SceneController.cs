@@ -6,6 +6,19 @@ using UnityEngine.InputSystem;
 
 public class SceneController : MonoBehaviour
 {
+    void Awake() {
+        SceneManager.sceneLoaded += SceneLoaded;
+    }
+
+    private void OnDestroy() {
+        SceneManager.sceneLoaded -= SceneLoaded;
+    }
+
+    void SceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (GetComponent<DontDestroy>() && !GetComponent<DontDestroy>().CheckValidInstance()) return;
+    }
+
     public void LoadPrototype()
     {
         SceneManager.LoadScene("PROTOTYPE");
