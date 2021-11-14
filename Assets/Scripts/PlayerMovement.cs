@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Ground Pound")]
     public float m_groundPoundForce = 1.0f;
+    public GameObject m_shockwavePrefab;
 
     [Header("Dash")]
     [SerializeField] float m_dashForce = 1.0f;
@@ -72,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public bool m_grounded = false;
+    public bool m_groundPounding = false;
     public Vector2 m_groundCheckOffset, m_groundCheckExtents;
 
     
@@ -96,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource m_jumpSource;
     public AudioSource m_doubleJumpSource;
     public AudioSource m_thrusterSource;
+
+    public AudioSource m_groundPoundSource;
 
 
     [Header("Particles")]
@@ -163,6 +167,8 @@ public class PlayerMovement : MonoBehaviour
         if(!m_grounded && !m_thrustersEngaged)
         {
             rb.velocity = new Vector2(0.0f, -m_groundPoundForce);
+            m_groundPoundSource.Play();
+            m_groundPounding = true;
         }
     }
 
@@ -174,6 +180,16 @@ public class PlayerMovement : MonoBehaviour
         m_noise.PositionNoise[0].X.Amplitude = m_landingNoiseMagnitude.x * (Mathf.Abs(m_oldVelocity.x) / 10.0f);
         m_noise.PositionNoise[0].Y.Amplitude = m_landingNoiseMagnitude.y * (Mathf.Abs(m_oldVelocity.y) / 10.0f);
         if(Gamepad.current != null) Gamepad.current.SetMotorSpeeds(Mathf.Clamp(m_oldVelocity.magnitude/20.0f, 0.0f, 1.0f), 0.5f);
+        
+        if (m_groundPounding)
+        {
+            Instantiate(m_shockwavePrefab, transform.position, Quaternion.identity);
+            m_groundPounding = false;
+        }
+        else
+        {
+            m_landingSource.Play();
+        }
         
         m_landingSource.Play();
         m_OnLand.Invoke();
