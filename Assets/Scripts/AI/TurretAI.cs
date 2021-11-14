@@ -7,6 +7,10 @@ public class TurretAI : MonoBehaviour
     bool m_playerDetected = false;
     public AudioSource m_barkSource;
     public List<AudioClip> m_clips;
+
+    public AudioSource m_fireSource;
+    public List<AudioClip> m_fireClips;
+    public AudioSource m_idleSource;
     public ParticleSystem p;
     Transform m_playerTransform;
 
@@ -43,6 +47,7 @@ public class TurretAI : MonoBehaviour
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         m_anim = GetComponent<Animator>();
         m_clip = m_clipSize;
+        m_idleSource.Play();
     }
 
     //Reloads the clip
@@ -120,6 +125,8 @@ public class TurretAI : MonoBehaviour
         {
             m_clip--;
             m_shotDelayTimer = m_shotDelay;
+            
+
             GameObject projectile = Instantiate(m_bulletPrefab, m_barrelPositions[_barrelIndex].position, m_barrelAimHolder.rotation, null);
             projectile.GetComponent<Rigidbody2D>().velocity = (m_barrelPositions[_barrelIndex].position - m_barrelAimHolder.position).normalized * m_bulletSpeed;
         }
@@ -144,6 +151,10 @@ public class TurretAI : MonoBehaviour
             m_anim.SetTrigger("Shoot");
             m_roundChambered = true;
             m_anim.speed = 1.0f / m_shotDelay;
+            m_idleSource.Pause();
+            m_fireSource.clip = m_fireClips[Random.Range(0, m_fireClips.Count)];
+            m_fireSource.pitch = 1.0f / m_shotDelay;
+            m_fireSource.Play();
             if(++m_currBarrel >= m_barrelPositions.Count)
             {
                 m_currBarrel = 0;
@@ -163,6 +174,7 @@ public class TurretAI : MonoBehaviour
         m_shotDelayTimer = m_shotDelay;
         GameObject projectile = Instantiate(m_bulletPrefab, m_barrelPositions[m_currBarrel].position, m_barrelAimHolder.rotation, null);
         projectile.GetComponent<Rigidbody2D>().velocity = (m_barrelPositions[m_currBarrel].right).normalized * m_bulletSpeed;
+        m_idleSource.Play();
     }
 
 
