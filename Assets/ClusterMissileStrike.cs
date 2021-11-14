@@ -6,6 +6,7 @@ public class ClusterMissileStrike : MonoBehaviour
 {
     public int numOfMissiles = 10;
     public GameObject missilePrefab;
+    public GameObject indicatorPrefab;
     public float delay = 0.5f;
 
     public float startHeight = 0.0f;
@@ -25,8 +26,10 @@ public class ClusterMissileStrike : MonoBehaviour
         {
             timer = delay;
             numOfMissiles--;
-            Rigidbody2D rb = Instantiate(missilePrefab, new Vector3(transform.position.x + Random.Range(-horizontalPositionJitter, horizontalPositionJitter), transform.position.y + startHeight, transform.position.z), Quaternion.identity).GetComponent<Rigidbody2D>();
+            float xOffset = Random.Range(-horizontalPositionJitter, horizontalPositionJitter);
+            Rigidbody2D rb = Instantiate(missilePrefab, new Vector3(transform.position.x + xOffset, transform.position.y + startHeight, transform.position.z), Quaternion.identity).GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(0, -10);
+            Instantiate(indicatorPrefab, new Vector3(transform.position.x + xOffset, transform.position.y-0.8f, transform.position.z), Quaternion.identity);
         }
         if (numOfMissiles <= 0)
         {

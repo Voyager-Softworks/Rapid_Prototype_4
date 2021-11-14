@@ -19,6 +19,7 @@ public class TurretAI : MonoBehaviour
     public float m_attackRadius;
 
     public float m_minAngle, m_maxAngle;
+    public float m_aimOffset;
 
     public bool m_shooting;
     public List<Transform> m_barrelPositions;
@@ -243,7 +244,7 @@ public class TurretAI : MonoBehaviour
     public void RotateTurret()
     {
 
-        Vector3 direction = m_playerTransform.position - m_barrelAimHolder.position;
+        Vector3 direction = (m_playerTransform.position + (Vector3.up * m_aimOffset)) - m_barrelAimHolder.position;
         if(Vector3.Dot(transform.right, Vector3.right) < 0.0f)
         {
             direction = -direction;
