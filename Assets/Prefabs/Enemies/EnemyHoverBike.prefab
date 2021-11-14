@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4090130041316050393}
   - component: {fileID: 4090130041316050394}
   - component: {fileID: 4090130041316050395}
+  - component: {fileID: 4115687882345046465}
   m_Layer: 10
   m_Name: EnemyHoverBike
   m_TagString: Untagged
@@ -177,6 +178,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4115687882345046465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090130041316050396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3de96285238c429f6fefe9c3ca64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemyType: 0
+  m_health: 100
+  m_elite: 0
+  m_deathPart: {fileID: 0}
+  m_weakTo: 1
+  m_drops: []
 --- !u!1 &4090130042471227118
 GameObject:
   m_ObjectHideFlags: 0
