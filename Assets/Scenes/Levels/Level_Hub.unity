@@ -130,18 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 75374656111561851, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642166554257394127, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1759115838406961150, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2689046636191877565, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_objToPointAt
       value: 
@@ -158,30 +146,6 @@ PrefabInstance:
       propertyPath: m_playerTransform
       value: 
       objectReference: {fileID: 1834103191}
-    - target: {fileID: 4044961829912379195, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4488719598881291473, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4763812583186085510, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848023371781706813, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5584803317421592937, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5835520724900051406, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6688422379845105576, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -269,14 +233,6 @@ PrefabInstance:
     - target: {fileID: 6688422379845105580, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8041006047927053260, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8689907329371252025, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
