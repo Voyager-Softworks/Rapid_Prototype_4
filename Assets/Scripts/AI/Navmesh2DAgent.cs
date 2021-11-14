@@ -13,14 +13,16 @@ public class Navmesh2DAgent : MonoBehaviour
 
     public bool m_isMoving = false;
     public bool m_canFly = false;
+    public bool m_rotateToTarget = false;
     public bool m_canClimb = false;
 
-
+    Animator m_anim;
 
     void Start()
     {
         m_navmesh = FindObjectOfType<Navmesh2D>();
         m_rb = GetComponent<Rigidbody2D>();
+        m_anim = GetComponent<Animator>();
     }
     
 
@@ -28,6 +30,28 @@ public class Navmesh2DAgent : MonoBehaviour
     void Update()
     {
         UpdateMovement();
+    }
+
+    //Check if grounded
+    bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.0f, 1 << LayerMask.NameToLayer("Ground"));
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    //Check if there is a wall in front of the agent
+    bool IsWallInFront()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - Vector3.up, transform.right, 1.0f, 1 << LayerMask.NameToLayer("Ground"));
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void UpdateMovement()
@@ -48,24 +72,51 @@ public class Navmesh2DAgent : MonoBehaviour
                 {
                     climbforce = Vector2.left * 1.0f;
                 }
-                m_rb.AddForce(climbforce * 15.0f);
-                if (m_rb.IsTouchingLayers(LayerMask.GetMask("Ground")) && climbforce.magnitude > 0.1f)
+                m_rb.AddForce(climbforce * 10.0f);
+                if (IsWallInFront() && climbforce.magnitude > 0.1f)
                 {
-                    m_rb.AddForce(-Physics2D.gravity * 3.5f);
-                    m_rb.AddForce(climbforce * 20.0f);
+                    if(target.y >= transform.position.y)
+                    {
+                        m_rb.AddForce(-Physics2D.gravity * 1.0f);
+                        m_rb.AddForce(climbforce * 10.0f);
+                    }
+                    else
+                    {
+                        m_rb.AddForce(-Physics2D.gravity * 0.4f);
+                    }
+                    m_anim.SetBool("IsClimbing", true);
                 }
                 
                 
+                
+            }
+            if(IsGrounded())
+            {
+                m_anim.SetBool("IsClimbing", false);
             }
             
             float distance = direction.magnitude;
             float step = m_speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target, step);
+            if(IsGrounded() && target.y < transform.position.y)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.x, transform.position.y, transform.position.z), step);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target, step);
+            }
+            
+            //if can rotate, rotate to target
+            if (m_rotateToTarget)
+            {
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle - 90, Vector3.forward), m_rotationSpeed * Time.deltaTime);
+            }
             if (distance <= step)
             {
                 m_currentPath.RemoveAt(0);
             }
-            if (climbforce.magnitude < 0.1f)
+            if (climbforce.magnitude < 0.1f && !m_rotateToTarget)
             {
                 if ((target - (Vector2)transform.position).x < 0.0f)
                 {
@@ -76,7 +127,7 @@ public class Navmesh2DAgent : MonoBehaviour
                     transform.rotation = Quaternion.identity;
                 }
             }
-            else
+            else if (!m_rotateToTarget)
             {
                 if (climbforce.x > 0.0f)
                 {

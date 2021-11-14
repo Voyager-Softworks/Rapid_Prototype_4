@@ -182,9 +182,10 @@ public class Navmesh2D : MonoBehaviour
             closed.Add(current);
             foreach (Cell neighbor in GetNeighbors(current))
             {
-                if (!(IsWalkable(neighbor.m_position, current.m_position - neighbor.m_position) || 
+                if (!(IsWalkable(neighbor.m_position, Vector2.zero) || 
                 (_canFly && IsTraversible(neighbor.m_position, current.m_position - neighbor.m_position)) || 
-                (_canClimb && IsClimbable(neighbor.m_position, current.m_position - neighbor.m_position))))
+                (_canClimb && IsClimbable(neighbor.m_position, Vector2.zero)) && IsTraversible(neighbor.m_position, Vector3.right * (current.m_position - neighbor.m_position).x)||
+                (((current.m_position - neighbor.m_position).y > 0.0f) && ((current.m_position - neighbor.m_position).x == 0.0f)) && IsTraversible(neighbor.m_position, Vector2.zero)))
                 {
                     continue;
                 }
