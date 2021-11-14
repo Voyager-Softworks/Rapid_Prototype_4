@@ -122,7 +122,7 @@ public class SFX_Effect : MonoBehaviour
                     m_delayTimer = currEffect.m_waitDuration;
                     break;
                 case SFXtype.SPAWN:
-                    Instantiate(currEffect.m_prefab, transform.position, Quaternion.identity, transform.parent);
+                    Instantiate(currEffect.m_prefab, transform.position, Quaternion.identity, null);
                     break;
                 case SFXtype.SET_GAMEPAD_RUMBLE:
                     if(Gamepad.current != null)

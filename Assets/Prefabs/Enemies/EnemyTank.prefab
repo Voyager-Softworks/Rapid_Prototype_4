@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 8996698862650746562}
   - component: {fileID: 1318659001713216941}
   - component: {fileID: 8318879190339743277}
-  m_Layer: 0
+  - component: {fileID: 5244536967977369682}
+  - component: {fileID: 7942527743769435853}
+  m_Layer: 10
   m_Name: EnemyTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3167114344963638512, guid: 1edfc73501ff8c640af78cb34c065ddd, type: 3}
+  m_Sprite: {fileID: 902909894185105165, guid: 9c2e13c8dee5933e0a1810ac535c9d8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,15 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12daf68fe8320f0f7ab30d51e788c476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_barkSource: {fileID: 0}
-  m_aggroclips: []
+  m_barkSource: {fileID: 5244536967977369682}
+  m_aggroclips:
+  - {fileID: 8300000, guid: 7abee5c9b97233d46af75814d4ad6383, type: 3}
   m_attackClip: {fileID: 0}
   m_missilePrefab: {fileID: 8131205608957974712, guid: 0bb921c48e991680cb8bc65c862eac08, type: 3}
   m_detectionRadius: 10
   m_attackRadius: 5
-  m_normalAttackDuration: 2
-  m_missileAttackDuration: 5
-  m_reloadDuration: 2
+  m_normalAttackDuration: 3
+  m_missileAttackDuration: 3
+  m_reloadDuration: 5
   m_speed: 0.5
 --- !u!61 &1318659001713216941
 BoxCollider2D:
@@ -174,7 +177,119 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!82 &5244536967977369682
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140585175963440873}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7942527743769435853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140585175963440873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3de96285238c429f6fefe9c3ca64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 500
+  m_deathPart: {fileID: 0}
+  m_weakTo: 1
+  m_drops: []
 --- !u!1001 &9140585175968015259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,6 +300,10 @@ PrefabInstance:
     - target: {fileID: 3503313160248691969, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_Name
       value: EnemyTurretGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518498241451846828, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 5012946572134655473, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_RootOrder
@@ -200,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5012946572134655473, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.416
+      value: -0.416
       objectReference: {fileID: 0}
     - target: {fileID: 5012946572134655473, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_LocalPosition.y
@@ -240,7 +359,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_maxAngle
-      value: 34.4
+      value: 14.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_minAngle
+      value: -12.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_shotDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_bulletSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_reloadDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_attackRadius
+      value: 10.03
       objectReference: {fileID: 0}
     - target: {fileID: 7024769968947198219, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_SortingOrder
