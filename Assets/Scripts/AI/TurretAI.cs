@@ -13,7 +13,7 @@ public class TurretAI : MonoBehaviour
     public AudioSource m_idleSource;
     public ParticleSystem p;
     Transform m_playerTransform;
-
+    public bool m_manualdisable = false;
     Rigidbody2D m_body;
     public float m_detectionRadius;
     public float m_attackRadius;
@@ -138,6 +138,10 @@ public class TurretAI : MonoBehaviour
 
     public void Shoot()
     {
+        if (m_manualdisable)
+        {
+            return;
+        }
         if (m_reloadDelayTimer > 0.0f || m_shotDelayTimer > 0.0f)
         {
             return;
@@ -202,7 +206,7 @@ public class TurretAI : MonoBehaviour
         Vector3 pos = transform.position;
         for (int i = 0; i <= 20; i++)
         {
-            pos = transform.position + Quaternion.Euler(0, 0, angle) * Vector3.right * m_attackRadius;
+            pos = transform.position + Quaternion.Euler(0, 0, angle) * transform.right * m_attackRadius;
             Gizmos.DrawLine(prevPos, pos);
             prevPos = pos;
             angle += angleStep;
@@ -240,6 +244,10 @@ public class TurretAI : MonoBehaviour
     {
 
         Vector3 direction = m_playerTransform.position - m_barrelAimHolder.position;
+        if(Vector3.Dot(transform.right, Vector3.right) < 0.0f)
+        {
+            direction = -direction;
+        }
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //clamp angle
         if (angle < m_minAngle)
