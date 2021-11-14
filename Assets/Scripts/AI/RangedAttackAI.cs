@@ -16,7 +16,7 @@ public class RangedAttackAI : MonoBehaviour
     public bool m_shooting;
     public List<Transform> m_barrelPositions;
 
-
+    public Transform m_barrelAimHolder;
     public GameObject m_bulletPrefab;
     public float m_bulletSpeed;
 
@@ -79,6 +79,7 @@ public class RangedAttackAI : MonoBehaviour
                 Vector3.Angle(m_playerTransform.position - transform.position, transform.right) > m_maxAngle
             ))
         {
+            if(m_barrelAimHolder != null) RotateTurret();
             Shoot();
             m_anim.SetBool("IsShooting", true);
             m_agent.Stop();
@@ -209,5 +210,30 @@ public class RangedAttackAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, 0.25f);
     }
 
+    public void RotateTurret()
+    {
 
+        Vector3 direction = m_playerTransform.position - m_barrelAimHolder.position;
+        if(Vector3.Dot(transform.right, Vector3.right) < 0.0f)
+        {
+            direction = -direction;
+        }
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //clamp angle
+        if (angle < m_minAngle)
+        {
+            angle = m_minAngle;
+        }
+        else if (angle > m_maxAngle)
+        {
+            angle = m_maxAngle;
+        }
+        
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.Euler(0, m_barrelAimHolder.eulerAngles.y, 0);
+        
+        
+
+        m_barrelAimHolder.rotation = Quaternion.Slerp(m_barrelAimHolder.rotation, rotation, Time.deltaTime * 2.0f);
+        
+    }
 }
