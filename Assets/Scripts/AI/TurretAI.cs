@@ -7,9 +7,13 @@ public class TurretAI : MonoBehaviour
     bool m_playerDetected = false;
     public AudioSource m_barkSource;
     public List<AudioClip> m_clips;
+
+    public AudioSource m_fireSource;
+    public List<AudioClip> m_fireClips;
+    public AudioSource m_idleSource;
     public ParticleSystem p;
     Transform m_playerTransform;
-
+    public bool m_manualdisable = false;
     Rigidbody2D m_body;
     public float m_detectionRadius;
     public float m_attackRadius;
@@ -43,6 +47,7 @@ public class TurretAI : MonoBehaviour
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         m_anim = GetComponent<Animator>();
         m_clip = m_clipSize;
+        m_idleSource.Play();
     }
 
     //Reloads the clip
@@ -120,6 +125,8 @@ public class TurretAI : MonoBehaviour
         {
             m_clip--;
             m_shotDelayTimer = m_shotDelay;
+            
+
             GameObject projectile = Instantiate(m_bulletPrefab, m_barrelPositions[_barrelIndex].position, m_barrelAimHolder.rotation, null);
             projectile.GetComponent<Rigidbody2D>().velocity = (m_barrelPositions[_barrelIndex].position - m_barrelAimHolder.position).normalized * m_bulletSpeed;
         }
@@ -131,6 +138,10 @@ public class TurretAI : MonoBehaviour
 
     public void Shoot()
     {
+        if (m_manualdisable)
+        {
+            return;
+        }
         if (m_reloadDelayTimer > 0.0f || m_shotDelayTimer > 0.0f)
         {
             return;
@@ -144,6 +155,10 @@ public class TurretAI : MonoBehaviour
             m_anim.SetTrigger("Shoot");
             m_roundChambered = true;
             m_anim.speed = 1.0f / m_shotDelay;
+            m_idleSource.Pause();
+            m_fireSource.clip = m_fireClips[Random.Range(0, m_fireClips.Count)];
+            m_fireSource.pitch = 1.0f / m_shotDelay;
+            m_fireSource.Play();
             if(++m_currBarrel >= m_barrelPositions.Count)
             {
                 m_currBarrel = 0;
@@ -163,6 +178,7 @@ public class TurretAI : MonoBehaviour
         m_shotDelayTimer = m_shotDelay;
         GameObject projectile = Instantiate(m_bulletPrefab, m_barrelPositions[m_currBarrel].position, m_barrelAimHolder.rotation, null);
         projectile.GetComponent<Rigidbody2D>().velocity = (m_barrelPositions[m_currBarrel].right).normalized * m_bulletSpeed;
+        m_idleSource.Play();
     }
 
 
@@ -190,7 +206,7 @@ public class TurretAI : MonoBehaviour
         Vector3 pos = transform.position;
         for (int i = 0; i <= 20; i++)
         {
-            pos = transform.position + Quaternion.Euler(0, 0, angle) * Vector3.right * m_attackRadius;
+            pos = transform.position + Quaternion.Euler(0, 0, angle) * transform.right * m_attackRadius;
             Gizmos.DrawLine(prevPos, pos);
             prevPos = pos;
             angle += angleStep;
@@ -228,6 +244,10 @@ public class TurretAI : MonoBehaviour
     {
 
         Vector3 direction = m_playerTransform.position - m_barrelAimHolder.position;
+        if(Vector3.Dot(transform.right, Vector3.right) < 0.0f)
+        {
+            direction = -direction;
+        }
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //clamp angle
         if (angle < m_minAngle)

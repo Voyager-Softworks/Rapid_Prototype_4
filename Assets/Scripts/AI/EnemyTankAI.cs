@@ -35,6 +35,8 @@ public class EnemyTankAI : MonoBehaviour
     Animator m_anim;
     Navmesh2D m_nav;
     Rigidbody2D m_rb;
+
+    TurretAI m_turret;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,8 @@ public class EnemyTankAI : MonoBehaviour
         m_normalAttackTimer = m_normalAttackDuration;
         m_missileAttackTimer = m_missileAttackDuration;
         m_reloadTimer = m_reloadDuration;
+        m_turret = GetComponentInChildren<TurretAI>();
+        m_turret.m_manualdisable = true;
     }
 
     void Reload()
@@ -60,13 +64,25 @@ public class EnemyTankAI : MonoBehaviour
     {
         m_missileAttackTimer = m_missileAttackDuration;
         state = TankState.MissileAttackPhase;
-        Instantiate(m_missilePrefab, transform.position, Quaternion.identity);
+        StartCoroutine("MissileAttackCoroutine");
         m_anim.SetTrigger("MissileAttack");
+        m_turret.m_manualdisable = true;
+    }
+
+    // Coroutine to instantiate 3 missiles with a delay
+    IEnumerator MissileAttackCoroutine()
+    {
         
+        Instantiate(m_missilePrefab, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(m_missilePrefab, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(m_missilePrefab, transform.position, Quaternion.identity);
     }
 
     void NormalAttack()
     {
+        m_turret.m_manualdisable = false;
         m_normalAttackTimer = m_normalAttackDuration;
         state = TankState.NormalAttackPhase;
         m_anim.SetTrigger("NormalAttack");
@@ -80,15 +96,20 @@ public class EnemyTankAI : MonoBehaviour
             case TankState.Inactive:
                 if (Vector3.Distance(transform.position, m_playerTransform.position) < m_detectionRadius)
                 {
-                    state = TankState.NormalAttackPhase;
-                    //m_barkSource.PlayOneShot(m_aggroclips[Random.Range(0, m_aggroclips.Count)]);
+                    NormalAttack();
+                    m_barkSource.PlayOneShot(m_aggroclips[Random.Range(0, m_aggroclips.Count)]);
                 }
                 break;
             case TankState.NormalAttackPhase:
-                if (Vector3.Distance(transform.position, m_playerTransform.position) > 4.0f &&
+                if (Vector3.Distance(transform.position, m_playerTransform.position) > 6.0f &&
                 m_nav.IsWalkable(transform.position - Vector3.up * 0.5f, (((Vector2)transform.position - (Vector2)m_playerTransform.position) * Vector2.right).normalized))
                 {
                     m_rb.velocity = ((Vector2)m_playerTransform.position - (Vector2)transform.position) * Vector2.right * m_speed;
+                    m_anim.SetBool("IsMoving", true);
+                }
+                else
+                {
+                    m_anim.SetBool("IsMoving", false);
                 }
                 if ((m_normalAttackTimer -= Time.deltaTime) <= 0)
                 {
