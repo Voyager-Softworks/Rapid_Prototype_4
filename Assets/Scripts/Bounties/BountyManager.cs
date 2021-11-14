@@ -92,7 +92,7 @@ public class BountyManager : MonoBehaviour
 
     void LoadBoard()
     {
-        bountyBoard = GameObject.Find("BountyBoard").GetComponent<BountyBoard>();
+        bountyBoard = GameObject.FindObjectOfType<BountyBoard>(true);
     }
 
     void LoadBounties()

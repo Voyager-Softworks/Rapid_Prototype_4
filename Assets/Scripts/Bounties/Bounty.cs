@@ -12,7 +12,7 @@ public class Bounty
         //constructor
         public Condition()
         {
-            Start();
+            //Start();
         }
 
         public bool isComplete = false;

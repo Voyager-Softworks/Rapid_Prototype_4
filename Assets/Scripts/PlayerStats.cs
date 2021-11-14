@@ -29,8 +29,6 @@ public class PlayerStats : MonoBehaviour
             killList.Add(new KillTracker(){type = type, elite = false, killsCount = 0});
             killList.Add(new KillTracker(){type = type, elite = true, killsCount = 0});
         }
-
-        AddKill(gameObject, false);
     }
 
     private void OnDestroy() {
