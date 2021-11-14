@@ -72,7 +72,13 @@ public class BountyManager : MonoBehaviour
         if (gameObject == null) return;
         if (resourceManager == null) resourceManager = GetComponent<Resources>();
 
-        selectedBounty = null;
+        //if any active, select them automatically
+        if (activeBounties.Count > 0) {
+            selectedBounty = activeBounties[0];
+        }
+        else{
+            selectedBounty = null;
+        }
 
         if (scene.name == "Level_Hub")
         {
@@ -456,9 +462,17 @@ public class BountyManager : MonoBehaviour
         //check all active bounty conditions
         foreach (Bounty bounty in activeBounties)
         {
+            //if collected or complete, skip
+            if (bounty.bountyStatus == BountyStatus.COLLECT || bounty.bountyStatus == BountyStatus.COMPLETE)
+            {
+                continue;
+            }
+
             if (bounty.conditions.Count <= 0){
                 //if no conditions, complete the bounty
                 bounty.bountyStatus = BountyStatus.COLLECT;
+                //update the board
+                UpdateBoard();
             }
             else{
                 foreach (Bounty.Condition condition in bounty.conditions)
@@ -467,6 +481,8 @@ public class BountyManager : MonoBehaviour
                     if (condition.CheckComplete())
                     {
                         bounty.bountyStatus = BountyStatus.COLLECT;
+                        //update the board
+                        UpdateBoard();
                     }
                 }
             }
