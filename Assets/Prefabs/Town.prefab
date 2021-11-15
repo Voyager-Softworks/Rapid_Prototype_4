@@ -245,7 +245,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1504640070168002646}
-  - component: {fileID: 1504640072054018127}
   m_Layer: 0
   m_Name: Town
   m_TagString: Untagged
@@ -273,189 +272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1504640072054018127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504640070168002644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08abaa26178fd1346861266f1b684d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_currentLevel: 0
-  m_player: {fileID: 0}
-  m_equipUI: {fileID: 0}
-  m_upgradeUI: {fileID: 0}
-  m_repairUI: {fileID: 0}
-  m_upgradeText: {fileID: 2146142202}
-  m_upgradeRange: 2
-  m_upgrades:
-  - m_costs:
-    - m_type: 2
-      m_amount: 4
-    OnUpgrade:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6704605393040637930}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - m_costs:
-    - m_type: 2
-      m_amount: 10
-    - m_type: 0
-      m_amount: 10
-    OnUpgrade:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6831365113186161431}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - m_costs:
-    - m_type: 2
-      m_amount: 20
-    - m_type: 0
-      m_amount: 20
-    - m_type: 1
-      m_amount: 5
-    OnUpgrade:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5274142684958850843}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - m_costs:
-    - m_type: 2
-      m_amount: 25
-    - m_type: 0
-      m_amount: 25
-    - m_type: 1
-      m_amount: 8
-    OnUpgrade:
-      m_PersistentCalls:
-        m_Calls: []
-  Upgraded:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  Failed:
-    m_PersistentCalls:
-      m_Calls: []
-  HitMaxLevel:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FadeIn, Assembly-CSharp
-        m_MethodName: StartFade
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2358913776156425194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,11 +341,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd680b017da198c4a8f186fa694a7707, type: 3}
---- !u!1 &5274142684958850843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7605752116944454897, guid: bd680b017da198c4a8f186fa694a7707, type: 3}
-  m_PrefabInstance: {fileID: 2358913776156425194}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7028421327514577875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4698798543859421241, guid: bd680b017da198c4a8f186fa694a7707, type: 3}
@@ -616,11 +427,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09d21886c3dead489036fc588c88359, type: 3}
---- !u!1 &6831365113186161431 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8048222922447600363, guid: a09d21886c3dead489036fc588c88359, type: 3}
-  m_PrefabInstance: {fileID: 3565982819439094268}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1128462911122472591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4527790476420994931, guid: a09d21886c3dead489036fc588c88359, type: 3}
@@ -691,11 +497,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 667a04e432b084246a3bde6f395c4120, type: 3}
---- !u!1 &6704605393040637930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1032639229187085421, guid: 667a04e432b084246a3bde6f395c4120, type: 3}
-  m_PrefabInstance: {fileID: 6007556701074402183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6704605393040637929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1032639229187085422, guid: 667a04e432b084246a3bde6f395c4120, type: 3}
