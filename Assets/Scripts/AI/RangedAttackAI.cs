@@ -103,8 +103,12 @@ public class RangedAttackAI : MonoBehaviour
             
             m_agent.MoveTo(m_playerTransform.position);
             m_playerDetected = true;
-            m_barkSource.clip = m_clips[Random.Range(0, m_clips.Count)];
-            m_barkSource.Play();
+            if(m_clips.Count > 0)
+            {
+                m_barkSource.clip = m_clips[Random.Range(0, m_clips.Count)];
+                m_barkSource.Play();
+            }
+            
         }
         else
         {

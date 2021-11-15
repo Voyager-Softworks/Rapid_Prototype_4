@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Navmesh2D : MonoBehaviour
 {
+    public string m_path;
+
     /// <summary>
     /// The cell.
     /// </summary>
+    [System.Serializable]
     public class Cell
     {
         /// <summary>
@@ -30,11 +33,15 @@ public class Navmesh2D : MonoBehaviour
         /// </summary>
         /// <param name="_traversable">If true, _traversable.</param>
         public void SetTraversable(bool _traversable) => m_traversable = _traversable;
-
+        [SerializeField]
         public bool m_traversable;
+        [SerializeField]
         public bool m_walkable;
+        [SerializeField]
         public bool m_climbable;
+        [SerializeField]
         public Vector2 m_index;
+        [SerializeField]
         public Vector3 m_position;
 
         public float m_f;
@@ -43,33 +50,16 @@ public class Navmesh2D : MonoBehaviour
 
         public Cell m_parent;
     }
-
-   
-
-    public Cell[,] m_grid;
+    
+    public Navmesh2D_Data m_data;
+    
 
     public Vector3 m_origin = Vector3.zero;
     public int m_width = 20;
     public int m_height = 20;
     public float m_cellradius = 0.5f;
 
-    /// <summary>
-    /// Creates the Grid.
-    /// </summary>
-    public void Create()
-    {
-        m_grid = new Cell[m_width, m_height];
-        //Populate the grid
-        for (int i = 0; i < m_width; i++)
-        {
-            for (int j = 0; j < m_height; j++)
-            {
-                Vector3 pos = new Vector3(((m_cellradius * 2) * i + m_cellradius) + m_origin.x, ((m_cellradius * 2) * j + m_cellradius) + m_origin.y, 0);
-                m_grid[i, j] = new Cell(pos, new Vector2(i, j));
-            }
-        }
-    }
-
+    
     //Gets the cell corresponding to the specified position in world space
     public Cell QueryPosition(Vector2 _pos)
     {
@@ -80,7 +70,7 @@ public class Navmesh2D : MonoBehaviour
         {
             return null;
         }
-        return m_grid[x, y];
+        return m_data[x, y];
     }
 
     //Checks if a neighboring cell in a given direction is walkable using QueryPosition
@@ -106,6 +96,26 @@ public class Navmesh2D : MonoBehaviour
         }
         return true;
     }
+
+    //Get every cell within a certain radius of a position
+    public List<Cell> GetCellsInRadius(Vector2 _pos, float _radius)
+    {
+        List<Cell> cells = new List<Cell>();
+        for (int i = 0; i < m_width; i++)
+        {
+            for (int j = 0; j < m_height; j++)
+            {
+                if (Vector2.Distance(m_data[i, j].m_position, _pos) <= _radius &&
+                (m_data[i, j].m_traversable))
+                {
+                    cells.Add(m_data[i, j]);
+                }
+                
+            }
+        }
+        return cells;
+    }
+
 
     //Checks if a neighboring cell in a given direction is Traversible using QueryPosition
     public bool IsTraversible(Vector2 _pos, Vector2 _dir)
@@ -153,7 +163,7 @@ public class Navmesh2D : MonoBehaviour
         List<Cell> open = new List<Cell>();
         List<Cell> closed = new List<Cell>();
 
-        foreach (Cell cell in m_grid)
+        foreach (Cell cell in m_data.m_grid)
         {
             cell.m_f = Mathf.Infinity;
             cell.m_g = Mathf.Infinity;
@@ -246,7 +256,7 @@ public class Navmesh2D : MonoBehaviour
                 {
                     continue;
                 }
-                neighbors.Add(m_grid[(int)index.x, (int)index.y]);
+                neighbors.Add(m_data[(int)index.x, (int)index.y]);
             }
         }
         return neighbors;
@@ -309,7 +319,7 @@ public class Navmesh2D : MonoBehaviour
 
         Queue<Cell> cells_to_process = new Queue<Cell>();
         int layermask = LayerMask.GetMask("Player", "Ground");
-        foreach (Cell c in m_grid)
+        foreach (Cell c in m_data.m_grid)
         {
             c.m_traversable = true;
 
@@ -328,25 +338,25 @@ public class Navmesh2D : MonoBehaviour
             {
                 if (y > 0)
                 {
-                    if(m_grid[x, y].m_traversable && !m_grid[x, y-1].m_traversable) m_grid[x, y].m_walkable = true;
+                    if(m_data[x, y].m_traversable && !m_data[x, y-1].m_traversable) m_data[x, y].m_walkable = true;
                 }
                 if(x > 0 && x < m_width - 1 && y > 0 && y < m_height - 1)
                 {
                     if(
-                        m_grid[x, y].m_traversable &&
+                        m_data[x, y].m_traversable &&
                         (
                             (
-                            (!m_grid[x - 1, y].m_traversable || !m_grid[x + 1, y].m_traversable) &&
-                            m_grid[x, y + 1].m_traversable
+                            (!m_data[x - 1, y].m_traversable || !m_data[x + 1, y].m_traversable) &&
+                            m_data[x, y + 1].m_traversable
                             ) 
                         ||
                             (
-                                (m_grid[x - 1, y].m_walkable || m_grid[x + 1, y].m_walkable) &&
-                                m_grid[x, y - 1].m_climbable &&
-                                !m_grid[x, y + 1].m_climbable
+                                (m_data[x - 1, y].m_walkable || m_data[x + 1, y].m_walkable) &&
+                                m_data[x, y - 1].m_climbable &&
+                                !m_data[x, y + 1].m_climbable
                             )
                         )
-                        ) m_grid[x, y].m_climbable = true;
+                        ) m_data[x, y].m_climbable = true;
                     
                 }
             }
@@ -359,20 +369,20 @@ public class Navmesh2D : MonoBehaviour
                 if(x > 0 && x < m_width - 1 && y > 0 && y < m_height - 1)
                 {
                     if(
-                        m_grid[x, y].m_traversable &&
+                        m_data[x, y].m_traversable &&
                         (
                             (
-                            (!m_grid[x - 1, y].m_traversable || !m_grid[x + 1, y].m_traversable) &&
-                            m_grid[x, y + 1].m_traversable
+                            (!m_data[x - 1, y].m_traversable || !m_data[x + 1, y].m_traversable) &&
+                            m_data[x, y + 1].m_traversable
                             ) 
                         ||
                             (
-                                (m_grid[x - 1, y].m_walkable || m_grid[x + 1, y].m_walkable) &&
-                                m_grid[x, y - 1].m_climbable &&
-                                !m_grid[x, y + 1].m_climbable
+                                (m_data[x - 1, y].m_walkable || m_data[x + 1, y].m_walkable) &&
+                                m_data[x, y - 1].m_climbable &&
+                                !m_data[x, y + 1].m_climbable
                             )
                         )
-                        ) m_grid[x, y].m_climbable = true;
+                        ) m_data[x, y].m_climbable = true;
                     
                 }
             }
@@ -392,10 +402,10 @@ public class Navmesh2D : MonoBehaviour
                 Vector3 pos = new Vector3(((m_cellradius * 2) * i + m_cellradius) + m_origin.x, ((m_cellradius * 2) * j + m_cellradius) + m_origin.y, 0);
                 Gizmos.color = Color.black  - new Color(0.0f, 0.0f, 0.0f, 0.7f);
                 Gizmos.DrawWireCube(pos, Vector3.one * m_cellradius * 2);
-                if (m_grid != null)
+                if (m_data != null)
                 {
                     
-                    if (m_grid[i, j].m_walkable)
+                    if (m_data[i, j].m_walkable)
                     {
                         Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
@@ -403,7 +413,7 @@ public class Navmesh2D : MonoBehaviour
                         Gizmos.DrawCube(pos - new Vector3(0.0f, m_cellradius - 0.1f, 0.0f), new Vector3(m_cellradius*2.0f, 0.2f, 1.0f));
                         Gizmos.color = Color.black;
                     }
-                    else if (m_grid[i, j].m_climbable)
+                    else if (m_data[i, j].m_climbable)
                     {
                         Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
@@ -412,7 +422,7 @@ public class Navmesh2D : MonoBehaviour
                         Gizmos.DrawCube(pos + new Vector3(m_cellradius - 0.1f, 0.0f, 0.0f), new Vector3(0.2f, m_cellradius*2.0f, 1.0f));
                         Gizmos.color = Color.black;
                     }
-                    else if (m_grid[i, j].m_traversable)
+                    else if (m_data[i, j].m_traversable)
                     {
                         Gizmos.color = Color.cyan - new Color(0.0f, 0.0f, 0.0f, 0.95f);
                         Gizmos.DrawCube(pos, new Vector3(m_cellradius*2.0f, 1.0f, 1.0f));
@@ -437,8 +447,8 @@ public class Navmesh2D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Create();
-        GenerateNavmesh();
+        
+        
     }
 
 
