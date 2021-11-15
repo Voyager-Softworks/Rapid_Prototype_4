@@ -6,6 +6,7 @@ public class RangedAttackAI : MonoBehaviour
 {
     bool m_playerDetected = false;
     public AudioSource m_barkSource;
+    public AudioSource m_shootSource;
     public List<AudioClip> m_clips;
     Transform m_playerTransform;
 
@@ -138,6 +139,11 @@ public class RangedAttackAI : MonoBehaviour
         if(m_clip > 0)
         {
             m_clip--;
+            if(m_shootSource != null) 
+            {
+                m_shootSource.pitch = 1.0f / m_shotDelay;
+                m_shootSource.Play();
+            }
             m_anim.SetTrigger("Shoot");
             m_roundChambered = true;
             m_anim.speed = 1.0f / m_shotDelay;

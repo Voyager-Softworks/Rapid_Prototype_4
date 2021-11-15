@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 776811fd48d54b043a5634d1cd2ea10c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_barrelPositions:
   - {fileID: 3905944255188595360}
   m_barrelAimHolder: {fileID: 6944310565637877839}
-  m_bulletPrefab: {fileID: 0}
+  m_bulletPrefab: {fileID: 3079693891931515453, guid: 5b53f4633802f501185eb036e2afa638, type: 3}
   m_bulletSpeed: 6
   m_rotateSpeed: 2
   m_clipSize: 2
@@ -463,7 +463,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9572b93cfd046bd49aa8fa7a8091f69c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
