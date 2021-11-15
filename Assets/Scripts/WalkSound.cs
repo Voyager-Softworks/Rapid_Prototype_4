@@ -23,6 +23,10 @@ public class WalkSound : MonoBehaviour
     {
         source.clip = clipList[Random.Range(0, clipList.Count)];
         source.Play();
-        sfx.Play();
+        if (sfx != null)
+        {
+            sfx.Play();
+        }
+        
     }
 }
