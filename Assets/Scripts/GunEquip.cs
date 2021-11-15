@@ -26,7 +26,7 @@ public class GunEquip : MonoBehaviour
         [SerializeField] public GameObject m_right;
         [SerializeField] public GameObject m_rbutton;
 
-        [SerializeField] public Upgrade.ResourceCost m_cost;
+        // [SerializeField] public Upgrade.ResourceCost m_cost;
     }
 
     [SerializeField] GameObject m_player;
@@ -82,11 +82,11 @@ public class GunEquip : MonoBehaviour
                     }
                     else
                     {
-                        if (TryBuyGun(_ul))
-                        {
-                            _ul.m_isLUnlocked = true;
-                            doEquip = true;
-                        }
+                        // if (TryBuyGun(_ul))
+                        // {
+                        //     _ul.m_isLUnlocked = true;
+                        //     doEquip = true;
+                        // }
                     }
 
                     if (doEquip)
@@ -110,11 +110,11 @@ public class GunEquip : MonoBehaviour
                     }
                     else
                     {
-                        if (TryBuyGun(_ul))
-                        {
-                            _ul.m_isRUnlocked = true;
-                            doEquip = true;
-                        }
+                        // if (TryBuyGun(_ul))
+                        // {
+                        //     _ul.m_isRUnlocked = true;
+                        //     doEquip = true;
+                        // }
                     }
 
                     if (doEquip)
@@ -135,26 +135,26 @@ public class GunEquip : MonoBehaviour
         UpdateText();
     }
 
-    private bool TryBuyGun(Unlock _ul)
-    {
-        bool hasAll = true;
+    // private bool TryBuyGun(Unlock _ul)
+    // {
+    //     bool hasAll = true;
 
-        if (!m_player.GetComponent<Inventory>().DoesHave(_ul.m_cost.m_type, _ul.m_cost.m_amount))
-        {
-            hasAll = false;
-        }
+    //     if (!m_player.GetComponent<Inventory>().DoesHave(_ul.m_cost.m_type, _ul.m_cost.m_amount))
+    //     {
+    //         hasAll = false;
+    //     }
 
-        if (hasAll)
-        {
-            m_player.GetComponent<Inventory>().Remove(_ul.m_cost.m_type, _ul.m_cost.m_amount);
+    //     if (hasAll)
+    //     {
+    //         m_player.GetComponent<Inventory>().Remove(_ul.m_cost.m_type, _ul.m_cost.m_amount);
 
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         return false;
+    //     }
+    // }
 
     private void UpdateText()
     {
