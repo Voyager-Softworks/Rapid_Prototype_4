@@ -16,6 +16,13 @@ public class EnemyTankAI : MonoBehaviour
     public AudioSource m_barkSource;
     public List<AudioClip> m_aggroclips;
     public AudioClip m_attackClip;
+
+    public AudioSource m_missileSource;
+    public AudioSource m_engineSource;
+    public AudioClip m_idleClip;
+    public AudioClip m_driveClip;
+    public AudioClip m_disabledClip;
+    
     Transform m_playerTransform;
     public GameObject m_missilePrefab;
 
@@ -32,6 +39,7 @@ public class EnemyTankAI : MonoBehaviour
     float m_reloadTimer;
 
     public float m_speed = 5f;
+    bool isMoving = false;
     Animator m_anim;
     Navmesh2D m_nav;
     Rigidbody2D m_rb;
@@ -74,10 +82,63 @@ public class EnemyTankAI : MonoBehaviour
     {
         
         Instantiate(m_missilePrefab, transform.position, Quaternion.identity);
+        m_missileSource.Play();
         yield return new WaitForSeconds(0.5f);
         Instantiate(m_missilePrefab, transform.position, Quaternion.identity);
+        m_missileSource.Play();
         yield return new WaitForSeconds(0.5f);
         Instantiate(m_missilePrefab, transform.position, Quaternion.identity);
+        m_missileSource.Play();
+    }
+
+    //Switch between engine audio based on state
+    void EngineAudio()
+    {
+        if (state == TankState.Inactive)
+        {
+            if(m_engineSource.isPlaying)
+            {
+                m_engineSource.Stop();
+            }
+            
+        }
+        else if (state == TankState.NormalAttackPhase)
+        {
+            if(m_engineSource.clip != m_driveClip && isMoving)
+            {
+                m_engineSource.clip = m_driveClip;
+            }
+            else if(m_engineSource.clip != m_idleClip && !isMoving)
+            {
+                m_engineSource.clip = m_idleClip;
+            }
+            if (!m_engineSource.isPlaying)
+            {
+                m_engineSource.Play();
+            }
+        }
+        else if (state == TankState.MissileAttackPhase)
+        {
+            if ( m_engineSource.clip != m_idleClip)
+            {
+                m_engineSource.clip = m_idleClip;
+            }
+            if (!m_engineSource.isPlaying)
+            {
+                m_engineSource.Play();
+            }
+        }
+        else if (state == TankState.ReloadingPhase)
+        {
+            if ( m_engineSource.clip != m_disabledClip)
+            {
+                m_engineSource.clip = m_disabledClip;
+            }
+            if (!m_engineSource.isPlaying)
+            {
+                m_engineSource.Play();
+            }
+        }
     }
 
     void NormalAttack()
@@ -91,6 +152,7 @@ public class EnemyTankAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EngineAudio();
         switch(state)
         {
             case TankState.Inactive:
@@ -101,15 +163,18 @@ public class EnemyTankAI : MonoBehaviour
                 }
                 break;
             case TankState.NormalAttackPhase:
+                
                 if (Vector3.Distance(transform.position, m_playerTransform.position) > 6.0f &&
                 m_nav.IsWalkable(transform.position - Vector3.up * 0.5f, (((Vector2)transform.position - (Vector2)m_playerTransform.position) * Vector2.right).normalized))
                 {
                     m_rb.velocity = ((Vector2)m_playerTransform.position - (Vector2)transform.position) * Vector2.right * m_speed;
                     m_anim.SetBool("IsMoving", true);
+                    isMoving = true;
                 }
                 else
                 {
                     m_anim.SetBool("IsMoving", false);
+                    isMoving = false;
                 }
                 if ((m_normalAttackTimer -= Time.deltaTime) <= 0)
                 {
