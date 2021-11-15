@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2481144965356027267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.923, y: -4.438, z: -0.85892296}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5553446272424328189}
@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4043697470840738573}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.246, y: 1.186, z: 0.021207035}
+  m_LocalPosition: {x: 0.246, y: 0.719, z: 0.021207035}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 6944310565637877839}
@@ -281,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4394605963018888040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 0.907, z: 0.85892296}
+  m_LocalPosition: {x: 0.04, y: 0.44, z: 0.85892296}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3303851658592268956}
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_clips: []
   m_fireSource: {fileID: 4068791018285720554}
   m_fireClips:
-  - {fileID: 8300000, guid: 753604d328a9c554db81980047644e76, type: 3}
+  - {fileID: 8300000, guid: 9572b93cfd046bd49aa8fa7a8091f69c, type: 3}
   m_idleSource: {fileID: 4954566082419402756}
   p: {fileID: 0}
   m_manualdisable: 0
