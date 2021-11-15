@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: volcano_atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+    totalSpriteSurfaceArea: 49152
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 4825629629605908526, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -1494575689010650483, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -2643613527324663273, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -4887507298236016905, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -2302729828712316688, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -5021797327760123964, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -5124711356849166245, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -3628538016149451700, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: 588409267166453446, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: -5324009657640836303, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: 4072871066429780981, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  - {fileID: 7593095733653157393, guid: 6c43786f477ad474e83e0777ad45cfc9, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - volcano_tilesheet_11
+  - volcano_tilesheet_10
+  - volcano_tilesheet_6
+  - volcano_tilesheet_7
+  - volcano_tilesheet_4
+  - volcano_tilesheet_5
+  - volcano_tilesheet_2
+  - volcano_tilesheet_3
+  - volcano_tilesheet_0
+  - volcano_tilesheet_1
+  - volcano_tilesheet_8
+  - volcano_tilesheet_9
+  m_RenderDataMap: {}
+  m_Tag: volcano_atlas
+  m_IsVariant: 0
