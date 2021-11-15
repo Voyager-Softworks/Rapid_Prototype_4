@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7160418994165948359, guid: 9e33fbb34bca594b8a41aed5cf070e21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.48435
+      value: -20.97
       objectReference: {fileID: 0}
     - target: {fileID: 7160418994165948359, guid: 9e33fbb34bca594b8a41aed5cf070e21, type: 3}
       propertyPath: m_LocalPosition.y
@@ -306,6 +306,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7283390782539775134, guid: 9e33fbb34bca594b8a41aed5cf070e21, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283390782539775134, guid: 9e33fbb34bca594b8a41aed5cf070e21, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.251
+      objectReference: {fileID: 0}
     - target: {fileID: 7847949529256677592, guid: 9e33fbb34bca594b8a41aed5cf070e21, type: 3}
       propertyPath: m_Name
       value: EnemyTurretTall
@@ -323,6 +331,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_maxAirJumpCount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -374,6 +386,30 @@ PrefabInstance:
     - target: {fileID: 6100420772379895130, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_playerHealth
       value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474820241961355970, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474820241961355970, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: SubModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474820241961355970, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: ShapeModule.arc.spread
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474820241961355970, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474820241961355970, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081193284786623023, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_Name
+      value: Shotgun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
@@ -434,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4090130041316050396, guid: ab46ec961838c5bd3a1a57bda116d4dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab46ec961838c5bd3a1a57bda116d4dc, type: 3}
@@ -829,7 +865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1072502782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_navmesh: {fileID: 0}
-  m_speed: 2
+  m_speed: 1
   m_rotationSpeed: 1
   m_currentPath: []
   m_isMoving: 0
@@ -870,7 +906,7 @@ MonoBehaviour:
   m_detectionRadius: 8.38
   m_attackRadius: 1.06
   m_attacking: 0
-  m_Damage: 0
+  m_Damage: 20
   m_cooldown: 2.2
 --- !u!95 &1072502784
 Animator:
@@ -1120,7 +1156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607418049224667045, guid: c14b09738085f1399ac95f184eded253, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.485023
+      value: 4.11
       objectReference: {fileID: 0}
     - target: {fileID: 607418049224667045, guid: c14b09738085f1399ac95f184eded253, type: 3}
       propertyPath: m_LocalPosition.y

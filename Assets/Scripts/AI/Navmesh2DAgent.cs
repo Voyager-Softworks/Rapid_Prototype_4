@@ -72,13 +72,13 @@ public class Navmesh2DAgent : MonoBehaviour
                 {
                     climbforce = Vector2.left * 1.0f;
                 }
-                m_rb.AddForce(climbforce * 10.0f);
-                if (IsWallInFront() && climbforce.magnitude > 0.1f)
+                
+                if (IsWallInFront() && climbforce.magnitude >= 0.1f)
                 {
-                    if(target.y >= transform.position.y)
+                    if(target.y > transform.position.y)
                     {
-                        m_rb.AddForce(-Physics2D.gravity * 1.0f);
-                        m_rb.AddForce(climbforce * 10.0f);
+                        m_rb.AddForce(-Physics2D.gravity * 2.0f);
+                        m_rb.AddForce(climbforce * 15.0f);
                     }
                     else
                     {

@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_barkSource: {fileID: 23748567601496722}
   m_clips:
-  - {fileID: 8300000, guid: 1ba2ba5216fbf7944b7e8e9eb53015b0, type: 3}
+  - {fileID: 8300000, guid: 7643d866b52cb2b4187a1ee66316d5ce, type: 3}
   m_detectionRadius: 7
   m_attackRadius: 6.33
   m_minAngle: -32
@@ -308,6 +308,7 @@ MonoBehaviour:
   m_currentPath: []
   m_isMoving: 0
   m_canFly: 0
+  m_rotateToTarget: 0
   m_canClimb: 0
 --- !u!1 &4645603937120418653
 GameObject:
