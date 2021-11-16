@@ -648,6 +648,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.37732616
       objectReference: {fileID: 0}
+    - target: {fileID: 6061731658932011850, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
+      propertyPath: orthographic size
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6061731658932011851, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4948,7 +4952,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 841072572}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadPrototype
+        m_MethodName: LoadHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

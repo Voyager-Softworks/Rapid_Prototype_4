@@ -20,6 +20,8 @@ public class PlayerWeapons : MonoBehaviour
         {
             foreach (WeaponEquip we in leftWeapons)
             {
+                if (!we.weapon) continue;
+
                 if (we.weaponType == _type)
                 {
                     we.weapon.SetActive(true);
@@ -34,6 +36,8 @@ public class PlayerWeapons : MonoBehaviour
         {
             foreach (WeaponEquip we in rightWeapons)
             {
+                if (!we.weapon) continue;
+                
                 if (we.weaponType == _type)
                 {
                     we.weapon.SetActive(true);

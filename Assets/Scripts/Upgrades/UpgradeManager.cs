@@ -42,6 +42,7 @@ public class UpgradeManager : MonoBehaviour
     public List<Upgrade> moduleUpgrades = null;
 
     void Awake() {
+        if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
         SceneManager.sceneLoaded += SceneLoaded;
     }
 
@@ -54,7 +55,7 @@ public class UpgradeManager : MonoBehaviour
         if (this == null) return;
         if (gameObject == null) return;
 
-        if (!player) player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player) playerWeapons = player.GetComponent<PlayerWeapons>();
 
         if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
@@ -81,7 +82,7 @@ public class UpgradeManager : MonoBehaviour
 
     private void LoadUpgradeMenu()
     {
-        upgradeMenu = GameObject.FindObjectOfType<UpgradeMenu>();
+        upgradeMenu = GameObject.FindObjectOfType<UpgradeMenu>(true);
     }
 
     private void UpdateUpgrades()
