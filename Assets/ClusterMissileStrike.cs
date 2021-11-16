@@ -29,7 +29,9 @@ public class ClusterMissileStrike : MonoBehaviour
             float xOffset = Random.Range(-horizontalPositionJitter, horizontalPositionJitter);
             Rigidbody2D rb = Instantiate(missilePrefab, new Vector3(transform.position.x + xOffset, transform.position.y + startHeight, transform.position.z), Quaternion.identity).GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(0, -10);
-            Instantiate(indicatorPrefab, new Vector3(transform.position.x + xOffset, transform.position.y-0.8f, transform.position.z), Quaternion.identity);
+            //Raycast to find the ground
+            RaycastHit2D hit = Physics2D.Raycast(rb.gameObject.transform.position, Vector2.down, Mathf.Infinity, 1 << LayerMask.NameToLayer("Ground"));
+            Instantiate(indicatorPrefab, new Vector3(transform.position.x + xOffset, hit.point.y + 0.1f, transform.position.z), Quaternion.identity);
         }
         if (numOfMissiles <= 0)
         {
