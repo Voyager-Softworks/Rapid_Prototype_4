@@ -8,6 +8,7 @@ public class Resource : MonoBehaviour
 {
 
     [SerializeField] GameObject m_player;
+    [SerializeField] Resources resourceManager;
 
     [SerializeField] Resources.ResourceType m_type;
 
@@ -15,6 +16,7 @@ public class Resource : MonoBehaviour
     void Start()
     {
         if (!m_player) m_player = GameObject.Find("Player");
+        if (!resourceManager) resourceManager = GameObject.FindObjectOfType<Resources>();
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class Resource : MonoBehaviour
     {
         if (collision.transform == m_player.transform)
         {
-            m_player.GetComponent<Inventory>().AddResource(m_type);
+            resourceManager.AddResource(m_type, 1);
             Destroy(gameObject, 1.0f);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;

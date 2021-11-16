@@ -20,6 +20,9 @@ public class EnemyTest : MonoBehaviour
         MECH_SMALL,
         MECH_MEDIUM,
         MECH_LARGE,
+        BANDIT_GRUNT,
+        BANDIT_HOVER,
+        BANDIT_TANK
     }
 
     [System.Serializable]
