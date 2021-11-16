@@ -20,7 +20,8 @@ public class BountyManager : MonoBehaviour
     public enum BountyType {
         FIND,
         KILL,
-        ELITE
+        ELITE,
+        BOSS
     }
 
     public enum BountyStatus {
@@ -170,13 +171,20 @@ public class BountyManager : MonoBehaviour
             case BountyType.FIND:
                 //add condition
             break;
-            case BountyType.KILL:
+            case BountyType.KILL: 
                 //add condition
-                Bounty.Condition_Kills kills = new Bounty.Condition_Kills(EnemyTest.EnemyType.ALIEN_SMALL, 1);
+                Bounty.Condition_Kills kills = new Bounty.Condition_Kills(EnemyTest.EnemyType.BANDIT_GRUNT, 4);
                 bounty.conditions.Add(kills);
             break;
             case BountyType.ELITE:
                 //add condition
+                Bounty.Condition_Kills eliteKills = new Bounty.Condition_Kills(EnemyTest.EnemyType.BANDIT_HOVER, 2);
+                bounty.conditions.Add(eliteKills);
+            break;
+            case BountyType.BOSS:
+                //add condition
+                Bounty.Condition_Kills bossKills = new Bounty.Condition_Kills(EnemyTest.EnemyType.BANDIT_TANK, 1);
+                bounty.conditions.Add(bossKills);
             break;
         }
 

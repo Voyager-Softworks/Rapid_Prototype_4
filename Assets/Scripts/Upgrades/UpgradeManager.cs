@@ -31,6 +31,8 @@ public class UpgradeManager : MonoBehaviour
     private Resources resourceManager = null;
     public GameObject player = null;
     private PlayerWeapons playerWeapons = null;
+    public WeaponType leftEquippedWeapon = WeaponType.CANNON;
+    public WeaponType rightEquippedWeapon = WeaponType.CANNON;
 
     [Header("Menu")]
     public UpgradeMenu upgradeMenu = null;
@@ -67,6 +69,14 @@ public class UpgradeManager : MonoBehaviour
 
             UpdateUpgradeMenu();
         }
+
+        UpdateEquippedWeapons();
+    }
+
+    private void UpdateEquippedWeapons()
+    {
+        playerWeapons.EquipWeapon(leftEquippedWeapon, true);
+        playerWeapons.EquipWeapon(rightEquippedWeapon, false);
     }
 
     private void LoadUpgradeMenu()
@@ -98,38 +108,33 @@ public class UpgradeManager : MonoBehaviour
                 equipL.GetComponent<Button>().onClick.RemoveAllListeners();
                 equipR.GetComponent<Button>().onClick.RemoveAllListeners();
                 //update the equip button colours to green if the player has equipped the weapon
-                for (int j = 0; j < playerWeapons.leftWeapons.Count; j++)
+                if (leftEquippedWeapon == upgrade.weaponType)
                 {
-                    if (playerWeapons.leftWeapons[j].weaponType == upgrade.weaponType && playerWeapons.leftWeapons[j].weapon.activeSelf)
-                    {
-                        equipL.GetComponent<Image>().color = Color.green;
-                        break;
-                    }
-                    else
-                    {
-                        equipL.GetComponent<Image>().color = Color.white;
-                    }
+                    equipL.GetComponent<Image>().color = Color.green;
                 }
-                for (int j = 0; j < playerWeapons.rightWeapons.Count; j++)
+                else
                 {
-                    if (playerWeapons.rightWeapons[j].weaponType == upgrade.weaponType && playerWeapons.rightWeapons[j].weapon.activeSelf)
-                    {
-                        equipR.GetComponent<Image>().color = Color.green;
-                        break;
-                    }
-                    else
-                    {
-                        equipR.GetComponent<Image>().color = Color.white;
-                    }
+                    equipL.GetComponent<Image>().color = Color.white;
+                }
+                
+                if (rightEquippedWeapon == upgrade.weaponType)
+                {
+                    equipR.GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    equipR.GetComponent<Image>().color = Color.white;
                 }
 
                 //bind the equip buttons to PlayerWeapons EquipWeapon
                 equipL.GetComponent<Button>().onClick.AddListener(() => {
-                    playerWeapons.EquipWeapon(upgrade.weaponType, true);
+                    leftEquippedWeapon = upgrade.weaponType;
+                    UpdateEquippedWeapons();
                     UpdateUpgradeMenu();
                 });
                 equipR.GetComponent<Button>().onClick.AddListener(() => {
-                    playerWeapons.EquipWeapon(upgrade.weaponType, false);
+                    rightEquippedWeapon = upgrade.weaponType;
+                    UpdateEquippedWeapons();
                     UpdateUpgradeMenu();
                 });
 
