@@ -362,6 +362,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &229372569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229372571}
+  - component: {fileID: 229372570}
+  m_Layer: 0
+  m_Name: enemy_spawn_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &229372570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229372569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fedd3b78c76927de281f8fb4560290f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnables:
+  - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
+    probability: 0.8
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 8
+  data: {fileID: 11400000, guid: 5fa8ca02e9268094aaa80af8c4f9a1bf, type: 2}
+  difficultyPoints: 8
+  spawnRadius: 2.81
+--- !u!4 &229372571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229372569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.05, y: -11.56, z: -342.49283}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &284946145
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627a07dd39a51e5b7a206730f39ae914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_path: Assets/Resources/Navmesh2D/NavmeshData2D 6.asset
+  m_data: {fileID: 11400000, guid: 8155c4a99f50f7c449d60d63be6e5836, type: 2}
   m_origin: {x: -55, y: -31, z: 0}
   m_width: 128
   m_height: 41
