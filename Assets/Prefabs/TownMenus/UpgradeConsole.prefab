@@ -2166,7 +2166,7 @@ GameObject:
   - component: {fileID: 1040071435}
   - component: {fileID: 1040071434}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3054,7 +3054,7 @@ GameObject:
   - component: {fileID: 1355389045}
   - component: {fileID: 1355389044}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3590,7 +3590,7 @@ GameObject:
   - component: {fileID: 1545556490}
   - component: {fileID: 1545556489}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4752,7 +4752,7 @@ GameObject:
   - component: {fileID: 1825681756}
   - component: {fileID: 1825681755}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6955,7 +6955,7 @@ GameObject:
   - component: {fileID: 6340073868455059216}
   - component: {fileID: 6340073868455059217}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7375,7 +7375,7 @@ GameObject:
   - component: {fileID: 6340073868509706830}
   - component: {fileID: 6340073868509706831}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7509,7 +7509,7 @@ GameObject:
   - component: {fileID: 6340073868529197304}
   - component: {fileID: 6340073868529197305}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8450,7 +8450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6340073868711603983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9751,6 +9751,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4385b7d6d016a3c4b87b1aa663607a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platform: {fileID: 6340073870048578489}
+  upgradeMenu: {fileID: 6340073869023575465}
+  canvas: {fileID: 6340073868428985060}
+  mainPannel: {fileID: 6340073869571761342}
+  weaponButton: {fileID: 6340073869115181852}
+  weaponPannel: {fileID: 6340073868711603980}
+  weaponItems:
+  - {fileID: 6340073869715112258}
+  - {fileID: 6340073869875149471}
+  - {fileID: 6340073869214793481}
+  - {fileID: 1811982821}
+  - {fileID: 126911929}
+  moduleButton: {fileID: 6340073868805649552}
+  modulePannel: {fileID: 6340073869772435421}
+  moduleItems:
+  - {fileID: 6340073868280365420}
+  - {fileID: 6340073868280951436}
+  - {fileID: 6340073868687568863}
+  - {fileID: 2019029976}
+  - {fileID: 1638301829}
 --- !u!1 &6340073869068744846
 GameObject:
   m_ObjectHideFlags: 0
@@ -11374,7 +11394,7 @@ GameObject:
   - component: {fileID: 6340073869458830749}
   - component: {fileID: 6340073869458830722}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11508,7 +11528,7 @@ GameObject:
   - component: {fileID: 6340073869460567997}
   - component: {fileID: 6340073869460567970}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12972,7 +12992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6340073869772435420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14167,7 +14187,7 @@ GameObject:
   - component: {fileID: 6340073870077651882}
   - component: {fileID: 6340073870077651883}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

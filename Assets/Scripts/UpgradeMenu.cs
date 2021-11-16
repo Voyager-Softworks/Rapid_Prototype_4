@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject platform;
+    public GameObject upgradeMenu;
+    public GameObject canvas;
+    public GameObject mainPannel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Weapon")]
+    public GameObject weaponButton;
+    public GameObject weaponPannel;
+    public List<GameObject> weaponItems;
+    
+    [Header("Module")]
+    public GameObject moduleButton;
+    public GameObject modulePannel;
+    public List<GameObject> moduleItems;
 }
