@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: rocks
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a8336b38d0984db49bd60cc3d881af32, type: 3}
+    totalSpriteSurfaceArea: 19904
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -5986918108855916713, guid: a8336b38d0984db49bd60cc3d881af32, type: 3}
+  - {fileID: 5422414345635003961, guid: a8336b38d0984db49bd60cc3d881af32, type: 3}
+  - {fileID: -949534193390080710, guid: a8336b38d0984db49bd60cc3d881af32, type: 3}
+  - {fileID: -9034393368528132728, guid: a8336b38d0984db49bd60cc3d881af32, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - rock_fix_1
+  - rock_fix_0
+  - rock_fix_3
+  - rock_fix_2
+  m_RenderDataMap: {}
+  m_Tag: rocks
+  m_IsVariant: 0
