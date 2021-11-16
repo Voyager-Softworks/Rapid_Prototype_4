@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 202701198261587191}
   - component: {fileID: 202701198261587186}
   - component: {fileID: 202701198261587185}
+  - component: {fileID: 6740270674027826725}
   m_Layer: 10
   m_Name: MutantAbomination
   m_TagString: Untagged
@@ -715,3 +716,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6740270674027826725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202701198261584649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3de96285238c429f6fefe9c3ca64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemyType: 0
+  m_health: 200
+  m_elite: 0
+  m_deathPart: {fileID: 0}
+  m_weakTo: 0
+  m_drops: []

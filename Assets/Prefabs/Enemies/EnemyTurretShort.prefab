@@ -207,19 +207,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_shotDelay
-      value: 0.5
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_bulletSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_reloadDelay
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_attackRadius
-      value: 4.34
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_detectionRadius
-      value: 6.3
+      value: 8.69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11f65852e14a6eea3b782e198539f257, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4813587168458996138}
   - component: {fileID: 1247039791969089236}
   - component: {fileID: 4980394106393228845}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +4899,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8271244823148772747}
   - component: {fileID: 827841689085192017}
-  m_Layer: 0
+  - component: {fileID: 7624047037772745959}
+  - component: {fileID: 1074973506694501533}
+  m_Layer: 14
   m_Name: BugExplode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5019,6 +5021,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7624047037772745959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240376982557400333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b08f10da4769ebdbb179a40c4377e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 15
+--- !u!58 &1074973506694501533
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240376982557400333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.11
 --- !u!1 &2568755248833449418
 GameObject:
   m_ObjectHideFlags: 0
@@ -5030,7 +5061,7 @@ GameObject:
   - component: {fileID: 6719077130362732086}
   - component: {fileID: 1650348869160662406}
   - component: {fileID: 6914697437835471977}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9902,7 +9933,7 @@ GameObject:
   - component: {fileID: 2664872527406368175}
   - component: {fileID: 9120531996314443251}
   - component: {fileID: 5967506794987871320}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

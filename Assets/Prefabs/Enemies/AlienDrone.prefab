@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_navmesh: {fileID: 0}
   m_speed: 2
-  m_rotationSpeed: 1
+  m_rotationSpeed: 5
   m_currentPath: []
   m_isMoving: 0
   m_canFly: 1
@@ -152,11 +152,11 @@ MonoBehaviour:
   m_barrelPositions:
   - {fileID: 4047421635568989879}
   m_barrelAimHolder: {fileID: 4047421635564688435}
-  m_bulletPrefab: {fileID: 2240376982557400333, guid: 723a194b706d45747921b84bf7dc2c12, type: 3}
-  m_bulletSpeed: 5
-  m_clipSize: 10
+  m_bulletPrefab: {fileID: 2240376982557400333, guid: 2bde576e1b573a4dcb3696605a302383, type: 3}
+  m_bulletSpeed: 50
+  m_clipSize: 1
   m_shotDelay: 1
-  m_reloadDelay: 2
+  m_reloadDelay: 1
 --- !u!114 &4047421635564688432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemyType: 0
-  m_health: 10
+  m_health: 15
   m_elite: 0
   m_deathPart: {fileID: 0}
   m_weakTo: 0
@@ -236,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4047421635568989880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.108, y: 0, z: 0}
+  m_LocalPosition: {x: 0.081, y: -0.014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4047421635564688435}

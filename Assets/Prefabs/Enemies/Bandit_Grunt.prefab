@@ -159,10 +159,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemyType: 0
-  m_health: 75
+  m_health: 10
   m_elite: 0
   m_deathPart: {fileID: 2240376982557400333, guid: a287119178f539a469f2f9f86769fe0d, type: 3}
-  m_weakTo: 1
+  m_weakTo: 0
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
     m_amount: 5
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 2240376982557400333, guid: 723a194b706d45747921b84bf7dc2c12, type: 3}
   m_bulletSpeed: 20
   m_clipSize: 3
-  m_shotDelay: 0.1
-  m_reloadDelay: 1
+  m_shotDelay: 0.2
+  m_reloadDelay: 2
 --- !u!82 &23748567601496722
 AudioSource:
   m_ObjectHideFlags: 0
