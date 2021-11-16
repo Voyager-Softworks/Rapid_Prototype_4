@@ -180,10 +180,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 753604d328a9c554db81980047644e76, type: 3}
   m_idleSource: {fileID: 5495088872453191176}
   p: {fileID: 0}
-  m_detectionRadius: 4
+  m_manualdisable: 0
+  m_detectionRadius: 8
   m_attackRadius: 3.5
   m_minAngle: -14.9
   m_maxAngle: 194.5
+  m_aimOffset: 0
   m_shooting: 0
   m_barrelPositions:
   - {fileID: 4518498241451846828}
