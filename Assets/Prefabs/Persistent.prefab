@@ -97,24 +97,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cb8c1c80bd8134c950db7163891a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   upgradeMenu: {fileID: 0}
   weaponUpgrades:
   - type: 0
-    level: 0
     weaponType: 1
     moduleType: 0
+    unlocked: 1
+    level: 0
+    cost:
+    - type: 2
+      amount: 5
     levels:
     - cost:
       - type: 2
-        amount: 10
+        amount: 2
+      - type: 1
+        amount: 1
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
-    - cost: []
+    - cost:
+      - type: 2
+        amount: 3
+      - type: 1
+        amount: 4
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
-    - cost: []
+  - type: 0
+    weaponType: 3
+    moduleType: 0
+    unlocked: 0
+    level: 0
+    cost:
+    - type: 2
+      amount: 5
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+  - type: 0
+    weaponType: 2
+    moduleType: 0
+    unlocked: 0
+    level: 0
+    cost:
+    - type: 2
+      amount: 5
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
