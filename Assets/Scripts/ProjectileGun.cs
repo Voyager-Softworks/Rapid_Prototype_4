@@ -36,6 +36,8 @@ public class ProjectileGun : MonoBehaviour
     void Start()
     {
         fireAction.Enable();
+        m_fireTimer = m_fireDelay;
+        m_reloadTimer = 0.0f;
     }
 
     // Update is called once per frame
@@ -80,7 +82,7 @@ public class ProjectileGun : MonoBehaviour
         projectile.velocity = m_projectileSpeed * m_muzzle.right;
 
         // Play the fire effect
-        m_fireEffect.Play();
+        //m_fireEffect.Play();
     }
 
 
