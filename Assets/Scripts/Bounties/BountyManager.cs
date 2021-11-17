@@ -9,14 +9,6 @@ using UnityEngine.Events;
 public class BountyManager : MonoBehaviour
 {
 
-    public enum LevelType {
-        HUB,
-        WASTELAND,
-        CAVES,
-        VOLCANO,
-        RUINS
-    }
-
     public enum BountyType {
         FIND,
         KILL,
@@ -39,6 +31,7 @@ public class BountyManager : MonoBehaviour
     }
 
     private Resources resourceManager = null;
+    private LevelManager levelManager = null;
 
     [Header("Board")]
     public BountyBoard bountyBoard = null;
@@ -72,6 +65,7 @@ public class BountyManager : MonoBehaviour
         if (this == null) return;
         if (gameObject == null) return;
         if (resourceManager == null) resourceManager = GetComponent<Resources>();
+        if (levelManager == null) levelManager = GetComponent<LevelManager>();
 
         //if any active, select them automatically
         if (activeBounties.Count > 0) {
@@ -128,7 +122,7 @@ public class BountyManager : MonoBehaviour
         Bounty bounty = new Bounty();
 
         //get a random level type
-        bounty.levelType = (LevelType)Random.Range(0, System.Enum.GetValues(typeof(LevelType)).Length);
+        bounty.levelType = (LevelManager.LevelType)Random.Range(0, System.Enum.GetValues(typeof(LevelManager.LevelType)).Length);
 
         //get a random bounty type
         bounty.bountyType = (BountyType)Random.Range(0, System.Enum.GetValues(typeof(BountyType)).Length);
@@ -402,6 +396,8 @@ public class BountyManager : MonoBehaviour
                 condition.Start();
             }
 
+            if (levelManager) levelManager.GenLevel();
+            
             //update the board
             UpdateBoard();
         }

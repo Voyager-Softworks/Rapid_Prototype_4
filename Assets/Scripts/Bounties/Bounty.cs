@@ -74,7 +74,7 @@ public class Bounty
     }
 
 
-    public BountyManager.LevelType levelType = BountyManager.LevelType.WASTELAND;
+    public LevelManager.LevelType levelType = LevelManager.LevelType.WASTELAND;
     public BountyManager.BountyType bountyType = BountyManager.BountyType.KILL;
     public BountyManager.BountyStatus bountyStatus = BountyManager.BountyStatus.INACTIVE;
     public BountyManager.BountyDifficulty bountyDifficulty = BountyManager.BountyDifficulty.EASY;
