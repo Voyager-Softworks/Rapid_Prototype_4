@@ -13,7 +13,7 @@ public class LevelSpawnInfo : ScriptableObject
     }
 
     [Header("Level")]
-    [SerializeField] public BountyManager.LevelType levelType;
+    [SerializeField] public LevelManager.LevelType levelType;
 
     [Header("Default Spawns")]
     [SerializeField] float defaultMinAmount;

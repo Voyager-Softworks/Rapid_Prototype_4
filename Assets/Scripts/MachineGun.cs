@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MachineGun : MonoBehaviour
 {
@@ -77,6 +79,10 @@ public class MachineGun : MonoBehaviour
             Instantiate(m_OverHeatSound, transform.position, Quaternion.identity, null);
             canShoot = false;
         }
+
+        bool noUIcontrolsInUse = !EventSystem.current.IsPointerOverGameObject();
+        if (!noUIcontrolsInUse) canShoot = false;
+
 
         m_anim.ResetTrigger("Fire");
         if (canShoot && ((m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f) || (!m_leftClick && (m_shootAction.ReadValue<float>() > 0.5f)))))
