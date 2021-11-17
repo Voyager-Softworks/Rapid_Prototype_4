@@ -57,8 +57,11 @@ public class MeleeAttackAI : MonoBehaviour
             m_anim.SetBool("IsShooting", false);
             m_agent.MoveTo(m_playerTransform.position);
             m_playerDetected = true;
-            m_barkSource.clip = m_aggroclips[Random.Range(0, m_aggroclips.Count)];
-            m_barkSource.Play();
+            if (m_barkSource != null && m_aggroclips.Count > 0)
+            {
+                m_barkSource.clip = m_aggroclips[Random.Range(0, m_aggroclips.Count)];
+                m_barkSource.Play();
+            }
         }
         else
         {

@@ -86,11 +86,7 @@ public class HoverBikeAI : MonoBehaviour
                 
             }
         }
-        else
-        {
-            //Move around the map
-            transform.position += transform.up * speed * Time.deltaTime;
-        }
+        
     }
 
     public void Fire()
