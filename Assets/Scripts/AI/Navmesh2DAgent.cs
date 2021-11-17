@@ -97,13 +97,13 @@ public class Navmesh2DAgent : MonoBehaviour
             
             float distance = direction.magnitude;
             float step = m_speed * Time.deltaTime;
-            if(IsGrounded() && target.y < transform.position.y)
+            if(IsGrounded() && target.y < transform.position.y && !m_canFly)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.x, transform.position.y, transform.position.z), step);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector3(target.x, transform.position.y, transform.position.z), step);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, target, step);
+                transform.position = Vector2.MoveTowards(transform.position, target, step);
             }
             
             //if can rotate, rotate to target
