@@ -54,10 +54,7 @@ public class EnemyTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= -10)
-        {
-            Revive();
-        }
+        
     }
 
     public void TakeDamage(float _amount, DamageType _type)

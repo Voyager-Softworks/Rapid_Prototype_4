@@ -393,13 +393,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.8
+    probability: 1
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 8
   data: {fileID: 11400000, guid: 5fa8ca02e9268094aaa80af8c4f9a1bf, type: 2}
   difficultyPoints: 8
-  spawnRadius: 2.81
+  spawnRadius: 6.42
 --- !u!4 &229372571
 Transform:
   m_ObjectHideFlags: 0
