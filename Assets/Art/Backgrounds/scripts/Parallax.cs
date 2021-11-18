@@ -15,7 +15,8 @@ public class Parallax : MonoBehaviour
     {
         if (!cam) cam = GameObject.Find("Main Camera");
         startpos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer) length = spriteRenderer.bounds.size.x;
     }
 
     // Update is called once per frame

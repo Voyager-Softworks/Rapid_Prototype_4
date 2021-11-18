@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -72,6 +74,47 @@ public class UpgradeManager : MonoBehaviour
         }
 
         UpdateEquippedWeapons();
+    }
+
+    private void Update() {
+        //check if in hub level
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "Level_Hub") {
+            //if upgrade menu exists
+            if (upgradeMenu) {
+                //if upgrade menu is open
+                if (upgradeMenu.gameObject.activeSelf) {
+                    bool anyTrue = false;
+                    //loop through all weaponItems in upgrade menu
+                    for (int i = 0; i < upgradeMenu.weaponItems.Count; i++) {
+                        //if weaponItem is not active, skip
+                        if (!upgradeMenu.weaponItems[i].gameObject.activeSelf || i > weaponUpgrades.Count) continue;
+
+                        //convert mouse position to world position
+                        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+
+                        Vector3[] rectCorners = new Vector3[4];
+                        upgradeMenu.weaponItems[i].GetComponent<RectTransform>().GetWorldCorners(rectCorners);
+
+                        //check if mouse is within rectCorners, enable upgradeMenu infoPanel
+                        if (mousePos.x > rectCorners[0].x && mousePos.x < rectCorners[2].x && mousePos.y > rectCorners[0].y && mousePos.y < rectCorners[2].y) {
+                            upgradeMenu.infoPanel.SetActive(true);
+                            upgradeMenu.infoPanel.GetComponentInChildren<TextMeshProUGUI>().SetText(weaponUpgrades[i].description);
+                            anyTrue = true;
+                            upgradeMenu.infoPanel.transform.position = new Vector3(mousePos.x, mousePos.y + 0.5f, 0);
+                            break;
+                        }
+                    }
+
+                    if (!anyTrue) {
+                        upgradeMenu.infoPanel.SetActive(false);
+                    }
+                }
+                else{
+                    upgradeMenu.infoPanel.SetActive(false);
+                }
+            }
+        }
     }
 
     private void UpdateEquippedWeapons()

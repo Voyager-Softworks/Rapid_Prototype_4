@@ -241,6 +241,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6061731658932011852, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
   m_PrefabInstance: {fileID: 574275177}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &83637699 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6061731658932011850, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
+  m_PrefabInstance: {fileID: 574275177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &83637700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6061731658932011851, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
@@ -497,7 +502,7 @@ Transform:
   m_LocalScale: {x: 50, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176525727
 GameObject:
@@ -1803,7 +1808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665200170
 GameObject:
@@ -3087,7 +3092,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251535752
 GameObject:
@@ -10918,7 +10923,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3929655886022784920, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3929655886022784920, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10964,18 +10969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeleportConsole
       objectReference: {fileID: 0}
-    - target: {fileID: 3929655886022784922, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3929655886658152023, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 994972603}
-    - target: {fileID: 4996400288515327659, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
 --- !u!1001 &6340073868613327277
@@ -10985,17 +10982,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6340073868428985056, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 83637699}
     - target: {fileID: 6340073869980371041, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
       propertyPath: m_Name
       value: UpgradeConsole
       objectReference: {fileID: 0}
-    - target: {fileID: 6340073869980371041, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6340073869980371043, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6340073869980371043, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11037,10 +11034,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6340073870048578489, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
 --- !u!1001 &7537229292985358753
@@ -11054,13 +11047,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: TownConsole
       objectReference: {fileID: 0}
-    - target: {fileID: 7537229292877301141, guid: 41aa163f524aea946be5210456032f92, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7537229292877301142, guid: 41aa163f524aea946be5210456032f92, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7537229292877301142, guid: 41aa163f524aea946be5210456032f92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11100,10 +11089,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7537229292877301142, guid: 41aa163f524aea946be5210456032f92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7537229292877301143, guid: 41aa163f524aea946be5210456032f92, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11256,10 +11241,6 @@ PrefabInstance:
     - target: {fileID: 8461649907102655210, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
       propertyPath: m_Name
       value: BountyConsole
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461649907102655210, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8461649907102655215, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
       propertyPath: m_RootOrder

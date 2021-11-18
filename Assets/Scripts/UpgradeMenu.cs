@@ -8,6 +8,7 @@ public class UpgradeMenu : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject canvas;
     public GameObject mainPannel;
+    public GameObject infoPanel;
 
     [Header("Weapon")]
     public GameObject weaponButton;

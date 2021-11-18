@@ -145,6 +145,8 @@ MonoBehaviour:
     moduleType: 0
     unlocked: 1
     level: 0
+    description: 'Heavy cannon: Starter weapon, light splash damage, resistant to
+      overheating'
     cost:
     - type: 2
       amount: 5
@@ -170,6 +172,7 @@ MonoBehaviour:
     moduleType: 0
     unlocked: 0
     level: 0
+    description: 'Railgun: Low rate of fire, charge time, extreme damage, piercing'
     cost:
     - type: 2
       amount: 5
@@ -189,6 +192,7 @@ MonoBehaviour:
     moduleType: 0
     unlocked: 0
     level: 0
+    description: 'Minigun: High rate of fire, low armour piercing, prone to overheating'
     cost:
     - type: 2
       amount: 5
