@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
         WASTELAND,
         CAVES,
         VOLCANO,
-        RUINS
+        VAULT
     }
 
     public enum LevelMods {

@@ -30,9 +30,6 @@ public class Inventory : MonoBehaviour
     public void UpdateVisuals()
     {
         return;
-        m_text.text = "ORGANIC  x" + m_organicAmount +
-                        "\nPOWER    x" + m_powerAmount +
-                        "\nSCRAP    x" + m_scrapAmount;
     }
 
     public void AddResource(Resources.ResourceType _type, float _amount = 1.0f)

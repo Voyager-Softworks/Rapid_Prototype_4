@@ -55,8 +55,8 @@ public class SceneController : MonoBehaviour
                 LoadVolcano();
             break;
 
-            case LevelManager.LevelType.RUINS:
-                LoadRuins();
+            case LevelManager.LevelType.VAULT:
+                LoadValt();
             break;
         }
     }
@@ -81,9 +81,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Level_Volcano");
     }
 
-    public void LoadRuins()
+    public void LoadValt()
     {
-        SceneManager.LoadScene("Level_Ruins");
+        SceneManager.LoadScene("Level_Vault");
     }
 
     public void LoadWin()

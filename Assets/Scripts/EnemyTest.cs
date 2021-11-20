@@ -14,15 +14,15 @@ public class EnemyTest : MonoBehaviour
     public enum EnemyType
     {
         NONE,
-        ALIEN_SMALL,
-        ALIEN_LARGE,
-        ALIENT_FLYING,
-        MECH_SMALL,
-        MECH_MEDIUM,
-        MECH_LARGE,
         BANDIT_GRUNT,
-        BANDIT_HOVER,
-        BANDIT_TANK
+        BANDIT_BIKE,
+        BANDIT_TANK,
+        BANDIT_TURRET,
+        ALIEN_DRONE,
+        ALIEN_MECH,
+        MUTANT_CRAWLER,
+        MUTANT_ABOMINATION,
+        MUTANT_TURRET
     }
 
     [System.Serializable]

@@ -27,18 +27,21 @@ public class Bounty
         }
     }
 
+    [Serializable]
     public class Condition_Kills : Condition
     {
         //constructor
-        public Condition_Kills(EnemyTest.EnemyType _type, int _amount)
+        public Condition_Kills(EnemyTest.EnemyType _type, int _amount, bool _isEliteOnly = false)
         {
             enemyType = _type;
             targetValue = _amount;
+            isEliteOnly = _isEliteOnly;
 
             //Start();
         }
 
         public EnemyTest.EnemyType enemyType = EnemyTest.EnemyType.NONE;
+        public bool isEliteOnly = false;
         public int startKills = 0;
         public int targetValue = 0;
 
@@ -61,7 +64,8 @@ public class Bounty
             if (stats){
                 PlayerStats ps = stats.GetComponent<PlayerStats>();
                 if (ps){
-                    int kills = ps.GetKills(enemyType, false);
+                    int kills = 0;
+                    if (!isEliteOnly) kills += ps.GetKills(enemyType, false);
                     kills += ps.GetKills(enemyType, true);
 
                     if (kills - startKills >= targetValue){
