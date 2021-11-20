@@ -147,6 +147,7 @@ MonoBehaviour:
     level: 0
     description: 'Heavy cannon: Starter weapon, light splash damage, resistant to
       overheating'
+    icon: {fileID: 1200958525026924834, guid: b51f7056343262948bd826860400d8cf, type: 3}
     cost:
     - type: 2
       amount: 5
@@ -173,6 +174,7 @@ MonoBehaviour:
     unlocked: 0
     level: 0
     description: 'Railgun: Low rate of fire, charge time, extreme damage, piercing'
+    icon: {fileID: 3104207354697363745, guid: e3afd9165209e97459d2fd6d470a5618, type: 3}
     cost:
     - type: 2
       amount: 5
@@ -193,6 +195,7 @@ MonoBehaviour:
     unlocked: 0
     level: 0
     description: 'Minigun: High rate of fire, low armour piercing, prone to overheating'
+    icon: {fileID: -5120986925729201918, guid: ebd65149cb37d8e44831d4b497c611d2, type: 3}
     cost:
     - type: 2
       amount: 5
@@ -207,7 +210,26 @@ MonoBehaviour:
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
-  moduleUpgrades: []
+  moduleUpgrades:
+  - type: 1
+    weaponType: 0
+    moduleType: 2
+    unlocked: 0
+    level: 0
+    description: Go dashy weeeee
+    icon: {fileID: -4064355139998063853, guid: b020c8e8b96cee84ba1454008cbe3757, type: 3}
+    cost:
+    - type: 0
+      amount: 1
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 1
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!114 &5803008652019208702
 MonoBehaviour:
   m_ObjectHideFlags: 0
