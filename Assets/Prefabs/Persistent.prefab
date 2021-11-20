@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3437735875824158617}
   - component: {fileID: 3437735875824158598}
   - component: {fileID: 124964506}
+  - component: {fileID: 1027871813}
   m_Layer: 0
   m_Name: Persistent
   m_TagString: Untagged
@@ -272,6 +273,9 @@ MonoBehaviour:
     conditions: []
   spawnInfo:
   - {fileID: 11400000, guid: 207f28e395c865f4e8b28c00ebf6cc95, type: 2}
+  - {fileID: 11400000, guid: 38dcf67db8df4ef4f99fe7701a2af2a1, type: 2}
+  - {fileID: 11400000, guid: b3980c8bab95baa48ba158d6e34bc74b, type: 2}
+  - {fileID: 11400000, guid: 947899b847194974aa0979d6644a4328, type: 2}
 --- !u!114 &3437735875824158598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,3 +306,37 @@ MonoBehaviour:
   killList: []
   total_kills: 0
   total_deaths: 0
+--- !u!114 &1027871813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437735875824158597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ca445c6b5e3d445bbd183e4ecf2ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyIcons:
+  - enemyType: 0
+    icon: {fileID: 6970840943988027778, guid: 35461d300244a724c95892b9783363ee, type: 3}
+  - enemyType: 1
+    icon: {fileID: 379197510946912075, guid: 3de972643cd1f5a47a64145c46f80dd4, type: 3}
+  - enemyType: 2
+    icon: {fileID: 7453760143463317738, guid: 0f2641b33a219de4a93aa025410db676, type: 3}
+  - enemyType: 3
+    icon: {fileID: 3167114344963638512, guid: 1edfc73501ff8c640af78cb34c065ddd, type: 3}
+  - enemyType: 4
+    icon: {fileID: 6680595203304305954, guid: 9eefb9e5c4778044b9ed68e786914e54, type: 3}
+  - enemyType: 5
+    icon: {fileID: -3113031893975621820, guid: 5311d93fd377e6f4191bae2b8bd31d57, type: 3}
+  - enemyType: 6
+    icon: {fileID: 2866933017496313714, guid: 920911a86c70b2741b4e4dcde6e205d5, type: 3}
+  - enemyType: 7
+    icon: {fileID: -4546715284163673913, guid: f4402df9978cf5e4a8c5bd7876bc7698, type: 3}
+  - enemyType: 8
+    icon: {fileID: 5792510115394945999, guid: 7387fe22bf3493846b3dca63c167c5f6, type: 3}
+  - enemyType: 9
+    icon: {fileID: -4881770212317194497, guid: d6690b1a770509445a8c03461e8a6e6a, type: 3}
+  InteractCanvasPrefab: {fileID: 0}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316f28372d8e7b1429ca8a62996a8517, type: 3}
+  m_Name: Cave_SpawnInfo
+  m_EditorClassIdentifier: 
+  levelType: 2
+  regularSpawns:
+  - {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
+  bossSpawns:
+  - {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+  findSpawns: []
