@@ -207,7 +207,25 @@ MonoBehaviour:
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
-  moduleUpgrades: []
+  moduleUpgrades:
+  - type: 1
+    weaponType: 0
+    moduleType: 2
+    unlocked: 0
+    level: 0
+    description: Go dashy weeeee
+    cost:
+    - type: 0
+      amount: 1
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 1
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!114 &5803008652019208702
 MonoBehaviour:
   m_ObjectHideFlags: 0
