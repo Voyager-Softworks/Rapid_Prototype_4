@@ -207,8 +207,11 @@ public class UpgradeManager : MonoBehaviour
                 //get menu item
                 GameObject upgradeItem = upgradeMenu.weaponItems[i];
                 upgradeItem.SetActive(true);
-                TextMeshProUGUI text = upgradeItem.GetComponentInChildren<TextMeshProUGUI>();
-                text.text = upgrade.weaponType.ToString();
+                //get the icon
+                Image icon = upgradeItem.transform.GetChild(0).GetComponent<Image>();
+                //set the icon to the upgrade icon
+                icon.sprite = upgrade.icon;
+                
                 
                 //get equip buttons
                 GameObject equipL = upgradeItem.transform.Find("L").gameObject;
@@ -402,8 +405,10 @@ public class UpgradeManager : MonoBehaviour
                 //get the menu item
                 GameObject upgradeItem = upgradeMenu.moduleItems[i];
                 upgradeItem.SetActive(true);
-                TextMeshProUGUI upgradeName = upgradeItem.GetComponentInChildren<TextMeshProUGUI>();
-                upgradeName.text = upgrade.moduleType.ToString();
+                //get the icon
+                Image icon = upgradeItem.transform.GetChild(0).GetComponent<Image>();
+                //set the icon to the upgrade icon
+                icon.sprite = upgrade.icon;
 
                 //get upgrade button
                 Button button = upgradeItem.GetComponentInChildren<Button>();
