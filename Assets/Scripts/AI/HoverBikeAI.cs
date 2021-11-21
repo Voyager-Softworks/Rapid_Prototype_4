@@ -67,7 +67,8 @@ public class HoverBikeAI : MonoBehaviour
             //clamp velocity
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, speed);
             if (!navmesh.IsWalkable(transform.position, transform.right *2.0f) || 
-            ((Vector3.Distance(transform.position, target) > attackRange) && Vector3.Dot(transform.right, targetDir) < 0.0f))
+            ((Vector3.Distance(transform.position, target) > attackRange) && Vector3.Dot(transform.right, targetDir) < 0.0f &&
+            navmesh.IsWalkable(transform.position, transform.right *-2.0f)))
             
             {
                 if (facingLeft)

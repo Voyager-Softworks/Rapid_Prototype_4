@@ -734,7 +734,9 @@ MonoBehaviour:
   m_elite: 0
   m_deathPart: {fileID: 0}
   m_weakTo: 0
-  m_drops: []
+  m_drops:
+  - m_prefab: {fileID: 2240376982557400333, guid: eae3074d12ee66348abf281097940eeb, type: 3}
+    m_amount: 1
 --- !u!1001 &2561871865221866907
 PrefabInstance:
   m_ObjectHideFlags: 0
