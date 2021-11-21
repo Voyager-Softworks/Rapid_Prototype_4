@@ -38,6 +38,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3048739889292881485}
     m_Modifications:
+    - target: {fileID: 513997181, guid: 8d34de6d695a8894cb551757773cc89d, type: 3}
+      propertyPath: drops.Array.data[0].amount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4151390742987119088, guid: 8d34de6d695a8894cb551757773cc89d, type: 3}
       propertyPath: m_Name
       value: Node_Ichor_1

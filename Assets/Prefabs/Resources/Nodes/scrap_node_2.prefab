@@ -38,6 +38,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6271499167924829234}
     m_Modifications:
+    - target: {fileID: 898940805, guid: 47bb9e0b9d2f5cc4a82e701f4fe31ae0, type: 3}
+      propertyPath: drops.Array.data[0].amount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8036041289837709574, guid: 47bb9e0b9d2f5cc4a82e701f4fe31ae0, type: 3}
       propertyPath: m_Name
       value: Node_Scrap_1
