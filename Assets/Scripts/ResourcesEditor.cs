@@ -81,7 +81,7 @@ public class ResourcesEditor : Editor
         resources.m_ICHORPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_ICHORPrefab, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.m_ICHORPrefab = UnityEngine.Resources.Load<GameObject>("UI_ichor");
+            resources.m_ICHORPrefab = UnityEngine.Resources.Load<GameObject>("NEW/Resource_Ichor");
         }
         EditorGUILayout.EndHorizontal();
         //scrap
@@ -90,7 +90,7 @@ public class ResourcesEditor : Editor
         resources.m_SCRAPPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_SCRAPPrefab, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.m_SCRAPPrefab = UnityEngine.Resources.Load<GameObject>("UI_scrap");
+            resources.m_SCRAPPrefab = UnityEngine.Resources.Load<GameObject>("NEW/Resource_Scrap");
         }
         EditorGUILayout.EndHorizontal();
         //crystal
@@ -99,7 +99,7 @@ public class ResourcesEditor : Editor
         resources.m_CRYSTALPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_CRYSTALPrefab, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.m_CRYSTALPrefab = UnityEngine.Resources.Load<GameObject>("UI_crystal");
+            resources.m_CRYSTALPrefab = UnityEngine.Resources.Load<GameObject>("NEW/Resource_Crystal");
         }
         EditorGUILayout.EndHorizontal();
         //exotic
@@ -108,7 +108,7 @@ public class ResourcesEditor : Editor
         resources.m_EXOTICPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_EXOTICPrefab, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.m_EXOTICPrefab = UnityEngine.Resources.Load<GameObject>("UI_exotic");
+            resources.m_EXOTICPrefab = UnityEngine.Resources.Load<GameObject>("NEW/Resource_Exotic");
         }
         EditorGUILayout.EndHorizontal();
 

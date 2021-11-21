@@ -74,10 +74,10 @@ MonoBehaviour:
     amount: 25
   - type: 3
     amount: 25
-  m_ICHORPrefab: {fileID: 7925906998137058709, guid: 18848e7bc4055954d9ea6304503a34bd, type: 3}
-  m_CRYSTALPrefab: {fileID: 1668626673543316108, guid: df06bb846a4159f4ca5ce065b37ca68d, type: 3}
-  m_SCRAPPrefab: {fileID: 9138579729236097945, guid: 479a77c135a807c4abf9287ce89f3464, type: 3}
-  m_EXOTICPrefab: {fileID: 8204138437289900036, guid: 99a40e55cd331a743b08b5d2bcc38c27, type: 3}
+  m_ICHORPrefab: {fileID: 7649933593588755681, guid: 0db62460aa37da945bf6634499a8c61a, type: 3}
+  m_CRYSTALPrefab: {fileID: 7649933593588755681, guid: 63d7bcb11f0d68446a0f5c87aa5738b6, type: 3}
+  m_SCRAPPrefab: {fileID: 7649933593588755681, guid: 9a582e46ac5082e44a7e1885eb4fc15d, type: 3}
+  m_EXOTICPrefab: {fileID: 7649933593588755681, guid: 0358c1aa31405b94bb74f4ee9e56bd55, type: 3}
 --- !u!114 &3437735875824158616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +310,6 @@ MonoBehaviour:
     bountyStatus: 0
     bountyDifficulty: 0
     bountyCost: []
-    reward: {fileID: 0}
     conditions: []
   spawnInfo:
   - {fileID: 11400000, guid: 207f28e395c865f4e8b28c00ebf6cc95, type: 2}
