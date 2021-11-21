@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.24528301
       objectReference: {fileID: 0}
+    - target: {fileID: 684866582627050023, guid: 37546bc22bdddd749a11297285ff4665, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1219998
+      objectReference: {fileID: 0}
     - target: {fileID: 776627768368419148, guid: 37546bc22bdddd749a11297285ff4665, type: 3}
       propertyPath: drops.Array.data[0].amount
       value: 2
@@ -154,6 +158,10 @@ PrefabInstance:
     - target: {fileID: 3146048217902605193, guid: 37546bc22bdddd749a11297285ff4665, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325768481768295667, guid: 37546bc22bdddd749a11297285ff4665, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.062
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37546bc22bdddd749a11297285ff4665, type: 3}
