@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 1639815112}
   - component: {fileID: 1639815111}
   m_Layer: 5
-  m_Name: Penalty
+  m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4201,7 +4201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8474603433912942762
 Transform:
   m_ObjectHideFlags: 0
@@ -4245,7 +4245,7 @@ MonoBehaviour:
   icon: {fileID: 8313816665325275319}
   infoLevel: {fileID: 1839238219}
   infoReward: {fileID: 1615520122}
-  infoPenalty: {fileID: 1639815109}
+  infoCost: {fileID: 1639815109}
   infoAcceptButton: {fileID: 1271673753}
 --- !u!1 &8474603433925352106
 GameObject:

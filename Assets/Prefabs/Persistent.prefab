@@ -67,14 +67,17 @@ MonoBehaviour:
   resourceText: {fileID: 0}
   playerResources:
   - type: 0
-    amount: 35
+    amount: 25
   - type: 1
-    amount: 20
+    amount: 25
   - type: 2
     amount: 25
-  m_powerPrefab: {fileID: 1635208352146295761, guid: 8d35a8d0c020cd845a6dcf223760d2f5, type: 3}
-  m_organicPrefab: {fileID: 1635208352146295761, guid: c4ff223a4ec54894ab139beafaa2523d, type: 3}
-  m_scrapPrefab: {fileID: 1635208352146295761, guid: 678c2ee4234b01a41859cc00bce69766, type: 3}
+  - type: 3
+    amount: 25
+  m_ICHORPrefab: {fileID: 7925906998137058709, guid: 18848e7bc4055954d9ea6304503a34bd, type: 3}
+  m_CRYSTALPrefab: {fileID: 1668626673543316108, guid: df06bb846a4159f4ca5ce065b37ca68d, type: 3}
+  m_SCRAPPrefab: {fileID: 9138579729236097945, guid: 479a77c135a807c4abf9287ce89f3464, type: 3}
+  m_EXOTICPrefab: {fileID: 8204138437289900036, guid: 99a40e55cd331a743b08b5d2bcc38c27, type: 3}
 --- !u!114 &3437735875824158616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +151,7 @@ MonoBehaviour:
     level: 0
     description: 'Heavy cannon: Starter weapon, light splash damage, resistant to
       overheating'
-    icon: {fileID: 1200958525026924834, guid: b51f7056343262948bd826860400d8cf, type: 3}
+    icon: {fileID: -601295715328648532, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 5
@@ -175,7 +178,7 @@ MonoBehaviour:
     unlocked: 0
     level: 0
     description: 'Railgun: Low rate of fire, charge time, extreme damage, piercing'
-    icon: {fileID: 3104207354697363745, guid: e3afd9165209e97459d2fd6d470a5618, type: 3}
+    icon: {fileID: 5609850671035102186, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 5
@@ -196,7 +199,7 @@ MonoBehaviour:
     unlocked: 0
     level: 0
     description: 'Minigun: High rate of fire, low armour piercing, prone to overheating'
-    icon: {fileID: -5120986925729201918, guid: ebd65149cb37d8e44831d4b497c611d2, type: 3}
+    icon: {fileID: -8693945879516931404, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 5
@@ -218,7 +221,45 @@ MonoBehaviour:
     unlocked: 0
     level: 0
     description: Go dashy weeeee
-    icon: {fileID: -4064355139998063853, guid: b020c8e8b96cee84ba1454008cbe3757, type: 3}
+    icon: {fileID: -2685453121627481729, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+    cost:
+    - type: 0
+      amount: 1
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 1
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+  - type: 1
+    weaponType: 0
+    moduleType: 1
+    unlocked: 0
+    level: 0
+    description: angy smash >:(
+    icon: {fileID: 6085872072954216946, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+    cost:
+    - type: 0
+      amount: 1
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 1
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+  - type: 1
+    weaponType: 0
+    moduleType: 3
+    unlocked: 0
+    level: 0
+    description: UP GO UP GO UP GO UP GO UP GO
+    icon: {fileID: 7979741545503519275, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 0
       amount: 1
@@ -268,7 +309,7 @@ MonoBehaviour:
     bountyType: 1
     bountyStatus: 0
     bountyDifficulty: 0
-    bountyPenalty: []
+    bountyCost: []
     reward: {fileID: 0}
     conditions: []
   spawnInfo:
@@ -339,4 +380,13 @@ MonoBehaviour:
     icon: {fileID: 5792510115394945999, guid: 7387fe22bf3493846b3dca63c167c5f6, type: 3}
   - enemyType: 9
     icon: {fileID: -4881770212317194497, guid: d6690b1a770509445a8c03461e8a6e6a, type: 3}
+  resourceIcons:
+  - resourceType: 0
+    icon: {fileID: -8970328278503451895, guid: a0236a4824ea07547946c7e8f8c0ed66, type: 3}
+  - resourceType: 1
+    icon: {fileID: 8962930005187366003, guid: a0236a4824ea07547946c7e8f8c0ed66, type: 3}
+  - resourceType: 2
+    icon: {fileID: 6760579611535884213, guid: a0236a4824ea07547946c7e8f8c0ed66, type: 3}
+  - resourceType: 3
+    icon: {fileID: -146732267720400147, guid: a0236a4824ea07547946c7e8f8c0ed66, type: 3}
   InteractCanvasPrefab: {fileID: 0}

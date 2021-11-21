@@ -297,9 +297,7 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            if (cost.type == Resources.ResourceType.ORGANIC) costImage.color = Color.red;
-                            else if (cost.type == Resources.ResourceType.SCRAP) costImage.color = Color.grey;
-                            else if (cost.type == Resources.ResourceType.POWER) costImage.color = Color.green;
+                            //TODO change to resource icon
 
                             costText.text = cost.amount.ToString();
                         }
@@ -347,9 +345,7 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            if (cost.type == Resources.ResourceType.ORGANIC) costImage.color = Color.red;
-                            else if (cost.type == Resources.ResourceType.SCRAP) costImage.color = Color.grey;
-                            else if (cost.type == Resources.ResourceType.POWER) costImage.color = Color.green;
+                            //TODO change to resource icon
 
                             costText.text = cost.amount.ToString();
                         }
@@ -450,9 +446,7 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            if (cost.type == Resources.ResourceType.ORGANIC) costImage.color = Color.red;
-                            else if (cost.type == Resources.ResourceType.SCRAP) costImage.color = Color.grey;
-                            else if (cost.type == Resources.ResourceType.POWER) costImage.color = Color.green;
+                            //TODO change to resource icon
 
                             costText.text = cost.amount.ToString();
                         }
@@ -496,9 +490,7 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            if (cost.type == Resources.ResourceType.ORGANIC) costImage.color = Color.red;
-                            else if (cost.type == Resources.ResourceType.SCRAP) costImage.color = Color.grey;
-                            else if (cost.type == Resources.ResourceType.POWER) costImage.color = Color.green;
+                            //TODO change to resource icon
 
                             costText.text = cost.amount.ToString();
                         }

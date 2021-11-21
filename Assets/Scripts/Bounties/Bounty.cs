@@ -77,12 +77,51 @@ public class Bounty
         }
     }
 
+    [Serializable]
+    public class Condition_Collect : Condition 
+    {
+        //constructor
+        public Condition_Collect(Resources.ResourceType _type, int _amount)
+        {
+            itemType = _type;
+            targetAmount = _amount;
+
+            //Start();
+        }
+
+        public Resources.ResourceType itemType = Resources.ResourceType.SCRAP;
+        public int targetAmount = 0;
+
+        public override void Start()
+        {
+            base.Start();
+        }
+
+        public override bool CheckComplete()
+        {
+            GameObject pers = GameObject.Find("Persistent");
+            if (pers) {
+                Resources rec = pers.GetComponent<Resources>();
+                if (rec) {
+                    int amount = rec.GetResourceCount(itemType);
+                    if (amount >= targetAmount){
+                        isComplete = true;
+                    }
+                    else{
+                        isComplete = false;
+                    }
+                }
+            }
+            return isComplete;
+        }
+    }
+
 
     public LevelManager.LevelType levelType = LevelManager.LevelType.WASTELAND;
     public BountyManager.BountyType bountyType = BountyManager.BountyType.KILL;
     public BountyManager.BountyStatus bountyStatus = BountyManager.BountyStatus.INACTIVE;
     public BountyManager.BountyDifficulty bountyDifficulty = BountyManager.BountyDifficulty.EASY;
-    public List<Resources.PlayerResource> bountyPenalty = new List<Resources.PlayerResource>(){};
+    public List<Resources.PlayerResource> bountyCost = new List<Resources.PlayerResource>(){};
     public Reward reward = null;
 
     public List<Condition> conditions = new List<Condition>(){};
