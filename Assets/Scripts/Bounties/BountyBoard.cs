@@ -21,6 +21,6 @@ public class BountyBoard : MonoBehaviour
     public GameObject icon;
     public GameObject infoLevel;
     public GameObject infoReward;
-    public GameObject infoPenalty;
+    public GameObject infoCost;
     public GameObject infoAcceptButton;
 }

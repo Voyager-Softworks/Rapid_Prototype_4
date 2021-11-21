@@ -9,9 +9,10 @@ public class Resources : MonoBehaviour
 {
     public enum ResourceType
     {
-        ORGANIC,
-        POWER,
-        SCRAP
+        ICHOR,
+        CRYSTAL,
+        SCRAP,
+        EXOTIC
     }
 
     [Header("Scene Instances")]
@@ -27,16 +28,18 @@ public class Resources : MonoBehaviour
 
     [Header("Player Resources")]
     //player resources
-    [SerializeField] public PlayerResource[] playerResources = new PlayerResource[3]{
-        new PlayerResource{type = ResourceType.ORGANIC, amount = 0},
-        new PlayerResource{type = ResourceType.POWER, amount = 0},
-        new PlayerResource{type = ResourceType.SCRAP, amount = 0}
+    [SerializeField] public PlayerResource[] playerResources = new PlayerResource[4]{
+        new PlayerResource{type = ResourceType.ICHOR, amount = 0},
+        new PlayerResource{type = ResourceType.CRYSTAL, amount = 0},
+        new PlayerResource{type = ResourceType.SCRAP, amount = 0},
+        new PlayerResource{type = ResourceType.EXOTIC, amount = 0}
     };
 
     [Header("Prefabs")]
-    [SerializeField] public GameObject m_powerPrefab;
-    [SerializeField] public GameObject m_organicPrefab;
-    [SerializeField] public GameObject m_scrapPrefab;
+    [SerializeField] public GameObject m_ICHORPrefab;
+    [SerializeField] public GameObject m_CRYSTALPrefab;
+    [SerializeField] public GameObject m_SCRAPPrefab;
+    [SerializeField] public GameObject m_EXOTICPrefab;
 
     // Start is called before the first frame update
     void Awake() {
@@ -73,6 +76,11 @@ public class Resources : MonoBehaviour
         foreach(PlayerResource resource in resources){
             AddResource(resource.type, resource.amount);
         }
+    }
+
+    public int GetResourceCount(ResourceType type)
+    {
+        return playerResources[(int)type].amount;
     }
 
     public bool TryConsumeResources(List<PlayerResource> resources)
