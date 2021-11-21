@@ -19,6 +19,6 @@ public class HealthBarVisual : MonoBehaviour
 
         float val = ph.m_playerHealth / 100.0f;
 
-        transform.localScale = new Vector3(val * 0.45f, 0.3f, 1.0f);
+        transform.localScale = new Vector3(val * 1.0f, 0.3f, 1.0f);
     }
 }

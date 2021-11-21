@@ -140,5 +140,7 @@ public class Resources : MonoBehaviour
         {
             text.text += playerResources[i].type.ToString() + ": " + playerResources[i].amount + "\n";
         }
+        //remove the last newline
+        text.text = text.text.Substring(0, text.text.Length - 1);
     }
 }
