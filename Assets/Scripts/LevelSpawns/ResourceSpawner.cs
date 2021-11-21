@@ -61,11 +61,13 @@ public class ResourceSpawner : MonoBehaviour
                 foreach (SpawnRotation rotation in cell.rotations)
                 {
                     if (spawnSuccess) break;
+                    GameObject newObj = null;
                     switch (rotation)
                     {
+                        
                         case SpawnRotation.UP:
                             spawnSuccess = true;
-                            Instantiate(spawnables[i].prefab, cell.position - (Vector3.up/2.0f), Quaternion.Euler(0, 0, 0));
+                            newObj = Instantiate(spawnables[i].prefab, cell.position - (Vector3.up/2.0f), Quaternion.Euler(0, 0, 0));
                             spawnCounts[i]++;
                             break;
                         case SpawnRotation.DOWN:
@@ -73,7 +75,7 @@ public class ResourceSpawner : MonoBehaviour
                             {
                                 spawnSuccess = true;
                                 spawnCounts[i]++;
-                                Instantiate(spawnables[i].prefab, cell.position - (Vector3.down/2.0f), Quaternion.Euler(0, 0, 180));
+                                newObj = Instantiate(spawnables[i].prefab, cell.position - (Vector3.down/2.0f), Quaternion.Euler(0, 0, 180));
                                 break;
                             }
                             break;
@@ -82,7 +84,7 @@ public class ResourceSpawner : MonoBehaviour
                             {
                                 spawnSuccess = true;
                                 spawnCounts[i]++;
-                                Instantiate(spawnables[i].prefab, cell.position - (Vector3.left/2.0f), Quaternion.Euler(0, 0, 90));
+                                newObj = Instantiate(spawnables[i].prefab, cell.position - (Vector3.left/2.0f), Quaternion.Euler(0, 0, 90));
                                 break;
                             }
                             break;
@@ -91,10 +93,14 @@ public class ResourceSpawner : MonoBehaviour
                             {
                                 spawnSuccess = true;
                                 spawnCounts[i]++;
-                                Instantiate(spawnables[i].prefab, cell.position - (Vector3.right/2.0f), Quaternion.Euler(0, 0, 270));
+                                newObj = Instantiate(spawnables[i].prefab, cell.position - (Vector3.right/2.0f), Quaternion.Euler(0, 0, 270));
                                 break;
                             }
                             break;
+                    }
+                    if(newObj != null)
+                    {
+                        newObj.GetComponentInChildren<SpriteRenderer>().flipX = Random.Range(0, 2) == 0;
                     }
                 }
                 
@@ -109,7 +115,7 @@ public class ResourceSpawner : MonoBehaviour
         m_navmesh = FindObjectOfType<Navmesh2D>();
         foreach (Navmesh2D.Cell cell in m_navmesh.m_data.m_grid)
         {
-            if(!cell.m_traversable) continue;
+            if(!cell.m_traversable || cell.m_hazard) continue;
             SpawnCell spawnCell = new SpawnCell();
             spawnCell.position = cell.m_position;
             spawnCell.rotations = new List<SpawnRotation>();
