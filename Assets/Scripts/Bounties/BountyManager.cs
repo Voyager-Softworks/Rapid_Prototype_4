@@ -10,7 +10,7 @@ public class BountyManager : MonoBehaviour
 {
 
     public enum BountyType {
-        FIND,
+        COLLECT,
         KILL,
         ELITE,
         BOSS
@@ -150,12 +150,14 @@ public class BountyManager : MonoBehaviour
         //diff multiplier
         float diffMult = ((int)bounty.bountyDifficulty) + 1;
 
-        //random penalty
-        //create and add organic penalty
-        Resources.PlayerResource organicPenalty = new Resources.PlayerResource();
-        organicPenalty.type = Resources.ResourceType.ORGANIC;
-        organicPenalty.amount = (int)(Random.Range(1, 10) * diffMult);
-        bounty.bountyPenalty.Add(organicPenalty);
+        //random cost
+        //if not wasteland, add scrap cost
+        if (bounty.levelType != LevelManager.LevelType.WASTELAND) {
+            Resources.PlayerResource scrapCost2 = new Resources.PlayerResource();
+            scrapCost2.type = Resources.ResourceType.SCRAP;
+            scrapCost2.amount = (int)(Random.Range(1, 10) * diffMult);
+            bounty.bountyCost.Add(scrapCost2);
+        }
 
         //random reward
         bounty.reward = new Reward();
@@ -164,23 +166,35 @@ public class BountyManager : MonoBehaviour
         scrapReward.type = Resources.ResourceType.SCRAP;
         scrapReward.amount = (int)(Random.Range(1, 10) * diffMult);
         bounty.reward.resources.Add(scrapReward);
-        //create and add organic reward
-        Resources.PlayerResource organicReward = new Resources.PlayerResource();
-        organicReward.type = Resources.ResourceType.ORGANIC;
-        organicReward.amount = (int)(Random.Range(1, 10) * diffMult);
-        bounty.reward.resources.Add(organicReward);
-        //create and add power reward
-        Resources.PlayerResource powerReward = new Resources.PlayerResource();
-        powerReward.type = Resources.ResourceType.POWER;
-        powerReward.amount = (int)(Random.Range(1, 10) * diffMult);
-        bounty.reward.resources.Add(powerReward);
+        //create and add ichor reward
+        Resources.PlayerResource ichorReward = new Resources.PlayerResource();
+        ichorReward.type = Resources.ResourceType.ICHOR;
+        ichorReward.amount = (int)(Random.Range(1, 10) * diffMult);
+        bounty.reward.resources.Add(ichorReward);
+        //create and add crystal reward
+        Resources.PlayerResource crystalReward = new Resources.PlayerResource();
+        crystalReward.type = Resources.ResourceType.CRYSTAL;
+        crystalReward.amount = (int)(Random.Range(1, 10) * diffMult);
+        bounty.reward.resources.Add(crystalReward);
+        //create and add exotic reward
+        Resources.PlayerResource exoticReward = new Resources.PlayerResource();
+        exoticReward.type = Resources.ResourceType.EXOTIC;
+        exoticReward.amount = (int)(Random.Range(1, 10) * diffMult);
+        bounty.reward.resources.Add(exoticReward);
 
 
         //add condition
         switch (bounty.bountyType)
         {
-            case BountyType.FIND:
-                //TO DO
+            case BountyType.COLLECT:
+                //get the resource type to collect from the spawn info
+                Resources.ResourceType resourceType = spawnInfo.regularResources[Random.Range(0, spawnInfo.regularResources.Count)];
+                //get amount to collect
+                int resourceAmount = (int)(Random.Range(1, 10) * diffMult);
+                //make
+                Bounty.Condition_Collect collect = new Bounty.Condition_Collect(resourceType, resourceAmount);
+                //add
+                bounty.conditions.Add(collect);
             break;
             case BountyType.KILL: 
                 //get type of enemy to kill using spawn info
@@ -325,9 +339,15 @@ public class BountyManager : MonoBehaviour
             //update the image of the selected bounty
             switch (selectedBounty.bountyType)
             {
-                case BountyType.FIND:
-                    bountyBoard.icon.GetComponentInChildren<Image>().sprite = null;
-                    bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = "TODO";
+                case BountyType.COLLECT:
+                    //cast to collect
+                    Bounty.Condition_Collect collect = (Bounty.Condition_Collect)selectedBounty.conditions[0];
+                    //update icon
+                    bountyBoard.icon.GetComponentInChildren<Image>().sprite = iconReference.GetIcon(collect.itemType).icon;
+                    //update amount
+                    int currentAmount = resourceManager.GetResourceCount(collect.itemType);
+                    int neededAmount = collect.targetAmount;
+                    bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = currentAmount + "/" + neededAmount;
                     break;
                 case BountyType.KILL:
                     //cast the condition to kills
@@ -381,15 +401,22 @@ public class BountyManager : MonoBehaviour
             rewardText = rewardText.Remove(rewardText.Length - 2);
             bountyBoard.infoReward.GetComponent<TextMeshProUGUI>().text = rewardText;
             
-            //generate the penalty test
-            string penaltyText = "PENALTY:\n";
-            foreach (Resources.PlayerResource resource in selectedBounty.bountyPenalty)
+            //generate the cost test
+            string costText = "COST:\n";
+            foreach (Resources.PlayerResource resource in selectedBounty.bountyCost)
             {
-                penaltyText += resource.amount + " " + resource.type.ToString() + ", ";
+                costText += resource.amount + " " + resource.type.ToString() + ", ";
             }
-            //remove the last character
-            penaltyText = penaltyText.Remove(penaltyText.Length - 2);
-            bountyBoard.infoPenalty.GetComponent<TextMeshProUGUI>().text = penaltyText;
+            if (costText == "COST:\n")
+            {
+                costText = "COST:\nNONE";
+            }
+            else
+            {
+                //remove the last character
+                costText = costText.Remove(costText.Length - 2);
+            }
+            bountyBoard.infoCost.GetComponent<TextMeshProUGUI>().text = costText;
 
             // Add accept listener
             bountyBoard.infoAcceptButton.GetComponent<Button>().onClick.RemoveAllListeners();
@@ -469,6 +496,11 @@ public class BountyManager : MonoBehaviour
                 return;
             }
 
+            if (!resourceManager.TryConsumeResources(selectedBounty.bountyCost))
+            {
+                return;
+            }
+
             //remove the bounty from the inactive bounties
             inactiveBounties.Remove(selectedBounty);
 
@@ -498,17 +530,13 @@ public class BountyManager : MonoBehaviour
             if (selectedBounty.bountyStatus == BountyStatus.ACTIVE || activeBounties.Contains(selectedBounty))
             {
 
-                //check if the player has enough resources to abandon the bounty
-                if (resourceManager.TryConsumeResources(selectedBounty.bountyPenalty))
-                {
-                    //Remove from active
-                    activeBounties.Remove(selectedBounty);
+                //Remove from active
+                activeBounties.Remove(selectedBounty);
 
-                    //Add to failed
-                    failedBounties.Add(selectedBounty);
+                //Add to failed
+                failedBounties.Add(selectedBounty);
 
-                    selectedBounty.bountyStatus = BountyStatus.FAILED;
-                }
+                selectedBounty.bountyStatus = BountyStatus.FAILED;
             }
 
             selectedBounty = null;
@@ -525,6 +553,35 @@ public class BountyManager : MonoBehaviour
             //check if bounty is already active, or in the active list, if so, complete
             if (selectedBounty.bountyStatus == BountyStatus.COLLECT)
             {
+                switch (selectedBounty.bountyType)
+                {
+                    case BountyType.BOSS:
+                        //nothing
+                    break;
+                    case BountyType.COLLECT:
+                        //cast the bounty as a collect bounty
+                        Bounty.Condition_Collect collectCond = (Bounty.Condition_Collect)selectedBounty.conditions[0];
+                        //make list of resources to collect
+                        List<Resources.PlayerResource> toCollectList = new List<Resources.PlayerResource>();
+                        //add each resource to the list
+                        Resources.ResourceType type = collectCond.itemType;
+                        int amount = collectCond.targetAmount;
+                        Resources.PlayerResource resource = new Resources.PlayerResource();
+                        resource.type = type;
+                        resource.amount = amount;
+                        toCollectList.Add(resource);
+
+                        if (!resourceManager.TryConsumeResources(toCollectList)){
+                            //update the board
+                            UpdateBoard();
+                            return;
+                        }
+                    break;
+                    case BountyType.KILL:
+                        //nothing
+                    break;
+                }
+
                 //Remove from active
                 activeBounties.Remove(selectedBounty);
 
@@ -553,29 +610,36 @@ public class BountyManager : MonoBehaviour
         //check all active bounty conditions
         foreach (Bounty bounty in activeBounties)
         {
-            //if collected or complete, skip
-            if (bounty.bountyStatus == BountyStatus.COLLECT || bounty.bountyStatus == BountyStatus.COMPLETE)
-            {
-                continue;
-            }
-
             if (bounty.conditions.Count <= 0){
                 //if no conditions, complete the bounty
                 bounty.bountyStatus = BountyStatus.COLLECT;
                 //update the board
                 UpdateBoard();
             }
-            else{
+            else {
+                bool allComplete = true;
                 foreach (Bounty.Condition condition in bounty.conditions)
                 {
                     //if condition is met, set bounty to complete
                     if (condition.CheckComplete())
                     {
-                        bounty.bountyStatus = BountyStatus.COLLECT;
-                        //update the board
-                        UpdateBoard();
                     }
+                    else {
+                        allComplete = false;
+                    }
+
                 }
+
+                if (allComplete)
+                {
+                    bounty.bountyStatus = BountyStatus.COLLECT;
+                }
+                else{
+                    bounty.bountyStatus = BountyStatus.ACTIVE;
+                }
+
+                //update the board
+                UpdateBoard();
             }
         }
     }

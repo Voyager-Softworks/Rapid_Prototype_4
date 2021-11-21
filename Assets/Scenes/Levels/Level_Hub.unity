@@ -9050,10 +9050,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 1832670425}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -31258,17 +31254,6 @@ Transform:
   m_Father: {fileID: 194642957}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1832670425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-  m_PrefabInstance: {fileID: 75311205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698935746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1834103191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
@@ -35508,8 +35493,7 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 994972603}
-    m_RemovedComponents:
-    - {fileID: 745464242, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99515cdfbf9389d40ab3eb58128e7c12, type: 3}
 --- !u!1001 &6340073868613327277
 PrefabInstance:
@@ -35579,10 +35563,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 474449875}
     m_Modifications:
-    - target: {fileID: 4909674720395651453, guid: 41aa163f524aea946be5210456032f92, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.118
-      objectReference: {fileID: 0}
     - target: {fileID: 7537229292877301141, guid: 41aa163f524aea946be5210456032f92, type: 3}
       propertyPath: m_Name
       value: TownConsole
@@ -35630,10 +35610,6 @@ PrefabInstance:
     - target: {fileID: 7537229292877301142, guid: 41aa163f524aea946be5210456032f92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8005102081532814926, guid: 41aa163f524aea946be5210456032f92, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41aa163f524aea946be5210456032f92, type: 3}
@@ -35783,10 +35759,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 474449875}
     m_Modifications:
-    - target: {fileID: 7898155298725677067, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.162
-      objectReference: {fileID: 0}
     - target: {fileID: 8461649907102655210, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
       propertyPath: m_Name
       value: BountyConsole
@@ -35834,18 +35806,6 @@ PrefabInstance:
     - target: {fileID: 8461649907102655215, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858179641364846912, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.44500035
-      objectReference: {fileID: 0}
-    - target: {fileID: 8941159977778247045, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.184
-      objectReference: {fileID: 0}
-    - target: {fileID: 8941159977778247045, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.254
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16b48fbdb2e8c41438c40f848458ab14, type: 3}
