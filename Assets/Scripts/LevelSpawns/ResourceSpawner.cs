@@ -115,7 +115,7 @@ public class ResourceSpawner : MonoBehaviour
         m_navmesh = FindObjectOfType<Navmesh2D>();
         foreach (Navmesh2D.Cell cell in m_navmesh.m_data.m_grid)
         {
-            if(!cell.m_traversable) continue;
+            if(!cell.m_traversable || cell.m_hazard) continue;
             SpawnCell spawnCell = new SpawnCell();
             spawnCell.position = cell.m_position;
             spawnCell.rotations = new List<SpawnRotation>();
