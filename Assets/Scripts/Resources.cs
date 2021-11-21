@@ -21,7 +21,7 @@ public class Resources : MonoBehaviour
     [SerializeField] public GameObject resourceText;
 
     [Serializable]
-    public struct PlayerResource {
+    public class PlayerResource {
         [SerializeField] public ResourceType type;
         [SerializeField] public int amount;
     }

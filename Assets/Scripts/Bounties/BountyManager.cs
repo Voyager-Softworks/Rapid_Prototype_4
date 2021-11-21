@@ -44,6 +44,7 @@ public class BountyManager : MonoBehaviour
     public List<Bounty> completedBounties = new List<Bounty>(){};
     public List<Bounty> failedBounties = new List<Bounty>(){};
     public Bounty selectedBounty = null;
+    public RewardPossible rewardPossible = null;
 
     [Header("Spawn Info")]
     public List<LevelSpawnInfo> spawnInfo;
@@ -161,26 +162,11 @@ public class BountyManager : MonoBehaviour
 
         //random reward
         bounty.reward = new Reward();
-        //create and add scrap reward
-        Resources.PlayerResource scrapReward = new Resources.PlayerResource();
-        scrapReward.type = Resources.ResourceType.SCRAP;
-        scrapReward.amount = (int)(Random.Range(1, 10) * diffMult);
-        bounty.reward.resources.Add(scrapReward);
-        //create and add ichor reward
-        Resources.PlayerResource ichorReward = new Resources.PlayerResource();
-        ichorReward.type = Resources.ResourceType.ICHOR;
-        ichorReward.amount = (int)(Random.Range(1, 10) * diffMult);
-        bounty.reward.resources.Add(ichorReward);
-        //create and add crystal reward
-        Resources.PlayerResource crystalReward = new Resources.PlayerResource();
-        crystalReward.type = Resources.ResourceType.CRYSTAL;
-        crystalReward.amount = (int)(Random.Range(1, 10) * diffMult);
-        bounty.reward.resources.Add(crystalReward);
-        //create and add exotic reward
-        Resources.PlayerResource exoticReward = new Resources.PlayerResource();
-        exoticReward.type = Resources.ResourceType.EXOTIC;
-        exoticReward.amount = (int)(Random.Range(1, 10) * diffMult);
-        bounty.reward.resources.Add(exoticReward);
+        //random reward using reward possible
+        Resources.PlayerResource rewardResources = rewardPossible.GetRandomReward(bounty.bountyDifficulty);
+        if (rewardResources != null) {
+            bounty.reward.resources.Add(rewardResources);
+        }
 
 
         //add condition
@@ -639,7 +625,7 @@ public class BountyManager : MonoBehaviour
                 }
 
                 //update the board
-                UpdateBoard();
+                if (bountyBoard) UpdateBoard();
             }
         }
     }

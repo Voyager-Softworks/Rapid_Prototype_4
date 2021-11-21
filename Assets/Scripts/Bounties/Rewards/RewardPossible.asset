@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a7cfb597e47c74a975f54bde9ea354, type: 3}
+  m_Name: RewardPossible
+  m_EditorClassIdentifier: 
+  difficulties:
+  - difficulty: 0
+    resources:
+    - resourceType: 0
+      minAmount: 5
+      maxAmount: 10
+    - resourceType: 1
+      minAmount: 5
+      maxAmount: 10
+    - resourceType: 2
+      minAmount: 5
+      maxAmount: 10
+  - difficulty: 1
+    resources:
+    - resourceType: 0
+      minAmount: 10
+      maxAmount: 15
+    - resourceType: 1
+      minAmount: 10
+      maxAmount: 15
+    - resourceType: 2
+      minAmount: 10
+      maxAmount: 15
+  - difficulty: 2
+    resources:
+    - resourceType: 0
+      minAmount: 15
+      maxAmount: 20
+    - resourceType: 1
+      minAmount: 15
+      maxAmount: 20
+    - resourceType: 2
+      minAmount: 15
+      maxAmount: 20
