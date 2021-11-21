@@ -203,6 +203,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 82541816766054432, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 954681861665751438, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991536, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_maxAirJumpCount
       value: 5
@@ -437,26 +445,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnables:
-  - prefab: {fileID: 7847949529256677592, guid: 9e33fbb34bca594b8a41aed5cf070e21, type: 3}
+  - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
     probability: 0.2
     difficultyRating: 3
     mustBeGrounded: 1
     maxSpawns: 1
-  - prefab: {fileID: 8684316216028343048, guid: 9f19d6850ebefe8888a3a0fcefdc0c07, type: 3}
-    probability: 0.2
-    difficultyRating: 3
-    mustBeGrounded: 1
-    maxSpawns: 1
-  - prefab: {fileID: 4090130041316050396, guid: ab46ec961838c5bd3a1a57bda116d4dc, type: 3}
-    probability: 0.3
-    difficultyRating: 5
-    mustBeGrounded: 0
-    maxSpawns: 1
-  - prefab: {fileID: 607418049224667048, guid: c14b09738085f1399ac95f184eded253, type: 3}
-    probability: 0.3
-    difficultyRating: 1
-    mustBeGrounded: 0
-    maxSpawns: 4
   data: {fileID: 11400000, guid: fd95f8723b7287aadb1a342acf8098c2, type: 2}
   difficultyPoints: 8
   spawnRadius: 7.05

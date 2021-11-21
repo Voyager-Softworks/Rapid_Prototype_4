@@ -29,13 +29,18 @@ public class ProjectileGun : MonoBehaviour
 
     [Header("Effects")]
     public SFX_Effect m_fireEffect;
-    
+
+    [Header("Animation")]
+    Animator m_animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
         fireAction.Enable();
+        m_fireTimer = m_fireDelay;
+        m_reloadTimer = 0.0f;
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -75,12 +80,12 @@ public class ProjectileGun : MonoBehaviour
 
         m_currHeat += m_heatPerShot;
         m_fireTimer = m_fireDelay;
-
+        m_animator.SetTrigger("Shoot");
         Rigidbody2D projectile = Instantiate(m_projectilePrefab, m_muzzle.position, m_muzzle.rotation).GetComponent<Rigidbody2D>();
         projectile.velocity = m_projectileSpeed * m_muzzle.right;
 
         // Play the fire effect
-        m_fireEffect.Play();
+        //m_fireEffect.Play();
     }
 
 
