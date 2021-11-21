@@ -41,7 +41,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1708596902441701014}
   serializedVersion: 7
   lengthInSec: 2
-  simulationSpeed: 2
+  simulationSpeed: 4
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -1370,9 +1370,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.9600122, b: 0.5518868, a: 1}
-        key1: {r: 1, g: 0.8475749, b: 0.3820755, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 0.5529412, b: 0.9731541, a: 1}
+        key1: {r: 0.8679415, g: 0.3803922, b: 1, a: 1}
+        key2: {r: 1, g: 0.8475749, b: 0.3820755, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1380,7 +1380,7 @@ ParticleSystem:
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
         ctime1: 65535
-        ctime2: 0
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -1399,8 +1399,8 @@ ParticleSystem:
         m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.9017997, b: 0.8160377, a: 1}
-        key1: {r: 1, g: 0.6129489, b: 0.033018887, a: 1}
+        key0: {r: 0.99194455, g: 0.8156863, b: 1, a: 1}
+        key1: {r: 1, g: 0.031372547, b: 0.73927194, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6372,8 +6372,8 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 0.923266, b: 0.2216981, a: 1}
-        key2: {r: 1, g: 0.93386984, b: 0.3254717, a: 0}
+        key1: {r: 0.9616377, g: 0.2235294, b: 1, a: 1}
+        key2: {r: 1, g: 0.32549024, b: 0.82022995, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
