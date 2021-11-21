@@ -156,7 +156,7 @@ public class BountyManager : MonoBehaviour
         if (bounty.levelType != LevelManager.LevelType.WASTELAND) {
             Resources.PlayerResource scrapCost2 = new Resources.PlayerResource();
             scrapCost2.type = Resources.ResourceType.SCRAP;
-            scrapCost2.amount = (int)(Random.Range(1, 10) * diffMult);
+            scrapCost2.amount = (int)(Random.Range(diffMult, diffMult * 2));
             bounty.bountyCost.Add(scrapCost2);
         }
 
