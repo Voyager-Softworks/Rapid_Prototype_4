@@ -14,4 +14,7 @@ public class LevelSpawnInfo : ScriptableObject
     [SerializeField] public List<GameObject> regularSpawns;
     [SerializeField] public List<GameObject> bossSpawns;
     [SerializeField] public List<GameObject> findSpawns;
+
+    [Header("Resources")]
+    [SerializeField] public List<Resources.ResourceType> regularResources;
 }

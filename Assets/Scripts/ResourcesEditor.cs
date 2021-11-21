@@ -40,23 +40,35 @@ public class ResourcesEditor : Editor
 
         //draw player resources
         EditorGUILayout.LabelField("Player Resources", EditorStyles.boldLabel);
+        //ichor
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Organic");
-        resources.playerResources[(int)Resources.ResourceType.ORGANIC].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.ORGANIC].amount);
-        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.ORGANIC).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.ORGANIC].amount;
+        EditorGUILayout.LabelField("Ichor");
+        resources.playerResources[(int)Resources.ResourceType.ICHOR].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.ICHOR].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.ICHOR).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.ICHOR].amount;
         EditorGUILayout.EndHorizontal();
         
+        //scrap
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Scrap");
         resources.playerResources[(int)Resources.ResourceType.SCRAP].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.SCRAP].amount);
         serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.SCRAP).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.SCRAP].amount;
         EditorGUILayout.EndHorizontal();
 
+        //crystal
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Power");
-        resources.playerResources[(int)Resources.ResourceType.POWER].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.POWER].amount);
-        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.POWER).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.POWER].amount;
+        EditorGUILayout.LabelField("Crystal");
+        resources.playerResources[(int)Resources.ResourceType.CRYSTAL].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.CRYSTAL].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.CRYSTAL).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.CRYSTAL].amount;
         EditorGUILayout.EndHorizontal();
+
+        //exotic
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Exotic");
+        resources.playerResources[(int)Resources.ResourceType.EXOTIC].amount = EditorGUILayout.IntField(resources.playerResources[(int)Resources.ResourceType.EXOTIC].amount);
+        serializedObject.FindProperty("playerResources").GetArrayElementAtIndex((int)Resources.ResourceType.EXOTIC).FindPropertyRelative("amount").intValue = resources.playerResources[(int)Resources.ResourceType.EXOTIC].amount;
+        EditorGUILayout.EndHorizontal();
+
+
 
         //space
         EditorGUILayout.Space();
@@ -64,29 +76,42 @@ public class ResourcesEditor : Editor
         //draw resource prefabs and buttons to find them in the project files
         EditorGUILayout.LabelField("Resource Prefabs", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Organic");
-        resources.m_organicPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_organicPrefab, typeof(GameObject), true);
+        //ichor
+        EditorGUILayout.LabelField("Ichor");
+        resources.m_ICHORPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_ICHORPrefab, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.m_organicPrefab = UnityEngine.Resources.Load<GameObject>("Organic");
+            resources.m_ICHORPrefab = UnityEngine.Resources.Load<GameObject>("UI_ichor");
         }
         EditorGUILayout.EndHorizontal();
+        //scrap
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Scrap");
-        resources.m_scrapPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_scrapPrefab, typeof(GameObject), true);
+        resources.m_SCRAPPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_SCRAPPrefab, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.m_scrapPrefab = UnityEngine.Resources.Load<GameObject>("Scrap");
+            resources.m_SCRAPPrefab = UnityEngine.Resources.Load<GameObject>("UI_scrap");
         }
         EditorGUILayout.EndHorizontal();
+        //crystal
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Power");
-        resources.m_powerPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_powerPrefab, typeof(GameObject), true);
+        EditorGUILayout.LabelField("Crystal");
+        resources.m_CRYSTALPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_CRYSTALPrefab, typeof(GameObject), true);
         if (GUILayout.Button("Find"))
         {
-            resources.m_powerPrefab = UnityEngine.Resources.Load<GameObject>("Power");
+            resources.m_CRYSTALPrefab = UnityEngine.Resources.Load<GameObject>("UI_crystal");
         }
         EditorGUILayout.EndHorizontal();
+        //exotic
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Exotic");
+        resources.m_EXOTICPrefab = (GameObject)EditorGUILayout.ObjectField(resources.m_EXOTICPrefab, typeof(GameObject), true);
+        if (GUILayout.Button("Find"))
+        {
+            resources.m_EXOTICPrefab = UnityEngine.Resources.Load<GameObject>("UI_exotic");
+        }
+        EditorGUILayout.EndHorizontal();
+
 
         serializedObject.ApplyModifiedProperties();
     }
