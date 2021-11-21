@@ -100,7 +100,7 @@ public class ResourceSpawner : MonoBehaviour
                     }
                     if(newObj != null)
                     {
-                        newObj.GetComponentInChildren<SpriteRenderer>().flipX = Random.Range(0, 2) == 0;
+                        //newObj.GetComponentInChildren<SpriteRenderer>().flipX = Random.Range(0, 2) == 0;//
                     }
                 }
                 

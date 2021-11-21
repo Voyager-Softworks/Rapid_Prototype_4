@@ -51,7 +51,7 @@ public class MeleeAttackAI : MonoBehaviour
             m_anim.SetBool("IsShooting", false);
             m_agent.MoveTo(m_playerTransform.position);
         }
-        else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius && !m_playerDetected)
+        else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius && !m_playerDetected && m_cooldownTimer <= 0)
         {
             m_attacking = false;
             m_anim.SetBool("IsShooting", false);
@@ -73,6 +73,7 @@ public class MeleeAttackAI : MonoBehaviour
         {
             m_cooldownTimer -= Time.deltaTime;
             m_agent.m_isMoving = false;
+            m_agent.Stop();
         }
         else
         {
@@ -97,9 +98,10 @@ public class MeleeAttackAI : MonoBehaviour
         if ((transform.position - m_playerTransform.position).magnitude < m_attackRadius)
         {
             m_playerTransform.gameObject.GetComponent<PlayerHealth>().Damage(m_Damage);
+            m_cooldownTimer = m_cooldown;
             m_barkSource.clip = m_attackClip;
             m_barkSource.Play();
-            m_cooldownTimer = m_cooldown;
+            
         }
 
     }

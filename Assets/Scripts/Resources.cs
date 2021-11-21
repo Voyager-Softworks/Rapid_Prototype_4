@@ -21,7 +21,7 @@ public class Resources : MonoBehaviour
     [SerializeField] public GameObject resourceText;
 
     [Serializable]
-    public struct PlayerResource {
+    public class PlayerResource {
         [SerializeField] public ResourceType type;
         [SerializeField] public int amount;
     }
@@ -81,6 +81,23 @@ public class Resources : MonoBehaviour
     public int GetResourceCount(ResourceType type)
     {
         return playerResources[(int)type].amount;
+    }
+
+    public GameObject GetResourcePrefab(ResourceType type)
+    {
+        switch (type)
+        {
+            case ResourceType.ICHOR:
+                return m_ICHORPrefab;
+            case ResourceType.CRYSTAL:
+                return m_CRYSTALPrefab;
+            case ResourceType.SCRAP:
+                return m_SCRAPPrefab;
+            case ResourceType.EXOTIC:
+                return m_EXOTICPrefab;
+            default:
+                return null;
+        }
     }
 
     public bool TryConsumeResources(List<PlayerResource> resources)
