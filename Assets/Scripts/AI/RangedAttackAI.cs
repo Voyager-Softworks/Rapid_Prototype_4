@@ -72,7 +72,7 @@ public class RangedAttackAI : MonoBehaviour
         {
             m_shotDelayTimer = 0.0f;
         }
-        m_anim.SetBool("IsWalking", m_agent.m_isMoving);
+        if(m_agent != null) m_anim.SetBool("IsWalking", m_agent.m_isMoving);
         if ((!Physics2D.Linecast(transform.position, m_playerTransform.position, LayerMask.GetMask("Ground") | LayerMask.GetMask("Environment"))
             && (transform.position - m_playerTransform.position).magnitude < m_attackRadius) &&
             !(
@@ -82,22 +82,22 @@ public class RangedAttackAI : MonoBehaviour
         {
             if(m_barrelAimHolder != null) RotateTurret();
             Shoot();
-            m_anim.SetBool("IsShooting", true);
-            m_agent.Stop();
+            if(m_agent != null) m_anim.SetBool("IsShooting", true);
+            if(m_agent != null) m_agent.Stop();
 
         }
-        else if (m_playerDetected)
+        else if (m_playerDetected && m_agent != null)
         {
             
             
             m_agent.MoveTo(m_playerTransform.position);
             if (m_agent.m_currentPath.Count == 0 && m_agent.m_navmesh.IsWalkable(transform.position, ( m_playerTransform.position - transform.position).normalized/2.0f) )
             {
-                m_anim.SetBool("IsWalking", true);
+                if(m_anim != null) m_anim.SetBool("IsWalking", true);
                 transform.position += (m_playerTransform.position - transform.position).normalized * m_agent.m_speed * Time.deltaTime;
             }
         }
-        else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius && !m_playerDetected)
+        else if ((transform.position - m_playerTransform.position).magnitude < m_detectionRadius && !m_playerDetected && m_agent != null)
         {
             
             
@@ -110,7 +110,7 @@ public class RangedAttackAI : MonoBehaviour
             }
             
         }
-        else
+        else if (m_agent != null)
         {
             
             m_agent.Stop();
