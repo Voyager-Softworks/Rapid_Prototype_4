@@ -7392,6 +7392,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biocannon_Front
       objectReference: {fileID: 0}
+    - target: {fileID: 838342404026898121, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884811749862847929, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884811749862847929, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884811749862847929, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 454791645
+      objectReference: {fileID: 0}
     - target: {fileID: 5710671003571309327, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
       propertyPath: m_maxHeat
       value: 50
@@ -7472,7 +7488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_Sprite
@@ -8161,6 +8177,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biocannon_Back
       objectReference: {fileID: 0}
+    - target: {fileID: 838342404026898121, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884811749862847929, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5710671003571309327, guid: 8e6fcb7be298cf5939943c223059085c, type: 3}
       propertyPath: m_maxHeat
       value: 50
@@ -8257,7 +8281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2170322609392296693, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.51871634
+      value: 0.021
       objectReference: {fileID: 0}
     - target: {fileID: 2170322609392296693, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8294,6 +8318,14 @@ PrefabInstance:
     - target: {fileID: 2170322609392296693, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726537855100526309, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325939613563459753, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
+      propertyPath: fireAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/rightButton
       objectReference: {fileID: 0}
     - target: {fileID: 8385414998654393617, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: m_Name
@@ -8730,6 +8762,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2726537855100526309, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726537855100526309, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8385414998654393617, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: m_Name
       value: Shotgun_front
@@ -8758,7 +8798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023522, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6207577749372023532, guid: 65b7eecfa85861b49af480538be201b3, type: 3}
       propertyPath: m_Sprite
