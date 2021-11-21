@@ -18,6 +18,10 @@ public class HitscanGun : MonoBehaviour
 
     [Header("Settings")]
     public float m_damage;
+    public bool m_fullAuto;
+    public Rigidbody2D m_body;
+
+    public bool m_recoil;
     public AnimationCurve m_damageFalloff;
     public float m_fireDelay;
     float m_fireTimer;
@@ -32,6 +36,10 @@ public class HitscanGun : MonoBehaviour
 
     [Header("Effects")]
     public SFX_Effect m_fireEffect;
+    public ParticleSystem m_fireParticles;
+    public ParticleSystem m_smokeParticles;
+    public AudioSource m_fireAudioSource;
+    public Animator m_anim;
     
 
 
@@ -39,6 +47,7 @@ public class HitscanGun : MonoBehaviour
     void Start()
     {
         fireAction.Enable();
+        m_anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,6 +75,51 @@ public class HitscanGun : MonoBehaviour
         {
             Fire();
         }
+        if(m_fullAuto && fireAction.ReadValue<float>() > 0 && m_currHeat < m_maxHeat)
+        {
+            m_anim.SetBool("IsShooting", true);
+            if(m_fireParticles.isStopped)
+            {
+                m_fireParticles.Play();
+            }
+            if(!m_fireAudioSource.isPlaying)
+            {
+                m_fireAudioSource.Play();
+            }
+            if(m_recoil)
+            {
+                m_body.AddForce((-transform.right * 100000.0f) * new Vector2(1.0f, 0.3f));
+            }
+        }
+        else if (m_fullAuto)
+        {
+            m_anim.SetBool("IsShooting", false);
+            if(m_fireParticles.isPlaying)
+            {
+                m_fireParticles.Stop();
+            }
+            if(m_fireAudioSource.isPlaying)
+            {
+                m_fireAudioSource.Stop();
+            }
+        }
+        if(m_smokeParticles != null)
+        {
+            if(m_currHeat > 0)
+            {
+                if(!m_smokeParticles.isPlaying)
+                {
+                    m_smokeParticles.Play();
+                }
+                
+                ParticleSystem.EmissionModule e = m_smokeParticles.emission;
+                e.rateOverTime = new ParticleSystem.MinMaxCurve((m_currHeat / m_maxHeat) * 150.0f);
+            }
+            else
+            {
+                m_smokeParticles.Stop();
+            }
+        }
         
     }
 
@@ -82,7 +136,12 @@ public class HitscanGun : MonoBehaviour
         FireAtEnemies();
 
         // Play the fire effect
-        m_fireEffect.Play();
+        if(m_fireEffect != null) m_fireEffect.Play();
+
+        if(!m_fullAuto)
+        {
+            m_anim.SetTrigger("Shoot");
+        }
     }
 
 

@@ -25,6 +25,7 @@ public class EnemyTankAI : MonoBehaviour
     
     Transform m_playerTransform;
     public GameObject m_missilePrefab;
+    public List<ParticleSystem> m_treadParticles;
 
 
     public float m_detectionRadius;
@@ -107,10 +108,18 @@ public class EnemyTankAI : MonoBehaviour
             if(m_engineSource.clip != m_driveClip && isMoving)
             {
                 m_engineSource.clip = m_driveClip;
+                foreach(ParticleSystem ps in m_treadParticles)
+                {
+                    ps.Play();
+                }
             }
             else if(m_engineSource.clip != m_idleClip && !isMoving)
             {
                 m_engineSource.clip = m_idleClip;
+                foreach(ParticleSystem ps in m_treadParticles)
+                {
+                    ps.Stop();
+                }
             }
             if (!m_engineSource.isPlaying)
             {
@@ -122,6 +131,10 @@ public class EnemyTankAI : MonoBehaviour
             if ( m_engineSource.clip != m_idleClip)
             {
                 m_engineSource.clip = m_idleClip;
+                foreach (ParticleSystem ps in m_treadParticles)
+                {
+                    ps.Stop();
+                }
             }
             if (!m_engineSource.isPlaying)
             {
@@ -133,6 +146,10 @@ public class EnemyTankAI : MonoBehaviour
             if ( m_engineSource.clip != m_disabledClip)
             {
                 m_engineSource.clip = m_disabledClip;
+                foreach (ParticleSystem ps in m_treadParticles)
+                {
+                    ps.Stop();
+                }
             }
             if (!m_engineSource.isPlaying)
             {
