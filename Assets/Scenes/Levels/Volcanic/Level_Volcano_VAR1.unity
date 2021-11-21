@@ -4166,7 +4166,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -86, y: -41, z: 0}
   m_Size: {x: 224, y: 61, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileAnchor: {x: 0.5, y: 0.41, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -4199,7 +4199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickRate: 0.5
   timeToNextTick: 0
-  tickDamage: 1
+  tickDamage: 5
   slowedMaxVelocity: -0.05
   playerHealth: {fileID: 0}
   currentRigidbody: {fileID: 0}
