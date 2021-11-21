@@ -83,6 +83,23 @@ public class Resources : MonoBehaviour
         return playerResources[(int)type].amount;
     }
 
+    public GameObject GetResourcePrefab(ResourceType type)
+    {
+        switch (type)
+        {
+            case ResourceType.ICHOR:
+                return m_ICHORPrefab;
+            case ResourceType.CRYSTAL:
+                return m_CRYSTALPrefab;
+            case ResourceType.SCRAP:
+                return m_SCRAPPrefab;
+            case ResourceType.EXOTIC:
+                return m_EXOTICPrefab;
+            default:
+                return null;
+        }
+    }
+
     public bool TryConsumeResources(List<PlayerResource> resources)
     {
         //save the amount of resources we have before we try to consume them
