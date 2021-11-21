@@ -22,6 +22,7 @@ public class Navmesh2D : MonoBehaviour
             m_traversable = true;
             m_walkable = false;
             m_climbable = false;
+            m_hazard = false;
             m_position = _position;
             m_index = _index;
         }
@@ -39,6 +40,8 @@ public class Navmesh2D : MonoBehaviour
         public bool m_walkable;
         [SerializeField]
         public bool m_climbable;
+        [SerializeField]
+        public bool m_hazard;
         [SerializeField]
         public Vector2 m_index;
         [SerializeField]
@@ -330,6 +333,10 @@ public class Navmesh2D : MonoBehaviour
                 {
                     c.m_traversable = false;
                 }
+                if(hit.CompareTag("Hazard"))
+                {
+                    c.m_hazard = true;
+                }
             }
         }
         for (var x = 0; x < m_width; x++)
@@ -338,7 +345,7 @@ public class Navmesh2D : MonoBehaviour
             {
                 if (y > 0)
                 {
-                    if(m_data[x, y].m_traversable && !m_data[x, y-1].m_traversable) m_data[x, y].m_walkable = true;
+                    if(m_data[x, y].m_traversable && !m_data[x, y-1].m_traversable && !m_data[x,y].m_hazard) m_data[x, y].m_walkable = true;
                 }
                 if(x > 0 && x < m_width - 1 && y > 0 && y < m_height - 1)
                 {
