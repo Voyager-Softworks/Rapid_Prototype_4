@@ -85,7 +85,7 @@ public class ProjectileGun : MonoBehaviour
         projectile.velocity = m_projectileSpeed * m_muzzle.right;
 
         // Play the fire effect
-        //m_fireEffect.Play();
+        m_fireEffect.Play();
     }
 
 
