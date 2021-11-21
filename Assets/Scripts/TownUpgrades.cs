@@ -10,6 +10,7 @@ using UnityEngine.Events;
 public class TownUpgrades : MonoBehaviour
 {
     private Resources resourceManager = null;
+    private Town town = null;
     public GameObject player = null;
 
     public int level = 0;
@@ -40,10 +41,14 @@ public class TownUpgrades : MonoBehaviour
 
         resourceManager = GetComponent<Resources>();
 
+        if (!town) town = GameObject.FindObjectOfType<Town>();
+
         if (scene.name == "Level_Hub") {
             LoadMenu();
 
             UpdateMenu();
+
+            UpdateTown();
         }
     }
 
@@ -81,11 +86,25 @@ public class TownUpgrades : MonoBehaviour
     public void TryUpgrade(){
         if (resourceManager.TryConsumeResources(upgradeLevels[level].cost)) {
             level++;
+            town.GetComponent<AudioSource>().Play();
             UpdateMenu();
+            UpdateTown();
         }
 
         if (level >= upgradeLevels.Count) {
-            MaxLevelReached.Invoke();
+            GameObject.FindObjectOfType<FadeIn>().StartFade(5.0f);
+        }
+    }
+
+    public void UpdateTown()
+    {
+        //enable the town levels based on the current level
+        for (int i = 0; i < town.townLevels.Count; i++) {
+            if (i < level) {
+                town.townLevels[i].SetActive(true);
+            } else {
+                town.townLevels[i].SetActive(false);
+            }
         }
     }
 }

@@ -102,12 +102,20 @@ MonoBehaviour:
   - cost:
     - type: 0
       amount: 2
+    - type: 0
+      amount: 2
     onUpgrade:
       m_PersistentCalls:
         m_Calls: []
   - cost:
     - type: 0
       amount: 3
+    onUpgrade:
+      m_PersistentCalls:
+        m_Calls: []
+  - cost:
+    - type: 0
+      amount: 5
     onUpgrade:
       m_PersistentCalls:
         m_Calls: []
