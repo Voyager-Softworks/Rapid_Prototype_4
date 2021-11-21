@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 using UnityEditor;
+using UnityEngine.UI;
 
 [Serializable]
 public class Upgrade
@@ -13,6 +14,8 @@ public class Upgrade
     public UpgradeManager.ModuleType moduleType = UpgradeManager.ModuleType.NONE;
     public bool unlocked = false;
     public int level = 0;
+    public string description = "";
+    public Sprite icon = null;
     public List<Resources.PlayerResource> cost = new List<Resources.PlayerResource>(){};
     public List<UpgradeLevel> levels;
 }

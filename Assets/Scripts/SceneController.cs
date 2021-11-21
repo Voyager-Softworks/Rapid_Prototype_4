@@ -30,7 +30,7 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void LoadLevel(BountyManager.LevelType _type){
+    public void LoadLevel(LevelManager.LevelType _type){
         //HUB
         //WASTELAND
         //CAVES
@@ -39,24 +39,24 @@ public class SceneController : MonoBehaviour
 
         switch (_type)
         {
-            case BountyManager.LevelType.HUB:
+            case LevelManager.LevelType.HUB:
                 LoadHub();
             break;
 
-            case BountyManager.LevelType.WASTELAND:
+            case LevelManager.LevelType.WASTELAND:
                 LoadWasteland();
             break;
 
-            case BountyManager.LevelType.CAVES:
+            case LevelManager.LevelType.CAVES:
                 LoadCaves();
             break;
 
-            case BountyManager.LevelType.VOLCANO:
+            case LevelManager.LevelType.VOLCANO:
                 LoadVolcano();
             break;
 
-            case BountyManager.LevelType.RUINS:
-                LoadRuins();
+            case LevelManager.LevelType.VAULT:
+                LoadValt();
             break;
         }
     }
@@ -81,9 +81,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Level_Volcano");
     }
 
-    public void LoadRuins()
+    public void LoadValt()
     {
-        SceneManager.LoadScene("Level_Ruins");
+        SceneManager.LoadScene("Level_Vault");
     }
 
     public void LoadWin()
@@ -109,12 +109,12 @@ public class SceneController : MonoBehaviour
 
         if (Keyboard.current.numpad1Key.wasPressedThisFrame)
         {
-            LoadLevel(BountyManager.LevelType.HUB);
+            LoadLevel(LevelManager.LevelType.HUB);
         }
 
         if (Keyboard.current.numpad2Key.wasPressedThisFrame)
         {
-            LoadLevel(BountyManager.LevelType.WASTELAND);
+            LoadLevel(LevelManager.LevelType.WASTELAND);
         }
 
     }

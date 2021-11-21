@@ -80,6 +80,9 @@
         },
         {
             "m_Id": "7b8ae7c8dc334a4685f336d9f7bfef90"
+        },
+        {
+            "m_Id": "65358aec73214da1bc2346a6022fc865"
         }
     ],
     "m_GroupDatas": [
@@ -180,6 +183,20 @@
                     "m_Id": "70b04e6c149744eabc1a882293e06605"
                 },
                 "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "65358aec73214da1bc2346a6022fc865"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "39716e0ba48645eea03629eb7b1246dd"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -842,8 +859,8 @@
     "m_ObjectId": "42532d384af740ba9e25cbade3b33f55",
     "m_Title": "Hologram Scrolling",
     "m_Position": {
-        "x": -1301.000244140625,
-        "y": -154.00006103515626
+        "x": -1301.0,
+        "y": -197.00001525878907
     }
 }
 
@@ -1417,6 +1434,39 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.ScreenPositionNode",
+    "m_ObjectId": "65358aec73214da1bc2346a6022fc865",
+    "m_Group": {
+        "m_Id": "42532d384af740ba9e25cbade3b33f55"
+    },
+    "m_Name": "Screen Position",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1106.0,
+            "y": -115.00000762939453,
+            "width": 208.0,
+            "height": 314.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "6e82bdb75c864894b2d1323b88bddff8"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_ScreenSpaceType": 2
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
     "m_ObjectId": "6673c2206ebf4d55bdfe187b204ebbe0",
     "m_Guid": {
@@ -1574,6 +1624,31 @@
     "m_StageCapability": 2,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "6e82bdb75c864894b2d1323b88bddff8",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
     "m_Labels": []
 }
 

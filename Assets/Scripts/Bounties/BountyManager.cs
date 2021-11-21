@@ -9,14 +9,6 @@ using UnityEngine.Events;
 public class BountyManager : MonoBehaviour
 {
 
-    public enum LevelType {
-        HUB,
-        WASTELAND,
-        CAVES,
-        VOLCANO,
-        RUINS
-    }
-
     public enum BountyType {
         FIND,
         KILL,
@@ -39,6 +31,9 @@ public class BountyManager : MonoBehaviour
     }
 
     private Resources resourceManager = null;
+    private LevelManager levelManager = null;
+    private IconReference iconReference = null;
+    private PlayerStats playerStats = null;
 
     [Header("Board")]
     public BountyBoard bountyBoard = null;
@@ -72,6 +67,9 @@ public class BountyManager : MonoBehaviour
         if (this == null) return;
         if (gameObject == null) return;
         if (resourceManager == null) resourceManager = GetComponent<Resources>();
+        if (levelManager == null) levelManager = GetComponent<LevelManager>();
+        if (iconReference == null) iconReference = GetComponent<IconReference>();
+        if (playerStats == null) playerStats = GetComponent<PlayerStats>();
 
         //if any active, select them automatically
         if (activeBounties.Count > 0) {
@@ -112,6 +110,10 @@ public class BountyManager : MonoBehaviour
         {
             //Gen new Bounty
             Bounty bounty = GenNewBounty();
+            if (bounty == null) {
+                i--;
+                continue;
+            }
 
             //add it to the possible bounties
             inactiveBounties.Add(bounty);
@@ -128,10 +130,19 @@ public class BountyManager : MonoBehaviour
         Bounty bounty = new Bounty();
 
         //get a random level type
-        bounty.levelType = (LevelType)Random.Range(0, System.Enum.GetValues(typeof(LevelType)).Length);
+        bounty.levelType = (LevelManager.LevelType)Random.Range(0, System.Enum.GetValues(typeof(LevelManager.LevelType)).Length);
+
+        //get spawn info for this level type
+        LevelSpawnInfo spawnInfo = GetSpawnInfo(bounty.levelType);
+        if (spawnInfo == null) {
+            return null;
+        }
 
         //get a random bounty type
         bounty.bountyType = (BountyType)Random.Range(0, System.Enum.GetValues(typeof(BountyType)).Length);
+        if (spawnInfo.bossSpawns.Count <= 0 && bounty.bountyType == BountyType.BOSS) {
+            return null;
+        }
 
         //get a random bounty difficulty
         bounty.bountyDifficulty = (BountyDifficulty)Random.Range(0, System.Enum.GetValues(typeof(BountyDifficulty)).Length);
@@ -169,26 +180,50 @@ public class BountyManager : MonoBehaviour
         switch (bounty.bountyType)
         {
             case BountyType.FIND:
-                //add condition
+                //TO DO
             break;
             case BountyType.KILL: 
-                //add condition
-                Bounty.Condition_Kills kills = new Bounty.Condition_Kills(EnemyTest.EnemyType.BANDIT_GRUNT, 4);
+                //get type of enemy to kill using spawn info
+                EnemyTest.EnemyType enemyType = spawnInfo.regularSpawns[Random.Range(0, spawnInfo.regularSpawns.Count)].GetComponent<EnemyTest>().m_enemyType;
+                //get amount
+                int amount = (int)(Random.Range(1, 10) * diffMult);
+                //make
+                Bounty.Condition_Kills kills = new Bounty.Condition_Kills(enemyType, amount);
+                //add
                 bounty.conditions.Add(kills);
             break;
             case BountyType.ELITE:
-                //add condition
-                Bounty.Condition_Kills eliteKills = new Bounty.Condition_Kills(EnemyTest.EnemyType.BANDIT_HOVER, 2);
+                //get type
+                EnemyTest.EnemyType eliteType = spawnInfo.regularSpawns[Random.Range(0, spawnInfo.regularSpawns.Count)].GetComponent<EnemyTest>().m_enemyType;
+                //get amount
+                int eliteAmount = (int)(Random.Range(1, 5) * diffMult);
+                //make
+                Bounty.Condition_Kills eliteKills = new Bounty.Condition_Kills(eliteType, eliteAmount, true);
                 bounty.conditions.Add(eliteKills);
             break;
             case BountyType.BOSS:
-                //add condition
-                Bounty.Condition_Kills bossKills = new Bounty.Condition_Kills(EnemyTest.EnemyType.BANDIT_TANK, 1);
+                //get type
+                EnemyTest.EnemyType bossType = spawnInfo.bossSpawns[Random.Range(0, spawnInfo.bossSpawns.Count)].GetComponent<EnemyTest>().m_enemyType;
+                //get amount
+                int bossAmount = 1;
+                Bounty.Condition_Kills bossKills = new Bounty.Condition_Kills(bossType, bossAmount);
                 bounty.conditions.Add(bossKills);
             break;
         }
 
         return bounty;
+    }
+
+    private LevelSpawnInfo GetSpawnInfo(LevelManager.LevelType levelType)
+    {
+        foreach (LevelSpawnInfo spawnInfo in this.spawnInfo)
+        {
+            if (spawnInfo.levelType == levelType)
+            {
+                return spawnInfo;
+            }
+        }
+        return null;
     }
 
     void UpdateBoard()
@@ -286,6 +321,52 @@ public class BountyManager : MonoBehaviour
 
             bountyBoard.infoTitle.GetComponent<TextMeshProUGUI>().text = selectedBounty.bountyType.ToString();
             bountyBoard.infoLevel.GetComponent<TextMeshProUGUI>().text = "LEVEL:\n" + selectedBounty.levelType.ToString();
+
+            //update the image of the selected bounty
+            switch (selectedBounty.bountyType)
+            {
+                case BountyType.FIND:
+                    bountyBoard.icon.GetComponentInChildren<Image>().sprite = null;
+                    bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = "TODO";
+                    break;
+                case BountyType.KILL:
+                    //cast the condition to kills
+                    Bounty.Condition_Kills killCond = (Bounty.Condition_Kills)selectedBounty.conditions[0];
+                    //update icon
+                    bountyBoard.icon.GetComponentInChildren<Image>().sprite = iconReference.GetIcon(killCond.enemyType).icon;
+                    //update amount
+                    int totalKills = playerStats.GetKills(killCond.enemyType, false);
+                    totalKills += playerStats.GetKills(killCond.enemyType, true);
+                    int killsCompleted = totalKills - killCond.startKills;
+                    int killsNeeded = killCond.targetValue;
+                    bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = killsCompleted.ToString() + "/" + killsNeeded.ToString();
+                    break;
+                case BountyType.ELITE:
+                    //cast the condition to elite kills
+                    Bounty.Condition_Kills eliteCond = (Bounty.Condition_Kills)selectedBounty.conditions[0];
+                    //update icon
+                    bountyBoard.icon.GetComponentInChildren<Image>().sprite = iconReference.GetIcon(eliteCond.enemyType).icon;
+                    //update amount
+                    int totalEliteKills = playerStats.GetKills(eliteCond.enemyType, true);
+                    int eliteKillsCompleted = totalEliteKills - eliteCond.startKills;
+                    int eliteKillsNeeded = eliteCond.targetValue;
+                    bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = eliteKillsCompleted.ToString() + "/" + eliteKillsNeeded.ToString();
+                    break;
+                case BountyType.BOSS:
+                    //cast the condition to boss kills
+                    Bounty.Condition_Kills bossCond = (Bounty.Condition_Kills)selectedBounty.conditions[0];
+                    //update icon
+                    bountyBoard.icon.GetComponentInChildren<Image>().sprite = iconReference.GetIcon(bossCond.enemyType).icon;
+                    //update amount
+                    int totalBossKills = playerStats.GetKills(bossCond.enemyType, false);
+                    totalBossKills += playerStats.GetKills(bossCond.enemyType, true);
+                    int bossKillsCompleted = totalBossKills - bossCond.startKills;
+                    int bossKillsNeeded = bossCond.targetValue;
+                    bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = bossKillsCompleted.ToString() + "/" + bossKillsNeeded.ToString();
+                    break;
+            }
+
+
             //generate the reward text
             string rewardText = "REWARD:\n";
             foreach (Resources.PlayerResource resource in selectedBounty.reward.resources)
@@ -402,6 +483,8 @@ public class BountyManager : MonoBehaviour
                 condition.Start();
             }
 
+            if (levelManager) levelManager.GenLevel();
+            
             //update the board
             UpdateBoard();
         }

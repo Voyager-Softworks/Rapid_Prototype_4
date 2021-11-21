@@ -65,6 +65,18 @@ TextureImporter:
   - first:
       213: -4672863260411676921
     second: TownCenter_Icon
+  - first:
+      213: 2943775588444044145
+    second: UI-buttonR
+  - first:
+      213: -1747971436156847062
+    second: UI-button1
+  - first:
+      213: -6551880835692674430
+    second: UI-buttonL
+  - first:
+      213: 8812338120536921464
+    second: UI-button2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -590,6 +602,90 @@ TextureImporter:
       bones: []
       spriteID: 707303f5f97a62fb0800000000000000
       internalID: -4672863260411676921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-buttonR
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 247
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b7ca70d446ad820800000000000000
+      internalID: 2943775588444044145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-button1
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 247
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c775e6d35fdb7e0800000000000000
+      internalID: -1747971436156847062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-buttonL
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 214
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28249d1e71b0315a0800000000000000
+      internalID: -6551880835692674430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-button2
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 214
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8759c33b4d6bb4a70800000000000000
+      internalID: 8812338120536921464
       vertices: []
       indices: 
       edges: []

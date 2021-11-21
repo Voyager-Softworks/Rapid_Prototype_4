@@ -18,6 +18,7 @@ public class BountyBoard : MonoBehaviour
     [Header("Info")]
     public GameObject infoPannel;
     public GameObject infoTitle;
+    public GameObject icon;
     public GameObject infoLevel;
     public GameObject infoReward;
     public GameObject infoPenalty;

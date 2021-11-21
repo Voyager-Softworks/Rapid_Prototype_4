@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class Railgun : MonoBehaviour
 {
@@ -58,9 +59,12 @@ public class Railgun : MonoBehaviour
 
     void Update()
     {
+        bool noUIcontrolsInUse = !EventSystem.current.IsPointerOverGameObject();
+
         m_anim.ResetTrigger("Fire");
-        if (Time.time - m_lastShotTime >= m_cooldownWait && (m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed))
+        if (noUIcontrolsInUse && (Time.time - m_lastShotTime >= m_cooldownWait && (m_leftClick && Mouse.current.leftButton.isPressed) || (!m_leftClick && Mouse.current.rightButton.isPressed)))
         {
+
             m_as.clip = m_chargeSound;
             m_as.loop = true;
             if (!m_as.isPlaying) m_as.Play();
