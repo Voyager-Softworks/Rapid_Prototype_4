@@ -72,7 +72,7 @@ public class Harvest : MonoBehaviour
             {
                 GameObject dropInstance = Instantiate(dropObj, transform.position, Quaternion.identity, null);
                 //add random force
-                dropInstance.GetComponent<Rigidbody2D>().AddForce(new Vector2(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f)) * 10.0f, ForceMode2D.Impulse);
+                dropInstance.GetComponent<Rigidbody2D>().AddForce(new Vector2(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f)) * 10.0f, ForceMode2D.Impulse);
             }
         }
 
