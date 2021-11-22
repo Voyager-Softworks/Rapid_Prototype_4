@@ -255,7 +255,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7437ead7713fe6b419da48a98e2ef84c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1823,7 +1823,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7437ead7713fe6b419da48a98e2ef84c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2159,7 +2159,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4f00f32851bbda649a2ef8be2c172c2d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8337,6 +8337,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c8789ed45ef715ad5aa62cd994d09a4f, type: 2}
+    - target: {fileID: 6277964896616676053, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
+      propertyPath: m_Pitch
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7325939613563459753, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: fireAction.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Mouse>/rightButton
@@ -8795,6 +8799,10 @@ PrefabInstance:
     - target: {fileID: 3204362083273198273, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: m_Controller
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277964896616676053, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
+      propertyPath: m_Pitch
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8385414998654393617, guid: 6841957c815d4b5e8b2a3b97136e633a, type: 3}
       propertyPath: m_Name
