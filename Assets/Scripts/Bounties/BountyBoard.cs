@@ -11,6 +11,7 @@ public class BountyBoard : MonoBehaviour
     [Header("Main")]
     public GameObject mainPannel;
     public GameObject mainTitle;
+    public GameObject refreshButton;
 
     [Header("Missions")]
     public List<GameObject> missionButtons;

@@ -99,6 +99,19 @@ public class BountyManager : MonoBehaviour
     void LoadBoard()
     {
         bountyBoard = GameObject.FindObjectOfType<BountyBoard>(true);
+
+        if (bountyBoard){
+            Button button = bountyBoard.refreshButton.GetComponent<Button>();
+            //bind refresh button to clear then generate bounties
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => {
+                selectedBounty = null;
+                inactiveBounties.Clear();
+                // Load the bounties
+                LoadBounties();
+                UpdateBoard();
+            });
+        }
     }
 
     void LoadBounties()
