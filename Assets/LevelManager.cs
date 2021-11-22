@@ -23,6 +23,12 @@ public class LevelManager : MonoBehaviour
         RADIATION,
         STORM
     }
+    
+    [Serializable]
+    public class LevelDescription {
+        public LevelType type;
+        public string description;
+    }
 
     [Header("Board")]
     TeleportMenu teleportMenu = null;
@@ -33,7 +39,7 @@ public class LevelManager : MonoBehaviour
     public BountyManager.BountyDifficulty bountyDifficulty = BountyManager.BountyDifficulty.EASY;
     public BountyManager.BountyType bountyType = BountyManager.BountyType.KILL;
     public List<LevelMods> levelMods = new List<LevelMods>(){};
-
+    public List<LevelDescription> levelDescriptions = new List<LevelDescription>(){};
 
     void Awake() {
         if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
@@ -78,6 +84,17 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public string GetLevelDescription(LevelType type){
+        string description = "NO DESCRIPTION";
+        foreach (LevelDescription ld in levelDescriptions){
+            if (ld.type == type){
+                description = ld.description;
+                return description;
+            }
+        }
+        return description;
+    }
+
     private void UpdateMenu()
     {
         if (teleportMenu == null) return;
@@ -96,7 +113,7 @@ public class LevelManager : MonoBehaviour
         if (bountyManager.activeBounties.Count > 0)
         {
             title.text = bountyManager.activeBounties[0].levelType.ToString();
-            description.text = "A dangerous place(holder text)";
+            description.text = GetLevelDescription(bountyManager.activeBounties[0].levelType);
             mods.text = "MODS: ";
             if (levelMods.Count > 0)
             {

@@ -28159,6 +28159,46 @@ PrefabInstance:
       propertyPath: bountyBoard
       value: 
       objectReference: {fileID: 1062549878}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[3].type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[4].type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[0].description
+      value: Live. Laugh. Love
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[1].description
+      value: I swear it has nothing to do with getting wasted
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[2].description
+      value: I hide in here sometimes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[3].description
+      value: Kinda hot, idk
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803008652019208702, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: levelDescriptions.Array.data[4].description
+      value: mony
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
 --- !u!1001 &3929655886620382763
