@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyTest : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class EnemyTest : MonoBehaviour
 
     [SerializeField] List<Drop> m_drops;
 
+    public GameObject m_healthBar;
+    public GameObject m_healthBarPREFAB;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +58,39 @@ public class EnemyTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //get the sprite
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        //get the size of the sprite
+        Vector2 size = sprite.bounds.size;
+
+        //get the position of the sprite
+        Vector3 pos = transform.position;
+
+        if (m_healthBar == null)
+        {
+            m_healthBar = Instantiate(m_healthBarPREFAB, pos, Quaternion.identity, transform);
+        }
+
+        //set thje position of the health bar
+        m_healthBar.transform.position = new Vector3(pos.x, pos.y + size.y / 2, 0);
+
+        //set the scale to match the size of the sprite
+        m_healthBar.transform.localScale = new Vector3(size.x / transform.localScale.x, 1 / transform.localScale.y, 1);
+
+        //set the health bar to the correct size
+        m_healthBar.GetComponentsInChildren<RectTransform>()[2].sizeDelta = new Vector2(m_health / startHealth, m_healthBar.GetComponentsInChildren<RectTransform>()[1].sizeDelta.y);
+
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        if (rend.color != Color.white)
+        {
+            rend.color += new Color(Time.deltaTime,Time.deltaTime,Time.deltaTime) * 5.0f;
+
+            //if too white, set to white
+            if (rend.color.g > 1.0f)
+            {
+                rend.color = Color.white;
+            }
+        }
     }
 
     public void TakeDamage(float _amount, DamageType _type)
@@ -74,12 +110,13 @@ public class EnemyTest : MonoBehaviour
 
         m_health -= _amount;
 
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        rend.color = new Color(1, 0, 0);
+
         if (m_alive && m_health <= 0)
         {
             Die();
         }
-
-        UpdateVisuals();
     }
 
     private void Revive()
@@ -91,8 +128,6 @@ public class EnemyTest : MonoBehaviour
         GetComponent<Rigidbody2D>().freezeRotation = true;
         GetComponent<Rigidbody2D>().mass *= 2.0f;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-        UpdateVisuals();
     }
 
     public void Die()
@@ -110,7 +145,7 @@ public class EnemyTest : MonoBehaviour
         m_health = 0;
         GetComponent<Rigidbody2D>().freezeRotation = false;
         GetComponent<Rigidbody2D>().AddTorque(1);
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 0.0f);
 
         Destroy(GetComponent<NavAgent>());
 
@@ -128,11 +163,5 @@ public class EnemyTest : MonoBehaviour
         if (!this.gameObject.scene.isLoaded) return;
 
         Destroy(Instantiate(m_deathPart, transform.position, Quaternion.identity, null), 4.0f);
-    }
-
-    public void UpdateVisuals()
-    {
-        SpriteRenderer rend = GetComponent<SpriteRenderer>();
-        rend.color = new Color(1, m_health / startHealth, m_health / startHealth);
     }
 }
