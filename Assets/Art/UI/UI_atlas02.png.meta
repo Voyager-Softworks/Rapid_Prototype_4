@@ -43,13 +43,13 @@ TextureImporter:
     second: Shotgun_Icon
   - first:
       213: -601295715328648532
-    second: Starter_Icon
+    second: Cannon_Icon
   - first:
       213: -8678846216882449820
     second: UI_guestkey
   - first:
       213: -4042544069086742019
-    second: UI_starter
+    second: UI_cannon
   - first:
       213: -6507224203137060279
     second: UI_shotgun
@@ -68,6 +68,18 @@ TextureImporter:
   - first:
       213: 1461492804684761097
     second: UI_rg
+  - first:
+      213: 6523843896229632861
+    second: UI_DashICON
+  - first:
+      213: 4983949085192744555
+    second: UI_JumpICON
+  - first:
+      213: 5778867666203373986
+    second: UI_SlamICON
+  - first:
+      213: -3963699974075899870
+    second: UI_JetpackICON
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -430,7 +442,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Starter_Icon
+      name: Cannon_Icon
       rect:
         serializedVersion: 2
         x: 160
@@ -472,7 +484,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_starter
+      name: UI_cannon
       rect:
         serializedVersion: 2
         x: 176
@@ -543,7 +555,7 @@ TextureImporter:
         width: 48
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -564,7 +576,7 @@ TextureImporter:
         width: 48
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -585,7 +597,7 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -606,7 +618,7 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,6 +626,90 @@ TextureImporter:
       bones: []
       spriteID: 908460966f3484410800000000000000
       internalID: 1461492804684761097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_DashICON
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b1ed47579598a50800000000000000
+      internalID: 6523843896229632861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_JumpICON
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6eeb81794b8a2540800000000000000
+      internalID: 4983949085192744555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SlamICON
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1fa005689a23050800000000000000
+      internalID: 5778867666203373986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_JetpackICON
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2202bf8cfdb1ef8c0800000000000000
+      internalID: -3963699974075899870
       vertices: []
       indices: 
       edges: []
