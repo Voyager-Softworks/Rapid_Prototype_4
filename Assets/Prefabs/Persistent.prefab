@@ -295,6 +295,18 @@ MonoBehaviour:
   bountyDifficulty: 0
   bountyType: 1
   levelMods: 
+  levelDescriptions:
+  - type: 0
+    description: Live. Laugh. Love
+  - type: 1
+    description: War torn ruins crawling with bandits hoarding valuable scrap
+  - type: 2
+    description: Only the bravest enter the underworld to harvest valuable  Ichor
+  - type: 3
+    description: Failed mining operations provide the oppotunity to harvest power
+      crystals
+  - type: 4
+    description: Undiscovered vaults. Readings show a wealth of exotic material
 --- !u!114 &3437735875824158617
 MonoBehaviour:
   m_ObjectHideFlags: 0
