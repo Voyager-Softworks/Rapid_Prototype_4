@@ -844,7 +844,7 @@ Transform:
   - {fileID: 1978953342}
   - {fileID: 333711540}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &37353974
 GameObject:
@@ -1533,7 +1533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6688422379845105576, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6688422379845105576, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2023,7 +2023,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 501089118616100131, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 501089118616100131, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3067,7 +3067,7 @@ Transform:
   - {fileID: 1550856503}
   - {fileID: 180195852}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &160157122 stripped
 Transform:
@@ -5076,7 +5076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3437735875824158599, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3437735875824158599, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6252,7 +6252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &386009184
 PrefabInstance:
@@ -8909,7 +8909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635065742
 GameObject:
@@ -8944,11 +8944,11 @@ MonoBehaviour:
   - prefab: {fileID: 607418049224667048, guid: c14b09738085f1399ac95f184eded253, type: 3}
     probability: 0.8
     difficultyRating: 1
-    mustBeGrounded: 0
-    maxSpawns: 3
+    mustBeGrounded: 1
+    maxSpawns: 10
   data: {fileID: 11400000, guid: 7890ec73f4d091b48929180066eb2fd3, type: 2}
-  difficultyPoints: 3
-  spawnRadius: 1.69
+  difficultyPoints: 10
+  spawnRadius: 7.11
 --- !u!4 &635065744
 Transform:
   m_ObjectHideFlags: 0
@@ -8957,11 +8957,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635065742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.34, y: 6.61, z: -336.0691}
+  m_LocalPosition: {x: 66.82, y: 4.62, z: -336.0691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &636809626
 PrefabInstance:
@@ -9631,7 +9631,7 @@ PrefabInstance:
       objectReference: {fileID: 1832670425}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10892,6 +10892,597 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1045191965478393827, guid: 601a79d3f88fdc54ab676ce5bc8ae848, type: 3}
   m_PrefabInstance: {fileID: 448286367}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &791533264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6f898695c1167f2b100a7bb99ee69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCells:
+  - position: {x: 2.5, y: -0.5, z: 0}
+    rotations: 0000000003000000
+  - position: {x: 3.5, y: -0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 4.5, y: -0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 5.5, y: -0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 6.5, y: -0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 7.5, y: -0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 8.5, y: -0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 9.5, y: -0.5, z: 0}
+    rotations: 010000000000000002000000
+  - position: {x: -53.5, y: 0.5, z: 0}
+    rotations: 03000000
+  - position: {x: -50.5, y: 0.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: -38.5, y: 0.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: -33.5, y: 0.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: -27.5, y: 0.5, z: 0}
+    rotations: 03000000
+  - position: {x: -23.5, y: 0.5, z: 0}
+    rotations: 02000000
+  - position: {x: -20.5, y: 0.5, z: 0}
+    rotations: 03000000
+  - position: {x: -18.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -17.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -16.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -15.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -11.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -10.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -6.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -5.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: -0.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 0.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 1.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 5.5, y: 0.5, z: 0}
+    rotations: 01000000
+  - position: {x: 6.5, y: 0.5, z: 0}
+    rotations: 01000000
+  - position: {x: 7.5, y: 0.5, z: 0}
+    rotations: 01000000
+  - position: {x: 8.5, y: 0.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 31.5, y: 0.5, z: 0}
+    rotations: 0000000003000000
+  - position: {x: 32.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 33.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 36.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 37.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 38.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 42.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 43.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 44.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 62.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 63.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 64.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 65.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 66.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 67.5, y: 0.5, z: 0}
+    rotations: 00000000
+  - position: {x: 68.5, y: 0.5, z: 0}
+    rotations: 0000000002000000
+  - position: {x: -53.5, y: 1.5, z: 0}
+    rotations: 03000000
+  - position: {x: -51.5, y: 1.5, z: 0}
+    rotations: 02000000
+  - position: {x: -37.5, y: 1.5, z: 0}
+    rotations: 03000000
+  - position: {x: -34.5, y: 1.5, z: 0}
+    rotations: 02000000
+  - position: {x: -30.5, y: 1.5, z: 0}
+    rotations: 0000000003000000
+  - position: {x: -29.5, y: 1.5, z: 0}
+    rotations: 00000000
+  - position: {x: -28.5, y: 1.5, z: 0}
+    rotations: 00000000
+  - position: {x: -22.5, y: 1.5, z: 0}
+    rotations: 00000000
+  - position: {x: -21.5, y: 1.5, z: 0}
+    rotations: 00000000
+  - position: {x: -0.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 0.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 1.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 2.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 3.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 4.5, y: 1.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 29.5, y: 1.5, z: 0}
+    rotations: 0000000003000000
+  - position: {x: 30.5, y: 1.5, z: 0}
+    rotations: 00000000
+  - position: {x: 49.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 50.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 51.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 66.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 67.5, y: 1.5, z: 0}
+    rotations: 01000000
+  - position: {x: 68.5, y: 1.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: -53.5, y: 2.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: -50.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -49.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -48.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -47.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -46.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -45.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -44.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -43.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -42.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -41.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -40.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -39.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -38.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -33.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -32.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -31.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: -1.5, y: 2.5, z: 0}
+    rotations: 02000000
+  - position: {x: 15.5, y: 2.5, z: 0}
+    rotations: 0000000003000000
+  - position: {x: 16.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 17.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 18.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 19.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 20.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 21.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 22.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 23.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 24.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 25.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 26.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 27.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 28.5, y: 2.5, z: 0}
+    rotations: 00000000
+  - position: {x: 48.5, y: 2.5, z: 0}
+    rotations: 02000000
+  - position: {x: 52.5, y: 2.5, z: 0}
+    rotations: 03000000
+  - position: {x: 65.5, y: 2.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: -52.5, y: 3.5, z: 0}
+    rotations: 03000000
+  - position: {x: -1.5, y: 3.5, z: 0}
+    rotations: 02000000
+  - position: {x: 6.5, y: 3.5, z: 0}
+    rotations: 0000000003000000
+  - position: {x: 7.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 8.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 9.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 10.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 11.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 12.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 13.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 14.5, y: 3.5, z: 0}
+    rotations: 00000000
+  - position: {x: 25.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 26.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 27.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 28.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 29.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 30.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 48.5, y: 3.5, z: 0}
+    rotations: 02000000
+  - position: {x: 52.5, y: 3.5, z: 0}
+    rotations: 03000000
+  - position: {x: 57.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 58.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 59.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 60.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 61.5, y: 3.5, z: 0}
+    rotations: 01000000
+  - position: {x: 64.5, y: 3.5, z: 0}
+    rotations: 02000000
+  - position: {x: -52.5, y: 4.5, z: 0}
+    rotations: 03000000
+  - position: {x: -0.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 0.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 1.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 2.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 3.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 4.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 5.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 24.5, y: 4.5, z: 0}
+    rotations: 02000000
+  - position: {x: 31.5, y: 4.5, z: 0}
+    rotations: 03000000
+  - position: {x: 49.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 50.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 51.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 56.5, y: 4.5, z: 0}
+    rotations: 02000000
+  - position: {x: 62.5, y: 4.5, z: 0}
+    rotations: 03000000
+  - position: {x: 65.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 66.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 67.5, y: 4.5, z: 0}
+    rotations: 00000000
+  - position: {x: 68.5, y: 4.5, z: 0}
+    rotations: 0000000002000000
+  - position: {x: -52.5, y: 5.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 24.5, y: 5.5, z: 0}
+    rotations: 02000000
+  - position: {x: 31.5, y: 5.5, z: 0}
+    rotations: 03000000
+  - position: {x: 37.5, y: 5.5, z: 0}
+    rotations: 01000000
+  - position: {x: 38.5, y: 5.5, z: 0}
+    rotations: 01000000
+  - position: {x: 39.5, y: 5.5, z: 0}
+    rotations: 01000000
+  - position: {x: 40.5, y: 5.5, z: 0}
+    rotations: 01000000
+  - position: {x: 41.5, y: 5.5, z: 0}
+    rotations: 01000000
+  - position: {x: 42.5, y: 5.5, z: 0}
+    rotations: 01000000
+  - position: {x: 56.5, y: 5.5, z: 0}
+    rotations: 02000000
+  - position: {x: 62.5, y: 5.5, z: 0}
+    rotations: 03000000
+  - position: {x: 68.5, y: 5.5, z: 0}
+    rotations: 02000000
+  - position: {x: -51.5, y: 6.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: -50.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: -49.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: -48.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: 25.5, y: 6.5, z: 0}
+    rotations: 00000000
+  - position: {x: 26.5, y: 6.5, z: 0}
+    rotations: 0000000002000000
+  - position: {x: 31.5, y: 6.5, z: 0}
+    rotations: 03000000
+  - position: {x: 36.5, y: 6.5, z: 0}
+    rotations: 02000000
+  - position: {x: 43.5, y: 6.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 44.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: 45.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: 46.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: 47.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: 48.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: 57.5, y: 6.5, z: 0}
+    rotations: 00000000
+  - position: {x: 58.5, y: 6.5, z: 0}
+    rotations: 00000000
+  - position: {x: 59.5, y: 6.5, z: 0}
+    rotations: 00000000
+  - position: {x: 60.5, y: 6.5, z: 0}
+    rotations: 00000000
+  - position: {x: 61.5, y: 6.5, z: 0}
+    rotations: 00000000
+  - position: {x: 67.5, y: 6.5, z: 0}
+    rotations: 01000000
+  - position: {x: 68.5, y: 6.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: -47.5, y: 7.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: -46.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -45.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -44.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -43.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -42.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -41.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -40.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -39.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -38.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -37.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -36.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -35.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -34.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -33.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -32.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -31.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -30.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -29.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -28.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: -27.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 0.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 1.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 2.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 3.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 4.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 5.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 6.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 7.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 8.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 9.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 10.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 11.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 12.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 27.5, y: 7.5, z: 0}
+    rotations: 00000000
+  - position: {x: 28.5, y: 7.5, z: 0}
+    rotations: 00000000
+  - position: {x: 29.5, y: 7.5, z: 0}
+    rotations: 00000000
+  - position: {x: 30.5, y: 7.5, z: 0}
+    rotations: 00000000
+  - position: {x: 36.5, y: 7.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 49.5, y: 7.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 50.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 51.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 64.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 65.5, y: 7.5, z: 0}
+    rotations: 01000000
+  - position: {x: 66.5, y: 7.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: -26.5, y: 8.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: -25.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -24.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -23.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -22.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -21.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -20.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -19.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -18.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -17.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -16.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -15.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -14.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -13.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -12.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: -0.5, y: 8.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 13.5, y: 8.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 34.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: 35.5, y: 8.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 52.5, y: 8.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 53.5, y: 8.5, z: 0}
+    rotations: 01000000
+  - position: {x: 63.5, y: 8.5, z: 0}
+    rotations: 02000000
+  - position: {x: -11.5, y: 9.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: -10.5, y: 9.5, z: 0}
+    rotations: 01000000
+  - position: {x: -9.5, y: 9.5, z: 0}
+    rotations: 01000000
+  - position: {x: -4.5, y: 9.5, z: 0}
+    rotations: 01000000
+  - position: {x: -3.5, y: 9.5, z: 0}
+    rotations: 01000000
+  - position: {x: -2.5, y: 9.5, z: 0}
+    rotations: 01000000
+  - position: {x: -1.5, y: 9.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 14.5, y: 9.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 31.5, y: 9.5, z: 0}
+    rotations: 01000000
+  - position: {x: 32.5, y: 9.5, z: 0}
+    rotations: 01000000
+  - position: {x: 33.5, y: 9.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 54.5, y: 9.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 63.5, y: 9.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: -8.5, y: 10.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: -7.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: -6.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: -5.5, y: 10.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 15.5, y: 10.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 16.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 17.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 18.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 19.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 20.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 21.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 22.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 23.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 24.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 25.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 26.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 27.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 28.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 29.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 30.5, y: 10.5, z: 0}
+    rotations: 0100000002000000
+  - position: {x: 55.5, y: 10.5, z: 0}
+    rotations: 0100000003000000
+  - position: {x: 56.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 57.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 58.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 59.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 60.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 61.5, y: 10.5, z: 0}
+    rotations: 01000000
+  - position: {x: 62.5, y: 10.5, z: 0}
+    rotations: 0100000002000000
 --- !u!1 &793087553
 GameObject:
   m_ObjectHideFlags: 0
@@ -13690,6 +14281,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1198612820389773466, guid: 8c0abda2d24fe114894440b11e716102, type: 3}
   m_PrefabInstance: {fileID: 1408684011}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1031997645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031997647}
+  - component: {fileID: 1031997646}
+  m_Layer: 0
+  m_Name: resource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1031997646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031997645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9c9024bb4cd3fc7a1162f33fb39045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 791533264}
+  spawnables:
+  - prefab: {fileID: 3806392044393138315, guid: 30283a43f90646b43bbd191fc0503d69, type: 3}
+    probability: 0
+    mustBeUpright: 1
+    minSpawns: 3
+    maxSpawns: 5
+  - prefab: {fileID: 1430512763667418688, guid: f0285ccc42bebe045b0c6a64ecc2638d, type: 3}
+    probability: 0
+    mustBeUpright: 1
+    minSpawns: 3
+    maxSpawns: 5
+--- !u!4 &1031997647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031997645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.29, y: 3.02, z: -43.630665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033661750
 GameObject:
   m_ObjectHideFlags: 0
@@ -13724,10 +14370,15 @@ MonoBehaviour:
     probability: 0.8
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 6
+    maxSpawns: 11
+  - prefab: {fileID: 8684316216028343048, guid: 9f19d6850ebefe8888a3a0fcefdc0c07, type: 3}
+    probability: 0.8
+    difficultyRating: 2
+    mustBeGrounded: 0
+    maxSpawns: 1
   data: {fileID: 11400000, guid: bfedaec8845313a4d8dff556e7dd09f1, type: 2}
-  difficultyPoints: 6
-  spawnRadius: 3.08
+  difficultyPoints: 11
+  spawnRadius: 5.83
 --- !u!4 &1033661752
 Transform:
   m_ObjectHideFlags: 0
@@ -13736,11 +14387,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033661750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.05, y: -0.4, z: -333.63562}
+  m_LocalPosition: {x: 6.19, y: 1.8, z: -333.63562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1037090592 stripped
 Transform:
@@ -15311,7 +15962,7 @@ Transform:
   - {fileID: 1606694642}
   - {fileID: 559192571}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1205976333 stripped
 Transform:
@@ -15840,7 +16491,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1246789890
 PrefabInstance:
@@ -17392,6 +18043,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7402341209767715298, guid: 5847d7142ee8eb542ad0ad24f88c8232, type: 3}
   m_PrefabInstance: {fileID: 181441591}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1351616076
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9140585175963440873, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_Name
+      value: EnemyTank
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -44.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5737073
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.0804913
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140585175963440874, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebdc12441b4da55a9ad3d479b16fa5d0, type: 3}
 --- !u!4 &1353188842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3050516560270499981, guid: 0b34e16b60c41764387591b76590235e, type: 3}
@@ -45275,7 +45983,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1711966995
 PrefabInstance:
@@ -49919,10 +50627,10 @@ MonoBehaviour:
     probability: 0.7
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 6
+    maxSpawns: 7
   data: {fileID: 11400000, guid: f9eab7f78c9a37b4eab674eba876f32c, type: 2}
   difficultyPoints: 7
-  spawnRadius: 2.64
+  spawnRadius: 5.4
 --- !u!4 &1921591522
 Transform:
   m_ObjectHideFlags: 0
@@ -49931,11 +50639,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921591520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.61, y: 2.47, z: -333.63232}
+  m_LocalPosition: {x: -44.2, y: 2.47, z: -333.63232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1921681645 stripped
 Transform:
@@ -52558,7 +53266,7 @@ Transform:
   m_Children:
   - {fileID: 1815507989}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6061731659434917155
 Camera:
