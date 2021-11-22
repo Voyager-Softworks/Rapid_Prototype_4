@@ -304,7 +304,7 @@ MonoBehaviour:
   m_barkSource: {fileID: 6251465048129009352}
   m_aggroclips: []
   m_attackClip: {fileID: 8300000, guid: b938b97f4ce5ed94e8ba71d0313e2f21, type: 3}
-  m_detectionRadius: 8.33
+  m_detectionRadius: 5
   m_attackRadius: 1.12
   m_attacking: 0
   m_Damage: 4
@@ -327,6 +327,8 @@ MonoBehaviour:
   m_deathPart: {fileID: 0}
   m_weakTo: 0
   m_drops: []
+  m_healthBar: {fileID: 0}
+  m_healthBarPREFAB: {fileID: 5616414377192114188, guid: a1c4942e811df5a44a24bfb40e7b8332, type: 3}
 --- !u!70 &635585129271134236
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

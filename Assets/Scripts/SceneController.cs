@@ -83,7 +83,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadValt()
     {
-        SceneManager.LoadScene("Level_Vault_VAR" + Random.Range(1, 3));
+        SceneManager.LoadScene("Level_Vault_VAR" + Random.Range(1, 2));
     }
 
     public void LoadWin()

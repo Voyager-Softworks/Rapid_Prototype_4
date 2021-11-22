@@ -358,6 +358,10 @@ public class BountyManager : MonoBehaviour
                     totalKills += playerStats.GetKills(killCond.enemyType, true);
                     int killsCompleted = totalKills - killCond.startKills;
                     int killsNeeded = killCond.targetValue;
+                    if (selectedBounty.bountyStatus == BountyStatus.INACTIVE)
+                    {
+                        killsCompleted = 0;
+                    }
                     bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = killsCompleted.ToString() + "/" + killsNeeded.ToString();
                     break;
                 case BountyType.ELITE:
