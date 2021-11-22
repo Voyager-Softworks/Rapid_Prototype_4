@@ -68,22 +68,22 @@ public class SceneController : MonoBehaviour
 
     public void LoadWasteland()
     {
-        SceneManager.LoadScene("Level_Wasteland_VAR1");
+        SceneManager.LoadScene("Level_Wasteland_VAR" + Random.Range(1, 3));
     }
 
     public void LoadCaves()
     {
-        SceneManager.LoadScene("Level_Caves");
+        SceneManager.LoadScene("Level_Cave_VAR" + Random.Range(1, 3));
     }
 
     public void LoadVolcano()
     {
-        SceneManager.LoadScene("Level_Volcano");
+        SceneManager.LoadScene("Level_Volcano_VAR" + Random.Range(1, 3));
     }
 
     public void LoadValt()
     {
-        SceneManager.LoadScene("Level_Vault");
+        SceneManager.LoadScene("Level_Vault_VAR" + Random.Range(1, 3));
     }
 
     public void LoadWin()
