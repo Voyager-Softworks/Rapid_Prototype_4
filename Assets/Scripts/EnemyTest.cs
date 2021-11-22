@@ -145,7 +145,7 @@ public class EnemyTest : MonoBehaviour
         m_health = 0;
         GetComponent<Rigidbody2D>().freezeRotation = false;
         GetComponent<Rigidbody2D>().AddTorque(1);
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 0.0f);
 
         Destroy(GetComponent<NavAgent>());
 
