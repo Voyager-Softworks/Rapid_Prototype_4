@@ -145,6 +145,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTurretGun
       objectReference: {fileID: 0}
+    - target: {fileID: 3528397071800401382, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528397071800401382, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5012946572134655473, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -196,6 +204,18 @@ PrefabInstance:
     - target: {fileID: 5012946572134655473, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495088872453191176, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495088872453191176, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495088872453191176, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6806701780626800697, guid: 11f65852e14a6eea3b782e198539f257, type: 3}
       propertyPath: m_maxAngle
