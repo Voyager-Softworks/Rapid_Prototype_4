@@ -49,6 +49,7 @@ public class MachineGun : MonoBehaviour
     [SerializeField] bool m_leftClick = true;
 
     Vector3 vel = Vector3.zero;
+    
 
     void Start()
     {

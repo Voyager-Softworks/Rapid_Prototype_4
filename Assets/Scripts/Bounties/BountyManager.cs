@@ -375,6 +375,10 @@ public class BountyManager : MonoBehaviour
                     int totalEliteKills = playerStats.GetKills(eliteCond.enemyType, true);
                     int eliteKillsCompleted = totalEliteKills - eliteCond.startKills;
                     int eliteKillsNeeded = eliteCond.targetValue;
+                    if (selectedBounty.bountyStatus == BountyStatus.INACTIVE)
+                    {
+                        eliteKillsCompleted = 0;
+                    }
                     bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = eliteKillsCompleted.ToString() + "/" + eliteKillsNeeded.ToString();
                     break;
                 case BountyType.BOSS:
@@ -387,6 +391,10 @@ public class BountyManager : MonoBehaviour
                     totalBossKills += playerStats.GetKills(bossCond.enemyType, true);
                     int bossKillsCompleted = totalBossKills - bossCond.startKills;
                     int bossKillsNeeded = bossCond.targetValue;
+                    if (selectedBounty.bountyStatus == BountyStatus.INACTIVE)
+                    {
+                        bossKillsCompleted = 0;
+                    }
                     bountyBoard.icon.GetComponentInChildren<TextMeshProUGUI>().text = bossKillsCompleted.ToString() + "/" + bossKillsNeeded.ToString();
                     break;
             }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class ProjectileGun : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class ProjectileGun : MonoBehaviour
     Animator m_animator;
 
 
+    private bool canShoot = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +68,12 @@ public class ProjectileGun : MonoBehaviour
                 m_currHeat = 0;
             }
         }
-        if(fireAction.ReadValue<float>() > 0 && m_fireTimer <= 0 && m_reloadTimer <= 0)
+
+        canShoot = true;
+        bool noUIcontrolsInUse = !EventSystem.current.IsPointerOverGameObject();
+        if (!noUIcontrolsInUse) canShoot = false;
+
+        if(canShoot && fireAction.ReadValue<float>() > 0 && m_fireTimer <= 0 && m_reloadTimer <= 0)
         {
             Fire();
         }
