@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 
 
@@ -41,7 +42,7 @@ public class HitscanGun : MonoBehaviour
     public AudioSource m_fireAudioSource;
     public Animator m_anim;
     
-
+    private bool canShoot = false;
 
     // Start is called before the first frame update
     void Start()
@@ -71,11 +72,16 @@ public class HitscanGun : MonoBehaviour
                 m_currHeat = 0;
             }
         }
-        if(fireAction.ReadValue<float>() > 0 && m_fireTimer <= 0 && m_reloadTimer <= 0)
+
+        canShoot = true;
+        bool noUIcontrolsInUse = !EventSystem.current.IsPointerOverGameObject();
+        if (!noUIcontrolsInUse) canShoot = false;
+
+        if(canShoot && fireAction.ReadValue<float>() > 0 && m_fireTimer <= 0 && m_reloadTimer <= 0)
         {
             Fire();
         }
-        if(m_fullAuto && fireAction.ReadValue<float>() > 0 && m_currHeat < m_maxHeat)
+        if(canShoot && m_fullAuto && fireAction.ReadValue<float>() > 0 && m_currHeat < m_maxHeat)
         {
             m_anim.SetBool("IsShooting", true);
             if(m_fireParticles.isStopped)
@@ -88,7 +94,7 @@ public class HitscanGun : MonoBehaviour
             }
             if(m_recoil)
             {
-                m_body.AddForce((-transform.right * 100000.0f) * new Vector2(1.0f, 0.3f));
+                if (m_body) m_body.AddForce((-transform.right * 100000.0f) * new Vector2(1.0f, 0.3f));
             }
         }
         else if (m_fullAuto)
