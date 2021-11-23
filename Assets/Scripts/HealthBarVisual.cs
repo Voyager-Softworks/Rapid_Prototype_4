@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBarVisual : MonoBehaviour
 {
+    public enum HealthBarType
+    {
+        HEALTH,
+        SHIELD
+    }
+
+    public HealthBarType m_Type;
+    public Image m_HealthBar;
     [SerializeField] GameObject m_player;
 
     // Start is called before the first frame update
@@ -17,8 +26,18 @@ public class HealthBarVisual : MonoBehaviour
     {
         PlayerHealth ph = m_player.GetComponent<PlayerHealth>();
 
-        float val = ph.m_playerHealth / 100.0f;
+        float val = 0.0f;
+        switch (m_Type)
+        {
+            case HealthBarType.HEALTH:
+                val = ph.m_playerHealth / 150.0f;
+                break;
+            case HealthBarType.SHIELD:
+                val = ph.m_playerShield / 75.0f;
+                break;
+        }
 
-        transform.localScale = new Vector3(val * 1.0f, 0.3f, 1.0f);
+        
+        m_HealthBar.fillAmount = val;
     }
 }
