@@ -1,5 +1,46 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &737380133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638720659201449639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 0
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.462
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 5.83
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 4157a330b5f52e1900000000dd911b1bfd4d8e79b7356dd5
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 76
+  m_ShapeLightParametricRadius: 0.32
+  m_ShapeLightFalloffSize: 1.83
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &7288110774158217878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4882,7 +4923,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 1881157899164512412, guid: 07990d27a862a304e9309eebd655367d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5024,7 +5065,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_lazerDuration: 5
   m_lazerCooldown: 2
-  m_lazerDPS: 40
+  m_lazerDPS: 70
 --- !u!82 &7288110775686611581
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5046,9 +5087,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 40
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -9991,12 +10032,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7288110775686611580}
     m_Modifications:
     - target: {fileID: 2443358643241940340, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443358643241940340, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2443358643241940340, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 94766d9ae60569345b4b22d2c3647cea, type: 2}
     - target: {fileID: 3126712770872496260, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
       propertyPath: m_Name
       value: LaserHazard_Beam
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433074461319932367, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.060453
       objectReference: {fileID: 0}
     - target: {fileID: 7433074461319932367, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10004,7 +10057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7433074461319932367, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6455
+      value: -2.19
       objectReference: {fileID: 0}
     - target: {fileID: 7433074461319932367, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
       propertyPath: m_LocalPosition.z
