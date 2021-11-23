@@ -68,13 +68,13 @@ MonoBehaviour:
   resourceText: {fileID: 0}
   playerResources:
   - type: 0
-    amount: 25
+    amount: 10
   - type: 1
-    amount: 25
+    amount: 5
   - type: 2
-    amount: 25
+    amount: 20
   - type: 3
-    amount: 25
+    amount: 0
   m_ICHORPrefab: {fileID: 7649933593588755681, guid: 0db62460aa37da945bf6634499a8c61a, type: 3}
   m_CRYSTALPrefab: {fileID: 7649933593588755681, guid: 63d7bcb11f0d68446a0f5c87aa5738b6, type: 3}
   m_SCRAPPrefab: {fileID: 7649933593588755681, guid: 9a582e46ac5082e44a7e1885eb4fc15d, type: 3}
@@ -95,28 +95,42 @@ MonoBehaviour:
   level: 0
   upgradeLevels:
   - cost:
+    - type: 2
+      amount: 40
+    onUpgrade:
+      m_PersistentCalls:
+        m_Calls: []
+  - cost:
+    - type: 2
+      amount: 40
     - type: 0
+      amount: 20
+    - type: 1
+      amount: 10
+    onUpgrade:
+      m_PersistentCalls:
+        m_Calls: []
+  - cost:
+    - type: 2
+      amount: 60
+    - type: 0
+      amount: 40
+    - type: 1
+      amount: 20
+    - type: 2
       amount: 1
     onUpgrade:
       m_PersistentCalls:
         m_Calls: []
   - cost:
+    - type: 2
+      amount: 100
     - type: 0
-      amount: 2
-    - type: 0
-      amount: 2
-    onUpgrade:
-      m_PersistentCalls:
-        m_Calls: []
-  - cost:
-    - type: 0
+      amount: 80
+    - type: 1
+      amount: 50
+    - type: 3
       amount: 3
-    onUpgrade:
-      m_PersistentCalls:
-        m_Calls: []
-  - cost:
-    - type: 0
-      amount: 5
     onUpgrade:
       m_PersistentCalls:
         m_Calls: []
@@ -167,9 +181,7 @@ MonoBehaviour:
     levels:
     - cost:
       - type: 2
-        amount: 2
-      - type: 1
-        amount: 1
+        amount: 20
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
@@ -198,31 +210,35 @@ MonoBehaviour:
     icon: {fileID: 5609850671035102186, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
-      amount: 5
+      amount: 40
     - type: 1
-      amount: 2
+      amount: 20
+    - type: 0
+      amount: 10
+    - type: 3
+      amount: 1
     levels:
     - cost:
       - type: 2
-        amount: 6
+        amount: 20
       - type: 1
-        amount: 3
+        amount: 15
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 20
       - type: 1
-        amount: 3
+        amount: 15
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 20
       - type: 1
-        amount: 3
+        amount: 15
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
@@ -235,31 +251,37 @@ MonoBehaviour:
     icon: {fileID: -8693945879516931404, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
-      amount: 5
+      amount: 30
     - type: 1
-      amount: 2
+      amount: 10
     levels:
     - cost:
       - type: 2
-        amount: 6
+        amount: 20
       - type: 1
-        amount: 3
+        amount: 5
+      - type: 0
+        amount: 10
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 20
       - type: 1
-        amount: 3
+        amount: 5
+      - type: 0
+        amount: 10
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 20
       - type: 1
-        amount: 3
+        amount: 5
+      - type: 0
+        amount: 10
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
@@ -268,35 +290,45 @@ MonoBehaviour:
     moduleType: 0
     unlocked: 0
     level: 0
-    description: 'Biocannon: *spluck*'
+    description: 'Biocannon: Corrosive and Experimental, weak against mutants.'
     icon: {fileID: 9189119915828734018, guid: 27de4ef3a36c9784b98b5097a3a45fce, type: 3}
     cost:
     - type: 2
-      amount: 5
+      amount: 30
     - type: 1
-      amount: 2
+      amount: 5
+    - type: 0
+      amount: 60
+    - type: 3
+      amount: 1
     levels:
     - cost:
       - type: 2
-        amount: 6
+        amount: 15
       - type: 1
-        amount: 3
+        amount: 5
+      - type: 0
+        amount: 30
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 15
       - type: 1
-        amount: 3
+        amount: 5
+      - type: 0
+        amount: 30
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 15
       - type: 1
-        amount: 3
+        amount: 5
+      - type: 0
+        amount: 30
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
@@ -309,31 +341,31 @@ MonoBehaviour:
     icon: {fileID: 4557727860447450751, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
-      amount: 5
-    - type: 1
-      amount: 2
+      amount: 30
+    - type: 0
+      amount: 20
     levels:
     - cost:
       - type: 2
-        amount: 6
+        amount: 20
       - type: 1
-        amount: 3
+        amount: 10
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
-      - type: 1
-        amount: 3
+        amount: 20
+      - type: 0
+        amount: 10
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
-      - type: 1
-        amount: 3
+        amount: 20
+      - type: 0
+        amount: 10
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
@@ -342,35 +374,51 @@ MonoBehaviour:
     moduleType: 0
     unlocked: 0
     level: 0
-    description: 'Guestkey: Why use anything else!'
+    description: 'The Guest key: Hard to breathe in an atmosphere of 80% Lead.'
     icon: {fileID: 5430957938232941620, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
-      amount: 5
+      amount: 80
     - type: 1
+      amount: 40
+    - type: 0
+      amount: 40
+    - type: 3
       amount: 2
     levels:
     - cost:
       - type: 2
-        amount: 6
+        amount: 30
       - type: 1
-        amount: 3
+        amount: 15
+      - type: 0
+        amount: 20
+      - type: 3
+        amount: 1
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 30
       - type: 1
-        amount: 3
+        amount: 15
+      - type: 0
+        amount: 20
+      - type: 3
+        amount: 1
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
     - cost:
       - type: 2
-        amount: 6
+        amount: 30
       - type: 1
-        amount: 3
+        amount: 15
+      - type: 0
+        amount: 20
+      - type: 2
+        amount: 1
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
@@ -380,17 +428,17 @@ MonoBehaviour:
     moduleType: 2
     unlocked: 0
     level: 0
-    description: Go dashy weeeee
+    description: 'Burst: Allows horizontal dashing. Double tab direction.'
     icon: {fileID: -2685453121627481729, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
+    - type: 2
+      amount: 20
     - type: 0
-      amount: 1
-    - type: 1
-      amount: 2
+      amount: 10
     levels:
     - cost:
       - type: 2
-        amount: 1
+        amount: 10
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
@@ -399,16 +447,18 @@ MonoBehaviour:
     moduleType: 1
     unlocked: 0
     level: 0
-    description: angy smash >:(
+    description: 'Thermal Slam: Performs a powerful slam. Double tap Down.'
     icon: {fileID: 6085872072954216946, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
-    - type: 0
-      amount: 1
+    - type: 2
+      amount: 30
     - type: 1
-      amount: 2
+      amount: 20
+    - type: 3
+      amount: 1
     levels:
     - cost:
-      - type: 2
+      - type: 3
         amount: 1
       onUpgrade:
         m_PersistentCalls:
@@ -418,13 +468,15 @@ MonoBehaviour:
     moduleType: 3
     unlocked: 0
     level: 0
-    description: UP GO UP GO UP GO UP GO UP GO
+    description: 'Second Tank: Allows double Jumping.'
     icon: {fileID: 7979741545503519275, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
+    - type: 2
+      amount: 30
     - type: 0
-      amount: 1
+      amount: 20
     - type: 1
-      amount: 2
+      amount: 10
     levels:
     - cost:
       - type: 2
