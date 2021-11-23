@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Resources : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class Resources : MonoBehaviour
     {
         if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
         if (!player) player = GameObject.FindGameObjectWithTag("Player");
-        if (!resourceText) resourceText = GameObject.Find("Resource_Text");
+        if (!resourceText) resourceText = GameObject.FindObjectOfType<ResourceText>(true).gameObject;
 
         UpdateVisuals();
     }
@@ -62,7 +63,7 @@ public class Resources : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        UpdateVisuals();
     }
 
     public void AddResource(ResourceType type, int amount)
@@ -133,14 +134,13 @@ public class Resources : MonoBehaviour
     {
         if (resourceText == null) return;
 
-        Text text = resourceText.GetComponent<Text>();
-        //update the text to show the current resources
-        text.text = "";
+        TextMeshProUGUI[] texts = resourceText.GetComponentsInChildren<TextMeshProUGUI>();
+
+        //update the texts to show the current resources
         for (int i = 0; i < playerResources.Length; i++)
         {
-            text.text += playerResources[i].type.ToString() + ": " + playerResources[i].amount + "\n";
+            if (texts.Length <= i) break;
+            texts[i].text = playerResources[i].amount.ToString();
         }
-        //remove the last newline
-        text.text = text.text.Substring(0, text.text.Length - 1);
     }
 }
