@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class SceneController : MonoBehaviour
 {
+    private GameObject persistent;
+
     void Awake() {
         SceneManager.sceneLoaded += SceneLoaded;
     }
@@ -16,8 +18,9 @@ public class SceneController : MonoBehaviour
 
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        persistent = DontDestroy.instance;
+
         if (GetComponent<DontDestroy>() && !GetComponent<DontDestroy>().CheckValidInstance()) return;
-        //GetComponent<SaveSerialization>().LoadData();
     }
 
     public void LoadPrototype()
@@ -26,18 +29,15 @@ public class SceneController : MonoBehaviour
     }
     public void LoadMenu()
     {
+        if (persistent != null) persistent.GetComponent<SaveSerialization>().SaveData();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene("Menu");
     }
 
     public void LoadLevel(LevelManager.LevelType _type){
-        //HUB
-        //WASTELAND
-        //CAVES
-        //VOLCANO
-        //RUINS
-        GetComponent<SaveSerialization>().SaveData();
+        if (persistent != null) persistent.GetComponent<SaveSerialization>().SaveData();
+
         switch (_type)
         {
             case LevelManager.LevelType.HUB:
@@ -62,46 +62,47 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void LoadHub()
+    private void LoadHub()
     {
         SceneManager.LoadScene("Level_Hub");
     }
 
-    public void LoadWasteland()
+    private void LoadWasteland()
     {
         SceneManager.LoadScene("Level_Wasteland_VAR" + Random.Range(1, 3));
     }
 
-    public void LoadCaves()
+    private void LoadCaves()
     {
         SceneManager.LoadScene("Level_Cave_VAR" + Random.Range(1, 3));
     }
 
-    public void LoadVolcano()
+    private void LoadVolcano()
     {
         SceneManager.LoadScene("Level_Volcano_VAR" + Random.Range(1, 3));
     }
 
-    public void LoadValt()
+    private void LoadValt()
     {
         SceneManager.LoadScene("Level_Vault_VAR" + Random.Range(1, 3));
     }
 
-    public void LoadWin()
+    private void LoadWin()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene("Win");
     }
 
-    public void Exit()
+    private void Exit()
     {
+        if (persistent != null) persistent.GetComponent<SaveSerialization>().SaveData();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Application.Quit();
     }
 
-    public void Update()
+    private void Update()
     {
         
     }

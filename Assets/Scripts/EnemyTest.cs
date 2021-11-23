@@ -49,9 +49,52 @@ public class EnemyTest : MonoBehaviour
     public GameObject m_healthBar;
     public GameObject m_healthBarPREFAB;
 
+    private GameObject persistent;
+
     // Start is called before the first frame update
     void Start()
     {
+        persistent = DontDestroy.instance;
+        if (persistent){
+            BountyManager bountyManager = persistent.GetComponent<BountyManager>();
+            if (bountyManager == null) goto end;
+            Bounty bounty = bountyManager.activeBounties.Count > 0 ? bountyManager.activeBounties[0] : null;
+            if (bounty == null) goto end;
+
+            BountyManager.BountyDifficulty difficulty = bounty.bountyDifficulty;
+            BountyManager.BountyType type = bounty.bountyType;
+
+            if (type ==  BountyManager.BountyType.ELITE){
+                m_elite = true;
+            }
+            else {
+                //chance of elite based on difficulty, starting at 10%, then 10% for each difficulty
+                if (Random.Range(0, 100) < 10 + (((int)difficulty) * 10)){
+                    m_elite = true;
+                }
+            }
+
+            //apply difficulty multipliers
+            switch (difficulty){
+                case BountyManager.BountyDifficulty.EASY:
+                    m_health *= 1.0f;
+                    break;
+                case BountyManager.BountyDifficulty.MEDIUM:
+                    m_health *= 1.5f;
+                    break;
+                case BountyManager.BountyDifficulty.HARD:
+                    m_health *= 2.0f;
+                    break;
+            }
+        }
+        end:
+
+        //apply elite multipliers
+        if (m_elite){
+            m_health *= 1.5f;
+            transform.localScale *= 1.2f;
+        }
+
         startHealth = m_health;
     }
 
@@ -147,17 +190,15 @@ public class EnemyTest : MonoBehaviour
             PlayerStats stats = persistent.GetComponent<PlayerStats>();
             if (stats)
             {
-                stats.AddKill(gameObject, false);
+                stats.AddKill(gameObject, m_elite);
             }
         }
 
         m_alive = false;
         m_health = 0;
-        GetComponent<Rigidbody2D>().freezeRotation = false;
-        GetComponent<Rigidbody2D>().AddTorque(1);
         Destroy(gameObject, 0.0f);
 
-        Destroy(GetComponent<NavAgent>());
+        if (GetComponent<NavAgent>()) Destroy(GetComponent<NavAgent>());
 
         foreach (Drop _drop in m_drops)
         {

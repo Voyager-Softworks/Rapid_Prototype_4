@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public UnityEvent OnDeath;
     public UnityEvent OnDamage;
+    public UnityEvent OnShieldDamage;
+    public UnityEvent OnShieldPop;
 
     public UnityEvent OnRespawn;
 
@@ -15,6 +17,12 @@ public class PlayerHealth : MonoBehaviour
     public bool m_dead = false;
     public float m_deathTimer = 2.0f;
     public float m_playerHealth;
+    public float m_playerShield;
+
+    public float m_shieldRegenRate = 1.0f;
+
+    public float m_shieldRegenDelay = 1.0f;
+    float m_shieldRegenTimer = 0.0f;
     // Start is called before the first frame update
 
     private GameObject persistent = null;
@@ -22,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!persistent)
         {
-           persistent = DontDestroy.instance;
+            persistent = DontDestroy.instance;
         }
 
         m_deathTimer = 2.0f;
@@ -36,13 +44,22 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
 
+        if(m_shieldRegenTimer > 0.0f)
+        {
+            m_shieldRegenTimer -= Time.deltaTime;
+        }
+        else
+        {
+            m_playerShield = Mathf.Min(m_playerShield + m_shieldRegenRate * Time.deltaTime, 100.0f);
+        }
+
         if (m_dead)
         {
             m_deathTimer -= Time.deltaTime;
 
             if (m_deathTimer <= 0.0f)
             {
-                persistent.GetComponent<SceneController>().LoadHub();
+                persistent.GetComponent<SceneController>().LoadLevel(LevelManager.LevelType.HUB);
             }
         }
     }
@@ -91,7 +108,26 @@ public class PlayerHealth : MonoBehaviour
     public void Damage(float _dmg)
     {
         if (m_dead) return;
-        m_playerHealth -= _dmg;
-        OnDamage.Invoke();
+        if (m_playerShield > 0.0f)
+        {
+            m_playerShield -= _dmg;
+            if(m_playerShield <= 0.0f)
+            {
+                OnShieldPop.Invoke();
+            }
+            else
+            {
+                OnShieldDamage.Invoke();
+            }
+            m_playerShield = Mathf.Clamp(m_playerShield, 0.0f, 75.0f);
+            m_shieldRegenTimer = m_shieldRegenDelay;
+            
+        }
+        else
+        {
+            m_playerHealth -= _dmg;
+            m_playerHealth = Mathf.Clamp(m_playerHealth, 0.0f, 100.0f);
+            OnDamage.Invoke();
+        }
     }
 }
