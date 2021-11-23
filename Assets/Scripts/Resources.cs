@@ -55,7 +55,10 @@ public class Resources : MonoBehaviour
     {
         if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
         if (!player) player = GameObject.FindGameObjectWithTag("Player");
-        if (!resourceText) resourceText = GameObject.FindObjectOfType<ResourceText>(true).gameObject;
+        if (!resourceText) {
+            ResourceText rt = GameObject.FindObjectOfType<ResourceText>(true);
+            if (rt) resourceText = rt.gameObject;
+        }
 
         UpdateVisuals();
     }
