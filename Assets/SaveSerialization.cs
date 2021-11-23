@@ -28,9 +28,9 @@ public class SaveSerialization : MonoBehaviour
 
         t.level = save.townLevel;
 
-        //u.weaponUpgrades = save.weaponUpgrades;
+        u.weaponUpgrades = save.weaponUpgrades;
 
-        //u.moduleUpgrades = save.moduleUpgrades;
+        u.moduleUpgrades = save.moduleUpgrades;
 
         b.inactiveBounties = save.inactiveBounties;
         b.activeBounties = save.activeBounties;
@@ -58,9 +58,9 @@ public class SaveSerialization : MonoBehaviour
 
         save.townLevel = t.level;
 
-        //save.weaponUpgrades = u.weaponUpgrades;
+        save.weaponUpgrades = u.weaponUpgrades;
 
-        //save.moduleUpgrades = u.moduleUpgrades;
+        save.moduleUpgrades = u.moduleUpgrades;
 
         save.inactiveBounties = b.inactiveBounties;
         save.activeBounties = b.activeBounties;

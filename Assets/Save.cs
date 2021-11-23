@@ -6,10 +6,10 @@ using UnityEngine;
 public class Save
 {
 
-    // [SerializeField]
-    // public List<Upgrade> weaponUpgrades;
-    // [SerializeField]
-    // public List<Upgrade> moduleUpgrades;
+    [SerializeField]
+    public List<Upgrade> weaponUpgrades;
+    [SerializeField]
+    public List<Upgrade> moduleUpgrades;
     [SerializeField]
     public Resources.PlayerResource[] playerResources;
     [SerializeField]
