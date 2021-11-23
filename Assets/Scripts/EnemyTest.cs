@@ -58,10 +58,19 @@ public class EnemyTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //copy the current rotation
+        Quaternion rot = transform.rotation;
+
+        //reset the rotation
+        transform.rotation = Quaternion.identity;
+
         //get the sprite
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         //get the size of the sprite
         Vector2 size = sprite.bounds.size;
+
+        //set the rotation back
+        transform.rotation = rot;
 
         //get the position of the sprite
         Vector3 pos = transform.position;
@@ -73,6 +82,7 @@ public class EnemyTest : MonoBehaviour
 
         //set thje position of the health bar
         m_healthBar.transform.position = new Vector3(pos.x, pos.y + size.y / 2, 0);
+        m_healthBar.transform.rotation = Quaternion.identity;
 
         //set the scale to match the size of the sprite
         m_healthBar.transform.localScale = new Vector3(size.x / transform.localScale.x, 1 / transform.localScale.y, 1);
