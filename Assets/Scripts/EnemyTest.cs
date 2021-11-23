@@ -65,7 +65,7 @@ public class EnemyTest : MonoBehaviour
         transform.rotation = Quaternion.identity;
 
         //get the sprite
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
         //get the size of the sprite
         Vector2 size = sprite.bounds.size;
 
@@ -90,7 +90,7 @@ public class EnemyTest : MonoBehaviour
         //set the health bar to the correct size
         m_healthBar.GetComponentsInChildren<RectTransform>()[2].sizeDelta = new Vector2(m_health / startHealth, m_healthBar.GetComponentsInChildren<RectTransform>()[1].sizeDelta.y);
 
-        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        SpriteRenderer rend = GetComponentInChildren<SpriteRenderer>();
         if (rend.color != Color.white)
         {
             rend.color += new Color(Time.deltaTime,Time.deltaTime,Time.deltaTime) * 5.0f;
@@ -120,7 +120,7 @@ public class EnemyTest : MonoBehaviour
 
         m_health -= _amount;
 
-        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        SpriteRenderer rend = GetComponentInChildren<SpriteRenderer>();
         rend.color = new Color(1, 0, 0);
 
         if (m_alive && m_health <= 0)
