@@ -188,7 +188,7 @@ public class UpgradeManager : MonoBehaviour
         upgradeMenu = GameObject.FindObjectOfType<UpgradeMenu>(true);
     }
 
-    private void UpdateUpgradeMenu()
+    public void UpdateUpgradeMenu()
     {
         UpdateWeaponUpgradeMenu();
         UpdateModuleUpgradeMenu();
@@ -310,7 +310,7 @@ public class UpgradeManager : MonoBehaviour
                         }
                     }
                 }
-                else if (upgrade.levels.Count > upgrade.level)
+                else if (upgrade.levels.Count > upgrade.level && GetComponent<TownUpgrades>().level > upgrade.level)
                 {
                     buttonText.text = "UPGRADE";
 
@@ -359,12 +359,28 @@ public class UpgradeManager : MonoBehaviour
                     }
 
                 }
-                else
+                else if (upgrade.levels.Count <= upgrade.level)
                 {   
                     //if the weapon is fully upgraded
                     buttonText.text = "MAXED";
 
-                    //disable equip
+                    //enable equip
+                    equipL.SetActive(true);
+                    equipR.SetActive(true);
+
+                    //disable images
+                    for (int j = 0; j < images.Count; j++)
+                    {
+                        Image costImage = images[j];
+                        costImage.enabled = false;
+                        TextMeshProUGUI costText = texts[j];
+                        costText.enabled = false;
+                    }
+                }
+                else{
+                    buttonText.text = "UPGRADE TOWN";
+
+                    //enable equip
                     equipL.SetActive(true);
                     equipR.SetActive(true);
 

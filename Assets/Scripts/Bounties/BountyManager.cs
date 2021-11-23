@@ -161,7 +161,7 @@ public class BountyManager : MonoBehaviour
         }
 
         //get a random bounty difficulty
-        bounty.bountyDifficulty = (BountyDifficulty)Random.Range(0, System.Enum.GetValues(typeof(BountyDifficulty)).Length);
+        bounty.bountyDifficulty = (BountyDifficulty)Random.Range(0, Mathf.Min(System.Enum.GetValues(typeof(BountyDifficulty)).Length, GetComponent<TownUpgrades>().level + 1));
 
         //diff multiplier
         float diffMult = ((int)bounty.bountyDifficulty) + 1;
