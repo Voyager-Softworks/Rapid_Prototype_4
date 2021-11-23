@@ -98,9 +98,6 @@ MonoBehaviour:
   - cost:
     - type: 2
       amount: 40
-    onUpgrade:
-      m_PersistentCalls:
-        m_Calls: []
   - cost:
     - type: 2
       amount: 40
@@ -108,9 +105,6 @@ MonoBehaviour:
       amount: 20
     - type: 1
       amount: 10
-    onUpgrade:
-      m_PersistentCalls:
-        m_Calls: []
   - cost:
     - type: 2
       amount: 60
@@ -120,9 +114,6 @@ MonoBehaviour:
       amount: 20
     - type: 2
       amount: 1
-    onUpgrade:
-      m_PersistentCalls:
-        m_Calls: []
   - cost:
     - type: 2
       amount: 100
@@ -132,9 +123,6 @@ MonoBehaviour:
       amount: 50
     - type: 3
       amount: 3
-    onUpgrade:
-      m_PersistentCalls:
-        m_Calls: []
   MaxLevelReached:
     m_PersistentCalls:
       m_Calls:
@@ -175,7 +163,6 @@ MonoBehaviour:
     level: 0
     description: 'Heavy cannon: Starter weapon, light splash damage, resistant to
       overheating'
-    icon: {fileID: -601295715328648532, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 5
@@ -183,32 +170,22 @@ MonoBehaviour:
     - cost:
       - type: 2
         amount: 20
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 3
       - type: 1
         amount: 4
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 3
       - type: 1
         amount: 4
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   - type: 0
     weaponType: 3
     moduleType: 0
     unlocked: 0
     level: 0
     description: 'Railgun: Low rate of fire, charge time, extreme damage, piercing'
-    icon: {fileID: 5609850671035102186, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 40
@@ -224,32 +201,22 @@ MonoBehaviour:
         amount: 20
       - type: 1
         amount: 15
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 20
       - type: 1
         amount: 15
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 20
       - type: 1
         amount: 15
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   - type: 0
     weaponType: 2
     moduleType: 0
     unlocked: 0
     level: 0
     description: 'Minigun: High rate of fire, low armour piercing, prone to overheating'
-    icon: {fileID: -8693945879516931404, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 30
@@ -263,9 +230,6 @@ MonoBehaviour:
         amount: 5
       - type: 0
         amount: 10
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 20
@@ -273,9 +237,6 @@ MonoBehaviour:
         amount: 5
       - type: 0
         amount: 10
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 20
@@ -283,16 +244,12 @@ MonoBehaviour:
         amount: 5
       - type: 0
         amount: 10
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   - type: 0
     weaponType: 4
     moduleType: 0
     unlocked: 0
     level: 0
     description: 'Biocannon: Corrosive and Experimental, weak against mutants.'
-    icon: {fileID: 9189119915828734018, guid: 27de4ef3a36c9784b98b5097a3a45fce, type: 3}
     cost:
     - type: 2
       amount: 30
@@ -310,9 +267,6 @@ MonoBehaviour:
         amount: 5
       - type: 0
         amount: 30
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 15
@@ -320,9 +274,6 @@ MonoBehaviour:
         amount: 5
       - type: 0
         amount: 30
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 15
@@ -330,16 +281,12 @@ MonoBehaviour:
         amount: 5
       - type: 0
         amount: 30
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   - type: 0
     weaponType: 5
     moduleType: 0
     unlocked: 0
     level: 0
     description: 'Shotgun: Looks like there is something down the barrel...'
-    icon: {fileID: 4557727860447450751, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 30
@@ -351,32 +298,22 @@ MonoBehaviour:
         amount: 20
       - type: 1
         amount: 10
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 20
       - type: 0
         amount: 10
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 20
       - type: 0
         amount: 10
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   - type: 0
     weaponType: 6
     moduleType: 0
     unlocked: 0
     level: 0
     description: 'The Guest key: Hard to breathe in an atmosphere of 80% Lead.'
-    icon: {fileID: 5430957938232941620, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 80
@@ -396,9 +333,6 @@ MonoBehaviour:
         amount: 20
       - type: 3
         amount: 1
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 30
@@ -408,9 +342,6 @@ MonoBehaviour:
         amount: 20
       - type: 3
         amount: 1
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
     - cost:
       - type: 2
         amount: 30
@@ -420,9 +351,6 @@ MonoBehaviour:
         amount: 20
       - type: 2
         amount: 1
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   moduleUpgrades:
   - type: 1
     weaponType: 0
@@ -430,7 +358,6 @@ MonoBehaviour:
     unlocked: 0
     level: 0
     description: 'Burst: Allows horizontal dashing. Double tab direction.'
-    icon: {fileID: -2685453121627481729, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 20
@@ -440,16 +367,12 @@ MonoBehaviour:
     - cost:
       - type: 2
         amount: 10
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   - type: 1
     weaponType: 0
     moduleType: 1
     unlocked: 0
     level: 0
     description: 'Thermal Slam: Performs a powerful slam. Double tap Down.'
-    icon: {fileID: 6085872072954216946, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 30
@@ -461,16 +384,12 @@ MonoBehaviour:
     - cost:
       - type: 3
         amount: 1
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
   - type: 1
     weaponType: 0
     moduleType: 3
     unlocked: 0
     level: 0
     description: 'Second Tank: Allows double Jumping.'
-    icon: {fileID: 7979741545503519275, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
     cost:
     - type: 2
       amount: 30
@@ -482,9 +401,6 @@ MonoBehaviour:
     - cost:
       - type: 2
         amount: 1
-      onUpgrade:
-        m_PersistentCalls:
-          m_Calls: []
 --- !u!114 &5803008652019208702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +452,9 @@ MonoBehaviour:
     bountyStatus: 0
     bountyDifficulty: 0
     bountyCost: []
+    reward:
+      resources: []
+      unlocks: 
     conditions: []
   rewardPossible: {fileID: 11400000, guid: c838f62c5d74e564d92dcdc0730bf756, type: 2}
   spawnInfo:
@@ -615,6 +534,30 @@ MonoBehaviour:
     icon: {fileID: 6760579611535884213, guid: a0236a4824ea07547946c7e8f8c0ed66, type: 3}
   - resourceType: 3
     icon: {fileID: -146732267720400147, guid: a0236a4824ea07547946c7e8f8c0ed66, type: 3}
+  weaponIcons:
+  - weaponType: 0
+    icon: {fileID: 6970840943988027778, guid: 35461d300244a724c95892b9783363ee, type: 3}
+  - weaponType: 1
+    icon: {fileID: -601295715328648532, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - weaponType: 2
+    icon: {fileID: -8693945879516931404, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - weaponType: 3
+    icon: {fileID: 5609850671035102186, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - weaponType: 4
+    icon: {fileID: -5768763749592301489, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - weaponType: 5
+    icon: {fileID: 4557727860447450751, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - weaponType: 6
+    icon: {fileID: 5430957938232941620, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  moduleIcons:
+  - moduleType: 0
+    icon: {fileID: 6970840943988027778, guid: 35461d300244a724c95892b9783363ee, type: 3}
+  - moduleType: 1
+    icon: {fileID: 6085872072954216946, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - moduleType: 2
+    icon: {fileID: -2685453121627481729, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - moduleType: 3
+    icon: {fileID: 7979741545503519275, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
   InteractCanvasPrefab: {fileID: 0}
 --- !u!114 &1729557129
 MonoBehaviour:

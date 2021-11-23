@@ -53,7 +53,7 @@ public class TownUpgrades : MonoBehaviour
         }
     }
 
-    private void UpdateMenu()
+    public void UpdateMenu()
     {
         Button upgradeButton = townMenu.upgradeButton.GetComponent<Button>();
         TextMeshProUGUI upgradeButtonText = townMenu.upgradeButton.GetComponentInChildren<TextMeshProUGUI>();

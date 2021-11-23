@@ -87,6 +87,12 @@ public class Console : MonoBehaviour
             if (GameObject.FindObjectOfType<BountyManager>()) {
                 GameObject.FindObjectOfType<BountyManager>().UpdateBoard();
             }
+            if (GameObject.FindObjectOfType<LevelManager>()) {
+                GameObject.FindObjectOfType<LevelManager>().UpdateMenu();
+            }
+            if (GameObject.FindObjectOfType<TownUpgrades>()) {
+                GameObject.FindObjectOfType<TownUpgrades>().UpdateMenu();
+            }
         }
     }
 

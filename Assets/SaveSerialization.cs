@@ -4,6 +4,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine;
 
+//if in editor mode
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+
 public class SaveSerialization : MonoBehaviour
 {
     void Start()
@@ -115,4 +121,28 @@ public class SaveSerialization : MonoBehaviour
             return null;
         }
     }
+
+    #region Editor Stuff
+
+    //if in editor mode, check if there is an InteractCanvas on this object
+    #if UNITY_EDITOR
+    [CustomEditor(typeof(SaveSerialization))]
+    public class SaveSerializationEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            DrawDefaultInspector();
+
+            SaveSerialization console = (SaveSerialization)target;
+
+            //add audiosource button
+            if (GUILayout.Button("DELETE ALL SAVES"))
+            {
+                DeleteSaveData();
+            }
+        }
+    }
+
+    #endif
+    #endregion
 }
