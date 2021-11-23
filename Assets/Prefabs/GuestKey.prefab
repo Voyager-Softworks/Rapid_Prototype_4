@@ -5010,6 +5010,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheGuestKey
       objectReference: {fileID: 0}
+    - target: {fileID: 3537472550107286440, guid: 16f8ab9db515fb844b615a759b454c93, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537472550107286440, guid: 16f8ab9db515fb844b615a759b454c93, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693024921395015175, guid: 16f8ab9db515fb844b615a759b454c93, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.023
