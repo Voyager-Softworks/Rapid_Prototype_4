@@ -546,9 +546,9 @@ public class BountyManager : MonoBehaviour
 
             //update the board
             UpdateBoard();
-
-            if (levelManager) levelManager.UpdateMenu();
         }
+
+        if (levelManager) levelManager.UpdateMenu();
     }
 
     void CollectBounty()
@@ -604,6 +604,8 @@ public class BountyManager : MonoBehaviour
             //update the board
             UpdateBoard();
         }
+
+        if (levelManager) levelManager.UpdateMenu();
     }
 
     void Update()
