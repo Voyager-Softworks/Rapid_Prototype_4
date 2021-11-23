@@ -581,10 +581,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.8
+    probability: 0.6
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 18
+  - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+    probability: 0.4
+    difficultyRating: 2
+    mustBeGrounded: 0
+    maxSpawns: 1
   data: {fileID: 11400000, guid: f1881c98dac1cc9478975b59dd2e1cdd, type: 2}
   difficultyPoints: 20
   spawnRadius: 7.99
@@ -5248,7 +5253,7 @@ PrefabInstance:
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
       value: 
-      objectReference: {fileID: 1832670425}
+      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -8995,7 +9000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
-    probability: 0.4
+    probability: 0.2
     difficultyRating: 2
     mustBeGrounded: 1
     maxSpawns: 1
@@ -9004,6 +9009,11 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 32
+  - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+    probability: 0.2
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 1
   data: {fileID: 11400000, guid: 668b3e5b4c184e64283df93c72b21895, type: 2}
   difficultyPoints: 32
   spawnRadius: 7.62
@@ -31950,17 +31960,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5857520000374061984, guid: 5d842de15569c2440bd1e7840934bc52, type: 3}
   m_PrefabInstance: {fileID: 2109599500}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1832670425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-  m_PrefabInstance: {fileID: 75311205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1834103191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}

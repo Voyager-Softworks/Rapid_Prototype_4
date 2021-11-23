@@ -8650,7 +8650,7 @@ PrefabInstance:
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
       value: 
-      objectReference: {fileID: 1832670425}
+      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -51510,17 +51510,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6517629829802385361, guid: 057c041802d6a7845bf9068eaa7d29d8, type: 3}
   m_PrefabInstance: {fileID: 1811599062}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1832670425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-  m_PrefabInstance: {fileID: 75311205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1834103191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
@@ -52485,10 +52474,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.8
-    difficultyRating: 0
+    probability: 0.6
+    difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 15
+    maxSpawns: 14
+  - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+    probability: 0.4
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 1
   data: {fileID: 11400000, guid: 4f5b1e82160885f458932c4ed5ad68cd, type: 2}
   difficultyPoints: 15
   spawnRadius: 7.61
@@ -53895,6 +53889,11 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 15
+  - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+    probability: 0.4
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 1
   data: {fileID: 11400000, guid: 658a1df95503aee4782433e7b0602e97, type: 2}
   difficultyPoints: 15
   spawnRadius: 9.35

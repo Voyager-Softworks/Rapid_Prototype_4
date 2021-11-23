@@ -11093,7 +11093,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.4811321, g: 0.4561677, b: 0.4561677, a: 1}
+  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_Intensity: 0.57
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 4157a330b5f52e1900000000dd911b1bfd4d8e79b7356dd5
@@ -13213,18 +13213,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
+    probability: 0.2
+    difficultyRating: 1
+    mustBeGrounded: 1
+    maxSpawns: 1
+  - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
+    probability: 0.5
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 16
+  - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
     probability: 0.3
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 1
-  - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.7
-    difficultyRating: 1
-    mustBeGrounded: 0
-    maxSpawns: 16
   data: {fileID: 11400000, guid: 9706933f55bd4de419f6c7856aa31ed1, type: 2}
   difficultyPoints: 16
-  spawnRadius: 10.83
+  spawnRadius: 12.1
 --- !u!4 &1607378127
 Transform:
   m_ObjectHideFlags: 0
@@ -69701,10 +69706,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.8
+    probability: 0.3
     difficultyRating: 0
     mustBeGrounded: 0
     maxSpawns: 12
+  - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+    probability: 0.4
+    difficultyRating: 0
+    mustBeGrounded: 0
+    maxSpawns: 1
+  - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
+    probability: 0.4
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 1
   data: {fileID: 11400000, guid: 2f3e014fcbde56c4eafb8ed179db2135, type: 2}
   difficultyPoints: 12
   spawnRadius: 12.85
@@ -70483,9 +70498,9 @@ MonoBehaviour:
     probability: 0.8
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 20
+    maxSpawns: 12
   data: {fileID: 11400000, guid: 3db9c98eddd071241a938471b338fc8d, type: 2}
-  difficultyPoints: 20
+  difficultyPoints: 12
   spawnRadius: 12.96
 --- !u!4 &1989207215
 Transform:
