@@ -6,6 +6,7 @@ public class LazerHazard : MonoBehaviour
 {
     Animator m_anim;
     public SpriteRenderer m_beamSprite;
+    public GameObject m_beam;
     public ParticleSystem m_beamParticles;
     public AnimationCurve m_beamCurve;
 
@@ -38,9 +39,11 @@ public class LazerHazard : MonoBehaviour
             m_beamSprite.enabled = false;
             m_beamParticles.Stop();
             m_lazerSource.Stop();
+            m_beam.SetActive(false);
         }
         else if (m_lazerTimer >= m_lazerCooldown && !m_lazerOn)
         {
+            m_beam.SetActive(true);
             m_lazerOn = true;
             m_anim.SetBool("LazerOn", true);
             m_lazerTimer = 0.0f;

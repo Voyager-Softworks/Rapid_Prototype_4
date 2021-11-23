@@ -4924,6 +4924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_beamSprite: {fileID: 4957372057932495703}
+  m_beam: {fileID: 5638720659201449639}
   m_beamParticles: {fileID: 7288110774158217881}
   m_beamCurve:
     serializedVersion: 2
@@ -10027,6 +10028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
+--- !u!1 &5638720659201449639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3126712770872496260, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
+  m_PrefabInstance: {fileID: 7288110773896973859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &144968364703557612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7433074461319932367, guid: 58ed6c9dd841f5c4d95d1e0ab3b61830, type: 3}
