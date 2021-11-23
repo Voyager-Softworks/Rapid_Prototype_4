@@ -42,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (m_deathTimer <= 0.0f)
             {
-                persistent.GetComponent<SceneController>().LoadHub();
+                persistent.GetComponent<SceneController>().LoadLevel(LevelManager.LevelType.HUB);
             }
         }
     }
