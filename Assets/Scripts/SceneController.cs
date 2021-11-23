@@ -17,6 +17,7 @@ public class SceneController : MonoBehaviour
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (GetComponent<DontDestroy>() && !GetComponent<DontDestroy>().CheckValidInstance()) return;
+        //GetComponent<SaveSerialization>().LoadData();
     }
 
     public void LoadPrototype()
@@ -36,7 +37,7 @@ public class SceneController : MonoBehaviour
         //CAVES
         //VOLCANO
         //RUINS
-
+        GetComponent<SaveSerialization>().SaveData();
         switch (_type)
         {
             case LevelManager.LevelType.HUB:

@@ -347,7 +347,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (anim != m_anim)
                 {
-                    anim.SetBool("Walking", false);
+                    //anim.SetBool("Walking", false);
                     
 
                 }
@@ -361,7 +361,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (anim != m_anim)
                 {
-                    anim.SetBool("Walking", true);
+                    //anim.SetBool("Walking", true);
                     
                 }
             }
@@ -376,7 +376,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (anim != m_anim)
                     {
-                        anim.SetBool("Walking", true);
+                        //anim.SetBool("Walking", true);
                         
                     }
                 }
