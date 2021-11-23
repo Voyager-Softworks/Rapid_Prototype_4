@@ -12749,7 +12749,7 @@ PrefabInstance:
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
       value: 
-      objectReference: {fileID: 1832670425}
+      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991542, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -20880,10 +20880,10 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.11372549, g: 0.07058824, b: 0.047058824, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.33962262, g: 0.22745098, b: 0.16470589, a: 1}
+  m_Intensity: 3
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: b5f52e1900000000dd911b1bfd4d8e79b7356dd5
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -48827,17 +48827,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1132247765064244152, guid: a7e8e6ec96e01274e9534c99a09fabf1, type: 3}
   m_PrefabInstance: {fileID: 1360774325}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1832670425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-  m_PrefabInstance: {fileID: 75311205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1834103191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
