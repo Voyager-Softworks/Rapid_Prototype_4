@@ -93,7 +93,7 @@ public class HoverBikeAI : MonoBehaviour
     public void Fire()
     {
         Rigidbody2D b = Instantiate(bullet, barrelPosition.position, barrelPosition.rotation).GetComponent<Rigidbody2D>();
-        b.velocity = (Vector3)rb.velocity + (transform.right * 5.0f);
+        b.velocity = (Vector3)rb.velocity + (transform.right * 10.0f);
     }
 
 
