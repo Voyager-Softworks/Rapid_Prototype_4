@@ -110,6 +110,16 @@ public class TurretAI : MonoBehaviour
             
             
         }
+        if ((m_playerTransform.position - transform.position).x < 0.0f)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            m_facingLeft = true;
+        }
+        else
+        {
+            transform.rotation = Quaternion.identity;
+            m_facingLeft = false;
+        }
         
 
     }

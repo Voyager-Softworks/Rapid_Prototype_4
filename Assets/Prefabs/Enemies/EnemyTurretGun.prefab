@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6112518753676106006}
   - component: {fileID: 5495088872453191176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,9 @@ GameObject:
   - component: {fileID: 5012946572134655473}
   - component: {fileID: 6806701780626800697}
   - component: {fileID: 8775962162723487916}
-  m_Layer: 0
+  - component: {fileID: 5356554738310452892}
+  - component: {fileID: 1225335062392699864}
+  m_Layer: 10
   m_Name: EnemyTurretGun
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -215,6 +217,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5356554738310452892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503313160248691969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3de96285238c429f6fefe9c3ca64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemyType: 4
+  m_health: 200
+  m_elite: 0
+  m_deathPart: {fileID: 0}
+  m_weakTo: 1
+  m_drops: []
+  m_healthBar: {fileID: 0}
+  m_healthBarPREFAB: {fileID: 0}
+--- !u!61 &1225335062392699864
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503313160248691969}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.30914283, y: -0.00000008940697}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.84636545, y: 0.25805718}
+  m_EdgeRadius: 0
 --- !u!1 &3615343330866658307
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2527883103442636745}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7556890659934629443}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7609941279181242646}
   - component: {fileID: 3528397071800401382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Firing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7409160653150549556}
   - component: {fileID: 7024769968947198219}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Turret_Idle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4518498241451846828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
