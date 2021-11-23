@@ -19,6 +19,8 @@ public class Console : MonoBehaviour
     public float m_interactDistance = 2.0f;
     public bool m_canInteract = false;
     public GameObject m_elementToOpen = null;
+    public AudioClip m_openSound = null;
+    public AudioClip m_closeSound = null;
     public bool m_isOpen = false;
 
     private void Start() {
@@ -74,14 +76,16 @@ public class Console : MonoBehaviour
     }
 
     public void OpenElement() {
-        if (m_elementToOpen) {
+        if (m_elementToOpen && !m_isOpen) {
+            GetComponent<AudioSource>().PlayOneShot(m_openSound);
             m_elementToOpen.SetActive(true);
             m_isOpen = true;
         }
     }
 
     public void CloseElement() {
-        if (m_elementToOpen) {
+        if (m_elementToOpen && m_isOpen) {
+            GetComponent<AudioSource>().PlayOneShot(m_closeSound);
             m_elementToOpen.SetActive(false);
             m_isOpen = false;
         }
@@ -89,8 +93,12 @@ public class Console : MonoBehaviour
 
     public void ToggleElement() {
         if (m_elementToOpen) {
-            m_elementToOpen.SetActive(!m_elementToOpen.activeSelf);
-            m_isOpen = m_elementToOpen.activeSelf;
+            if (m_isOpen) {
+                CloseElement();
+            }
+            else {
+                OpenElement();
+            }
         }
     }
 
@@ -112,6 +120,12 @@ public class Console : MonoBehaviour
             {
                 console.AddInteractCanvas();
             }
+
+            //add audiosource button
+            if (GUILayout.Button("Add AudioSource"))
+            {
+                console.AddAudioSource();
+            }
         }
     }
 
@@ -126,6 +140,23 @@ public class Console : MonoBehaviour
 
             //set the text of the canvas to the display name
             m_interactCanvas.GetComponentInChildren<TextMeshProUGUI>().text = m_DisplayName + "\n[E]";
+
+            //save the object
+            EditorUtility.SetDirty(this);
+        }
+    }
+
+    public void AddAudioSource()
+    {
+        //check if there is an AudioSource on this object
+        if (GetComponent<AudioSource>() == null)
+        {
+            //if not, add one
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+            audioSource.spatialBlend = 1.0f;
+            audioSource.minDistance = 1.0f;
+            audioSource.maxDistance = 10.0f;
 
             //save the object
             EditorUtility.SetDirty(this);
