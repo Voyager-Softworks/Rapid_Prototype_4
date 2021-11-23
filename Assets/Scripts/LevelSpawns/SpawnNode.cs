@@ -75,6 +75,7 @@ public class SpawnNode : MonoBehaviour
                     GameObject spawned = Instantiate(spawnables[j].prefab, position, Quaternion.identity);
                     currSpawns[j]++;
                     currDifficulty += spawnables[j].difficultyRating;
+                    cell = Random.Range(0, data.Count);
                     break;
                 }
             }

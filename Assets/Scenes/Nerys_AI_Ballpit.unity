@@ -469,6 +469,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnables:
+  - prefab: {fileID: 607418049224667048, guid: c14b09738085f1399ac95f184eded253, type: 3}
+    probability: 0.5
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 20
   - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
     probability: 0.2
     difficultyRating: 3
