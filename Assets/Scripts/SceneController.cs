@@ -102,9 +102,6 @@ public class SceneController : MonoBehaviour
 
     public void Update()
     {
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            LoadHub();
-        }
+        
     }
 }
