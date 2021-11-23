@@ -24503,11 +24503,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627a07dd39a51e5b7a206730f39ae914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_path: Assets/Resources/Navmesh2D/NavmeshData2D 1.asset
-  m_data: {fileID: 11400000, guid: 6fe024c0032e00b4f979de72c5a4a091, type: 2}
+  m_path: Assets/Resources/Navmesh2D/Level_Wasteland_VAR2_NavmeshData2D.asset
+  m_data: {fileID: 11400000, guid: 8e86da55382a9b140a9ef1b1d18ff50b, type: 2}
   m_origin: {x: -100, y: -7, z: 0}
-  m_width: 231
-  m_height: 21
+  m_width: 242
+  m_height: 20
   m_cellradius: 0.5
 --- !u!1 &1209757664
 GameObject:
@@ -66106,7 +66106,7 @@ Transform:
   m_Children:
   - {fileID: 1311844008}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6061731659434917155
 Camera:
