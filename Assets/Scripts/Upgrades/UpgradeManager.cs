@@ -20,7 +20,10 @@ public class UpgradeManager : MonoBehaviour
         NONE,
         CANNON,
         MINIGUN,
-        RAILGUN
+        RAILGUN,
+        BIOCANNON,
+        SHOTGUN,
+        GUESTKEY
     }
 
     public enum ModuleType {

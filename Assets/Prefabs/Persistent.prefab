@@ -181,6 +181,14 @@ MonoBehaviour:
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
+    - cost:
+      - type: 2
+        amount: 3
+      - type: 1
+        amount: 4
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
   - type: 0
     weaponType: 3
     moduleType: 0
@@ -202,6 +210,22 @@ MonoBehaviour:
       onUpgrade:
         m_PersistentCalls:
           m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
   - type: 0
     weaponType: 2
     moduleType: 0
@@ -215,6 +239,133 @@ MonoBehaviour:
     - type: 1
       amount: 2
     levels:
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+  - type: 0
+    weaponType: 4
+    moduleType: 0
+    unlocked: 0
+    level: 0
+    description: 'Biocannon: *spluck*'
+    icon: {fileID: 9189119915828734018, guid: 27de4ef3a36c9784b98b5097a3a45fce, type: 3}
+    cost:
+    - type: 2
+      amount: 5
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+  - type: 0
+    weaponType: 5
+    moduleType: 0
+    unlocked: 0
+    level: 0
+    description: 'Shotgun: Looks like there is something down the barrel...'
+    icon: {fileID: 4557727860447450751, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+    cost:
+    - type: 2
+      amount: 5
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+  - type: 0
+    weaponType: 6
+    moduleType: 0
+    unlocked: 0
+    level: 0
+    description: 'Guestkey: Why use anything else!'
+    icon: {fileID: 5430957938232941620, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+    cost:
+    - type: 2
+      amount: 5
+    - type: 1
+      amount: 2
+    levels:
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
+    - cost:
+      - type: 2
+        amount: 6
+      - type: 1
+        amount: 3
+      onUpgrade:
+        m_PersistentCalls:
+          m_Calls: []
     - cost:
       - type: 2
         amount: 6
