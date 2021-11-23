@@ -89,6 +89,7 @@ public class TownUpgrades : MonoBehaviour
             town.GetComponent<AudioSource>().Play();
             UpdateMenu();
             UpdateTown();
+            GetComponent<UpgradeManager>().UpdateUpgradeMenu();
         }
 
         if (level >= upgradeLevels.Count) {
