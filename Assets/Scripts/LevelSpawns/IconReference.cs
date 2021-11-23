@@ -101,6 +101,9 @@ public class IconReference : MonoBehaviour
         }
     }
 
+    #endif
+    #endregion
+
     public EnemyIcon GetIcon(EnemyTest.EnemyType enemyType){
         foreach (EnemyIcon enemyIcon in enemyIcons)
         {
@@ -122,7 +125,4 @@ public class IconReference : MonoBehaviour
         }
         return null;
     }
-
-    #endif
-    #endregion
 }

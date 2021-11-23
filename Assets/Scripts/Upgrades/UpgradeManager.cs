@@ -34,6 +34,7 @@ public class UpgradeManager : MonoBehaviour
     }
 
     private Resources resourceManager = null;
+    private IconReference iconReference = null;
     public GameObject player = null;
     private PlayerWeapons playerWeapons = null;
     public WeaponType leftEquippedWeapon = WeaponType.CANNON;
@@ -66,6 +67,7 @@ public class UpgradeManager : MonoBehaviour
         if (!GetComponent<DontDestroy>().CheckValidInstance()) return;
 
         if (resourceManager == null) resourceManager = GetComponent<Resources>();
+        if (iconReference == null) iconReference = GetComponent<IconReference>();
 
         if (scene.name == "Level_Hub")
         {
@@ -301,7 +303,8 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            //TODO change to resource icon
+                            //change resource icon
+                            costImage.sprite = iconReference.GetIcon(cost.type).icon;
 
                             costText.text = cost.amount.ToString();
                         }
@@ -350,7 +353,8 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            //TODO change to resource icon
+                            //change resource icon
+                            costImage.sprite = iconReference.GetIcon(cost.type).icon;
 
                             costText.text = cost.amount.ToString();
                         }
@@ -469,7 +473,8 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            //TODO change to resource icon
+                            //change resource icon
+                            costImage.sprite = iconReference.GetIcon(cost.type).icon;
 
                             costText.text = cost.amount.ToString();
                         }
@@ -513,7 +518,8 @@ public class UpgradeManager : MonoBehaviour
                             TextMeshProUGUI costText = texts[j];
                             costText.enabled = true;
 
-                            //TODO change to resource icon
+                            //change resource icon
+                            costImage.sprite = iconReference.GetIcon(cost.type).icon;
 
                             costText.text = cost.amount.ToString();
                         }
