@@ -2312,7 +2312,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 501089118616100131, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 501089118616100131, guid: 817d887a5f587cd4495b1b76dd4da3be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6121,7 +6121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3437735875824158599, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3437735875824158599, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11143,13 +11143,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 872815411, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6061731658932011850, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
       propertyPath: orthographic size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6061731658932011851, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6061731658932011851, guid: 56100d77ff1d34c44a78f660f305dc1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13609,7 +13613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29138,14 +29142,14 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 6
-  - prefab: {fileID: 0}
-    probability: 0
-    difficultyRating: 0
+  - prefab: {fileID: 4090130041316050396, guid: ab46ec961838c5bd3a1a57bda116d4dc, type: 3}
+    probability: 0.4
+    difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 0
+    maxSpawns: 2
   data: {fileID: 11400000, guid: e11850073aa08884fa19fe4cee9d446b, type: 2}
-  difficultyPoints: 6
-  spawnRadius: 3.71
+  difficultyPoints: 9
+  spawnRadius: 4.84
 --- !u!4 &1573953920
 Transform:
   m_ObjectHideFlags: 0
@@ -33586,8 +33590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627a07dd39a51e5b7a206730f39ae914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_path: Assets/Resources/Navmesh2D/NavmeshData2D 2.asset
-  m_data: {fileID: 11400000, guid: 704a0ca82b856e84eb3c16be619d77c5, type: 2}
+  m_path: Assets/Resources/Navmesh2D/Level_Wasteland_VAR3_NavmeshData2D.asset
+  m_data: {fileID: 11400000, guid: 250f32c0a74bf714f8203d814c7e4374, type: 2}
   m_origin: {x: -103, y: -11, z: 0}
   m_width: 220
   m_height: 20
@@ -39425,7 +39429,7 @@ Transform:
   - {fileID: 1774506154}
   - {fileID: 324149486}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091750323
 GameObject:
