@@ -670,6 +670,17 @@ public class BountyManager : MonoBehaviour
                         int killTarget = killCond.GetTargetKills();
                         missionPanel.count.GetComponent<TextMeshProUGUI>().text = killAmount.ToString() + "\n" + killTarget.ToString();
                         break;
+                    case BountyType.ELITE:
+                        //elite stats
+                        //cast the condition to elite kills
+                        Bounty.Condition_Kills eliteCond = (Bounty.Condition_Kills)bounty.conditions[0];
+                        //update icon
+                        missionPanel.icon.GetComponent<Image>().sprite = iconReference.GetIcon(eliteCond.enemyType).icon;
+                        //update amount
+                        int eliteAmount = eliteCond.GetCompletedKills(true);
+                        int eliteTarget = eliteCond.GetTargetKills();
+                        missionPanel.count.GetComponent<TextMeshProUGUI>().text = eliteAmount.ToString() + "\n" + eliteTarget.ToString();
+                        break;
                 }
             }
             else

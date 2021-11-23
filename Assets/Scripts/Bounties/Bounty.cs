@@ -58,13 +58,14 @@ public class Bounty
             }
         }
 
-        public int GetCompletedKills()
+        public int GetCompletedKills(bool isElite = false)
         {
             GameObject stats = GameObject.Find("Persistent");
             if (stats){
                 PlayerStats ps = stats.GetComponent<PlayerStats>();
                 if (ps){
-                    int totalKills = ps.GetKills(enemyType, false);
+                    int totalKills = 0;
+                    if (!isElite) totalKills += ps.GetKills(enemyType, false);
                     totalKills += ps.GetKills(enemyType, true);
                     int killsCompleted = totalKills - startKills;
                     return killsCompleted;
