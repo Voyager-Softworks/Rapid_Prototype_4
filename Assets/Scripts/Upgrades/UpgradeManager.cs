@@ -475,7 +475,7 @@ public class UpgradeManager : MonoBehaviour
                         }
                     }
                 }
-                else if (upgrade.levels.Count > upgrade.level)
+                else if (upgrade.levels.Count > upgrade.level && GetComponent<TownUpgrades>().level > upgrade.level)
                 {
                     buttonText.text = "UPGRADE";
 
@@ -520,10 +520,22 @@ public class UpgradeManager : MonoBehaviour
                     }
 
                 }
-                else
+                else if (upgrade.levels.Count <= upgrade.level)
                 {
                     //if the weapon is fully upgraded
                     buttonText.text = "MAXED";
+
+                    //disable images
+                    for (int j = 0; j < images.Count; j++)
+                    {
+                        Image costImage = images[j];
+                        costImage.enabled = false;
+                        TextMeshProUGUI costText = texts[j];
+                        costText.enabled = false;
+                    }
+                }
+                else{
+                    buttonText.text = "UPGRADE TOWN";
 
                     //disable images
                     for (int j = 0; j < images.Count; j++)
