@@ -131,7 +131,9 @@ public class LevelManager : MonoBehaviour
 
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() => {
-                sceneController.LoadLevel(bountyManager.activeBounties[0].levelType);
+                //find teleporthome script
+                TeleportHome teleportHome = GameObject.FindObjectOfType<TeleportHome>();
+                teleportHome.TeleportOut(bountyManager.activeBounties[0].levelType);
             });
             buttonText.text = "START";
             button.interactable = true;

@@ -1738,7 +1738,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2e9b071978f744fb18dd8f0e20276d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1
+  holdTime: 5
+  outDelay: 2
+  inDelay: 2
+  holdPrefab: {fileID: 2240376982557400333, guid: 506df202aeb080546a724ae7212e3bd6, type: 3}
+  outPrefab: {fileID: 2240376982557400333, guid: c0ee3975bc20acc4290d88c167fd1673, type: 3}
+  inPrefab: {fileID: 1481440382649509202, guid: 5c3d0c91f56a9fe439b4f162fcefa166, type: 3}
 --- !u!1 &5312238161658561860
 GameObject:
   m_ObjectHideFlags: 0

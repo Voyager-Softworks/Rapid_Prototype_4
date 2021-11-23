@@ -142,7 +142,7 @@ public class EnemyTest : MonoBehaviour
 
     public void Die()
     {
-        GameObject persistent = GameObject.Find("Persistent");
+        GameObject persistent = DontDestroy.instance;
         if (persistent){
             PlayerStats stats = persistent.GetComponent<PlayerStats>();
             if (stats)
