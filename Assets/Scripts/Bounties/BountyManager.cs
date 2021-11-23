@@ -622,11 +622,13 @@ public class BountyManager : MonoBehaviour
         {
             if (activeBounties.Count > 0)
             {
-                missionPanel.gameObject.SetActive(true);
-                missionPanel.type.GetComponent<TextMeshProUGUI>().text = activeBounties[0].bountyType.ToString();
-                missionPanel.level.GetComponent<TextMeshProUGUI>().text = activeBounties[0].levelType.ToString();
+                Bounty bounty = activeBounties[0];
 
-                if (selectedBounty.conditions.Count > 0 && selectedBounty.conditions[0].isComplete){
+                missionPanel.gameObject.SetActive(true);
+                missionPanel.type.GetComponent<TextMeshProUGUI>().text = bounty.bountyType.ToString();
+                missionPanel.level.GetComponent<TextMeshProUGUI>().text = bounty.levelType.ToString();
+
+                if (bounty.conditions.Count > 0 && bounty.conditions[0].isComplete){
                     missionPanel.GetComponent<Image>().color = Color.green;
                 }
                 else {
@@ -638,7 +640,7 @@ public class BountyManager : MonoBehaviour
                     case BountyType.BOSS:
                         //boss stats
                         //cast the condition to boss kills
-                        Bounty.Condition_Kills bossCond = (Bounty.Condition_Kills)selectedBounty.conditions[0];
+                        Bounty.Condition_Kills bossCond = (Bounty.Condition_Kills)bounty.conditions[0];
                         //update icon
                         missionPanel.icon.GetComponent<Image>().sprite = iconReference.GetIcon(bossCond.enemyType).icon;
                         //update amount
@@ -649,7 +651,7 @@ public class BountyManager : MonoBehaviour
                     case BountyType.COLLECT:
                         //collect stats
                         //cast the condition to collect
-                        Bounty.Condition_Collect collectCond = (Bounty.Condition_Collect)selectedBounty.conditions[0];
+                        Bounty.Condition_Collect collectCond = (Bounty.Condition_Collect)bounty.conditions[0];
                         //update icon
                         missionPanel.icon.GetComponent<Image>().sprite = iconReference.GetIcon(collectCond.itemType).icon;
                         //update amount
@@ -660,7 +662,7 @@ public class BountyManager : MonoBehaviour
                     case BountyType.KILL:
                         //kill stats
                         //cast the condition to kill
-                        Bounty.Condition_Kills killCond = (Bounty.Condition_Kills)selectedBounty.conditions[0];
+                        Bounty.Condition_Kills killCond = (Bounty.Condition_Kills)bounty.conditions[0];
                         //update icon
                         missionPanel.icon.GetComponent<Image>().sprite = iconReference.GetIcon(killCond.enemyType).icon;
                         //update amount
