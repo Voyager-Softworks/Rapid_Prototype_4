@@ -6431,7 +6431,7 @@ PrefabInstance:
     - target: {fileID: 5203168192554026397, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_text
       value: 
-      objectReference: {fileID: 1832670425}
+      objectReference: {fileID: 0}
     - target: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -69583,17 +69583,6 @@ Transform:
   m_Father: {fileID: 371556987}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1832670425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6688422379020023368, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
-  m_PrefabInstance: {fileID: 75311205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1834103191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312238160630991543, guid: 5937a35cea5582a48a30fe3e7c2a94fa, type: 3}
@@ -73232,6 +73221,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1031842131}
     m_Modifications:
+    - target: {fileID: 9059614262717799010, guid: 0c0b47fe8db0dd74fa5c4441021d1ace, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.585
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059614262717799010, guid: 0c0b47fe8db0dd74fa5c4441021d1ace, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059614262717799010, guid: 0c0b47fe8db0dd74fa5c4441021d1ace, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 148
+      objectReference: {fileID: 0}
     - target: {fileID: 9059614262717799036, guid: 0c0b47fe8db0dd74fa5c4441021d1ace, type: 3}
       propertyPath: m_Name
       value: spotlight

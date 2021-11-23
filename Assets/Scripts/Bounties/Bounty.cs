@@ -58,11 +58,31 @@ public class Bounty
             }
         }
 
-        public override bool CheckComplete()
+        public int GetCompletedKills()
         {
             GameObject stats = GameObject.Find("Persistent");
             if (stats){
                 PlayerStats ps = stats.GetComponent<PlayerStats>();
+                if (ps){
+                    int totalKills = ps.GetKills(enemyType, false);
+                    totalKills += ps.GetKills(enemyType, true);
+                    int killsCompleted = totalKills - startKills;
+                    return killsCompleted;
+                }
+            }
+            return 0;
+        }
+
+        public int GetTargetKills()
+        {
+            return targetValue;
+        }
+
+        public override bool CheckComplete()
+        {
+            GameObject pers = GameObject.Find("Persistent");
+            if (pers){
+                PlayerStats ps = pers.GetComponent<PlayerStats>();
                 if (ps){
                     int kills = 0;
                     if (!isEliteOnly) kills += ps.GetKills(enemyType, false);
@@ -95,6 +115,23 @@ public class Bounty
         public override void Start()
         {
             base.Start();
+        }
+
+        public int GetCompletedAmount()
+        {
+            GameObject pers = GameObject.Find("Persistent");
+            if (pers){
+                Resources rcrs = pers.GetComponent<Resources>();
+                if (rcrs){
+                    return rcrs.GetResourceCount(itemType);
+                }
+            }
+            return 0;
+        }
+
+        public int GetTargetAmount()
+        {
+            return targetAmount;
         }
 
         public override bool CheckComplete()

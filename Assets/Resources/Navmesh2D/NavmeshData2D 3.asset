@@ -27205,16 +27205,16 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 1
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 93, y: 24}
     m_position: {x: 69.5, y: -2.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 1
+  - m_traversable: 0
+    m_walkable: 0
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 94, y: 24}
     m_position: {x: 70.5, y: -2.5, z: 0}
@@ -27320,9 +27320,9 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 1
+  - m_traversable: 0
+    m_walkable: 0
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 106, y: 24}
     m_position: {x: 82.5, y: -2.5, z: 0}
@@ -27331,7 +27331,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 1
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 107, y: 24}
     m_position: {x: 83.5, y: -2.5, z: 0}
@@ -28303,16 +28303,16 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 93, y: 25}
     m_position: {x: 69.5, y: -1.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 94, y: 25}
     m_position: {x: 70.5, y: -1.5, z: 0}
@@ -28418,9 +28418,9 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 106, y: 25}
     m_position: {x: 82.5, y: -1.5, z: 0}
@@ -28429,7 +28429,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 107, y: 25}
     m_position: {x: 83.5, y: -1.5, z: 0}
@@ -29365,7 +29365,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 89, y: 26}
     m_position: {x: 65.5, y: -0.5, z: 0}
@@ -29401,7 +29401,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 93, y: 26}
     m_position: {x: 69.5, y: -0.5, z: 0}
@@ -29409,8 +29409,8 @@ MonoBehaviour:
     m_g: 0
     m_h: 0
   - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
+    m_walkable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 94, y: 26}
     m_position: {x: 70.5, y: -0.5, z: 0}
@@ -29428,15 +29428,15 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 1
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 96, y: 26}
     m_position: {x: 72.5, y: -0.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 97, y: 26}
@@ -29444,9 +29444,9 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 1
+  - m_traversable: 0
+    m_walkable: 0
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 98, y: 26}
     m_position: {x: 74.5, y: -0.5, z: 0}
@@ -29480,17 +29480,17 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 1
+  - m_traversable: 0
+    m_walkable: 0
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 102, y: 26}
     m_position: {x: 78.5, y: -0.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 103, y: 26}
@@ -29500,7 +29500,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 1
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 104, y: 26}
     m_position: {x: 80.5, y: -0.5, z: 0}
@@ -29517,8 +29517,8 @@ MonoBehaviour:
     m_g: 0
     m_h: 0
   - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
+    m_walkable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 106, y: 26}
     m_position: {x: 82.5, y: -0.5, z: 0}
@@ -29527,7 +29527,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 107, y: 26}
     m_position: {x: 83.5, y: -0.5, z: 0}
@@ -30461,9 +30461,9 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 89, y: 27}
     m_position: {x: 65.5, y: 0.5, z: 0}
@@ -30472,7 +30472,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 90, y: 27}
     m_position: {x: 66.5, y: 0.5, z: 0}
@@ -30526,14 +30526,14 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 96, y: 27}
     m_position: {x: 72.5, y: 0.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -30542,9 +30542,9 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 98, y: 27}
     m_position: {x: 74.5, y: 0.5, z: 0}
@@ -30578,16 +30578,16 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 102, y: 27}
     m_position: {x: 78.5, y: 0.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -30598,7 +30598,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 104, y: 27}
     m_position: {x: 80.5, y: 0.5, z: 0}
@@ -31489,15 +31489,15 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 1
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 81, y: 28}
     m_position: {x: 57.5, y: 1.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 82, y: 28}
@@ -31505,8 +31505,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 83, y: 28}
@@ -31514,8 +31514,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 84, y: 28}
@@ -31523,8 +31523,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 85, y: 28}
@@ -31532,8 +31532,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 86, y: 28}
@@ -31541,8 +31541,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 87, y: 28}
@@ -31550,8 +31550,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
-    m_walkable: 1
+  - m_traversable: 0
+    m_walkable: 0
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 88, y: 28}
@@ -31560,8 +31560,8 @@ MonoBehaviour:
     m_g: 0
     m_h: 0
   - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 0
+    m_walkable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 89, y: 28}
     m_position: {x: 65.5, y: 1.5, z: 0}
@@ -31570,7 +31570,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 90, y: 28}
     m_position: {x: 66.5, y: 1.5, z: 0}
@@ -31624,14 +31624,14 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 96, y: 28}
     m_position: {x: 72.5, y: 1.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -31640,9 +31640,9 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 98, y: 28}
     m_position: {x: 74.5, y: 1.5, z: 0}
@@ -31676,16 +31676,16 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 102, y: 28}
     m_position: {x: 78.5, y: 1.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -31696,7 +31696,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 104, y: 28}
     m_position: {x: 80.5, y: 1.5, z: 0}
@@ -32587,14 +32587,14 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 81, y: 29}
     m_position: {x: 57.5, y: 2.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -32603,7 +32603,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -32612,7 +32612,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -32621,7 +32621,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -32630,7 +32630,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -32639,7 +32639,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -32648,7 +32648,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -32659,7 +32659,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 89, y: 29}
     m_position: {x: 65.5, y: 2.5, z: 0}
@@ -32722,7 +32722,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 96, y: 29}
     m_position: {x: 72.5, y: 2.5, z: 0}
@@ -32730,7 +32730,7 @@ MonoBehaviour:
     m_g: 0
     m_h: 0
   - m_traversable: 1
-    m_walkable: 0
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 97, y: 29}
@@ -32739,8 +32739,8 @@ MonoBehaviour:
     m_g: 0
     m_h: 0
   - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
+    m_walkable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 98, y: 29}
     m_position: {x: 74.5, y: 2.5, z: 0}
@@ -32775,8 +32775,8 @@ MonoBehaviour:
     m_g: 0
     m_h: 0
   - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
+    m_walkable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 102, y: 29}
     m_position: {x: 78.5, y: 2.5, z: 0}
@@ -32784,7 +32784,7 @@ MonoBehaviour:
     m_g: 0
     m_h: 0
   - m_traversable: 1
-    m_walkable: 0
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 103, y: 29}
@@ -32794,7 +32794,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 104, y: 29}
     m_position: {x: 80.5, y: 2.5, z: 0}
@@ -34711,7 +34711,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
     m_index: {x: 73, y: 31}
     m_position: {x: 49.5, y: 4.5, z: 0}
@@ -35807,7 +35807,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -35816,7 +35816,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -35825,7 +35825,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -35834,7 +35834,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -35843,7 +35843,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -35852,7 +35852,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -35861,7 +35861,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 1
+  - m_traversable: 0
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -35872,7 +35872,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 80, y: 32}
     m_position: {x: 56.5, y: 5.5, z: 0}
@@ -35881,7 +35881,7 @@ MonoBehaviour:
     m_h: 0
   - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 81, y: 32}
     m_position: {x: 57.5, y: 5.5, z: 0}
@@ -36968,26 +36968,26 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 80, y: 33}
     m_position: {x: 56.5, y: 6.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
-    m_climbable: 0
+    m_climbable: 1
     m_hazard: 0
     m_index: {x: 81, y: 33}
     m_position: {x: 57.5, y: 6.5, z: 0}
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
-    m_walkable: 0
+  - m_traversable: 1
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 82, y: 33}
@@ -36995,8 +36995,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
-    m_walkable: 0
+  - m_traversable: 1
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 83, y: 33}
@@ -37004,8 +37004,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
-    m_walkable: 0
+  - m_traversable: 1
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 84, y: 33}
@@ -37013,8 +37013,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
-    m_walkable: 0
+  - m_traversable: 1
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 85, y: 33}
@@ -37022,8 +37022,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
-    m_walkable: 0
+  - m_traversable: 1
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 86, y: 33}
@@ -37031,8 +37031,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
-    m_walkable: 0
+  - m_traversable: 1
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 87, y: 33}
@@ -37040,8 +37040,8 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
-    m_walkable: 0
+  - m_traversable: 1
+    m_walkable: 1
     m_climbable: 0
     m_hazard: 0
     m_index: {x: 88, y: 33}
@@ -38066,7 +38066,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38075,7 +38075,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38084,7 +38084,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38093,7 +38093,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38102,7 +38102,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38111,7 +38111,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38120,7 +38120,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38129,7 +38129,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
@@ -38138,7 +38138,7 @@ MonoBehaviour:
     m_f: 0
     m_g: 0
     m_h: 0
-  - m_traversable: 0
+  - m_traversable: 1
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0

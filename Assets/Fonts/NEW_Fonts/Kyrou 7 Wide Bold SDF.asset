@@ -915,6 +915,20 @@ MonoBehaviour:
       m_Height: 79
     m_Scale: 1
     m_AtlasIndex: 0
+  - m_Index: 77
+    m_Metrics:
+      m_Width: 78.75
+      m_Height: 56.25
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 56.25
+      m_HorizontalAdvance: 90
+    m_GlyphRect:
+      m_X: 424
+      m_Y: 479
+      m_Width: 79
+      m_Height: 57
+    m_Scale: 1
+    m_AtlasIndex: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -1151,6 +1165,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 51
     m_GlyphIndex: 13
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 117
+    m_GlyphIndex: 77
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: -6390695646428774895}
@@ -1389,6 +1407,10 @@ MonoBehaviour:
     m_Y: 468
     m_Width: 109
     m_Height: 98
+  - m_X: 414
+    m_Y: 469
+    m_Width: 98
+    m_Height: 76
   m_FreeGlyphRects:
   - m_X: 109
     m_Y: 96
@@ -1490,14 +1512,6 @@ MonoBehaviour:
     m_Y: 566
     m_Width: 959
     m_Height: 457
-  - m_X: 414
-    m_Y: 469
-    m_Width: 98
-    m_Height: 554
-  - m_X: 294
-    m_Y: 491
-    m_Width: 218
-    m_Height: 532
   - m_X: 621
     m_Y: 468
     m_Width: 23
@@ -1506,9 +1520,17 @@ MonoBehaviour:
     m_Y: 565
     m_Width: 402
     m_Height: 458
+  - m_X: 294
+    m_Y: 491
+    m_Width: 120
+    m_Height: 532
+  - m_X: 174
+    m_Y: 545
+    m_Width: 338
+    m_Height: 478
   - m_X: 174
     m_Y: 522
-    m_Width: 338
+    m_Width: 240
     m_Height: 501
   m_fontInfo:
     Name: 
@@ -1731,6 +1753,21 @@ MonoBehaviour:
           m_YAdvance: 0
       m_SecondAdjustmentRecord:
         m_GlyphIndex: 81
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: 0
+          m_YAdvance: 0
+      m_FeatureLookupFlags: 0
+    - m_FirstAdjustmentRecord:
+        m_GlyphIndex: 44
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: -11.25
+          m_YAdvance: 0
+      m_SecondAdjustmentRecord:
+        m_GlyphIndex: 77
         m_GlyphValueRecord:
           m_XPlacement: 0
           m_YPlacement: 0
