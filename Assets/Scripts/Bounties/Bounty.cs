@@ -52,7 +52,8 @@ public class Bounty
             if (stats){
                 PlayerStats ps = stats.GetComponent<PlayerStats>();
                 if (ps){
-                    startKills = ps.GetKills(enemyType, false);
+                    startKills = 0;
+                    if (!isEliteOnly) startKills += ps.GetKills(enemyType, false);
                     startKills += ps.GetKills(enemyType, true);
                 }
             }

@@ -241,7 +241,7 @@ public class BountyManager : MonoBehaviour
         return null;
     }
 
-    void UpdateBoard()
+    public void UpdateBoard()
     {
         //loop through all the mission buttons, and update them with the bounties
         for (int i = 0; i < bountyBoard.missionButtons.Count; i++)
@@ -581,6 +581,7 @@ public class BountyManager : MonoBehaviour
                         if (!resourceManager.TryConsumeResources(toCollectList)){
                             //update the board
                             UpdateBoard();
+                            selectedBounty = null;
                             return;
                         }
                     break;

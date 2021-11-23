@@ -80,6 +80,13 @@ public class Console : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(m_openSound);
             m_elementToOpen.SetActive(true);
             m_isOpen = true;
+
+            if (GameObject.FindObjectOfType<UpgradeManager>()) {
+                GameObject.FindObjectOfType<UpgradeManager>().UpdateUpgradeMenu();
+            }
+            if (GameObject.FindObjectOfType<BountyManager>()) {
+                GameObject.FindObjectOfType<BountyManager>().UpdateBoard();
+            }
         }
     }
 
