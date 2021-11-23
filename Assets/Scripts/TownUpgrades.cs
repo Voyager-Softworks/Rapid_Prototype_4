@@ -13,6 +13,7 @@ public class TownUpgrades : MonoBehaviour
     private Town town = null;
     public GameObject player = null;
 
+    [SerializeField]
     public int level = 0;
     public List<UpgradeLevel> upgradeLevels = new List<UpgradeLevel>();
 
