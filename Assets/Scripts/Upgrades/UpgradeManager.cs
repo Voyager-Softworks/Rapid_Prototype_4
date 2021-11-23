@@ -215,7 +215,7 @@ public class UpgradeManager : MonoBehaviour
                 //get the icon
                 Image icon = upgradeItem.transform.GetChild(0).GetComponent<Image>();
                 //set the icon to the upgrade icon
-                icon.sprite = upgrade.icon;
+                icon.sprite = iconReference.GetIcon(upgrade.weaponType).icon;
                 
                 
                 //get equip buttons
@@ -431,7 +431,7 @@ public class UpgradeManager : MonoBehaviour
                 //get the icon
                 Image icon = upgradeItem.transform.GetChild(0).GetComponent<Image>();
                 //set the icon to the upgrade icon
-                icon.sprite = upgrade.icon;
+                icon.sprite = iconReference.GetIcon(upgrade.moduleType).icon;
 
                 //get upgrade button
                 Button button = upgradeItem.GetComponentInChildren<Button>();

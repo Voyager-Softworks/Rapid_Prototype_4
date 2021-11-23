@@ -15,14 +15,29 @@ public class IconReference : MonoBehaviour
         [SerializeField] public EnemyTest.EnemyType enemyType;
         [SerializeField] public Sprite icon;
     }
+
     [Serializable]
     public class ResourceIcon{
         [SerializeField] public Resources.ResourceType resourceType;
         [SerializeField] public Sprite icon;
     }
 
+    [Serializable]
+    public class WeaponIcon{
+        [SerializeField] public UpgradeManager.WeaponType weaponType;
+        [SerializeField] public Sprite icon;
+    }
+
+    [Serializable]
+    public class ModuleIcon{
+        [SerializeField] public UpgradeManager.ModuleType moduleType;
+        [SerializeField] public Sprite icon;
+    }
+
     [SerializeField] public List<EnemyIcon> enemyIcons;
     [SerializeField] public List<ResourceIcon> resourceIcons;
+    [SerializeField] public List<WeaponIcon> weaponIcons;
+    [SerializeField] public List<ModuleIcon> moduleIcons;
 
     #region Editor Stuff
     public GameObject InteractCanvasPrefab;
@@ -64,6 +79,32 @@ public class IconReference : MonoBehaviour
                 EditorGUILayout.EndHorizontal();
             }
 
+            //header for weapon icons
+            EditorGUILayout.LabelField("Weapon Icons", EditorStyles.boldLabel);
+
+            //display all the icons in the list, with the weapon type not ediatble, and the icon editable
+            for (int i = 0; i < myScript.weaponIcons.Count; i++)
+            {
+                EditorGUILayout.BeginHorizontal();
+                //text for the weapon type
+                EditorGUILayout.LabelField(myScript.weaponIcons[i].weaponType.ToString());
+                myScript.weaponIcons[i].icon = (Sprite)EditorGUILayout.ObjectField(myScript.weaponIcons[i].icon, typeof(Sprite), false);
+                EditorGUILayout.EndHorizontal();
+            }
+
+            //header for module icons
+            EditorGUILayout.LabelField("Module Icons", EditorStyles.boldLabel);
+
+            //display all the icons in the list, with the module type not ediatble, and the icon editable
+            for (int i = 0; i < myScript.moduleIcons.Count; i++)
+            {
+                EditorGUILayout.BeginHorizontal();
+                //text for the module type
+                EditorGUILayout.LabelField(myScript.moduleIcons[i].moduleType.ToString());
+                myScript.moduleIcons[i].icon = (Sprite)EditorGUILayout.ObjectField(myScript.moduleIcons[i].icon, typeof(Sprite), false);
+                EditorGUILayout.EndHorizontal();
+            }
+
             //if anytihng is changed, save the changes
             if (GUI.changed)
             {
@@ -99,6 +140,26 @@ public class IconReference : MonoBehaviour
                 resourceIcons.Add(new ResourceIcon() { resourceType = resourceType, icon = null });
             }
         }
+
+        //weapons
+        foreach (UpgradeManager.WeaponType weaponType in Enum.GetValues(typeof(UpgradeManager.WeaponType)))
+        {
+            //check if there is an icon for this weapon type
+            if (GetIcon(weaponType) == null)
+            {
+                weaponIcons.Add(new WeaponIcon() { weaponType = weaponType, icon = null });
+            }
+        }
+
+        //modules
+        foreach (UpgradeManager.ModuleType moduleType in Enum.GetValues(typeof(UpgradeManager.ModuleType)))
+        {
+            //check if there is an icon for this module type
+            if (GetIcon(moduleType) == null)
+            {
+                moduleIcons.Add(new ModuleIcon() { moduleType = moduleType, icon = null });
+            }
+        }
     }
 
     #endif
@@ -121,6 +182,28 @@ public class IconReference : MonoBehaviour
             if (resourceIcon.resourceType == resourceType)
             {
                 return resourceIcon;
+            }
+        }
+        return null;
+    }
+
+    public WeaponIcon GetIcon(UpgradeManager.WeaponType weaponType){
+        foreach (WeaponIcon weaponIcon in weaponIcons)
+        {
+            if (weaponIcon.weaponType == weaponType)
+            {
+                return weaponIcon;
+            }
+        }
+        return null;
+    }
+
+    public ModuleIcon GetIcon(UpgradeManager.ModuleType moduleType){
+        foreach (ModuleIcon moduleIcon in moduleIcons)
+        {
+            if (moduleIcon.moduleType == moduleType)
+            {
+                return moduleIcon;
             }
         }
         return null;
