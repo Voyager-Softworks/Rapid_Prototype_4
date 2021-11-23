@@ -95,7 +95,7 @@ public class LevelManager : MonoBehaviour
         return description;
     }
 
-    private void UpdateMenu()
+    public void UpdateMenu()
     {
         if (teleportMenu == null) return;
 
