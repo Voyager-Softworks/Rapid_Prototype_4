@@ -75,16 +75,17 @@ public class Navmesh2DAgent : MonoBehaviour
                 
                 if (IsWallInFront() && climbforce.magnitude >= 0.1f)
                 {
-                    if(target.y > transform.position.y)
+                    if(m_currentPath[0].y > transform.position.y)
                     {
                         m_rb.AddForce(-Physics2D.gravity * 2.0f);
+                        m_anim.SetBool("IsClimbing", true);
                         m_rb.AddForce(climbforce * 15.0f);
                     }
                     else
                     {
                         m_rb.AddForce(-Physics2D.gravity * 0.4f);
                     }
-                    m_anim.SetBool("IsClimbing", true);
+                    
                 }
                 
                 
@@ -127,7 +128,7 @@ public class Navmesh2DAgent : MonoBehaviour
                     transform.rotation = Quaternion.identity;
                 }
             }
-            else if (!m_rotateToTarget)
+            else if (!m_rotateToTarget && IsWallInFront() && m_currentPath[0].y > transform.position.y)
             {
                 if (climbforce.x > 0.0f)
                 {
