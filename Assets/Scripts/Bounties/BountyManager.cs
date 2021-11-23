@@ -37,6 +37,7 @@ public class BountyManager : MonoBehaviour
 
     [Header("Board")]
     public BountyBoard bountyBoard = null;
+    public MissionPanel missionPanel = null;
 
     [Header("Bounties")]
     public List<Bounty> inactiveBounties = new List<Bounty>(){};
@@ -71,6 +72,7 @@ public class BountyManager : MonoBehaviour
         if (levelManager == null) levelManager = GetComponent<LevelManager>();
         if (iconReference == null) iconReference = GetComponent<IconReference>();
         if (playerStats == null) playerStats = GetComponent<PlayerStats>();
+        if (missionPanel == null) missionPanel = GameObject.FindObjectOfType<MissionPanel>();
 
         //if any active, select them automatically
         if (activeBounties.Count > 0) {
@@ -611,6 +613,68 @@ public class BountyManager : MonoBehaviour
     void Update()
     {
         CheckConditions();
+        UpdateMissionUI();
+    }
+
+    private void UpdateMissionUI()
+    {
+        if (missionPanel)
+        {
+            if (activeBounties.Count > 0)
+            {
+                missionPanel.gameObject.SetActive(true);
+                missionPanel.type.GetComponent<TextMeshProUGUI>().text = activeBounties[0].bountyType.ToString();
+                missionPanel.level.GetComponent<TextMeshProUGUI>().text = activeBounties[0].levelType.ToString();
+
+                if (selectedBounty.conditions.Count > 0 && selectedBounty.conditions[0].isComplete){
+                    missionPanel.GetComponent<Image>().color = Color.green;
+                }
+                else {
+                    missionPanel.GetComponent<Image>().color = Color.white;
+                }
+
+                switch (activeBounties[0].bountyType)
+                {
+                    case BountyType.BOSS:
+                        //boss stats
+                        //cast the condition to boss kills
+                        Bounty.Condition_Kills bossCond = (Bounty.Condition_Kills)selectedBounty.conditions[0];
+                        //update icon
+                        missionPanel.icon.GetComponent<Image>().sprite = iconReference.GetIcon(bossCond.enemyType).icon;
+                        //update amount
+                        int bossKillsCompleted = bossCond.GetCompletedKills();
+                        int bossKillsTarget = bossCond.GetTargetKills();
+                        missionPanel.count.GetComponent<TextMeshProUGUI>().text = bossKillsCompleted.ToString() + "\n" + bossKillsTarget.ToString();
+                        break;
+                    case BountyType.COLLECT:
+                        //collect stats
+                        //cast the condition to collect
+                        Bounty.Condition_Collect collectCond = (Bounty.Condition_Collect)selectedBounty.conditions[0];
+                        //update icon
+                        missionPanel.icon.GetComponent<Image>().sprite = iconReference.GetIcon(collectCond.itemType).icon;
+                        //update amount
+                        int collectAmount = collectCond.GetCompletedAmount();
+                        int collectTarget = collectCond.GetTargetAmount();
+                        missionPanel.count.GetComponent<TextMeshProUGUI>().text = collectAmount.ToString() + "\n" + collectTarget.ToString();
+                        break;
+                    case BountyType.KILL:
+                        //kill stats
+                        //cast the condition to kill
+                        Bounty.Condition_Kills killCond = (Bounty.Condition_Kills)selectedBounty.conditions[0];
+                        //update icon
+                        missionPanel.icon.GetComponent<Image>().sprite = iconReference.GetIcon(killCond.enemyType).icon;
+                        //update amount
+                        int killAmount = killCond.GetCompletedKills();
+                        int killTarget = killCond.GetTargetKills();
+                        missionPanel.count.GetComponent<TextMeshProUGUI>().text = killAmount.ToString() + "\n" + killTarget.ToString();
+                        break;
+                }
+            }
+            else
+            {
+                missionPanel.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void CheckConditions(){
