@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(Navmesh2D))]
 public class Navmesh2D_Editor : Editor
@@ -21,7 +22,7 @@ public class Navmesh2D_Editor : Editor
             navmesh.GenerateNavmesh();
 
 
-            AssetDatabase.CreateAsset(navmesh.m_data, AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/Navmesh2D/NavmeshData2D.asset"));
+            AssetDatabase.CreateAsset(navmesh.m_data, AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/Navmesh2D/" + EditorSceneManager.GetActiveScene().name + "_NavmeshData2D.asset"));
             navmesh.m_path = AssetDatabase.GetAssetPath(navmesh.m_data);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();

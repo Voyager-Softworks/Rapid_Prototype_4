@@ -56,7 +56,7 @@ public class LazerHazard : MonoBehaviour
             RaycastHit2D r = Physics2D.BoxCast(m_beamSprite.transform.position, m_beamSprite.transform.localScale, 0.0f, Vector2.zero, 0.0f, LayerMask.GetMask("Player"));
             if(r && r.collider.gameObject.GetComponent<PlayerHealth>() != null)
             {
-                r.collider.gameObject.GetComponent<PlayerHealth>().Damage(m_lazerDPS * Time.deltaTime);
+                r.collider.gameObject.GetComponent<PlayerHealth>().Damage(m_lazerDPS * Time.deltaTime * m_beamCurve.Evaluate(m_lazerTimer / m_lazerDuration));
             }
             
 
