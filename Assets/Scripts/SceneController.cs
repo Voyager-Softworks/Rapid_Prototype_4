@@ -83,7 +83,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadValt()
     {
-        SceneManager.LoadScene("Level_Vault_VAR" + Random.Range(1, 2));
+        SceneManager.LoadScene("Level_Vault_VAR" + Random.Range(1, 3));
     }
 
     public void LoadWin()
@@ -102,6 +102,9 @@ public class SceneController : MonoBehaviour
 
     public void Update()
     {
-
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            LoadHub();
+        }
     }
 }

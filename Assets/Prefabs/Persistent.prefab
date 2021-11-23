@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3437735875824158598}
   - component: {fileID: 124964506}
   - component: {fileID: 1027871813}
+  - component: {fileID: 1729557129}
   m_Layer: 0
   m_Name: Persistent
   m_TagString: Untagged
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bountyBoard: {fileID: 0}
+  missionPanel: {fileID: 0}
   inactiveBounties: []
   activeBounties: []
   completedBounties: []
@@ -410,3 +412,15 @@ MonoBehaviour:
   - resourceType: 3
     icon: {fileID: -146732267720400147, guid: a0236a4824ea07547946c7e8f8c0ed66, type: 3}
   InteractCanvasPrefab: {fileID: 0}
+--- !u!114 &1729557129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437735875824158597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f33a99e68262446a2ccbaef7eb03a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
