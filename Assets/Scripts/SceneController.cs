@@ -102,20 +102,6 @@ public class SceneController : MonoBehaviour
 
     public void Update()
     {
-        if (Keyboard.current.numpad0Key.wasPressedThisFrame)
-        {
-            LoadMenu();
-        }
-
-        if (Keyboard.current.numpad1Key.wasPressedThisFrame)
-        {
-            LoadLevel(LevelManager.LevelType.HUB);
-        }
-
-        if (Keyboard.current.numpad2Key.wasPressedThisFrame)
-        {
-            LoadLevel(LevelManager.LevelType.WASTELAND);
-        }
 
     }
 }

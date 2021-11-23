@@ -16,25 +16,55 @@ public class PlayerHealth : MonoBehaviour
     public float m_deathTimer = 2.0f;
     public float m_playerHealth;
     // Start is called before the first frame update
+
+    private GameObject persistent = null;
     void Start()
     {
+        if (!persistent)
+        {
+           persistent = DontDestroy.instance;
+        }
 
+        m_deathTimer = 2.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_dead && m_deathTimer > 0.0f) m_deathTimer -= Time.deltaTime;
-        else if (m_dead)
+        if (!m_dead && m_playerHealth <= 0.0f)
         {
-            m_dead = false;
-            GetComponent<Animator>().SetBool("Dead", false);
-            //TODO drop resources on death?
-            transform.position = m_respawnPos.position;
-            m_playerHealth = 100.0f;
-            m_deathTimer = 2.0f;
-            OnRespawn.Invoke();
+            Die();
+        }
 
+        if (m_dead)
+        {
+            m_deathTimer -= Time.deltaTime;
+
+            if (m_deathTimer <= 0.0f)
+            {
+                persistent.GetComponent<SceneController>().LoadHub();
+            }
+        }
+    }
+
+    private void Die()
+    {
+        m_playerHealth = 0.0f;
+        OnDeath.Invoke();
+        m_dead = true;
+        GetComponent<Animator>().SetBool("Dead", true);
+        GetComponent<Animator>().speed = 1.0f;
+
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        //loop through all of the weapons and disable them
+        foreach (PlayerWeapons.WeaponEquip weapon in GetComponent<PlayerWeapons>().leftWeapons)
+        {
+            weapon.weapon.SetActive(false);
+        }
+        foreach (PlayerWeapons.WeaponEquip weapon in GetComponent<PlayerWeapons>().rightWeapons)
+        {
+            weapon.weapon.SetActive(false);
         }
     }
 
@@ -63,15 +93,5 @@ public class PlayerHealth : MonoBehaviour
         if (m_dead) return;
         m_playerHealth -= _dmg;
         OnDamage.Invoke();
-        if (m_playerHealth <= 0.0f)
-        {
-            m_playerHealth = 0.0f;
-            OnDeath.Invoke();
-            m_dead = true;
-            GetComponent<Animator>().SetBool("Dead", true);
-            GetComponent<Animator>().speed = 1.0f;
-
-
-        }
     }
 }
