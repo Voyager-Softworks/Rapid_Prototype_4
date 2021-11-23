@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202701196289742514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.633, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 202701197334942026}
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_detectionRadius: 8.38
   m_attackRadius: 1.06
   m_attacking: 0
-  m_Damage: 20
+  m_Damage: 30
   m_cooldown: 2.2
 --- !u!114 &202701198261584650
 MonoBehaviour:
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemyType: 8
-  m_health: 200
+  m_health: 250
   m_elite: 0
   m_deathPart: {fileID: 0}
   m_weakTo: 0
