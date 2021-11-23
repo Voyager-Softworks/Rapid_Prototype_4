@@ -15,37 +15,10 @@ MonoBehaviour:
   spawnPoints:
   - m_traversable: 1
     m_walkable: 1
-    m_climbable: 1
+    m_climbable: 0
     m_hazard: 0
-    m_index: {x: 40, y: 14}
-    m_position: {x: 16.5, y: -12.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 40, y: 15}
-    m_position: {x: 16.5, y: -11.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 40, y: 16}
-    m_position: {x: 16.5, y: -10.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 40, y: 17}
-    m_position: {x: 16.5, y: -9.5, z: 0}
+    m_index: {x: 74, y: 28}
+    m_position: {x: 50.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -53,8 +26,26 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 40, y: 18}
-    m_position: {x: 16.5, y: -8.5, z: 0}
+    m_index: {x: 74, y: 29}
+    m_position: {x: 50.5, y: 2.5, z: 0}
+    m_f: Infinity
+    m_g: Infinity
+    m_h: Infinity
+  - m_traversable: 1
+    m_walkable: 0
+    m_climbable: 0
+    m_hazard: 0
+    m_index: {x: 74, y: 30}
+    m_position: {x: 50.5, y: 3.5, z: 0}
+    m_f: Infinity
+    m_g: Infinity
+    m_h: Infinity
+  - m_traversable: 1
+    m_walkable: 0
+    m_climbable: 0
+    m_hazard: 0
+    m_index: {x: 74, y: 31}
+    m_position: {x: 50.5, y: 4.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -62,8 +53,8 @@ MonoBehaviour:
     m_walkable: 1
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 41, y: 14}
-    m_position: {x: 17.5, y: -12.5, z: 0}
+    m_index: {x: 75, y: 28}
+    m_position: {x: 51.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -71,8 +62,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 41, y: 15}
-    m_position: {x: 17.5, y: -11.5, z: 0}
+    m_index: {x: 75, y: 29}
+    m_position: {x: 51.5, y: 2.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -80,8 +71,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 41, y: 16}
-    m_position: {x: 17.5, y: -10.5, z: 0}
+    m_index: {x: 75, y: 30}
+    m_position: {x: 51.5, y: 3.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -89,8 +80,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 41, y: 17}
-    m_position: {x: 17.5, y: -9.5, z: 0}
+    m_index: {x: 75, y: 31}
+    m_position: {x: 51.5, y: 4.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -98,8 +89,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 41, y: 18}
-    m_position: {x: 17.5, y: -8.5, z: 0}
+    m_index: {x: 75, y: 32}
+    m_position: {x: 51.5, y: 5.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -107,8 +98,8 @@ MonoBehaviour:
     m_walkable: 1
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 42, y: 14}
-    m_position: {x: 18.5, y: -12.5, z: 0}
+    m_index: {x: 76, y: 28}
+    m_position: {x: 52.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -116,8 +107,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 42, y: 15}
-    m_position: {x: 18.5, y: -11.5, z: 0}
+    m_index: {x: 76, y: 29}
+    m_position: {x: 52.5, y: 2.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -125,8 +116,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 42, y: 16}
-    m_position: {x: 18.5, y: -10.5, z: 0}
+    m_index: {x: 76, y: 30}
+    m_position: {x: 52.5, y: 3.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -134,8 +125,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 42, y: 17}
-    m_position: {x: 18.5, y: -9.5, z: 0}
+    m_index: {x: 76, y: 31}
+    m_position: {x: 52.5, y: 4.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -143,8 +134,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 42, y: 18}
-    m_position: {x: 18.5, y: -8.5, z: 0}
+    m_index: {x: 76, y: 32}
+    m_position: {x: 52.5, y: 5.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -152,8 +143,8 @@ MonoBehaviour:
     m_walkable: 1
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 43, y: 14}
-    m_position: {x: 19.5, y: -12.5, z: 0}
+    m_index: {x: 77, y: 28}
+    m_position: {x: 53.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -161,8 +152,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 43, y: 15}
-    m_position: {x: 19.5, y: -11.5, z: 0}
+    m_index: {x: 77, y: 29}
+    m_position: {x: 53.5, y: 2.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -170,8 +161,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 43, y: 16}
-    m_position: {x: 19.5, y: -10.5, z: 0}
+    m_index: {x: 77, y: 30}
+    m_position: {x: 53.5, y: 3.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -179,8 +170,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 43, y: 17}
-    m_position: {x: 19.5, y: -9.5, z: 0}
+    m_index: {x: 77, y: 31}
+    m_position: {x: 53.5, y: 4.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -188,71 +179,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 43, y: 18}
-    m_position: {x: 19.5, y: -8.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 44, y: 12}
-    m_position: {x: 20.5, y: -14.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 44, y: 13}
-    m_position: {x: 20.5, y: -13.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 44, y: 14}
-    m_position: {x: 20.5, y: -12.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 44, y: 15}
-    m_position: {x: 20.5, y: -11.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 44, y: 16}
-    m_position: {x: 20.5, y: -10.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 44, y: 17}
-    m_position: {x: 20.5, y: -9.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 44, y: 18}
-    m_position: {x: 20.5, y: -8.5, z: 0}
+    m_index: {x: 77, y: 32}
+    m_position: {x: 53.5, y: 5.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -260,8 +188,8 @@ MonoBehaviour:
     m_walkable: 1
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 45, y: 12}
-    m_position: {x: 21.5, y: -14.5, z: 0}
+    m_index: {x: 78, y: 28}
+    m_position: {x: 54.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -269,8 +197,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 45, y: 13}
-    m_position: {x: 21.5, y: -13.5, z: 0}
+    m_index: {x: 78, y: 29}
+    m_position: {x: 54.5, y: 2.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -278,26 +206,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 45, y: 14}
-    m_position: {x: 21.5, y: -12.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 45, y: 15}
-    m_position: {x: 21.5, y: -11.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 45, y: 16}
-    m_position: {x: 21.5, y: -10.5, z: 0}
+    m_index: {x: 78, y: 30}
+    m_position: {x: 54.5, y: 3.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -305,8 +215,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 45, y: 17}
-    m_position: {x: 21.5, y: -9.5, z: 0}
+    m_index: {x: 78, y: 31}
+    m_position: {x: 54.5, y: 4.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -314,8 +224,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 45, y: 18}
-    m_position: {x: 21.5, y: -8.5, z: 0}
+    m_index: {x: 78, y: 32}
+    m_position: {x: 54.5, y: 5.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -323,8 +233,8 @@ MonoBehaviour:
     m_walkable: 1
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 46, y: 12}
-    m_position: {x: 22.5, y: -14.5, z: 0}
+    m_index: {x: 79, y: 28}
+    m_position: {x: 55.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -332,8 +242,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 46, y: 13}
-    m_position: {x: 22.5, y: -13.5, z: 0}
+    m_index: {x: 79, y: 29}
+    m_position: {x: 55.5, y: 2.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -341,8 +251,26 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 46, y: 14}
-    m_position: {x: 22.5, y: -12.5, z: 0}
+    m_index: {x: 79, y: 30}
+    m_position: {x: 55.5, y: 3.5, z: 0}
+    m_f: Infinity
+    m_g: Infinity
+    m_h: Infinity
+  - m_traversable: 1
+    m_walkable: 0
+    m_climbable: 0
+    m_hazard: 0
+    m_index: {x: 79, y: 31}
+    m_position: {x: 55.5, y: 4.5, z: 0}
+    m_f: Infinity
+    m_g: Infinity
+    m_h: Infinity
+  - m_traversable: 1
+    m_walkable: 0
+    m_climbable: 0
+    m_hazard: 0
+    m_index: {x: 79, y: 32}
+    m_position: {x: 55.5, y: 5.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -350,8 +278,8 @@ MonoBehaviour:
     m_walkable: 1
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 46, y: 16}
-    m_position: {x: 22.5, y: -10.5, z: 0}
+    m_index: {x: 80, y: 28}
+    m_position: {x: 56.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -359,8 +287,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 46, y: 17}
-    m_position: {x: 22.5, y: -9.5, z: 0}
+    m_index: {x: 80, y: 29}
+    m_position: {x: 56.5, y: 2.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -368,8 +296,26 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 46, y: 18}
-    m_position: {x: 22.5, y: -8.5, z: 0}
+    m_index: {x: 80, y: 30}
+    m_position: {x: 56.5, y: 3.5, z: 0}
+    m_f: Infinity
+    m_g: Infinity
+    m_h: Infinity
+  - m_traversable: 1
+    m_walkable: 0
+    m_climbable: 0
+    m_hazard: 0
+    m_index: {x: 80, y: 31}
+    m_position: {x: 56.5, y: 4.5, z: 0}
+    m_f: Infinity
+    m_g: Infinity
+    m_h: Infinity
+  - m_traversable: 1
+    m_walkable: 0
+    m_climbable: 0
+    m_hazard: 0
+    m_index: {x: 80, y: 32}
+    m_position: {x: 56.5, y: 5.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -377,8 +323,8 @@ MonoBehaviour:
     m_walkable: 1
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 47, y: 12}
-    m_position: {x: 23.5, y: -14.5, z: 0}
+    m_index: {x: 81, y: 28}
+    m_position: {x: 57.5, y: 1.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -386,179 +332,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 47, y: 13}
-    m_position: {x: 23.5, y: -13.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 47, y: 14}
-    m_position: {x: 23.5, y: -12.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 47, y: 16}
-    m_position: {x: 23.5, y: -10.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 47, y: 17}
-    m_position: {x: 23.5, y: -9.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 47, y: 18}
-    m_position: {x: 23.5, y: -8.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 48, y: 12}
-    m_position: {x: 24.5, y: -14.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 48, y: 13}
-    m_position: {x: 24.5, y: -13.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 48, y: 14}
-    m_position: {x: 24.5, y: -12.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 48, y: 16}
-    m_position: {x: 24.5, y: -10.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 48, y: 17}
-    m_position: {x: 24.5, y: -9.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 48, y: 18}
-    m_position: {x: 24.5, y: -8.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 49, y: 12}
-    m_position: {x: 25.5, y: -14.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 49, y: 13}
-    m_position: {x: 25.5, y: -13.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 49, y: 14}
-    m_position: {x: 25.5, y: -12.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 49, y: 16}
-    m_position: {x: 25.5, y: -10.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 49, y: 17}
-    m_position: {x: 25.5, y: -9.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 49, y: 18}
-    m_position: {x: 25.5, y: -8.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 1
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 50, y: 12}
-    m_position: {x: 26.5, y: -14.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 50, y: 13}
-    m_position: {x: 26.5, y: -13.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 50, y: 14}
-    m_position: {x: 26.5, y: -12.5, z: 0}
+    m_index: {x: 81, y: 29}
+    m_position: {x: 57.5, y: 2.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -566,8 +341,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 1
     m_hazard: 0
-    m_index: {x: 50, y: 15}
-    m_position: {x: 26.5, y: -11.5, z: 0}
+    m_index: {x: 81, y: 30}
+    m_position: {x: 57.5, y: 3.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -575,8 +350,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 1
     m_hazard: 0
-    m_index: {x: 50, y: 16}
-    m_position: {x: 26.5, y: -10.5, z: 0}
+    m_index: {x: 81, y: 31}
+    m_position: {x: 57.5, y: 4.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
@@ -584,35 +359,8 @@ MonoBehaviour:
     m_walkable: 0
     m_climbable: 0
     m_hazard: 0
-    m_index: {x: 50, y: 17}
-    m_position: {x: 26.5, y: -9.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 51, y: 13}
-    m_position: {x: 27.5, y: -13.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 1
-    m_hazard: 0
-    m_index: {x: 51, y: 14}
-    m_position: {x: 27.5, y: -12.5, z: 0}
-    m_f: Infinity
-    m_g: Infinity
-    m_h: Infinity
-  - m_traversable: 1
-    m_walkable: 0
-    m_climbable: 0
-    m_hazard: 0
-    m_index: {x: 51, y: 15}
-    m_position: {x: 27.5, y: -11.5, z: 0}
+    m_index: {x: 81, y: 32}
+    m_position: {x: 57.5, y: 5.5, z: 0}
     m_f: Infinity
     m_g: Infinity
     m_h: Infinity
