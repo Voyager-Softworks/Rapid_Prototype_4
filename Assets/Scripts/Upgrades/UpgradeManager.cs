@@ -330,7 +330,6 @@ public class UpgradeManager : MonoBehaviour
                         {
                             if (resourceManager.TryConsumeResources(upgrade.levels[upgrade.level].cost))
                             {
-                                upgrade.levels[upgrade.level].onUpgrade.Invoke();
                                 upgrade.level++;
                                 UpdateUpgradeMenu();
                             }
@@ -499,7 +498,6 @@ public class UpgradeManager : MonoBehaviour
                         {
                             if (resourceManager.TryConsumeResources(upgrade.levels[upgrade.level].cost))
                             {
-                                upgrade.levels[upgrade.level].onUpgrade.Invoke();
                                 upgrade.level++;
                                 UpdateUpgradeMenu();
                             }

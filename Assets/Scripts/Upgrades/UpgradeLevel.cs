@@ -9,5 +9,4 @@ using UnityEditor;
 public class UpgradeLevel
 {
     public List<Resources.PlayerResource> cost;
-    public UnityEvent onUpgrade;
 }
