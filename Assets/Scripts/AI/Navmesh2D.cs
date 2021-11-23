@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Navmesh2D : MonoBehaviour
 {
@@ -455,7 +456,10 @@ public class Navmesh2D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (m_data == null)
+        {
+            m_data = UnityEngine.Resources.Load<Navmesh2D_Data>("Navmesh2D/" + SceneManager.GetActiveScene().name + "_NavmeshData2D");
+        }
         
     }
 
