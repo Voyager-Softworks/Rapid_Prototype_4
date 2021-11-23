@@ -273,6 +273,7 @@ public class UpgradeManager : MonoBehaviour
                 if (!upgrade.unlocked)
                 {
                     buttonText.text = "BUY";
+                    icon.color = Color.black;
 
                     //link button to buy upgrade
                     button.onClick.AddListener(() =>
@@ -316,6 +317,7 @@ public class UpgradeManager : MonoBehaviour
                 else if (upgrade.levels.Count > upgrade.level && GetComponent<TownUpgrades>().level > upgrade.level)
                 {
                     buttonText.text = "UPGRADE";
+                    icon.color = Color.white;
 
                     //link button to upgrade weapon
                     button.onClick.AddListener(() =>
@@ -366,6 +368,7 @@ public class UpgradeManager : MonoBehaviour
                 {   
                     //if the weapon is fully upgraded
                     buttonText.text = "MAXED";
+                    icon.color = Color.green;
 
                     //enable equip
                     equipL.SetActive(true);
@@ -382,6 +385,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 else{
                     buttonText.text = "UPGRADE TOWN";
+                    icon.color = Color.yellow;
 
                     //enable equip
                     equipL.SetActive(true);
