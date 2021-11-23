@@ -19,7 +19,7 @@ public class EscapeMenu : MonoBehaviour
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             escapeMenu.SetActive(!escapeMenu.activeSelf);
-            Time.timeScale = (escapeMenu.activeSelf) ? 0 : 1;
+            //Time.timeScale = (escapeMenu.activeSelf) ? 0 : 1;
         }
     }
 }
