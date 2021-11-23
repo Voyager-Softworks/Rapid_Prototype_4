@@ -29409,6 +29409,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1885635552}
+    - target: {fileID: 1090247763, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: playerResources.Array.data[0].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090247763, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: playerResources.Array.data[1].amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090247763, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: playerResources.Array.data[2].amount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090247763, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: playerResources.Array.data[3].amount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: moduleUpgrades.Array.data[0].description
       value: 'Burst: Allows horizontal dashing. Double tab direction.'
