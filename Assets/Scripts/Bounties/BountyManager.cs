@@ -546,6 +546,8 @@ public class BountyManager : MonoBehaviour
 
             //update the board
             UpdateBoard();
+
+            if (levelManager) levelManager.UpdateMenu();
         }
     }
 
