@@ -34,7 +34,7 @@ public class ProjectileGun : MonoBehaviour
     [Header("Animation")]
     Animator m_animator;
 
-
+    private GameObject persistent = null;
     private bool canShoot = false;
 
 
@@ -45,6 +45,7 @@ public class ProjectileGun : MonoBehaviour
         m_fireTimer = m_fireDelay;
         m_reloadTimer = 0.0f;
         m_animator = GetComponent<Animator>();
+        persistent = DontDestroy.instance;
     }
 
     // Update is called once per frame
@@ -91,6 +92,7 @@ public class ProjectileGun : MonoBehaviour
         m_fireTimer = m_fireDelay;
         m_animator.SetTrigger("Shoot");
         Rigidbody2D projectile = Instantiate(m_projectilePrefab, m_muzzle.position, m_muzzle.rotation).GetComponent<Rigidbody2D>();
+        projectile.GetComponent<PlayerProjectile>().m_Damage *= (persistent.GetComponent<UpgradeManager>().GetWeaponLevel(transform.name.ToLower().Contains("front")) + 1);
         projectile.velocity = m_projectileSpeed * m_muzzle.right;
 
         // Play the fire effect

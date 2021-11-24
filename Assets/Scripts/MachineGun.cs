@@ -49,6 +49,8 @@ public class MachineGun : MonoBehaviour
     [SerializeField] bool m_leftClick = true;
 
     Vector3 vel = Vector3.zero;
+
+    private GameObject persistent = null;
     
 
     void Start()
@@ -57,6 +59,8 @@ public class MachineGun : MonoBehaviour
         m_currentRPS = m_startRPS;
         m_shootAction.Enable();
         m_anim = GetComponent<Animator>();
+
+        persistent = DontDestroy.instance;
     }
 
     GameObject _shootPart;
@@ -154,7 +158,7 @@ public class MachineGun : MonoBehaviour
         GameObject bullet = Instantiate(m_bulletPrefab, m_shootPos.position, transform.rotation, null);
         Rigidbody2D rb_bullet = bullet.GetComponent<Rigidbody2D>();
         Bullet bulletScript = bullet.GetComponent<Bullet>();
-        bulletScript.m_damageMulti = m_bulletDamageMulti;
+        bulletScript.m_damageMulti = m_bulletDamageMulti * (persistent.GetComponent<UpgradeManager>().GetWeaponLevel(transform.name.ToLower().Contains("front")) + 1);
         bulletScript.m_damageAdd = m_bulletDamageAdd;
 
         rb_bullet.velocity = transform.right * transform.lossyScale.x * m_bullet_vel * Random.Range(0.9f, 1.1f);

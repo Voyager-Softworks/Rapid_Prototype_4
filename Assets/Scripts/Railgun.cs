@@ -50,11 +50,15 @@ public class Railgun : MonoBehaviour
 
     GameObject _chargePart;
 
+    GameObject persistent = null;
+
     void Start()
     {
         m_as = GetComponent<AudioSource>();
         m_restPos = transform.localPosition;
         m_anim = GetComponent<Animator>();
+
+        persistent = DontDestroy.instance;
     }
 
     void Update()
@@ -140,7 +144,7 @@ public class Railgun : MonoBehaviour
                 EnemyTest _e = _hit.transform.GetComponent<EnemyTest>();
                 if (_e)
                 {
-                    _e.TakeDamage(m_Damage, m_damageType);
+                    _e.TakeDamage(m_Damage * (persistent.GetComponent<UpgradeManager>().GetWeaponLevel(transform.name.ToLower().Contains("front")) + 1), m_damageType);
                 }
 
                 ResourceNode _rn = _hit.transform.GetComponent<ResourceNode>();

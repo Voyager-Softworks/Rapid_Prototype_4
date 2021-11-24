@@ -634,7 +634,13 @@ public class BountyManager : MonoBehaviour
                 Bounty bounty = activeBounties[0];
 
                 missionPanel.gameObject.SetActive(true);
-                missionPanel.type.GetComponent<TextMeshProUGUI>().text = bounty.bountyType.ToString();
+                missionPanel.type.GetComponent<TextMeshProUGUI>().text = bounty.bountyType.ToString() + " ";
+                //add * for difficulty
+                for (int i = 0; i <= ((int)bounty.bountyDifficulty); i++)
+                {
+                    missionPanel.type.GetComponent<TextMeshProUGUI>().text += "*";
+                }
+
                 missionPanel.level.GetComponent<TextMeshProUGUI>().text = bounty.levelType.ToString();
 
                 if (bounty.conditions.Count > 0 && bounty.conditions[0].isComplete){

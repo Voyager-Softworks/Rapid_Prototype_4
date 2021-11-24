@@ -89,6 +89,25 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    public int GetWeaponLevel(WeaponType weaponType) {
+        int level = 0;
+        foreach (Upgrade upgrade in weaponUpgrades) {
+            if (upgrade.weaponType == weaponType) {
+                level = upgrade.level;
+                return level;
+            }
+        }
+        return level;
+    }
+
+    public int GetWeaponLevel(bool leftWeapon) {
+        if (leftWeapon) {
+            return GetWeaponLevel(leftEquippedWeapon);
+        } else {
+            return GetWeaponLevel(rightEquippedWeapon);
+        }
+    }
+
     private void WeaponTooltip()
     {
         //if upgrade menu exists

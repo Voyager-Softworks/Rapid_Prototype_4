@@ -42,6 +42,7 @@ public class HitscanGun : MonoBehaviour
     public AudioSource m_fireAudioSource;
     public Animator m_anim;
     
+    private GameObject persistent = null;
     private bool canShoot = false;
 
     // Start is called before the first frame update
@@ -49,6 +50,8 @@ public class HitscanGun : MonoBehaviour
     {
         fireAction.Enable();
         m_anim = GetComponent<Animator>();
+
+        persistent = DontDestroy.instance;
     }
 
     // Update is called once per frame
@@ -163,7 +166,7 @@ public class HitscanGun : MonoBehaviour
                 
                 if (WithinCone(m_muzzle.position, m_muzzle.right, toEnemy, m_coneAngle/2.0f))
                 {
-                    col.GetComponent<EnemyTest>().TakeDamage(m_damage * m_damageFalloff.Evaluate(toEnemy.magnitude/m_attackRadius), EnemyTest.DamageType.Universal);
+                    col.GetComponent<EnemyTest>().TakeDamage(m_damage * m_damageFalloff.Evaluate(toEnemy.magnitude/m_attackRadius) * (persistent.GetComponent<UpgradeManager>().GetWeaponLevel(transform.name.ToLower().Contains("front")) + 1), EnemyTest.DamageType.Universal);
                 }
             }
         }
