@@ -109,7 +109,7 @@ public class SaveSerialization : MonoBehaviour
             d.taggedForDelete = true;
             Destroy(d.gameObject);
         }
-        DontDestroy.instance.GetComponent<DontDestroy>().taggedForDelete = true;
+        if (DontDestroy.instance) DontDestroy.instance.GetComponent<DontDestroy>().taggedForDelete = true;
         DontDestroy.instance = null;
 
         SceneController[] SC = GameObject.FindObjectsOfType<SceneController>(true);
