@@ -246,6 +246,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump(InputAction.CallbackContext _ctx)
     {
         m_maxThrusterDuration = 0.3f + (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.JETPACK) * 0.1f);
+        m_maneuveringThrusterStrength = 0.2f + (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.AIRTRHUST) * 0.1f);
         if (m_grounded)
         {
 
