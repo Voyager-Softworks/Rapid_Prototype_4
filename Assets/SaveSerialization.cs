@@ -11,19 +11,16 @@ using UnityEditor;
 
 
 public class SaveSerialization : MonoBehaviour
-{
-    void Start()
-    {
-        LoadData();
-    }
-    
+{    
     public void LoadData()
     {
-        Resources r = FindObjectOfType<Resources>();
-        TownUpgrades t = FindObjectOfType<TownUpgrades>();
-        UpgradeManager u = FindObjectOfType<UpgradeManager>();
-        BountyManager b = FindObjectOfType<BountyManager>();
-        PlayerStats p = FindObjectOfType<PlayerStats>();
+        if (GetComponent<DontDestroy>() && GetComponent<DontDestroy>().taggedForDelete) return;
+
+        Resources r = GetComponent<Resources>();
+        TownUpgrades t = GetComponent<TownUpgrades>();
+        UpgradeManager u = GetComponent<UpgradeManager>();
+        BountyManager b = GetComponent<BountyManager>();
+        PlayerStats p = GetComponent<PlayerStats>();
 
 
         Save save = Load();
@@ -52,11 +49,13 @@ public class SaveSerialization : MonoBehaviour
 
     public void SaveData()
     {
-        Resources r = FindObjectOfType<Resources>();
-        TownUpgrades t = FindObjectOfType<TownUpgrades>();
-        UpgradeManager u = FindObjectOfType<UpgradeManager>();
-        BountyManager b = FindObjectOfType<BountyManager>();
-        PlayerStats p = FindObjectOfType<PlayerStats>();
+        if (GetComponent<DontDestroy>() && GetComponent<DontDestroy>().taggedForDelete) return;
+
+        Resources r = GetComponent<Resources>();
+        TownUpgrades t = GetComponent<TownUpgrades>();
+        UpgradeManager u = GetComponent<UpgradeManager>();
+        BountyManager b = GetComponent<BountyManager>();
+        PlayerStats p = GetComponent<PlayerStats>();
 
         Save save = new Save();
 
@@ -98,6 +97,28 @@ public class SaveSerialization : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath + "/save.dat");
         }
+    }
+
+    static public void NewGame()
+    {
+        DeleteSaveData();
+
+        DontDestroy[] DD = GameObject.FindObjectsOfType<DontDestroy>(true);
+        foreach (DontDestroy d in DD)
+        {
+            d.taggedForDelete = true;
+            Destroy(d.gameObject);
+        }
+        DontDestroy.instance.GetComponent<DontDestroy>().taggedForDelete = true;
+        DontDestroy.instance = null;
+
+        SceneController[] SC = GameObject.FindObjectsOfType<SceneController>(true);
+        foreach (SceneController s in SC)
+        {
+            s.persistent = null;
+        }
+
+        GameObject.FindObjectOfType<SceneController>().LoadHubPUBLIC();
     }
 
     static public bool SaveExists()

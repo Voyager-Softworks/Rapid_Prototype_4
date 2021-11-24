@@ -6,6 +6,8 @@ public class DontDestroy : MonoBehaviour
 {
     public static GameObject instance = null;
 
+    public bool taggedForDelete = false;
+
     void Awake()
     {
         CheckValidInstance();
@@ -13,10 +15,11 @@ public class DontDestroy : MonoBehaviour
 
     public bool CheckValidInstance()
     {
-        if (instance == null)
+        if (instance == null && !taggedForDelete)
         {
             instance = this.gameObject;
             DontDestroyOnLoad(this.gameObject);   
+            GetComponent<SaveSerialization>().LoadData();
         }
         else if (instance != this.gameObject)
         {

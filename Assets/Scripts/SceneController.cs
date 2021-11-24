@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class SceneController : MonoBehaviour
 {
-    private GameObject persistent;
+    public GameObject persistent;
 
     void Awake() {
         SceneManager.sceneLoaded += SceneLoaded;
@@ -60,6 +60,11 @@ public class SceneController : MonoBehaviour
                 LoadValt();
             break;
         }
+    }
+
+    public void LoadHubPUBLIC()
+    {
+        LoadLevel(LevelManager.LevelType.HUB);
     }
 
     private void LoadHub()
