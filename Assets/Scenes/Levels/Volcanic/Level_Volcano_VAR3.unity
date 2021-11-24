@@ -46703,12 +46703,12 @@ MonoBehaviour:
   spawnables:
   - prefab: {fileID: 3806392044393138315, guid: 30283a43f90646b43bbd191fc0503d69, type: 3}
     probability: 0
-    mustBeUpright: 0
+    mustBeUpright: 1
     minSpawns: 3
     maxSpawns: 5
   - prefab: {fileID: 1430512763667418688, guid: f0285ccc42bebe045b0c6a64ecc2638d, type: 3}
     probability: 0
-    mustBeUpright: 0
+    mustBeUpright: 1
     minSpawns: 3
     maxSpawns: 5
 --- !u!4 &1928985044
