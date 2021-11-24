@@ -108,6 +108,26 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    public int GetModuleLevel(ModuleType moduleType) {
+        int level = 0;
+        foreach (Upgrade upgrade in moduleUpgrades) {
+            if (upgrade.moduleType == moduleType) {
+                level = upgrade.level;
+                return level;
+            }
+        }
+        return level;
+    }
+
+    public bool ModuleUnlocked(ModuleType moduleType) {
+        foreach (Upgrade upgrade in moduleUpgrades) {
+            if (upgrade.moduleType == moduleType) {
+                return upgrade.unlocked;
+            }
+        }
+        return false;
+    }
+
     private void WeaponTooltip()
     {
         //if upgrade menu exists
