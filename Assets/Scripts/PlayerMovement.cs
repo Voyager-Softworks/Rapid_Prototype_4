@@ -240,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
     {
         bool m_groundedOld = m_grounded;
         m_timesincelastmovementkey += Time.deltaTime;
-        RaycastHit2D hit = Physics2D.BoxCast(
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(
             (Vector2)transform.position + m_groundCheckOffset, 
             m_groundCheckExtents, 
             0.0f, 
@@ -248,7 +248,15 @@ public class PlayerMovement : MonoBehaviour
             1.0f, 
             LayerMask.GetMask("Ground")
             );
-        m_grounded = (Vector2.Dot(hit.normal, Vector2.up) >= 0.5f && hit.collider.gameObject.tag == "Ground");
+        m_grounded = false;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider != null && Vector2.Dot(hit.normal, Vector2.up) >= 0.5f && hit.collider.gameObject.tag == "Ground")
+            {
+                m_grounded = true;
+                break;
+            }
+        }
         m_anim.SetBool("Grounded", m_grounded);
         if (!m_groundedOld && m_grounded)
         {
