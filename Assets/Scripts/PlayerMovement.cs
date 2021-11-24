@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     public bool m_groundPoundEnabled = true;
     public float m_groundPoundForce = 1.0f;
     public float m_shockwaveDamage = 1.0f;
+    public float m_shockwaveKnockback = 1.0f;
     public GameObject m_shockwavePrefab;
 
     [Header("Dash")]
@@ -139,15 +140,17 @@ public class PlayerMovement : MonoBehaviour
         {
             m_groundPoundEnabled = false;
         }
-
-        // if (upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DOUBLEJUMP))
-        // {
-        //     m_doubleJumpEnabled = true;
-        // }
-        // else
-        // {
-        //     m_doubleJumpEnabled = false;
-        // }
+        m_shockwaveDamage = (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.SLAM)+1) * 2.0f;
+        m_shockwaveKnockback = (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.SLAM)*2.5f) + 10.0f;
+        m_dashDuration = 0.3f + (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.DASH) * 0.1f);
+        if (upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.JUMP))
+        {
+            m_doubleJumpEnabled = true;
+        }
+        else
+        {
+            m_doubleJumpEnabled = false;
+        }
 
         
         //if (upgradeManager) upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.DASH);
@@ -181,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash(InputAction.CallbackContext _ctx)
     {
-        if (m_dashTimer > 0.0f || m_dashCooldownTimer > 0.0f || !m_dashEnabled) return;
+        if (m_dashTimer > 0.0f || m_dashCooldownTimer > 0.0f || !upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DASH)) return;
         m_onDash.Invoke();
         
         
@@ -194,14 +197,17 @@ public class PlayerMovement : MonoBehaviour
         {
             m_dashAnim.SetTrigger("DashBackward");
         }
+        m_dashDuration = 0.3f + (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.DASH) * 0.1f);
         m_dashTimer = m_dashDuration;
 
     }
 
     void GroundPound(InputAction.CallbackContext _ctx)
     {
-        if(!m_grounded && !m_thrustersEngaged)
+        if(!m_grounded && !m_thrustersEngaged && upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.SLAM))
         {
+            m_shockwaveDamage = (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.SLAM)+1) * 2.0f;
+            m_shockwaveKnockback = (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.SLAM)*2.5f) + 10.0f;
             rb.velocity = new Vector2(0.0f, -m_groundPoundForce);
             m_groundPoundSource.Play();
             m_groundPounding = true;
@@ -219,7 +225,10 @@ public class PlayerMovement : MonoBehaviour
         
         if (m_groundPounding)
         {
-            Instantiate(m_shockwavePrefab, transform.position, Quaternion.identity).GetComponent<Shockwave>().damage = m_shockwaveDamage;
+            Shockwave s = Instantiate(m_shockwavePrefab, transform.position, Quaternion.identity).GetComponent<Shockwave>();
+            s.damage = m_shockwaveDamage;
+            s.knockback = m_shockwaveKnockback;
+
             m_groundPounding = false;
         }
         else
@@ -236,6 +245,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump(InputAction.CallbackContext _ctx)
     {
+        m_maxThrusterDuration = 0.3f + (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.JETPACK) * 0.1f);
         if (m_grounded)
         {
 
@@ -247,7 +257,7 @@ public class PlayerMovement : MonoBehaviour
             m_thrusterDuration = m_maxThrusterDuration;
             m_jumpcount++;
         }
-        else if(m_jumpcount < m_maxAirJumpCount)
+        else if(m_jumpcount < m_maxAirJumpCount && upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.JUMP))
         {
             m_doubleJumpSource.Play();
             rb.velocity *= new Vector2(1.0f, 0.0f);
