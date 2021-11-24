@@ -31,7 +31,8 @@ public class UpgradeManager : MonoBehaviour
         SLAM,
         DASH,
         JETPACK,
-        JUMP
+        JUMP,
+        AIRTRHUST
     }
 
     private Resources resourceManager = null;

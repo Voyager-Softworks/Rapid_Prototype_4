@@ -357,6 +357,9 @@ MonoBehaviour:
     levels:
     - cost:
       - type: 2
+        amount: 5
+    - cost:
+      - type: 2
         amount: 10
   - type: 1
     weaponType: 0
@@ -373,8 +376,14 @@ MonoBehaviour:
       amount: 2
     levels:
     - cost:
-      - type: 3
-        amount: 1
+      - type: 2
+        amount: 5
+    - cost:
+      - type: 2
+        amount: 10
+    - cost:
+      - type: 2
+        amount: 15
   - type: 1
     weaponType: 0
     moduleType: 3
@@ -391,7 +400,13 @@ MonoBehaviour:
     levels:
     - cost:
       - type: 2
-        amount: 1
+        amount: 5
+    - cost:
+      - type: 2
+        amount: 10
+    - cost:
+      - type: 2
+        amount: 15
   - type: 1
     weaponType: 0
     moduleType: 4
@@ -408,7 +423,36 @@ MonoBehaviour:
     levels:
     - cost:
       - type: 2
-        amount: 1
+        amount: 5
+    - cost:
+      - type: 2
+        amount: 10
+    - cost:
+      - type: 2
+        amount: 15
+  - type: 1
+    weaponType: 0
+    moduleType: 5
+    unlocked: 0
+    level: 0
+    description: 'Air Thrusters: Allows better movement in air.'
+    cost:
+    - type: 2
+      amount: 10
+    - type: 0
+      amount: 15
+    - type: 1
+      amount: 5
+    levels:
+    - cost:
+      - type: 2
+        amount: 5
+    - cost:
+      - type: 2
+        amount: 10
+    - cost:
+      - type: 2
+        amount: 15
 --- !u!114 &5803008652019208702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +613,8 @@ MonoBehaviour:
     icon: {fileID: 7979741545503519275, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
   - moduleType: 4
     icon: {fileID: 4195942777435530034, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - moduleType: 5
+    icon: {fileID: 7979741545503519275, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
   InteractCanvasPrefab: {fileID: 0}
 --- !u!114 &1729557129
 MonoBehaviour:
