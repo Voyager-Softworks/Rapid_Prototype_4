@@ -105,6 +105,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Particles")]
     public List<ParticleSystem> m_particles;
 
+    private UpgradeManager upgradeManager = null;
+
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +117,11 @@ public class PlayerMovement : MonoBehaviour
         m_walksoundmaker = GetComponentInChildren<WalkSound>();
         m_mousescript = GetComponentInChildren<FollowMouse>();
         m_gunAnims = GetComponentsInChildren<Animator>();
+
+        if (DontDestroy.instance) upgradeManager = DontDestroy.instance.GetComponent<UpgradeManager>();
+
+        //if (upgradeManager) upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DASH);
+        //if (upgradeManager) upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.DASH);
     }
 
     public void StepNoise()
