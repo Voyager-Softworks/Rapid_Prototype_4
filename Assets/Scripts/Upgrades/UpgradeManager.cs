@@ -30,7 +30,8 @@ public class UpgradeManager : MonoBehaviour
         NONE,
         SLAM,
         DASH,
-        JETPACK
+        JETPACK,
+        JUMP
     }
 
     private Resources resourceManager = null;

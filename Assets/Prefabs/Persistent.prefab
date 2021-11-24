@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d069a7960e86064997dfcf70bce09e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taggedForDelete: 0
 --- !u!114 &1090247763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,32 +98,28 @@ MonoBehaviour:
   upgradeLevels:
   - cost:
     - type: 2
-      amount: 40
+      amount: 25
   - cost:
     - type: 2
-      amount: 40
+      amount: 25
     - type: 0
-      amount: 20
+      amount: 10
     - type: 1
       amount: 10
   - cost:
     - type: 2
-      amount: 60
-    - type: 0
-      amount: 40
+      amount: 25
     - type: 1
-      amount: 20
-    - type: 2
+      amount: 25
+    - type: 3
       amount: 1
   - cost:
     - type: 2
-      amount: 100
+      amount: 60
     - type: 0
-      amount: 80
-    - type: 1
-      amount: 50
+      amount: 60
     - type: 3
-      amount: 3
+      amount: 5
   MaxLevelReached:
     m_PersistentCalls:
       m_Calls:
@@ -169,17 +166,17 @@ MonoBehaviour:
     levels:
     - cost:
       - type: 2
-        amount: 20
+        amount: 10
     - cost:
       - type: 2
-        amount: 3
-      - type: 1
-        amount: 4
+        amount: 15
+      - type: 0
+        amount: 5
     - cost:
       - type: 2
-        amount: 3
+        amount: 15
       - type: 1
-        amount: 4
+        amount: 5
   - type: 0
     weaponType: 3
     moduleType: 0
@@ -188,44 +185,57 @@ MonoBehaviour:
     description: 'Railgun: Low rate of fire, charge time, extreme damage, piercing'
     cost:
     - type: 2
-      amount: 40
+      amount: 30
     - type: 1
-      amount: 20
-    - type: 0
-      amount: 10
+      amount: 30
     - type: 3
       amount: 1
     levels:
     - cost:
       - type: 2
-        amount: 20
+        amount: 15
       - type: 1
         amount: 15
+      - type: 3
+        amount: 1
     - cost:
       - type: 2
-        amount: 20
+        amount: 15
       - type: 1
         amount: 15
+      - type: 3
+        amount: 1
     - cost:
       - type: 2
-        amount: 20
+        amount: 15
       - type: 1
         amount: 15
+      - type: 3
+        amount: 1
   - type: 0
     weaponType: 2
     moduleType: 0
     unlocked: 0
     level: 0
-    description: 'Minigun: High rate of fire, low armour piercing, prone to overheating'
+    description: 'Chaingun: High rate of fire, low armour piercing, prone to overheating'
     cost:
     - type: 2
-      amount: 30
+      amount: 20
     - type: 1
       amount: 10
+    - type: 0
+      amount: 15
     levels:
     - cost:
       - type: 2
-        amount: 20
+        amount: 15
+      - type: 1
+        amount: 5
+      - type: 0
+        amount: 10
+    - cost:
+      - type: 2
+        amount: 15
       - type: 1
         amount: 5
       - type: 0
@@ -233,17 +243,8 @@ MonoBehaviour:
     - cost:
       - type: 2
         amount: 20
-      - type: 1
-        amount: 5
-      - type: 0
-        amount: 10
-    - cost:
-      - type: 2
-        amount: 20
-      - type: 1
-        amount: 5
-      - type: 0
-        amount: 10
+      - type: 3
+        amount: 1
   - type: 0
     weaponType: 4
     moduleType: 0
@@ -252,41 +253,39 @@ MonoBehaviour:
     description: 'Biocannon: Corrosive and Experimental, weak against mutants.'
     cost:
     - type: 2
-      amount: 30
-    - type: 1
-      amount: 5
+      amount: 20
     - type: 0
-      amount: 60
+      amount: 40
     - type: 3
       amount: 1
     levels:
     - cost:
       - type: 2
         amount: 15
-      - type: 1
-        amount: 5
       - type: 0
-        amount: 30
+        amount: 25
+      - type: 3
+        amount: 1
     - cost:
       - type: 2
         amount: 15
-      - type: 1
-        amount: 5
       - type: 0
-        amount: 30
+        amount: 25
+      - type: 3
+        amount: 1
     - cost:
       - type: 2
         amount: 15
-      - type: 1
-        amount: 5
       - type: 0
-        amount: 30
+        amount: 25
+      - type: 3
+        amount: 1
   - type: 0
     weaponType: 5
     moduleType: 0
     unlocked: 0
     level: 0
-    description: 'Shotgun: Looks like there is something down the barrel...'
+    description: 'Scrap Thrower: High damage in a cone, weak at range.'
     cost:
     - type: 2
       amount: 30
@@ -295,19 +294,21 @@ MonoBehaviour:
     levels:
     - cost:
       - type: 2
-        amount: 20
-      - type: 1
-        amount: 10
-    - cost:
-      - type: 2
-        amount: 20
+        amount: 15
       - type: 0
         amount: 10
     - cost:
       - type: 2
-        amount: 20
+        amount: 15
       - type: 0
         amount: 10
+    - cost:
+      - type: 2
+        amount: 15
+      - type: 0
+        amount: 10
+      - type: 3
+        amount: 1
   - type: 0
     weaponType: 6
     moduleType: 0
@@ -316,41 +317,29 @@ MonoBehaviour:
     description: 'The Guest key: Hard to breathe in an atmosphere of 80% Lead.'
     cost:
     - type: 2
-      amount: 80
-    - type: 1
-      amount: 40
+      amount: 70
     - type: 0
-      amount: 40
+      amount: 50
     - type: 3
-      amount: 2
+      amount: 5
     levels:
     - cost:
       - type: 2
         amount: 30
       - type: 1
-        amount: 15
+        amount: 30
       - type: 0
-        amount: 20
-      - type: 3
-        amount: 1
+        amount: 30
     - cost:
       - type: 2
         amount: 30
       - type: 1
-        amount: 15
-      - type: 0
-        amount: 20
-      - type: 3
-        amount: 1
-    - cost:
-      - type: 2
         amount: 30
-      - type: 1
-        amount: 15
       - type: 0
-        amount: 20
-      - type: 2
-        amount: 1
+        amount: 30
+    - cost:
+      - type: 3
+        amount: 5
   moduleUpgrades:
   - type: 1
     weaponType: 0
@@ -360,9 +349,11 @@ MonoBehaviour:
     description: 'Burst: Allows horizontal dashing. Double tab direction.'
     cost:
     - type: 2
-      amount: 20
-    - type: 0
       amount: 10
+    - type: 0
+      amount: 5
+    - type: 1
+      amount: 5
     levels:
     - cost:
       - type: 2
@@ -375,11 +366,11 @@ MonoBehaviour:
     description: 'Thermal Slam: Performs a powerful slam. Double tap Down.'
     cost:
     - type: 2
-      amount: 30
+      amount: 20
     - type: 1
       amount: 20
     - type: 3
-      amount: 1
+      amount: 2
     levels:
     - cost:
       - type: 3
@@ -389,14 +380,31 @@ MonoBehaviour:
     moduleType: 3
     unlocked: 0
     level: 0
-    description: 'Second Tank: Allows double Jumping.'
+    description: 'Second Tank: Allows longer thruster usage.'
     cost:
     - type: 2
-      amount: 30
-    - type: 0
-      amount: 20
-    - type: 1
       amount: 10
+    - type: 0
+      amount: 15
+    - type: 1
+      amount: 5
+    levels:
+    - cost:
+      - type: 2
+        amount: 1
+  - type: 1
+    weaponType: 0
+    moduleType: 4
+    unlocked: 0
+    level: 0
+    description: 'Pulse Jets: Allows double Jumping.'
+    cost:
+    - type: 2
+      amount: 10
+    - type: 0
+      amount: 15
+    - type: 1
+      amount: 5
     levels:
     - cost:
       - type: 2
@@ -474,6 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9686624a714e48e4e84799b1c0913dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  persistent: {fileID: 0}
 --- !u!114 &124964506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +567,8 @@ MonoBehaviour:
     icon: {fileID: -2685453121627481729, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
   - moduleType: 3
     icon: {fileID: 7979741545503519275, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
+  - moduleType: 4
+    icon: {fileID: 4195942777435530034, guid: f9ccd3fe3a70d5a4abfc93be69bf93d0, type: 3}
   InteractCanvasPrefab: {fileID: 0}
 --- !u!114 &1729557129
 MonoBehaviour:
