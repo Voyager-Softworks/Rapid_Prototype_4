@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -72,6 +73,8 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Animator>().SetBool("Dead", true);
         GetComponent<Animator>().speed = 1.0f;
 
+        m_deathTimer = 2.0f;
+
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
         //loop through all of the weapons and disable them
@@ -82,6 +85,18 @@ public class PlayerHealth : MonoBehaviour
         foreach (PlayerWeapons.WeaponEquip weapon in GetComponent<PlayerWeapons>().rightWeapons)
         {
             weapon.weapon.SetActive(false);
+        }
+
+        Light2D[] light = GetComponentsInChildren<Light2D>(true);
+        foreach (Light2D l in light)
+        {
+            l.enabled = false;
+        }
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb)
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 
