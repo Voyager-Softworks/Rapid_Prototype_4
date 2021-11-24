@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shockwave : MonoBehaviour
 {
     public Vector2 boundingBox;
-
+    public float damage = 1;
 
     // Start is called before the first frame update
     void Start()

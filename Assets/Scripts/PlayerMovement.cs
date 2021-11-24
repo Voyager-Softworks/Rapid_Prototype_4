@@ -47,7 +47,9 @@ public class PlayerMovement : MonoBehaviour
     int m_jumpcount = 0;
     
     [Header("Ground Pound")]
+    public bool m_groundPoundEnabled = true;
     public float m_groundPoundForce = 1.0f;
+    public float m_shockwaveDamage = 1.0f;
     public GameObject m_shockwavePrefab;
 
     [Header("Dash")]
@@ -120,7 +122,34 @@ public class PlayerMovement : MonoBehaviour
 
         if (DontDestroy.instance) upgradeManager = DontDestroy.instance.GetComponent<UpgradeManager>();
 
-        //if (upgradeManager) upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DASH);
+        if (upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DASH))
+        {
+            m_dashEnabled = true;
+        }
+        else
+        {
+            m_dashEnabled = false;
+        }
+
+        if (upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.SLAM))
+        {
+            m_groundPoundEnabled = true;
+        }
+        else
+        {
+            m_groundPoundEnabled = false;
+        }
+
+        // if (upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DOUBLEJUMP))
+        // {
+        //     m_doubleJumpEnabled = true;
+        // }
+        // else
+        // {
+        //     m_doubleJumpEnabled = false;
+        // }
+
+        
         //if (upgradeManager) upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.DASH);
     }
 
@@ -190,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (m_groundPounding)
         {
-            Instantiate(m_shockwavePrefab, transform.position, Quaternion.identity);
+            Instantiate(m_shockwavePrefab, transform.position, Quaternion.identity).GetComponent<Shockwave>().damage = m_shockwaveDamage;
             m_groundPounding = false;
         }
         else
