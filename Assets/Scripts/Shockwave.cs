@@ -5,7 +5,8 @@ using UnityEngine;
 public class Shockwave : MonoBehaviour
 {
     public Vector2 boundingBox;
-
+    public float damage = 1;
+    public float knockback = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class Shockwave : MonoBehaviour
             if (enemy.GetComponent<EnemyTest>())
             {
                 //Damage the enemy
-                enemy.GetComponent<EnemyTest>().TakeDamage(10, EnemyTest.DamageType.Universal);
+                enemy.GetComponent<EnemyTest>().TakeDamage(damage, EnemyTest.DamageType.Universal);
                 //If the enemy has a rigidbody, knock it back away from the shockwave proportional to the distance from the shockwave
                 if (enemy.GetComponent<Rigidbody2D>())
                 {
