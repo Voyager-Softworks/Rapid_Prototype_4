@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
     [Header("Level Stats")]
     public BountyManager.BountyDifficulty bountyDifficulty = BountyManager.BountyDifficulty.EASY;
     public BountyManager.BountyType bountyType = BountyManager.BountyType.KILL;
-    public List<LevelMods> levelMods = new List<LevelMods>(){};
+    //public List<LevelMods> levelMods = new List<LevelMods>(){};
     public List<LevelDescription> levelDescriptions = new List<LevelDescription>(){};
 
     void Awake() {
@@ -71,11 +71,11 @@ public class LevelManager : MonoBehaviour
             bountyDifficulty = bountyManager.activeBounties[0].bountyDifficulty;
             bountyType = bountyManager.activeBounties[0].bountyType;
 
-            //generate a few random mods
-            int randomAmount = UnityEngine.Random.Range(0, 2);
-            for (int i = 0; i < randomAmount; i++){
-                levelMods.Add((LevelMods)UnityEngine.Random.Range(1, Enum.GetNames(typeof(LevelMods)).Length));
-            }
+            // //generate a few random mods
+            // int randomAmount = UnityEngine.Random.Range(0, 2);
+            // for (int i = 0; i < randomAmount; i++){
+            //     levelMods.Add((LevelMods)UnityEngine.Random.Range(1, Enum.GetNames(typeof(LevelMods)).Length));
+            // }
 
             UpdateMenu();
         }
@@ -103,8 +103,8 @@ public class LevelManager : MonoBehaviour
         TextMeshProUGUI title = teleportMenu.title.GetComponent<TextMeshProUGUI>();
         //get description
         TextMeshProUGUI description = teleportMenu.description.GetComponent<TextMeshProUGUI>();
-        //get mods
-        TextMeshProUGUI mods = teleportMenu.mods.GetComponent<TextMeshProUGUI>();
+        // //get mods
+        // TextMeshProUGUI mods = teleportMenu.mods.GetComponent<TextMeshProUGUI>();
         //get button
         Button button = teleportMenu.startButton.GetComponent<Button>();
         //get button text
@@ -114,19 +114,19 @@ public class LevelManager : MonoBehaviour
         {
             title.text = bountyManager.activeBounties[0].levelType.ToString();
             description.text = GetLevelDescription(bountyManager.activeBounties[0].levelType);
-            mods.text = "MODS: ";
-            if (levelMods.Count > 0)
-            {
-                foreach (LevelMods mod in levelMods)
-                {
-                    mods.text += mod.ToString() + " ";
-                }
-                mods.text = mods.text.Remove(mods.text.Length - 1);
-            }
-            else
-            {
-                mods.text += "NONE";
-            }
+            // mods.text = "MODS: ";
+            // if (levelMods.Count > 0)
+            // {
+            //     foreach (LevelMods mod in levelMods)
+            //     {
+            //         mods.text += mod.ToString() + " ";
+            //     }
+            //     mods.text = mods.text.Remove(mods.text.Length - 1);
+            // }
+            // else
+            // {
+            //     mods.text += "NONE";
+            // }
             
 
             button.onClick.RemoveAllListeners();
@@ -143,7 +143,7 @@ public class LevelManager : MonoBehaviour
         {
             title.text = "SELECT BOUNTY";
             description.text = "";
-            mods.text = "";
+            //mods.text = "";
             buttonText.text = "-ERROR-";
             button.interactable = false;
         }

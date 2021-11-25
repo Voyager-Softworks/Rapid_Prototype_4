@@ -48,6 +48,7 @@ public class EnemyTest : MonoBehaviour
 
     public GameObject m_healthBar;
     public GameObject m_healthBarPREFAB;
+    public GameObject eliteParticlePrefab;
 
     private GameObject persistent;
 
@@ -93,6 +94,8 @@ public class EnemyTest : MonoBehaviour
         if (m_elite){
             m_health *= 1.5f;
             transform.localScale *= 1.2f;
+            //spawn elite particles
+            GameObject eliteParticle = Instantiate(eliteParticlePrefab, transform.position, Quaternion.identity, transform);
         }
 
         startHealth = m_health;

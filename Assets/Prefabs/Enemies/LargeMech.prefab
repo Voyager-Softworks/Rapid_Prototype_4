@@ -191,6 +191,9 @@ MonoBehaviour:
     m_amount: 15
   - m_prefab: {fileID: 1635208352146295761, guid: 8d35a8d0c020cd845a6dcf223760d2f5, type: 3}
     m_amount: 5
+  m_healthBar: {fileID: 0}
+  m_healthBarPREFAB: {fileID: 5616414377192114188, guid: a1c4942e811df5a44a24bfb40e7b8332, type: 3}
+  eliteParticlePrefab: {fileID: 2240376982557400333, guid: f77c86089dd4e244590d758f261484d3, type: 3}
 --- !u!114 &5730137711734366079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_barkSource: {fileID: 3453999832122165072}
+  m_shootSource: {fileID: 0}
   m_clips:
   - {fileID: 8300000, guid: 5152fa775390ef441a78d3aa80086b27, type: 3}
   - {fileID: 8300000, guid: 00aa08cfd28ff5841b020105e551538b, type: 3}
@@ -217,6 +221,7 @@ MonoBehaviour:
   m_barrelPositions:
   - {fileID: 7945554368423447946}
   - {fileID: 3212719191879311034}
+  m_barrelAimHolder: {fileID: 0}
   m_bulletPrefab: {fileID: 2240376982557400333, guid: 7d0c9f843706dc14e80f75209a09ff40, type: 3}
   m_bulletSpeed: 3
   m_clipSize: 0

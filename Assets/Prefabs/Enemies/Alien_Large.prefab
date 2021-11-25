@@ -165,6 +165,9 @@ MonoBehaviour:
   m_drops:
   - m_prefab: {fileID: 1635208352146295761, guid: c4ff223a4ec54894ab139beafaa2523d, type: 3}
     m_amount: 5
+  m_healthBar: {fileID: 0}
+  m_healthBarPREFAB: {fileID: 5616414377192114188, guid: a1c4942e811df5a44a24bfb40e7b8332, type: 3}
+  eliteParticlePrefab: {fileID: 2240376982557400333, guid: f77c86089dd4e244590d758f261484d3, type: 3}
 --- !u!114 &7201540384246155768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dd33e69580b2d95a5b880e5d70fa73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_controlRotation: 1
   m_barkSource: {fileID: 2213887242661115584}
   m_aggroclips:
   - {fileID: 8300000, guid: 91eab542a986bb34dacd436f99b44245, type: 3}
@@ -185,6 +189,7 @@ MonoBehaviour:
   m_attackRadius: 0.5
   m_attacking: 0
   m_Damage: 5
+  m_cooldown: 0
 --- !u!82 &2213887242661115584
 AudioSource:
   m_ObjectHideFlags: 0
@@ -299,4 +304,5 @@ MonoBehaviour:
   m_currentPath: []
   m_isMoving: 0
   m_canFly: 0
+  m_rotateToTarget: 0
   m_canClimb: 0
