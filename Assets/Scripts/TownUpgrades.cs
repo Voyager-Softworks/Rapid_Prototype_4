@@ -94,7 +94,8 @@ public class TownUpgrades : MonoBehaviour
         }
 
         if (level >= upgradeLevels.Count) {
-            MaxLevelReached.Invoke();
+            GameObject.FindGameObjectWithTag("EndingCinematic").GetComponent<AudioSource>().Play();
+            GameObject.FindGameObjectWithTag("EndingCinematic").GetComponent<Animator>().SetTrigger("End");
         }
     }
 
