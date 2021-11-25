@@ -675,10 +675,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.8
+    probability: 0.5
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 16
+  - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
+    probability: 0.5
+    difficultyRating: 1
+    mustBeGrounded: 1
+    maxSpawns: 1
   m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 2.asset
   data: {fileID: 11400000, guid: a11f5e4bfbd35de0d829c9638bf04351, type: 2}
   difficultyPoints: 16
@@ -1574,6 +1579,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnables:
+  - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
+    probability: 0.7
+    difficultyRating: 1
+    mustBeGrounded: 0
+    maxSpawns: 10
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
     probability: 0.7
     difficultyRating: 1
@@ -70498,10 +70508,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.8
+    probability: 0.6
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 10
+  - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
+    probability: 0.4
+    difficultyRating: 1
+    mustBeGrounded: 1
+    maxSpawns: 1
   m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 4.asset
   data: {fileID: 11400000, guid: 9a6a6bf67525ca8979e43f261d02ac65, type: 2}
   difficultyPoints: 12

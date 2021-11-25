@@ -581,14 +581,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.6
+    probability: 0.4
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 18
   - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
-    probability: 0.4
+    probability: 0.3
     difficultyRating: 2
     mustBeGrounded: 0
+    maxSpawns: 1
+  - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
+    probability: 0.3
+    difficultyRating: 2
+    mustBeGrounded: 1
     maxSpawns: 1
   m_path: 
   data: {fileID: 11400000, guid: e10911ec4d7f35143a74b9b27e9e25bf, type: 2}
@@ -4477,10 +4482,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - prefab: {fileID: 6742548939475183438, guid: d5ca3a8d069ca4557a75a711df15babe, type: 3}
-    probability: 0.7
+    probability: 0.6
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 12
+  - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
+    probability: 0.4
+    difficultyRating: 1
+    mustBeGrounded: 1
+    maxSpawns: 1
   m_path: 
   data: {fileID: 11400000, guid: fd14fb4fe2d8c4f3fae98e1e875c9083, type: 2}
   difficultyPoints: 18
@@ -7562,6 +7572,11 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 13
+  - prefab: {fileID: 2481144965356027267, guid: 29e8a7df1824515ef8a6dceaa812b2f0, type: 3}
+    probability: 0.5
+    difficultyRating: 1
+    mustBeGrounded: 1
+    maxSpawns: 1
   m_path: 
   data: {fileID: 11400000, guid: b24f8896c63065d40acd97375d05f33b, type: 2}
   difficultyPoints: 15
@@ -7733,7 +7748,7 @@ MonoBehaviour:
     probability: 0.8
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 12
+    maxSpawns: 16
   m_path: 
   data: {fileID: 11400000, guid: dcb550ca717a0efab870bc14752ce657, type: 2}
   difficultyPoints: 16
