@@ -30,10 +30,10 @@ public class HealthBarVisual : MonoBehaviour
         switch (m_Type)
         {
             case HealthBarType.HEALTH:
-                val = ph.m_playerHealth / 150.0f;
+                val = ph.m_playerHealth / 125.0f;
                 break;
             case HealthBarType.SHIELD:
-                val = ph.m_playerShield / 75.0f;
+                val = ph.m_playerShield / 50.0f;
                 break;
         }
 
