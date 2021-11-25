@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(SpawnNode))]
 public class SpawnNode_Editor : Editor 
@@ -16,7 +17,7 @@ public class SpawnNode_Editor : Editor
         {
             AssetDatabase.Refresh();
             spawnNode.data = ScriptableObject.CreateInstance<SpawnNode_Data>();
-            AssetDatabase.CreateAsset(spawnNode.data, AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/SpawnNode/SpawnNodeData.asset"));
+            AssetDatabase.CreateAsset(spawnNode.data, AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/SpawnNode/" + EditorSceneManager.GetActiveScene().name + "_SpawnNodeData.asset"));
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }
