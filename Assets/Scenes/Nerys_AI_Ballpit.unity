@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4090130041316050396, guid: ab46ec961838c5bd3a1a57bda116d4dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab46ec961838c5bd3a1a57bda116d4dc, type: 3}
@@ -1269,6 +1269,10 @@ PrefabInstance:
     - target: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
       propertyPath: m_Name
       value: MutantAbomination
+      objectReference: {fileID: 0}
+    - target: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 202701198261587190, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
       propertyPath: m_RootOrder
