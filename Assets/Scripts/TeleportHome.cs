@@ -98,6 +98,13 @@ public class TeleportHome : MonoBehaviour
         }
     }
 
+    public void Interupt(){
+        holdTime = timeCopy;
+        if (holdParticles) {
+            Destroy(holdParticles);
+        }
+    }
+
     public void TeleportOut(LevelManager.LevelType level = LevelManager.LevelType.HUB) {
         goingTo = level;
         holdTime = timeCopy;

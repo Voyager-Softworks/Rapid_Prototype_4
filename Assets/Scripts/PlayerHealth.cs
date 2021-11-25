@@ -159,5 +159,10 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(ChangeColor(m_damageColor));
             OnDamage.Invoke();
         }
+
+        if (GetComponentInChildren<TeleportHome>())
+        {
+            GetComponentInChildren<TeleportHome>().Interupt();
+        }
     }
 }
