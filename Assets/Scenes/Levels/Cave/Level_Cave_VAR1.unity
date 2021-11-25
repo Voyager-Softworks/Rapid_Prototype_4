@@ -678,10 +678,10 @@ MonoBehaviour:
     probability: 0.8
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 8
+    maxSpawns: 16
   m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 2.asset
-  data: {fileID: 11400000, guid: 845de8d146e377ffcb8ed19ed4d6c0b8, type: 2}
-  difficultyPoints: 10
+  data: {fileID: 11400000, guid: a11f5e4bfbd35de0d829c9638bf04351, type: 2}
+  difficultyPoints: 16
   spawnRadius: 10
 --- !u!4 &105005808
 Transform:
@@ -1578,9 +1578,9 @@ MonoBehaviour:
     probability: 0.7
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 8
+    maxSpawns: 10
   m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 3.asset
-  data: {fileID: 11400000, guid: de3d700ebcc11c3999146024a31a1fbb, type: 2}
+  data: {fileID: 11400000, guid: 52e542585170d03b7978c6989bb82448, type: 2}
   difficultyPoints: 10
   spawnRadius: 7.68
 --- !u!4 &260986481
@@ -13229,7 +13229,7 @@ MonoBehaviour:
     mustBeGrounded: 0
     maxSpawns: 1
   m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData.asset
-  data: {fileID: 11400000, guid: 475cf68588ccb046183800c324f5abe6, type: 2}
+  data: {fileID: 11400000, guid: 2db042a0fbe9d5f16a04f934ce8d6713, type: 2}
   difficultyPoints: 16
   spawnRadius: 12.1
 --- !u!4 &1607378127
@@ -69723,7 +69723,7 @@ MonoBehaviour:
     mustBeGrounded: 1
     maxSpawns: 1
   m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 1.asset
-  data: {fileID: 11400000, guid: dc281c6f9871a3d54af6bee15506b7a5, type: 2}
+  data: {fileID: 11400000, guid: 48d15f60787b18f6a8bd7f1eb7e64254, type: 2}
   difficultyPoints: 12
   spawnRadius: 12.85
 --- !u!4 &1846078541
@@ -70501,9 +70501,9 @@ MonoBehaviour:
     probability: 0.8
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 8
+    maxSpawns: 10
   m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 4.asset
-  data: {fileID: 11400000, guid: 6b476e0352e61c00a8a0192404dae434, type: 2}
+  data: {fileID: 11400000, guid: 9a6a6bf67525ca8979e43f261d02ac65, type: 2}
   difficultyPoints: 12
   spawnRadius: 12.96
 --- !u!4 &1989207215

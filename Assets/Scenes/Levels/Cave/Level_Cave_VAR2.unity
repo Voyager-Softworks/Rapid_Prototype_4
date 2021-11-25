@@ -584,13 +584,14 @@ MonoBehaviour:
     probability: 0.6
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 14
+    maxSpawns: 18
   - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
     probability: 0.4
     difficultyRating: 2
     mustBeGrounded: 0
     maxSpawns: 1
-  data: {fileID: 11400000, guid: f1881c98dac1cc9478975b59dd2e1cdd, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: e10911ec4d7f35143a74b9b27e9e25bf, type: 2}
   difficultyPoints: 20
   spawnRadius: 7.99
 --- !u!4 &66811114
@@ -4480,7 +4481,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 12
-  data: {fileID: 11400000, guid: c1b1d822fc734494a99dcca3e3d04339, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: fd14fb4fe2d8c4f3fae98e1e875c9083, type: 2}
   difficultyPoints: 18
   spawnRadius: 5.24
 --- !u!4 &570525073
@@ -7559,8 +7561,9 @@ MonoBehaviour:
     probability: 0.5
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 10
-  data: {fileID: 11400000, guid: 6241835e84d4e0642838d61f336ccf98, type: 2}
+    maxSpawns: 13
+  m_path: 
+  data: {fileID: 11400000, guid: b24f8896c63065d40acd97375d05f33b, type: 2}
   difficultyPoints: 15
   spawnRadius: 7.39
 --- !u!4 &887977244
@@ -7731,7 +7734,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 12
-  data: {fileID: 11400000, guid: 0858b20cc148f474ea5b606fae60512f, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: dcb550ca717a0efab870bc14752ce657, type: 2}
   difficultyPoints: 16
   spawnRadius: 6.72
 --- !u!4 &909429119
@@ -9014,7 +9018,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 1
-  data: {fileID: 11400000, guid: 668b3e5b4c184e64283df93c72b21895, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: f117b14ce17214a169eef8695dd24818, type: 2}
   difficultyPoints: 32
   spawnRadius: 7.62
 --- !u!4 &995940731
@@ -31871,7 +31876,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 12
-  data: {fileID: 11400000, guid: 114cc45fb04d31049a77f4eeee36c607, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: b4694c06a0dcd3af8bcb11872ec37ea9, type: 2}
   difficultyPoints: 18
   spawnRadius: 6.27
 --- !u!4 &1804783380
