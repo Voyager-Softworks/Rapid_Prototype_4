@@ -584,7 +584,7 @@ MonoBehaviour:
     probability: 0.6
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 10
+    maxSpawns: 14
   - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
     probability: 0.4
     difficultyRating: 2
@@ -3518,8 +3518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627a07dd39a51e5b7a206730f39ae914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_path: Assets/Resources/Navmesh2D/NavmeshData2D 7.asset
-  m_data: {fileID: 0}
+  m_path: Assets/Resources/Navmesh2D/Level_Cave_VAR2_NavmeshData2D.asset
+  m_data: {fileID: 11400000, guid: 5158f4ae14d870f36ae32401d88bf0e7, type: 2}
   m_origin: {x: -23, y: -11, z: 0}
   m_width: 74
   m_height: 28

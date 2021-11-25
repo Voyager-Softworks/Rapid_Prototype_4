@@ -5156,8 +5156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627a07dd39a51e5b7a206730f39ae914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_path: Assets/Resources/Navmesh2D/NavmeshData2D 9.asset
-  m_data: {fileID: 0}
+  m_path: Assets/Resources/Navmesh2D/Level_Cave_VAR3_NavmeshData2D.asset
+  m_data: {fileID: 11400000, guid: 88c6649641d228e29b97d050bd031591, type: 2}
   m_origin: {x: -46, y: -12, z: 0}
   m_width: 100
   m_height: 37
@@ -51418,7 +51418,7 @@ MonoBehaviour:
     probability: 0.7
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 14
+    maxSpawns: 16
   data: {fileID: 11400000, guid: 07672e52f8ed2074f8003b45d203735e, type: 2}
   difficultyPoints: 25
   spawnRadius: 12.42
