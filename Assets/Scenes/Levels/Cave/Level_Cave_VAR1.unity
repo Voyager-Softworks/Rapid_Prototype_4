@@ -678,7 +678,7 @@ MonoBehaviour:
     probability: 0.8
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 10
+    maxSpawns: 8
   data: {fileID: 11400000, guid: 045e1716a44e45247819ba008ec7fef0, type: 2}
   difficultyPoints: 10
   spawnRadius: 10
@@ -1577,7 +1577,7 @@ MonoBehaviour:
     probability: 0.7
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 10
+    maxSpawns: 8
   data: {fileID: 11400000, guid: fd68c5a130e48ec47ba552bec2ab6fe8, type: 2}
   difficultyPoints: 10
   spawnRadius: 7.68
@@ -2999,7 +2999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_path: Assets/Resources/Navmesh2D/NavmeshData2D 8.asset
-  m_data: {fileID: 11400000, guid: 0f6effd834b48a840977b241a0ba1492, type: 2}
+  m_data: {fileID: 0}
   m_origin: {x: -64, y: -33, z: 0}
   m_width: 157
   m_height: 43
@@ -13220,7 +13220,7 @@ MonoBehaviour:
     probability: 0.5
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 16
+    maxSpawns: 14
   - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
     probability: 0.3
     difficultyRating: 1
@@ -69708,7 +69708,7 @@ MonoBehaviour:
     probability: 0.3
     difficultyRating: 0
     mustBeGrounded: 0
-    maxSpawns: 12
+    maxSpawns: 8
   - prefab: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
     probability: 0.4
     difficultyRating: 0
@@ -70497,7 +70497,7 @@ MonoBehaviour:
     probability: 0.8
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 12
+    maxSpawns: 8
   data: {fileID: 11400000, guid: 3db9c98eddd071241a938471b338fc8d, type: 2}
   difficultyPoints: 12
   spawnRadius: 12.96
