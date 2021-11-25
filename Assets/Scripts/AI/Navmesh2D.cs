@@ -28,6 +28,17 @@ public class Navmesh2D : MonoBehaviour
             m_index = _index;
         }
 
+        //copy constructor
+        public Cell(Cell _cell)
+        {
+            m_traversable = _cell.m_traversable;
+            m_walkable = _cell.m_walkable;
+            m_climbable = _cell.m_climbable;
+            m_hazard = _cell.m_hazard;
+            m_position = _cell.m_position;
+            m_index = _cell.m_index;
+        }
+
         
 
         /// <summary>
@@ -54,6 +65,7 @@ public class Navmesh2D : MonoBehaviour
 
         public Cell m_parent;
     }
+    
     
     public Navmesh2D_Data m_data;
     
@@ -112,7 +124,7 @@ public class Navmesh2D : MonoBehaviour
                 if (Vector2.Distance(m_data[i, j].m_position, _pos) <= _radius &&
                 (m_data[i, j].m_traversable))
                 {
-                    cells.Add(m_data[i, j]);
+                    cells.Add(new Cell(m_data[i, j]));
                 }
                 
             }
@@ -450,6 +462,10 @@ public class Navmesh2D : MonoBehaviour
 
     public void OnDrawGizmos()
     {
+        if (m_data == null)
+        {
+            m_data = UnityEngine.Resources.Load<Navmesh2D_Data>("Navmesh2D/" + SceneManager.GetActiveScene().name + "_NavmeshData2D");
+        }
         GridGizmo();
     }
 

@@ -679,7 +679,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 8
-  data: {fileID: 11400000, guid: 045e1716a44e45247819ba008ec7fef0, type: 2}
+  m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 2.asset
+  data: {fileID: 11400000, guid: 845de8d146e377ffcb8ed19ed4d6c0b8, type: 2}
   difficultyPoints: 10
   spawnRadius: 10
 --- !u!4 &105005808
@@ -1578,7 +1579,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 8
-  data: {fileID: 11400000, guid: fd68c5a130e48ec47ba552bec2ab6fe8, type: 2}
+  m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 3.asset
+  data: {fileID: 11400000, guid: de3d700ebcc11c3999146024a31a1fbb, type: 2}
   difficultyPoints: 10
   spawnRadius: 7.68
 --- !u!4 &260986481
@@ -2998,8 +3000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627a07dd39a51e5b7a206730f39ae914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_path: Assets/Resources/Navmesh2D/NavmeshData2D 8.asset
-  m_data: {fileID: 0}
+  m_path: Assets/Resources/Navmesh2D/Level_Cave_VAR1_NavmeshData2D.asset
+  m_data: {fileID: 11400000, guid: de616c2254e6518109f8de88dd1e1983, type: 2}
   m_origin: {x: -64, y: -33, z: 0}
   m_width: 157
   m_height: 43
@@ -13226,7 +13228,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 1
-  data: {fileID: 11400000, guid: 9706933f55bd4de419f6c7856aa31ed1, type: 2}
+  m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData.asset
+  data: {fileID: 11400000, guid: 475cf68588ccb046183800c324f5abe6, type: 2}
   difficultyPoints: 16
   spawnRadius: 12.1
 --- !u!4 &1607378127
@@ -13237,7 +13240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607378125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.73, y: -15.38, z: -119.90116}
+  m_LocalPosition: {x: -41.73, y: -14.38, z: -119.90116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69719,7 +69722,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 1
     maxSpawns: 1
-  data: {fileID: 11400000, guid: 2f3e014fcbde56c4eafb8ed179db2135, type: 2}
+  m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 1.asset
+  data: {fileID: 11400000, guid: dc281c6f9871a3d54af6bee15506b7a5, type: 2}
   difficultyPoints: 12
   spawnRadius: 12.85
 --- !u!4 &1846078541
@@ -70498,7 +70502,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 8
-  data: {fileID: 11400000, guid: 3db9c98eddd071241a938471b338fc8d, type: 2}
+  m_path: Assets/Resources/SpawnNode/Level_Cave_VAR1_SpawnNodeData 4.asset
+  data: {fileID: 11400000, guid: 6b476e0352e61c00a8a0192404dae434, type: 2}
   difficultyPoints: 12
   spawnRadius: 12.96
 --- !u!4 &1989207215

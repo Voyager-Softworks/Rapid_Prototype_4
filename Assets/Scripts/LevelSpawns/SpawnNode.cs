@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnNode : MonoBehaviour
 {
@@ -22,8 +23,10 @@ public class SpawnNode : MonoBehaviour
 
     }
     public List<Spawnable> spawnables;
+
+    public string m_path = "";
     Navmesh2D navmesh;
-    [HideInInspector]
+    
     public SpawnNode_Data data;
     public int difficultyPoints= 0;
     public float spawnRadius = 1f;
@@ -45,7 +48,7 @@ public class SpawnNode : MonoBehaviour
 
     public void RegenerateSpawnPoints()
     {
-        data.SetData(navmesh.GetCellsInRadius(transform.position, spawnRadius));
+        data.SetData(new List<Navmesh2D.Cell>(FindObjectOfType<Navmesh2D>().GetCellsInRadius(transform.position, spawnRadius)));
     }
 
     //Spawns random prefabs in random cells
@@ -87,11 +90,16 @@ public class SpawnNode : MonoBehaviour
     /// <summary>
     /// Callback to draw gizmos only if the object is selected.
     /// </summary>
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         if (navmesh == null)
             navmesh = FindObjectOfType<Navmesh2D>();
         cellRadius = navmesh.m_cellradius;
+
+        if (data == null)
+        {
+            data = UnityEngine.Resources.Load<SpawnNode_Data>("SpawnNode/" + SceneManager.GetActiveScene().name + "_" + gameObject.name + "_SpawnNodeData");
+        }
         
         // Draw a box for every spawn point
         
