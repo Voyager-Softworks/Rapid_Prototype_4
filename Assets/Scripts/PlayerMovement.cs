@@ -177,14 +177,28 @@ public class PlayerMovement : MonoBehaviour
         m_jumpAction.performed += DisengageThrusters;
         m_dashAction.performed += Dash;
         
-        m_walkAction.started += (_ctx) => { if (m_timesincelastmovementkey < 0.3f && m_lastMovementDirection == _ctx.ReadValue<Vector2>().normalized) { Dash(_ctx); } m_timesincelastmovementkey = 0; m_lastMovementDirection = _ctx.ReadValue<Vector2>().normalized; };
-        m_groundPoundAction.started += (_ctx) => { if (m_timesincelastmovementkey < 0.3f && m_lastMovementDirection == _ctx.ReadValue<Vector2>().normalized) { GroundPound(_ctx); } m_timesincelastmovementkey = 0; m_lastMovementDirection = _ctx.ReadValue<Vector2>().normalized;};
+        m_walkAction.started += WalkStart;
+        m_groundPoundAction.started += PoundStart;
     }
 
+    private void WalkStart(InputAction.CallbackContext _ctx){
+        if (m_timesincelastmovementkey < 0.3f && m_lastMovementDirection == _ctx.ReadValue<Vector2>().normalized) { 
+            Dash(_ctx); 
+        }
+        m_timesincelastmovementkey = 0; m_lastMovementDirection = _ctx.ReadValue<Vector2>().normalized;
+    }
+
+    private void PoundStart(InputAction.CallbackContext _ctx)
+    {
+        if (m_timesincelastmovementkey < 0.3f && m_lastMovementDirection == _ctx.ReadValue<Vector2>().normalized) { 
+            GroundPound(_ctx); 
+        }
+        m_timesincelastmovementkey = 0; m_lastMovementDirection = _ctx.ReadValue<Vector2>().normalized;
+    }
 
     void Dash(InputAction.CallbackContext _ctx)
     {
-        if (m_dashTimer > 0.0f || m_dashCooldownTimer > 0.0f || !upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DASH)) return;
+        if (m_dashTimer > 0.0f || m_dashCooldownTimer > 0.0f || !upgradeManager || !upgradeManager.ModuleUnlocked(UpgradeManager.ModuleType.DASH)) return;
         m_onDash.Invoke();
         
         
@@ -269,10 +283,19 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private void OnDestroy() {
+        m_jumpAction.started -= Jump;
+        m_jumpAction.canceled -= DisengageThrusters;
+        m_jumpAction.performed -= DisengageThrusters;
+        m_dashAction.performed -= Dash;
+        m_walkAction.started -= WalkStart;
+        m_groundPoundAction.started -= PoundStart;
+    }
+
     void DisengageThrusters(InputAction.CallbackContext _ctx)
     {
         m_thrustersEngaged = false;
-        m_thrusterSource.Stop();
+        if (m_thrusterSource) m_thrusterSource.Stop();
     }
 
     // Update is called once per frame
