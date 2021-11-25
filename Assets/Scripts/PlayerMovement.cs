@@ -197,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
         {
             m_dashAnim.SetTrigger("DashBackward");
         }
-        m_dashDuration = 0.3f + (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.DASH) * 0.1f);
+        m_dashDuration = 0.2f + (upgradeManager.GetModuleLevel(UpgradeManager.ModuleType.DASH) * 0.1f);
         m_dashTimer = m_dashDuration;
 
     }

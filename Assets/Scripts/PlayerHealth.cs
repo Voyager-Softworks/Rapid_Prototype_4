@@ -147,7 +147,7 @@ public class PlayerHealth : MonoBehaviour
                 OnShieldDamage.Invoke();
                 StartCoroutine(ChangeColor(m_shieldDamageColor));
             }
-            m_playerShield = Mathf.Clamp(m_playerShield, 0.0f, 75.0f);
+            m_playerShield = Mathf.Clamp(m_playerShield, 0.0f, 50.0f);
             m_shieldRegenTimer = m_shieldRegenDelay;
             
         }
@@ -155,7 +155,7 @@ public class PlayerHealth : MonoBehaviour
         {
             m_playerHealth -= _dmg;
             m_shieldRegenTimer = m_shieldRegenDelay;
-            m_playerHealth = Mathf.Clamp(m_playerHealth, 0.0f, 150.0f);
+            m_playerHealth = Mathf.Clamp(m_playerHealth, 0.0f, 125.0f);
             StartCoroutine(ChangeColor(m_damageColor));
             OnDamage.Invoke();
         }
