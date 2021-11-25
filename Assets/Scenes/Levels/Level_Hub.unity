@@ -28909,6 +28909,66 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1885635552}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[2].description
+      value: 'Larger Tanks: Allows longer thruster usage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[3].description
+      value: 'Second Tank: Allows double Jumping.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[4].description
+      value: 'Rotary Thrusters: Allows better movement in air.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[2].cost.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[0].cost.Array.data[0].amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[1].cost.Array.data[0].amount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[1].cost.Array.data[1].amount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[2].cost.Array.data[0].amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[2].cost.Array.data[1].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[3].cost.Array.data[0].amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[3].cost.Array.data[1].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[3].cost.Array.data[2].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[4].cost.Array.data[0].amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: moduleUpgrades.Array.data[4].cost.Array.data[1].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880053641, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: weaponUpgrades.Array.data[5].cost.Array.data[0].amount
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 3437735875824158597, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: m_Name
       value: Persistent
@@ -28956,6 +29016,10 @@ PrefabInstance:
     - target: {fileID: 3437735875824158599, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3437735875824158616, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
+      propertyPath: upgradeLevels.Array.data[1].cost.Array.data[0].amount
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3437735875824158617, guid: 43a9f53867280674a9093a3fe2d879a3, type: 3}
       propertyPath: bountyBoard
