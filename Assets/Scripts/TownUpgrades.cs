@@ -94,7 +94,7 @@ public class TownUpgrades : MonoBehaviour
         }
 
         if (level >= upgradeLevels.Count) {
-            GameObject.FindObjectOfType<FadeIn>().StartFade(5.0f);
+            MaxLevelReached.Invoke();
         }
     }
 
