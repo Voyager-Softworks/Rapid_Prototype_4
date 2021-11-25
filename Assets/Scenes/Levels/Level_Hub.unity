@@ -22025,6 +22025,18 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7767154579985909515, guid: 8547244835bd40e46b394f762d71800d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767154579985909515, guid: 8547244835bd40e46b394f762d71800d, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767154579985909515, guid: 8547244835bd40e46b394f762d71800d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8547244835bd40e46b394f762d71800d, type: 3}
 --- !u!1 &1399593364
@@ -29148,6 +29160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 474449875}
     m_Modifications:
+    - target: {fileID: 82883169935191806, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 6340073868428985056, guid: 3843c748381d77a4db21070be93f2df5, type: 3}
       propertyPath: m_Camera
       value: 
