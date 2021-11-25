@@ -1533,7 +1533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6688422379845105576, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6688422379845105576, guid: df2a9812289d1f84185a8c6144166fac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8663,7 +8663,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 1
     maxSpawns: 10
-  data: {fileID: 11400000, guid: e314214394743a444ab87e99a0619b6a, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: adb22b96fdc5bdc718b56a6ade61b0d9, type: 2}
   difficultyPoints: 10
   spawnRadius: 6.76
 --- !u!4 &509608796
@@ -10093,7 +10094,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 1
     maxSpawns: 10
-  data: {fileID: 11400000, guid: 7890ec73f4d091b48929180066eb2fd3, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: 03e42bf96b666ccf881e62810588fed5, type: 2}
   difficultyPoints: 10
   spawnRadius: 5.32
 --- !u!4 &635065744
@@ -15481,7 +15483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033661750
 GameObject:
@@ -15521,9 +15523,10 @@ MonoBehaviour:
   - prefab: {fileID: 8684316216028343048, guid: 9f19d6850ebefe8888a3a0fcefdc0c07, type: 3}
     probability: 0.8
     difficultyRating: 2
-    mustBeGrounded: 0
+    mustBeGrounded: 1
     maxSpawns: 1
-  data: {fileID: 11400000, guid: bfedaec8845313a4d8dff556e7dd09f1, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: 68cd817ab61865d6eb8cafcc17822703, type: 2}
   difficultyPoints: 11
   spawnRadius: 5.83
 --- !u!4 &1033661752
@@ -18091,7 +18094,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 4
-  data: {fileID: 11400000, guid: b17e47884eb5e174faa4c9e490ffdf95, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: 7c08f6f40198573998378302f1b0baec, type: 2}
   difficultyPoints: 4
   spawnRadius: 2.82
 --- !u!4 &1270008256
@@ -51875,7 +51879,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 7
-  data: {fileID: 11400000, guid: f9eab7f78c9a37b4eab674eba876f32c, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: e0da57a8322574933b4d93a433ad0013, type: 2}
   difficultyPoints: 7
   spawnRadius: 5.4
 --- !u!4 &1921591522

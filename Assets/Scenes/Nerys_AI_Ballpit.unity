@@ -455,7 +455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &702366670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +474,8 @@ MonoBehaviour:
     difficultyRating: 2
     mustBeGrounded: 0
     maxSpawns: 20
-  data: {fileID: 11400000, guid: fd95f8723b7287aadb1a342acf8098c2, type: 2}
+  m_path: Assets/Resources/SpawnNode/Nerys_AI_Ballpit_SpawnNode_SpawnNodeData.asset
+  data: {fileID: 11400000, guid: b4132920ce4e6b9c18c00458eacf8f3e, type: 2}
   difficultyPoints: 8
   spawnRadius: 7.05
 --- !u!4 &702366671
@@ -630,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_path: Assets/Resources/NavmeshData2D.asset
-  m_data: {fileID: 0}
+  m_data: {fileID: 11400000, guid: 191f4a8a88d71785aa8a4619b221e889, type: 2}
   m_origin: {x: -55, y: -5.46, z: 0}
   m_width: 100
   m_height: 20
@@ -1253,13 +1254,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 202701196289742515, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 202701197128630795, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.403
+      objectReference: {fileID: 0}
+    - target: {fileID: 202701197588481613, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.415
+      objectReference: {fileID: 0}
     - target: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
       propertyPath: m_Name
       value: MutantAbomination
-      objectReference: {fileID: 0}
-    - target: {fileID: 202701198261584649, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 202701198261587190, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
       propertyPath: m_RootOrder
@@ -1271,7 +1280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 202701198261587190, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.63
+      value: -2.974
       objectReference: {fileID: 0}
     - target: {fileID: 202701198261587190, guid: 38f4d9b2ed8dfd142abfc677dfddf736, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1397,7 +1406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4311555012673266647, guid: 173603fa7189d2beeab6eab53f000ff9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.743418
+      value: -2.84
       objectReference: {fileID: 0}
     - target: {fileID: 4311555012673266647, guid: 173603fa7189d2beeab6eab53f000ff9, type: 3}
       propertyPath: m_LocalPosition.z

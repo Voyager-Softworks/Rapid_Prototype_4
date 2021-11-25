@@ -19,7 +19,9 @@ public class PlayerHealth : MonoBehaviour
     public float m_deathTimer = 2.0f;
     public float m_playerHealth;
     public float m_playerShield;
-
+    public Color m_shieldDamageColor;
+    public Color m_damageColor;
+    public Color m_shieldPopColor;
     public float m_shieldRegenRate = 1.0f;
 
     public float m_shieldRegenDelay = 1.0f;
@@ -120,6 +122,15 @@ public class PlayerHealth : MonoBehaviour
         m_playerHealth = Mathf.Clamp(m_playerHealth, 0, 100.0f);
     }
 
+    //Coroutine that changes the color of the player sprite then returns it to normal
+    public IEnumerator ChangeColor(Color color)
+    {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+    }
+
     public void Damage(float _dmg)
     {
         if (m_dead) return;
@@ -129,10 +140,12 @@ public class PlayerHealth : MonoBehaviour
             if(m_playerShield <= 0.0f)
             {
                 OnShieldPop.Invoke();
+                StartCoroutine(ChangeColor(m_shieldPopColor));
             }
             else
             {
                 OnShieldDamage.Invoke();
+                StartCoroutine(ChangeColor(m_shieldDamageColor));
             }
             m_playerShield = Mathf.Clamp(m_playerShield, 0.0f, 75.0f);
             m_shieldRegenTimer = m_shieldRegenDelay;
@@ -141,7 +154,9 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             m_playerHealth -= _dmg;
-            m_playerHealth = Mathf.Clamp(m_playerHealth, 0.0f, 100.0f);
+            m_shieldRegenTimer = m_shieldRegenDelay;
+            m_playerHealth = Mathf.Clamp(m_playerHealth, 0.0f, 150.0f);
+            StartCoroutine(ChangeColor(m_damageColor));
             OnDamage.Invoke();
         }
     }

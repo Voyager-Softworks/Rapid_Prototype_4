@@ -3669,9 +3669,10 @@ MonoBehaviour:
     probability: 0.6
     difficultyRating: 1
     mustBeGrounded: 0
-    maxSpawns: 4
-  data: {fileID: 11400000, guid: 14afe2c0ea238db49a465a9eb4ecf330, type: 2}
-  difficultyPoints: 4
+    maxSpawns: 6
+  m_path: 
+  data: {fileID: 11400000, guid: a0d5a620644e457428346e8b0b185911, type: 2}
+  difficultyPoints: 6
   spawnRadius: 4.21
 --- !u!4 &465373769
 Transform:
@@ -10647,7 +10648,8 @@ MonoBehaviour:
     difficultyRating: 1
     mustBeGrounded: 0
     maxSpawns: 5
-  data: {fileID: 11400000, guid: da357ae1e0dbfa9499fb2a6bd26facd9, type: 2}
+  m_path: 
+  data: {fileID: 11400000, guid: c9b0c44b7aa345f2d99c72ed41aa8928, type: 2}
   difficultyPoints: 5
   spawnRadius: 6.07
 --- !u!1001 &1119295136
