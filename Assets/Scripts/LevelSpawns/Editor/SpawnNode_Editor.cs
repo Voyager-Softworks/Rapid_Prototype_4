@@ -13,12 +13,35 @@ public class SpawnNode_Editor : Editor
     {
         spawnNode = (SpawnNode)target;
 
+        
         if (spawnNode.data == null)
         {
             AssetDatabase.Refresh();
-            spawnNode.data = ScriptableObject.CreateInstance<SpawnNode_Data>();
-            AssetDatabase.CreateAsset(spawnNode.data, AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/SpawnNode/" + EditorSceneManager.GetActiveScene().name + "_SpawnNodeData.asset"));
-            AssetDatabase.SaveAssets();
+            if(spawnNode.m_path != "")
+            {
+                spawnNode.data = AssetDatabase.LoadAssetAtPath<SpawnNode_Data>(spawnNode.m_path);
+                if(spawnNode.data == null)
+                {
+                    AssetDatabase.Refresh();
+                    spawnNode.data = ScriptableObject.CreateInstance<SpawnNode_Data>();
+                    
+                    AssetDatabase.CreateAsset(spawnNode.data, "Assets/Resources/SpawnNode/" + EditorSceneManager.GetActiveScene().name + "_" + spawnNode.gameObject.name + "_SpawnNodeData.asset");
+                    spawnNode.m_path = AssetDatabase.GetAssetPath(spawnNode.data);
+                    AssetDatabase.Refresh();
+                    AssetDatabase.SaveAssets();
+                }
+            }
+            else
+            {
+                AssetDatabase.Refresh();
+                    spawnNode.data = ScriptableObject.CreateInstance<SpawnNode_Data>();
+                    
+                    AssetDatabase.CreateAsset(spawnNode.data, "Assets/Resources/SpawnNode/" + EditorSceneManager.GetActiveScene().name + "_" + spawnNode.gameObject.name + "_SpawnNodeData.asset");
+                    spawnNode.m_path = AssetDatabase.GetAssetPath(spawnNode.data);
+                    AssetDatabase.Refresh();
+                    AssetDatabase.SaveAssets();
+            }
+            
             AssetDatabase.Refresh();
         }
     }
@@ -26,10 +49,13 @@ public class SpawnNode_Editor : Editor
         base.OnInspectorGUI();
         
         if (GUILayout.Button("Bake")) {
+            AssetDatabase.Refresh();
             spawnNode.RegenerateSpawnPoints();
             AssetDatabase.Refresh();
             EditorUtility.SetDirty(spawnNode.data);
+            AssetDatabase.Refresh();
             AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
     }
 }
