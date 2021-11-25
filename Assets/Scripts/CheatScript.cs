@@ -53,7 +53,6 @@ public class CheatScript : MonoBehaviour
                 {
                     currIndex = 0;
                     OnCheatCodeSuccess.Invoke();
-                    SetCursorState(true);
                 }
             }
             else
@@ -62,12 +61,6 @@ public class CheatScript : MonoBehaviour
                 currIndex = 0;
             }
         }
-    }
-
-    public void SetCursorState(bool _visible)
-    {
-        Cursor.visible = _visible;
-        Cursor.lockState = _visible ? CursorLockMode.Confined : CursorLockMode.Locked;
     }
 }
 
