@@ -204,10 +204,18 @@ MonoBehaviour:
   m_beam: {fileID: 732978792}
   m_shootPos: {fileID: 4186409856613465013}
   m_Range: 20
-  m_Damage: 150
+  m_Damage: 75
+  m_damageType: 0
+  m_chargePartPrefab: {fileID: 0}
+  m_shootPartPrefab: {fileID: 0}
+  m_hitPartPrefab: {fileID: 0}
+  m_as: {fileID: 0}
+  m_shootSound: {fileID: 0}
+  m_chargeSound: {fileID: 0}
   m_currentCharge: 0
   m_desiredCharge: 100
   m_chargePerSecond: 75
+  m_cooldownWait: 3
   m_recoilMulti: 25
   m_returnRate: 0.75
   m_leftClick: 0
@@ -238,7 +246,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 741911a84bd7dd14dba626989245bca0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -344,18 +352,24 @@ MonoBehaviour:
     m_source: {fileID: 0}
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 1, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 1
     m_waitDuration: 0.2
     m_clip: {fileID: 0}
     m_source: {fileID: 0}
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 1, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
   - m_type: 5
     m_waitDuration: 0
     m_clip: {fileID: 0}
     m_source: {fileID: 0}
     m_particle: {fileID: 0}
     m_screenShakeAmplitude: {x: 0, y: 0}
+    m_prefab: {fileID: 0}
+    m_controllerRumbleSpeed: {x: 0, y: 0}
 --- !u!1 &1080231804615137012
 GameObject:
   m_ObjectHideFlags: 0

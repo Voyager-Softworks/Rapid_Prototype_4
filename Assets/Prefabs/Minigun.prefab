@@ -154,15 +154,15 @@ MonoBehaviour:
   m_bullet_vel: 40
   m_bulletDamageMulti: 1
   m_bulletDamageAdd: 0
-  m_startRPS: 1
+  m_startRPS: 20
   m_currentRPS: 1
   m_targetRPS: 200
   m_randomShotDelay: 0.01
-  m_rampTime: 5
+  m_rampTime: 3
   m_decayTime: 2
   m_heatValue: 0
   m_heatUpRate: 0.25
-  m_coolDownRate: 0.5
+  m_coolDownRate: 1
   m_startShootMax: 0.75
   m_recoilMulti: 0
   m_returnRate: 1

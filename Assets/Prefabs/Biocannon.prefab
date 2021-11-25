@@ -65,8 +65,8 @@ MonoBehaviour:
       m_Flags: 0
   m_muzzle: {fileID: 585537089383817980}
   m_projectilePrefab: {fileID: 3079693891931515453, guid: ff0077be10c912f9a87254f1e61a8909, type: 3}
-  m_projectileSpeed: 10
-  m_damage: 10
+  m_projectileSpeed: 9
+  m_damage: 7
   m_damageFalloff:
     serializedVersion: 2
     m_Curve:
@@ -93,9 +93,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_fireDelay: 1.25
   m_reloadTime: 1
-  m_maxHeat: 20
+  m_maxHeat: 21
   m_heatPerShot: 3
-  m_heatDecayPerSecond: 1
+  m_heatDecayPerSecond: 2
   m_fireEffect: {fileID: 8917953326149112050}
 --- !u!95 &90931252601618058
 Animator:

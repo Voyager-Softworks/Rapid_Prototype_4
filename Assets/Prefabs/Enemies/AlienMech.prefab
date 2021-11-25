@@ -215,7 +215,7 @@ MonoBehaviour:
   m_detectionRadius: 11.34
   m_attackRadius: 1.26
   m_attacking: 0
-  m_Damage: 10
+  m_Damage: 15
   m_cooldown: 2.2
 --- !u!50 &4311555012673266641
 Rigidbody2D:
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemyType: 6
-  m_health: 275
+  m_health: 325
   m_elite: 0
   m_deathPart: {fileID: 2240376982557400333, guid: edd247f9b6d5792419150d94fb7d19c6, type: 3}
   m_weakTo: 1
