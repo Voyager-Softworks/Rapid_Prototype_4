@@ -54,6 +54,10 @@ public class SpawnNode : MonoBehaviour
     //Spawns random prefabs in random cells
     public void Spawn()
     {
+        if (data == null)
+        {
+            data = UnityEngine.Resources.Load<SpawnNode_Data>("SpawnNode/" + SceneManager.GetActiveScene().name + "_" + gameObject.name + "_SpawnNodeData");
+        }
         int currDifficulty = 0;
         int[] currSpawns = new int[spawnables.Count];
         for (int i = 0; i < data.Count; i++)

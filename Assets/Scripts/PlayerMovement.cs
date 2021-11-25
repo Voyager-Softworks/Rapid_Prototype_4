@@ -291,7 +291,7 @@ public class PlayerMovement : MonoBehaviour
         m_grounded = false;
         foreach (RaycastHit2D hit in hits)
         {
-            if (hit.collider != null && Vector2.Dot(hit.normal, Vector2.up) >= 0.5f && hit.collider.gameObject.tag == "Ground")
+            if (hit.collider != null && Vector2.Dot(hit.normal, Vector2.up) >= 0.0f && hit.collider.gameObject.tag == "Ground")
             {
                 m_grounded = true;
                 break;
